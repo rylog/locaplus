@@ -16,7 +16,7 @@ export const MobileMenu = ({
   navigation,
 }: MobileMenuProps) => {
   return (
-    <>
+    <div className="flex lg:hidden">
       <button
         type="button"
         onClick={() => setMobileMenuOpen(true)}
@@ -63,6 +63,6 @@ export const MobileMenu = ({
           </div>
         </DialogPanel>
       </Dialog>
-    </>
+    </div>
   );
 };
