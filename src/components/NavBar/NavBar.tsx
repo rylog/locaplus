@@ -19,7 +19,7 @@ export const NavBar = ({ navItems }: NavBarProps) => {
         aria-label="Global"
         className="flex items-center justify-between p-3 lg:px-8 "
       >
-        <div className="flex lg:flex-1 rounded-md">
+        <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <img alt="" src={Logo} className="h-14 w-auto" />
           </a>
@@ -30,7 +30,7 @@ export const NavBar = ({ navItems }: NavBarProps) => {
             <a
               key={item.name}
               href={item.href}
-              className="text-base leading-6 text-gray-300 hover:underline"
+              className="text-base leading-6 text-slate-300 hover:text-slate-200"
             >
               {item.name}
             </a>
