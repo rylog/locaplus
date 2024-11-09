@@ -2,15 +2,15 @@ import { useState } from 'react';
 
 import Logo from '/Logo_locaplus.png';
 
-import { NavigationItem } from '../models/Navigation';
+import { NavItem } from '../../types/NavItem';
 import { LanguageSelector } from './LanguageSelector';
-import { MobileMenu } from './MobileMenu';
+import { MobileNav } from './MobileNav';
 
-interface NavigationBarProps {
-  navigationItems: NavigationItem[];
+interface NavBarProps {
+  navItems: NavItem[];
 }
 
-export const NavigationBar = ({ navigationItems }: NavigationBarProps) => {
+export const NavBar = ({ navItems }: NavBarProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -26,7 +26,7 @@ export const NavigationBar = ({ navigationItems }: NavigationBarProps) => {
         </div>
         <div className="flex lg:hidden"></div>
         <div className="hidden lg:flex lg:gap-x-12">
-          {navigationItems.map((item) => (
+          {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
@@ -36,10 +36,10 @@ export const NavigationBar = ({ navigationItems }: NavigationBarProps) => {
             </a>
           ))}
         </div>
-        <MobileMenu
-          mobileMenuOpen={mobileMenuOpen}
+        <MobileNav
+          mobileNavOpen={mobileMenuOpen}
           setMobileMenuOpen={setMobileMenuOpen}
-          navigation={navigationItems}
+          navItems={navItems}
         />
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <LanguageSelector />

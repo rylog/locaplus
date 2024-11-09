@@ -2,7 +2,7 @@ import HomePageImage from '/MainPageTent.jpg';
 
 export const Home = () => {
   return (
-    <div className="isolate px-6 pt-14 lg:px-8 round">
+    <section id="home" className="isolate h-full px-6 pt-14 lg:px-8 round">
       <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div className="text-center">
           <h1 className="text-balance text-4xl font-medium tracking-tight text-white sm:text-6xl">
@@ -26,8 +26,8 @@ export const Home = () => {
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('${HomePageImage}')`,
         }}
-        className={`absolute inset-0 -z-10 h-auto w-full brightness-150 bg-cover  bg-center min-h-screen  bg-no-repeat `}
+        className={`absolute inset-0 -z-10 h-auto w-full brightness-150 bg-cover bg-center bg-no-repeat `}
       />
-    </div>
+    </section>
   );
 };

@@ -4,19 +4,19 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 
 import Logo from '/Logo_locaplus.png';
 
-import { NavigationItem } from '../models/Navigation';
+import { NavItem } from '../../types/NavItem';
 
-interface MobileMenuProps {
-  mobileMenuOpen: boolean;
+interface MobileNavProps {
+  mobileNavOpen: boolean;
   setMobileMenuOpen: (isOpen: boolean) => void;
-  navigation: NavigationItem[];
+  navItems: NavItem[];
 }
 
-export const MobileMenu = ({
-  mobileMenuOpen,
+export const MobileNav = ({
+  mobileNavOpen,
   setMobileMenuOpen,
-  navigation,
-}: MobileMenuProps) => {
+  navItems,
+}: MobileNavProps) => {
   return (
     <div className="flex lg:hidden">
       <button
@@ -28,7 +28,7 @@ export const MobileMenu = ({
         <Bars3Icon aria-hidden="true" className="h-6 w-6" />
       </button>
       <Dialog
-        open={mobileMenuOpen}
+        open={mobileNavOpen}
         onClose={setMobileMenuOpen}
         className="lg:hidden"
       >
@@ -50,7 +50,7 @@ export const MobileMenu = ({
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+                {navItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}

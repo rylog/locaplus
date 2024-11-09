@@ -1,17 +1,12 @@
-import { Home } from './components/Home/Home';
-import { NavigationBar } from './components/NavigationBar';
-
-const navigation = [
-  { name: 'Tents', href: '#' },
-  { name: 'Photos', href: '#' },
-  { name: 'Contact Us', href: '#' },
-];
+import { MainLayout } from './layouts/MainLayout/MainLayout';
+import { Home } from './sections/Home/Home';
 
 export const App = () => {
   return (
-    <div className="bg-white">
-      <NavigationBar navigationItems={navigation} />
-      <Home />
+    <div className="bg-white h-full">
+      <MainLayout>
+        <Home />
+      </MainLayout>
     </div>
   );
 };
