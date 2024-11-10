@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { NavItem } from '../../types/NavItem';
 import { NavBar } from '../NavBar/NavBar';
+import { SideElement } from '../SideElement/SideElement';
 
 interface MainLayoutProps {
   navItems: NavItem[];
@@ -12,7 +13,7 @@ export const MainLayout = ({ navItems, children }: MainLayoutProps) => {
   return (
     <div className="h-full">
       <NavBar navItems={navItems} />
-      <div></div>
+      <SideElement />
       {children}
     </div>
   );
