@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
-import { NavBar } from '../../components/NavBar/NavBar';
 import { NavItem } from '../../types/NavItem';
+import { NavBar } from '../NavBar/NavBar';
 
 interface MainLayoutProps {
   navItems: NavItem[];
@@ -12,7 +12,8 @@ export const MainLayout = ({ navItems, children }: MainLayoutProps) => {
   return (
     <div className="h-full">
       <NavBar navItems={navItems} />
-      <main className="h-full">{children}</main>
+      <div></div>
+      {children}
     </div>
   );
 };
