@@ -3,3 +3,9 @@ export interface Tent {
   min?: string;
   max: string;
 }
+
+export interface TentsList {
+  tents: {
+    list: Tent[];
+  };
+}

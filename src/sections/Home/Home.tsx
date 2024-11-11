@@ -6,7 +6,10 @@ import { Header } from '../../components/Header/Header';
 
 export const Home = () => {
   return (
-    <section id="home" className="isolate h-full px-6 pt-14 lg:px-8">
+    <section
+      id="home"
+      className="isolate h-full px-6 pt-14 lg:px-8 snap-always snap-start"
+    >
       <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div className="text-center">
           <Header>
@@ -19,7 +22,7 @@ export const Home = () => {
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
               href="#contact"
-              className="mt-10 flex items-center justify-center gap-x-6 transform transition duration-200 rounded-md bg-slate-900 px-3.5 py-2.5 text-sm text-slate-100 shadow-sm hover:bg-opacity-80 hover:scale-105 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:shadow-inner"
+              className="mt-10 flex items-center justify-center gap-x-6 transform transition duration-200 rounded-md bg-slate-900 px-3.5 py-2.5 text-sm text-slate-100 shadow-sm hover:scale-105 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:shadow-inner"
             >
               <FormattedMessage id="home.requestQuote" />
             </a>

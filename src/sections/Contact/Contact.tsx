@@ -8,7 +8,10 @@ import { LABEL_COLORS } from '../../styles/colors';
 export const Contact = () => {
   const intl = useIntl();
   return (
-    <section id="contact" className="h-full bg-slate-900">
+    <section
+      id="contact"
+      className="h-full bg-slate-900 snap-always snap-start"
+    >
       <div className="px-6 py-8 sm:py-28 lg:px-8 bg-slate-900">
         <div className="text-center">
           <Header>

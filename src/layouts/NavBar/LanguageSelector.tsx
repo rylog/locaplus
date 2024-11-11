@@ -22,7 +22,7 @@ export const LanguageSelector = () => {
       <div className="relative">
         <ListboxButton
           className={clsx(
-            'rounded-lg w-32 bg-white/5 py-1.5 pr-8 pl-3 text-left text-sm/6 text-white',
+            'rounded-lg w-28 bg-white/5 py-1.5 pr-8 pl-3 text-left text-sm/6 text-white',
             'focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25',
           )}
         >
@@ -35,7 +35,7 @@ export const LanguageSelector = () => {
         <ListboxOptions
           transition
           className={clsx(
-            'absolute right-0 mt-1 w-32 rounded-md border border-white/5 bg-white/5 p-1 [--anchor-gap:var(--spacing-1)] focus:outline-none',
+            'absolute right-0 mt-1 w-28 rounded-md border border-white/5 bg-white/5 p-1 [--anchor-gap:var(--spacing-1)] focus:outline-none',
             'transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0',
           )}
           modal={false}

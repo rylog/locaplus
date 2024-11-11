@@ -11,10 +11,10 @@ interface MainLayoutProps {
 
 export const MainLayout = ({ navItems, children }: MainLayoutProps) => {
   return (
-    <div className="h-full">
+    <div className="max-h-full h-full">
       <NavBar navItems={navItems} />
-      <SideElement />
       {children}
+      <SideElement />
     </div>
   );
 };
