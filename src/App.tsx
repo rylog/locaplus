@@ -1,6 +1,7 @@
 import { useIntl } from 'react-intl';
 
 import { MainLayout } from './layouts/MainLayout/MainLayout';
+import { About } from './sections/About/About';
 import { Contact } from './sections/Contact/Contact';
 import { Home } from './sections/Home/Home';
 import { Products } from './sections/Products/Products';
@@ -15,6 +16,7 @@ export const App = () => {
   return (
     <MainLayout navItems={navItems}>
       <Home />
+      <About />
       <Products />
       <Contact />
     </MainLayout>

@@ -3,8 +3,8 @@
   "nav.products": "Products",
   "nav.photos": "Photos",
   "nav.contactUs": "Contact us",
-  "home.title": "Reliable Equipment Rentals For Every Event",
-  "home.subtitle": "With over 30 years of experience, Locaplus provides reliable, quality rentals to make your event a success.",
+  "home.title": "Trusted Tent & Event Rentals in the Eastern Townships",
+  "home.subtitle": "  With 30+ years of experience Locaplus delivers reliable tent, marquee and event rentals to make your event unforgettable.",
   "home.requestQuote": "Request a quote",
   "requestQuote.title": "Request a quote",
   "form.firstName": "First name",
@@ -59,5 +59,18 @@
   "equipment.dishesCutleryAndGlasses": "Dishes, cutlery and glasses",
   "equipment.iceBasket": "Ice basket",
   "equipment.propaneFurnace": "Propane furnace",
-  "equipment.propaneFurnaceAccessory": "Propane furnace accessory"
+  "equipment.propaneFurnaceAccessory": "Propane furnace accessory",
+
+  "about.title": "About Us",
+  "about.heading": "Transforming Moments into Memories, Rain or Shine",
+  "about.section1.title": "30+ Years of Trusted Excellence",
+  "about.section1.description": "Since 1991, Locaplus has been a trusted partner in event rentals across Quebec. With decades of experience, we bring reliability and dedication to every event, from intimate gatherings to large-scale festivals.",
+  "about.section2.title": "Create the Perfect Event with Us",
+  "about.section2.description": "Every event is an opportunity to create something special. Let us help you design the perfect atmosphere with our wide range of high-quality event rentals and personalized service.",
+  "about.section3.title": "Your Vision, Our Commitment",
+  "about.section3.description": "At Locaplus, we understand that every event is unique. Our team works closely with you to ensure each detail aligns with your vision, delivering a truly personalized experience that meets your needs and expectations.",
+  "about.section4.title": "Event Equipment Tailored to Your Needs",
+  "about.section4.description": "From elegant tents and marquees to tables, chairs, flooring, and more, Locaplus offers a full range of rentals to make your event unforgettable with locations in Sherbrooke, St. Alphonse de Granby, and Cowansville.",
+  "about.section5.title": "Official distributor/installer for Tempo in the Eastern Townships",
+  "about.section5.description": "Locaplus is the official Tempo dealer in the Eastern Townships, providing sales, distribution, and expert installation."
 }
