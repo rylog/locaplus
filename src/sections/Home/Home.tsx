@@ -8,25 +8,24 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="isolate h-full px-6 pt-14 lg:px-8 snap-always snap-start"
+      className="flex isolate h-full px-6 pt-14 lg:px-8 snap-start"
     >
-      <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-        <div className="text-center">
-          <Header>
-            <FormattedMessage id="home.title" />
-          </Header>
-          <h1 className="text-balance text-4xl font-medium tracking-tight text-slate-100 sm:text-6xl"></h1>
-          <p className="mt-8 text-pretty text-lg font-normal text-slate-300 sm:text-xl/8">
-            <FormattedMessage id="home.subtitle" />
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#contact"
-              className="mt-10 flex items-center justify-center gap-x-6 transform transition duration-200 rounded-md bg-slate-900 px-3.5 py-2.5 text-sm text-slate-100 shadow-sm hover:scale-105 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:shadow-inner"
-            >
-              <FormattedMessage id="home.requestQuote" />
-            </a>
+      <div className="flex flex-col mx-auto max-w-3xl max-h-full absolute left-0  right-0 top-[30%]">
+        <div className="flex flex-col *:text-center place-content-center gap-10">
+          <div className="flex flex-col gap-8">
+            <Header>
+              <FormattedMessage id="home.title" />
+            </Header>
+            <h2 className="text-pretty text-lg font-normal text-slate-300 sm:text-xl/8">
+              <FormattedMessage id="home.subtitle" />
+            </h2>
           </div>
+          <a
+            href="#contact"
+            className="self-center transform transition duration-200 w-fit rounded-md bg-primary px-3.5 py-2.5 text-sm text-slate-100 shadow-sm hover:scale-105 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:shadow-inner"
+          >
+            <FormattedMessage id="home.requestQuote" />
+          </a>
         </div>
       </div>
       <div

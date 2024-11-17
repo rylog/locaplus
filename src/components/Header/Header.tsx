@@ -15,7 +15,7 @@ export const Header = ({
   const styles = {
     primary: 'text-4xl font-medium tracking-tight sm:text-6xl',
     secondary: 'text-3xl font-semibold tracking-wide sm:text-5xl',
-    tertiary: 'text-2xl font-light tracking-loose sm:text-4xl',
+    tertiary: 'text-2xl font-semibold tracking-loose sm:text-2xl',
   };
 
   return (

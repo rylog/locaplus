@@ -8,10 +8,7 @@ import { LABEL_COLORS } from '../../styles/colors';
 export const Contact = () => {
   const intl = useIntl();
   return (
-    <section
-      id="contact"
-      className="h-full bg-slate-900 snap-always snap-start"
-    >
+    <section id="contact" className="h-full bg-slate-900 snap-start">
       <div className="px-6 py-8 sm:py-28 lg:px-8 bg-slate-900">
         <div className="text-center">
           <Header>
@@ -69,7 +66,7 @@ export const Contact = () => {
           <div className="mt-10">
             <button
               type="submit"
-              className="block w-full rounded-md bg-indigo-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="block w-full rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm"
             >
               <FormattedMessage id="form.submitButton" />
             </button>
