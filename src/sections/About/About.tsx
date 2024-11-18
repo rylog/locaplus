@@ -10,14 +10,13 @@ export function About() {
         <h2 className="text-center text-lg/7 font-semibold text-primary">
           <FormattedMessage id="about.title" />
         </h2>
-        <p className="mx-auto mt-2 max-w-xl text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+        <p className="mx-auto mt-2 max-w-2xl text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
           <FormattedMessage id="about.heading" />
         </p>
-        <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+        <div className="h-full lg:max-h-[700px] mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
           {/* Left */}
-          <div className="relative lg:row-span-2">
-            <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
+          <div className="overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] bg-white shadow ring-1 ring-black/5  lg:row-span-2">
+            <div className="flex h-full flex-col ">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-8 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
                   <FormattedMessage id="about.section1.title" />
@@ -26,7 +25,7 @@ export function About() {
                   <FormattedMessage id="about.section1.description" />
                 </p>
               </div>
-              <div className="relative min-h-[30rem] w-full grow">
+              <div className="min-h-[30rem] w-full grow">
                 <img
                   className="size-full object-cover object-top"
                   src="/about/work.jpg"
@@ -34,12 +33,10 @@ export function About() {
                 />
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 lg:rounded-l-[2rem]"></div>
           </div>
           {/* Mid Top */}
-          <div className="relative max-lg:row-start-1">
-            <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+          <div className="overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] bg-white shadow ring-1 ring-black/5 max-lg:row-start-1">
+            <div className="flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
                   <FormattedMessage id="about.section2.title" />
@@ -49,33 +46,28 @@ export function About() {
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
-                <div className="relative flex items-center justify-center w-16 h-16 bg-blue-200 rounded-full">
+                <div className="flex items-center justify-center w-16 h-16 bg-blue-200 rounded-full">
                   <ClipboardDocumentCheckIcon className="text-primary size-8" />
                 </div>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
           </div>
           {/* Mid Bottom */}
-          <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-            <div className="absolute inset-px rounded-lg bg-white"></div>
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
-              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
+          <div className="overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] bg-white shadow ring-1 ring-black/5 max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
+            <div className="flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
+              <div className="px-8 pt-8 sm:px-10 sm:pt-10 pb-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
                   <FormattedMessage id="about.section3.title" />
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                   <FormattedMessage id="about.section3.description" />
                 </p>
-                <div className="relative flex items-center justify-center w-16 h-16"></div>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5"></div>
           </div>
           {/* Right */}
-          <div className="relative lg:row-span-2">
-            <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)]">
+          <div className="overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] bg-white shadow ring-1 ring-black/5 lg:row-span-2">
+            <div className="flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-8 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
                   <FormattedMessage id="about.section4.title" />
@@ -84,7 +76,7 @@ export function About() {
                   <FormattedMessage id="about.section4.description" />
                 </p>
               </div>
-              <div className="relative min-h-[30rem] w-full grow">
+              <div className="min-h-[30rem] w-full grow">
                 <img
                   className="size-full object-cover object-top"
                   src="/about/tent5.jpg"
@@ -92,7 +84,6 @@ export function About() {
                 />
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
           </div>
         </div>
         <div className="mt-4 flex flex-col overflow-hidden rounded-lg bg-white shadow ring-1 ring-black/5 items-center lg:rounded-b-[calc(2rem+1px)]">

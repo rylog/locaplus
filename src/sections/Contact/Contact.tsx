@@ -8,8 +8,8 @@ import { LABEL_COLORS } from '../../styles/colors';
 export const Contact = () => {
   const intl = useIntl();
   return (
-    <section id="contact" className="h-full bg-slate-900 snap-start">
-      <div className="px-6 py-8 sm:py-28 lg:px-8 bg-slate-900">
+    <section id="contact" className="h-full bg-slate-900">
+      <div className="px-6 py-8 sm:py-16 lg:px-8 bg-slate-900">
         <div className="text-center">
           <Header>
             <FormattedMessage id="requestQuote.title" />
@@ -18,7 +18,7 @@ export const Contact = () => {
         <form
           action="#"
           method="POST"
-          className="mx-auto mt-8 max-w-xl sm:mt-20"
+          className="mx-auto mt-8 max-w-xl sm:mt-8"
         >
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <TextInput
