@@ -1,7 +1,5 @@
 import { FormattedMessage } from 'react-intl';
 
-import HomePageImage from '/MainPageTent.jpg';
-
 import { Header } from '../../components/Header/Header';
 
 export const Home = () => {
@@ -25,12 +23,16 @@ export const Home = () => {
           </a>
         </div>
       </div>
-      <div
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('${HomePageImage}')`,
-        }}
-        className={`absolute inset-0 -z-10 h-auto w-full brightness-150 bg-cover bg-center bg-no-repeat`}
-      />
+      <div className="absolute inset-0 -z-10 h-auto w-full">
+        <picture>
+          <source srcSet="/MainPageTent.webp" type="image/webp" />
+          <img
+            src="/MainPageTent.png"
+            alt="Background"
+            className="h-full w-full object-cover"
+          />
+        </picture>
+      </div>
     </section>
   );
 };

@@ -1,6 +1,7 @@
-import { Dialog, DialogPanel } from '@headlessui/react';
-import { Bars3Icon } from '@heroicons/react/16/solid';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import { Dialog } from '@headlessui/react';
+import { DialogPanel } from '@headlessui/react';
+import Bars3Icon from '@heroicons/react/16/solid/Bars3Icon';
+import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 
 import Logo from '/Logo_locaplus.png';
 

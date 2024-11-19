@@ -25,6 +25,7 @@ export const Tents = () => {
           className="flex flex-row rounded-md p-4 bg-white shadow-md text-sm sm:text-base transition hover:bg-slate-100  gap-4"
         >
           <img
+            loading="lazy"
             alt={item.img}
             className="w-20 h-20 object-cover rounded-md"
             src={item.img}

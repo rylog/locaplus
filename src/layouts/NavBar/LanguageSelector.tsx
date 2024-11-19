@@ -4,7 +4,7 @@ import {
   ListboxOption,
   ListboxOptions,
 } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDoubleDownIcon';
 import { clsx } from 'clsx';
 
 import { useLocale } from '../../context/LocaleContext';
