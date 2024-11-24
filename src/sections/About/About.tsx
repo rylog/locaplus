@@ -27,7 +27,6 @@ export function About() {
               </div>
               <div className="min-h-[30rem] w-full grow">
                 <img
-                  loading="lazy"
                   className="size-full object-cover object-top"
                   src="/about/work.jpg"
                   alt={intl.formatMessage({ id: 'about.section1.title' })}
@@ -79,7 +78,6 @@ export function About() {
               </div>
               <div className="min-h-[30rem] w-full grow">
                 <img
-                  loading="lazy"
                   className="size-full object-cover object-top"
                   src="/about/tent5.jpg"
                   alt={intl.formatMessage({ id: 'about.section4.title' })}
@@ -96,11 +94,7 @@ export function About() {
             <p className="mt-2 text-sm/6 text-gray-600 max-lg:text-center">
               <FormattedMessage id="about.section5.description" />
             </p>
-            <img
-              loading="lazy"
-              src="/about/tempo.png"
-              className="h-12 mt-8"
-            ></img>
+            <img src="/about/tempo.png" className="h-12 mt-8"></img>
           </div>
         </div>
       </div>
