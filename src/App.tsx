@@ -10,7 +10,7 @@ export const App = () => {
   const intl = useIntl();
   const navItems = [
     { name: intl.formatMessage({ id: 'nav.products' }), href: '#products' },
-    { name: intl.formatMessage({ id: 'nav.photos' }), href: '#photos' },
+    { name: intl.formatMessage({ id: 'nav.projects' }), href: '#projects' },
   ];
 
   return (

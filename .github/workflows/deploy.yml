@@ -1,0 +1,69 @@
+name: Deploy React App to cPanel via SSH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: node
+
+      # Install dependencies and build
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      # Zip the build folder
+      - name: Zip the build folder
+        run: zip -r ./dist.zip ./dist/
+
+      # Verify current directory and list contents to check dist.zip
+      - name: List current directory
+        run: pwd
+
+      - name: List contents after zipping
+        run: ls -la
+
+      # Add remote server SSH key to known hosts
+      - name: Add SSH key and known hosts
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.CPANEL_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.CPANEL_HOSTNAME }} >> ~/.ssh/known_hosts
+
+      # SSH and execute commands on the server
+      - name: SSH and Build on Server
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOSTNAME }} << 'EOF'
+          # Navigate to your repository on the server
+          cd /home/${{ secrets.CPANEL_USERNAME }}/repositories/locaplus
+
+          # Pull the latest code
+          git pull origin main
+
+          # Install dependencies and build
+          npm install
+          npm run build
+
+          # Deploy built files to public_html
+          rm -rf /home/${{ secrets.CPANEL_USERNAME }}/public_html/*
+          cp -r ./dist/* /home/${{ secrets.CPANEL_USERNAME }}/public_html/
+
+          # Optional: List contents of public_html to verify
+          ls -la /home/${{ secrets.CPANEL_USERNAME }}/public_html/
+          EOF
