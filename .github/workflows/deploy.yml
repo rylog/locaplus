@@ -31,39 +31,33 @@ jobs:
       - name: Zip the build folder
         run: zip -r ./dist.zip ./dist/
 
-      # Verify current directory and list contents to check dist.zip
-      - name: List current directory
-        run: pwd
+      # Start SSH agent and add SSH key
+      - name: Start SSH Agent
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.CPANEL_SSH_KEY }}
 
-      - name: List contents after zipping
-        run: ls -la
+      # Upload the build zip to the server
+      - name: Upload Build to Server
+        run: scp ./dist.zip ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOSTNAME }}:/home/${{ secrets.CPANEL_USERNAME }}/
 
-      # Add remote server SSH key to known hosts
-      - name: Add SSH key and known hosts
+      # Deploy the build on the server
+      - name: SSH and Deploy
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.CPANEL_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.CPANEL_HOSTNAME }} >> ~/.ssh/known_hosts
+          ssh ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOSTNAME }} << 'EOF'
+          set -euo pipefail
 
-      # SSH and execute commands on the server
-      - name: SSH and Build on Server
-        run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOSTNAME }} << 'EOF'
-          # Navigate to your repository on the server
-          cd /home/${{ secrets.CPANEL_USERNAME }}/repositories/locaplus
+          # Create a new directory for the build
+          mkdir -p /home/${{ secrets.CPANEL_USERNAME }}/public_html_new
+          unzip -o /home/${{ secrets.CPANEL_USERNAME }}/dist.zip -d /home/${{ secrets.CPANEL_USERNAME }}/public_html_new
 
-          # Pull the latest code
-          git pull origin main
+          # Swap directories atomically
+          mv /home/${{ secrets.CPANEL_USERNAME }}/public_html /home/${{ secrets.CPANEL_USERNAME }}/public_html_old
+          mv /home/${{ secrets.CPANEL_USERNAME }}/public_html_new /home/${{ secrets.CPANEL_USERNAME }}/public_html
 
-          # Install dependencies and build
-          npm install
-          npm run build
+          # Cleanup old directory
+          rm -rf /home/${{ secrets.CPANEL_USERNAME }}/public_html_old
 
-          # Deploy built files to public_html
-          rm -rf /home/${{ secrets.CPANEL_USERNAME }}/public_html/*
-          cp -r ./dist/* /home/${{ secrets.CPANEL_USERNAME }}/public_html/
-
-          # Optional: List contents of public_html to verify
-          ls -la /home/${{ secrets.CPANEL_USERNAME }}/public_html/
+          # Optional: Verify contents of the deployed folder
+          ls -la /home/${{ secrets.CPANEL_USERNAME }}/public_html
           EOF
