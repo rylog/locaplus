@@ -49,7 +49,7 @@ jobs:
       # SSH and execute commands on the server
       - name: SSH and Build on Server
         run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOSTNAME }} << 'EOF'
+          ssh -i ~/.ssh/id_rsa ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOSTNAME }} << 'EOF'
           # Navigate to your repository on the server
           cd /home/${{ secrets.CPANEL_USERNAME }}/repositories/locaplus
 
