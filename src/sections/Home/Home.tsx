@@ -1,5 +1,8 @@
 import { FormattedMessage } from 'react-intl';
 
+import HomeBackgroundJpg from '/assets/home/MainPageTent.jpg';
+import HomeBackgroundWebp from '/assets/home/MainPageTent.webp';
+
 import { Header } from '../../components/Header/Header';
 
 export const Home = () => {
@@ -25,9 +28,9 @@ export const Home = () => {
       </div>
       <div className="absolute inset-0 -z-10 h-auto w-full">
         <picture>
-          <source srcSet="/MainPageTent.webp" type="image/webp" />
+          <source srcSet={HomeBackgroundWebp} type="image/webp" />
           <img
-            src="/MainPageTent.png"
+            src={HomeBackgroundJpg}
             alt="Background"
             className="h-full w-full object-cover"
           />

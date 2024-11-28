@@ -1,7 +1,10 @@
 import ClipboardDocumentCheckIcon from '@heroicons/react/24/outline/ClipboardDocumentCheckIcon';
 import { FormattedMessage, useIntl } from 'react-intl';
 
-export function About() {
+import AboutLeftSectionPhoto from '/assets/about/leftSection.jpg';
+import AboutRightSectionPhoto from '/assets/about/rightSection.jpg';
+
+export const About = () => {
   const intl = useIntl();
 
   return (
@@ -28,7 +31,7 @@ export function About() {
               <div className="min-h-[30rem] w-full grow">
                 <img
                   className="size-full object-cover object-top"
-                  src="/about/work.jpg"
+                  src={AboutLeftSectionPhoto}
                   alt={intl.formatMessage({ id: 'about.section1.title' })}
                 />
               </div>
@@ -79,7 +82,7 @@ export function About() {
               <div className="min-h-[30rem] w-full grow">
                 <img
                   className="size-full object-cover object-top"
-                  src="/about/tent5.jpg"
+                  src={AboutRightSectionPhoto}
                   alt={intl.formatMessage({ id: 'about.section4.title' })}
                 />
               </div>
@@ -100,4 +103,4 @@ export function About() {
       </div>
     </div>
   );
-}
+};
