@@ -27,9 +27,11 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      # Zip the build folder
-      - name: Zip the build folder
-        run: zip -r ./dist.zip ./dist/
+      # Zip the contents of the dist folder (not the folder itself)
+      - name: Zip Build Contents
+        run: |
+          cd dist
+          zip -r ../dist.zip ./*
 
       # Add remote server SSH key to known hosts
       - name: Add SSH key and known hosts
@@ -51,8 +53,7 @@ jobs:
 
           # Create a new directory for the build
           mkdir -p /home/${{ secrets.CPANEL_USERNAME }}/public_html_new
-          unzip -o /home/${{ secrets.CPANEL_USERNAME }}/dist.zip -d /home/${{ secrets.CPANEL_USERNAME }}/public_html_new
-
+          unzip -o /home/${{ secrets.CPANEL_USERNAME }}/dist.zip -d /home/${{ secrets.CPANEL_USERNAME }}/public_html_new/
           # Swap directories atomically
           mv /home/${{ secrets.CPANEL_USERNAME }}/public_html /home/${{ secrets.CPANEL_USERNAME }}/public_html_old
           mv /home/${{ secrets.CPANEL_USERNAME }}/public_html_new /home/${{ secrets.CPANEL_USERNAME }}/public_html
