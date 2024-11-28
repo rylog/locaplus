@@ -41,26 +41,27 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.CPANEL_HOSTNAME }} >> ~/.ssh/known_hosts
 
-        # Upload the build zip to the server
+      # Upload the build zip to the server
       - name: Upload Build to Server
         run: scp -i ~/.ssh/id_rsa ./dist.zip ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOSTNAME }}:/home/${{ secrets.CPANEL_USERNAME }}/
 
       # SSH and execute commands on the server
-      - name: SSH and Build on Server
+      - name: SSH and Deploy Build on Server
         run: |
           ssh -i ~/.ssh/id_rsa ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOSTNAME }} << 'EOF'
           set -euo pipefail
 
-          # Create a new directory for the build
-          mkdir -p /home/${{ secrets.CPANEL_USERNAME }}/public_html_new
-          unzip -o /home/${{ secrets.CPANEL_USERNAME }}/dist.zip -d /home/${{ secrets.CPANEL_USERNAME }}/public_html_new/
-          # Swap directories atomically
-          mv /home/${{ secrets.CPANEL_USERNAME }}/public_html /home/${{ secrets.CPANEL_USERNAME }}/public_html_old
-          mv /home/${{ secrets.CPANEL_USERNAME }}/public_html_new /home/${{ secrets.CPANEL_USERNAME }}/public_html
+          # Unzip the uploaded build zip into a temporary directory
+          mkdir -p /home/${{ secrets.CPANEL_USERNAME }}/public_html_temp
+          unzip -o /home/${{ secrets.CPANEL_USERNAME }}/dist.zip -d /home/${{ secrets.CPANEL_USERNAME }}/public_html_temp/
 
-          # Cleanup old directory
-          rm -rf /home/${{ secrets.CPANEL_USERNAME }}/public_html_old
+          # Copy new build files to public_html
+          rsync -av --delete --exclude='api/' /home/${{ secrets.CPANEL_USERNAME }}/public_html_temp/ /home/${{ secrets.CPANEL_USERNAME }}/public_html/
 
-          # Optional: List contents of public_html to verify
+          # Cleanup temporary directory and zip file
+          rm -rf /home/${{ secrets.CPANEL_USERNAME }}/public_html_temp
+          rm -f /home/${{ secrets.CPANEL_USERNAME }}/dist.zip
+
+          # List contents of public_html to verify
           ls -la /home/${{ secrets.CPANEL_USERNAME }}/public_html/
           EOF
