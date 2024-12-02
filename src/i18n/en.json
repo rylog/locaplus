@@ -1,5 +1,5 @@
 {
-  "nav.tents": "Tents",
+  "nav.aboutUs": "About Us",
   "nav.products": "Products",
   "nav.projects": "Projects",
   "nav.contactUs": "Contact us",
@@ -61,8 +61,7 @@
   "equipment.propaneFurnace": "Propane furnace",
   "equipment.propaneFurnaceAccessory": "Propane furnace accessory",
 
-  "about.title": "About Us",
-  "about.heading": "Transforming Moments into Memories, Rain or Shine",
+  "about.title": "Transforming Moments into Memories, Rain or Shine",
   "about.section1.title": "30+ Years of Trusted Excellence",
   "about.section1.description": "Since 1991, Locaplus has been a trusted partner in event rentals across Quebec. With decades of experience, we bring reliability and dedication to every event, from intimate gatherings to large-scale festivals.",
   "about.section2.title": "Create the Perfect Event with Us",
@@ -72,5 +71,10 @@
   "about.section4.title": "Event Equipment Tailored to Your Needs",
   "about.section4.description": "From elegant tents and marquees to tables, chairs, flooring, and more, Locaplus offers a full range of rentals to make your event unforgettable with locations in Sherbrooke, St. Alphonse de Granby, and Cowansville.",
   "about.section5.title": "Official distributor/installer for Tempo in the Eastern Townships",
-  "about.section5.description": "Locaplus is the official Tempo dealer in the Eastern Townships, providing sales, distribution, and expert installation."
+  "about.section5.description": "Locaplus is the official Tempo dealer in the Eastern Townships, providing sales, distribution, and expert installation.",
+
+  "products.title": "We've got you covered",
+  "products.description": "Premium tents, stylish furniture, and all the essentials to make your event seamless and unforgettable.",
+  "contact.title": "Have Questions? Ask Us!",
+  "contact.description": "Get in touch with Locaplus for tent and event rentals in Bromont, Granby, South Shore, Sherbrooke, and Magog. Call us, email us, orvisit our Saint-Alphonse-de-Granby office. Request your quote today to start planning your event!"
 }

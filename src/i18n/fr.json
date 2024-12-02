@@ -1,5 +1,5 @@
 {
-  "nav.tents": "Tentes",
+  "nav.aboutUs": "À propos de nous",
   "nav.products": "Produits",
   "nav.projects": "Projets",
   "nav.contactUs": "Contactez-nous",
@@ -61,8 +61,7 @@
   "equipment.propaneFurnace": "Fourneau à propane",
   "equipment.propaneFurnaceAccessory": "Accessoire pour fourneau à propane",
 
-  "about.title": "À propos de nous",
-  "about.heading": "Transformer vos moments en souvenirs, beau temps mauvais temps",
+  "about.title": "Transformer vos moments en souvenirs, beau temps mauvais temps",
   "about.section1.title": "Plus de 30 ans d'excellence de confiance",
   "about.section1.description": "Depuis 1991, Locaplus est un partenaire de confiance dans la location d'équipements pour événements à travers le Québec. Forts de plusieurs décennies d'expérience, nous apportons fiabilité et dévouement à chaque événement, des rassemblements intimes aux festivals de grande envergure.",
   "about.section2.title": "Créez l'événement parfait avec nous",
@@ -72,5 +71,11 @@
   "about.section4.title": "Équipements pour événements adaptés à vos besoins",
   "about.section4.description": "Des tentes et chapiteaux élégants aux tables, chaises, planchers et plus encore, Locaplus propose une gamme complète de locations pour rendre votre événement inoubliable, avec des sites à Sherbrooke, St. Alphonse de Granby et Cowansville.",
   "about.section5.title": "Distributeur/installateur officiel de Tempo en Estrie",
-  "about.section5.description": "Locaplus est le concessionnaire officiel de Tempo en Estrie, offrant des services de vente, de distribution et d'installation professionnelle."
+  "about.section5.description": "Locaplus est le concessionnaire officiel de Tempo en Estrie, offrant des services de vente, de distribution et d'installation professionnelle.",
+
+  "products.title": "Nous avons tout ce qu'il vous faut",
+  "products.description": "Des tentes premium, du mobilier élégant et tout le nécessaire pour rendre votre événement inoubliable.",
+
+  "contact.title": "Des questions ? Contactez-nous !",
+  "contact.description": "Contactez Locaplus pour la location de tentes et équipements dans les régions de Bromont, Granby, la Rive-Sud, Sherbrooke et Magog. Appelez-nous, envoyez-nous un email ou visitez notre bureau à Saint-Alphonse-de-Granby. Demandez votre soumission dès aujourd'hui pour commencer à planifier votre événement !"
 }

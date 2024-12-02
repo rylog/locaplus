@@ -1,77 +1,30 @@
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
-import { Header } from '../../components/Header/Header';
-import { MessageInput } from '../../components/MessageInput/MessageInput';
-import { TextInput } from '../../components/TextInput/TextInput';
-import { LABEL_COLORS } from '../../styles/colors';
+import { SECTIONS } from '../../constants/sections';
+import ContactInfo from './ContactInfo';
+import QuoteForm from './QuoteForm';
 
 export const Contact = () => {
-  const intl = useIntl();
   return (
-    <section id="contact" className="h-full bg-slate-900">
-      <div className="px-6 py-8 sm:py-16 lg:px-8 bg-slate-900">
-        <div className="text-center">
-          <Header>
-            <FormattedMessage id="requestQuote.title" />
-          </Header>
+    <section id={SECTIONS.CONTACT} className="h-full py-12 sm:py-16">
+      <div className="flex flex-col max-w-2xl px-6 lg:max-w-6xl justify-self-center gap-4">
+        <header>
+          <h1 className="text-lg/7 font-semibold text-primary text-center">
+            <FormattedMessage id="nav.contactUs" />
+          </h1>
+          <h2 className="mx-auto mt-2 max-w-2xl text-balance text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl text-center">
+            <FormattedMessage id="contact.title" />
+          </h2>
+          <p className="text-center mt-2 text-gray-600">
+            <FormattedMessage id="contact.description" />
+          </p>
+        </header>
+      </div>
+      <div className="flex py-12 justify-center">
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 max-w-2xl mx-6 lg:max-w-7xl lg:mx-8 rounded-2xl bg-white overflow-hidden">
+          <ContactInfo />
+          <QuoteForm />
         </div>
-        <form
-          action="#"
-          method="POST"
-          className="mx-auto mt-8 max-w-xl sm:mt-8"
-        >
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-            <TextInput
-              name="firstName"
-              autoComplete="given-name"
-              label={intl.formatMessage({ id: 'form.firstName' })}
-              labelColor={LABEL_COLORS.CONTACT_FORM}
-            />
-            <TextInput
-              name="lastName"
-              autoComplete="family-name"
-              label={intl.formatMessage({ id: 'form.lastName' })}
-              labelColor={LABEL_COLORS.CONTACT_FORM}
-            />
-            <TextInput
-              className={'sm:col-span-2'}
-              name="eventType"
-              label={intl.formatMessage({ id: 'form.typeOfEvent' })}
-              labelColor={LABEL_COLORS.CONTACT_FORM}
-            />
-
-            <TextInput
-              className={'sm:col-span-2'}
-              name="email"
-              autoComplete="email"
-              label={intl.formatMessage({ id: 'form.email' })}
-              labelColor={LABEL_COLORS.CONTACT_FORM}
-            />
-
-            <TextInput
-              className={'sm:col-span-2'}
-              name="phoneNumber"
-              autoComplete="tel"
-              label={intl.formatMessage({ id: 'form.phoneNumber' })}
-              labelColor={LABEL_COLORS.CONTACT_FORM}
-            />
-            <MessageInput
-              className={'sm:col-span-2'}
-              name={'message'}
-              label={intl.formatMessage({ id: 'form.message' })}
-              labelColor={LABEL_COLORS.CONTACT_FORM}
-            />
-          </div>
-
-          <div className="mt-10">
-            <button
-              type="submit"
-              className="block w-full rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm"
-            >
-              <FormattedMessage id="form.submitButton" />
-            </button>
-          </div>
-        </form>
       </div>
     </section>
   );
