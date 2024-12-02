@@ -47,7 +47,7 @@ const QuoteForm = () => {
   };
 
   return (
-    <div className="py-8 lg:px-12 bg-slate-900 ">
+    <div className="p-8 lg:px-12 bg-slate-900 ">
       <div>
         <Header type="tertiary">
           <FormattedMessage id="requestQuote.title" />

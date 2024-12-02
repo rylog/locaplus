@@ -10,7 +10,7 @@
   "form.firstName": "Prénom",
   "form.lastName": "Nom de famille",
   "form.typeOfEvent": "Type d'événement",
-  "form.email": "Email",
+  "form.email": "Courriel",
   "form.phoneNumber": "Numéro de téléphone",
   "form.message": "Message",
   "form.submitButton": "Demander une soumission",
@@ -77,5 +77,11 @@
   "products.description": "Des tentes premium, du mobilier élégant et tout le nécessaire pour rendre votre événement inoubliable.",
 
   "contact.title": "Des questions ? Contactez-nous !",
-  "contact.description": "Contactez Locaplus pour la location de tentes et équipements dans les régions de Bromont, Granby, la Rive-Sud, Sherbrooke et Magog. Appelez-nous, envoyez-nous un email ou visitez notre bureau à Saint-Alphonse-de-Granby. Demandez votre soumission dès aujourd'hui pour commencer à planifier votre événement !"
+  "contact.description": "Contactez Locaplus pour la location de tentes et équipements dans les régions de Bromont, Granby, la Rive-Sud, Sherbrooke et Magog. Appelez-nous, envoyez-nous un courriel ou visitez notre bureau à Saint-Alphonse-de-Granby. Demandez votre soumission dès aujourd'hui pour commencer à planifier votre événement !",
+
+  "contactInfo.address": "203 Rue des Alouettes, Saint-Alphonse-de-Granby",
+  "contactInfo.phone": "Téléphone",
+  "contactInfo.email": "Courriel",
+  "contactInfo.office": "Bureau",
+  "contactInfo.followUs": "Suivez-nous"
 }

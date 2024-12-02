@@ -2,7 +2,7 @@ export const SideElement = () => {
   return (
     <div className={'w-10 fixed bottom-0 left-4 right-auto z-10 text-gray-400'}>
       <ul>
-        <li className="flex justify-center items-center mb-6 mx-auto text-gray-400 hover:text-slate-100 relative group">
+        <li className="flex justify-center items-center mb-6 mx-auto text-gray-400 hover:text-slate-500 mix-blend-difference relative group">
           <a href="https://www.facebook.com/Locaplus.net">
             <span className="sr-only">Facebook</span>
             <svg className="size-7" fill="currentColor" viewBox="0 0 24 24">
@@ -17,7 +17,7 @@ export const SideElement = () => {
             facebook.com
           </span>
         </li>
-        <li className="flex justify-center items-center mb-6 mx-auto text-gray-400 hover:text-slate-100 relative group ">
+        <li className="flex justify-center items-center mb-6 mx-auto text-gray-400 hover:text-slate-500 mix-blend-difference relative group ">
           <a href="https://www.instagram.com/chapiteaulocaplus/">
             <span className="sr-only">Instagram</span>
             <svg className="size-7" fill="currentColor" viewBox="0 0 24 24">
@@ -32,7 +32,7 @@ export const SideElement = () => {
             instagram.com
           </span>
         </li>
-        <li className="flex justify-center items-center mb-6 mx-auto text-gray-400 hover:text-slate-100 relative group">
+        <li className="flex justify-center items-center mb-6 mx-auto text-gray-400 hover:text-slate-500 mix-blend-difference relative group">
           <a
             className="cursor-pointer"
             onClick={() =>

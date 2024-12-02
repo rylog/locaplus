@@ -3,6 +3,7 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from '@heroicons/react/24/outline';
+import { FormattedMessage } from 'react-intl';
 
 import facebookIcon from '/assets/socials/facebook.svg';
 import instagramIcon from '/assets/socials/instagram.svg';
@@ -13,7 +14,9 @@ const ContactInfo = () => {
     <div className="flex flex-col gap-4 justify-between bg-white border border-gray rounded-l-2xl">
       <div className="flex flex-col px-12 py-10 gap-5 border-gray border-b">
         <div>
-          <p className="text-lg font-medium flex">Phone</p>
+          <p className="text-lg font-medium flex">
+            <FormattedMessage id="contactInfo.phone" />
+          </p>
           <div className="flex flex-col">
             <div className="flex py-4 items-center">
               <PhoneIcon className="h-6 w-6 mr-5" />
@@ -32,7 +35,9 @@ const ContactInfo = () => {
           </div>
         </div>
         <div>
-          <p className="text-lg font-medium flex">Email</p>
+          <p className="text-lg font-medium flex">
+            <FormattedMessage id="contactInfo.email" />
+          </p>
           <div className="flex flex-col gap-2">
             <div className="flex py-4 items-center">
               <EnvelopeIcon className="h-6 w-6 mr-5" />
@@ -45,13 +50,15 @@ const ContactInfo = () => {
       </div>
 
       <div className="rounded-md px-12 py-10  border-gray border-b">
-        <p className="text-lg font-medium flex">Office</p>
+        <p className="text-lg font-medium flex">
+          <FormattedMessage id="contactInfo.office" />
+        </p>
         <div className="flex flex-col gap-2">
           <div className="flex py-4 items-center">
             <BuildingOffice2Icon className="h-6 w-6 mr-5" />
             <div>
               <p className="text-gray-600">
-                203 Rue des Alouettes, Saint-Alphonse-de-Granby
+                <FormattedMessage id="contactInfo.address" />
               </p>
             </div>
           </div>
@@ -60,23 +67,31 @@ const ContactInfo = () => {
 
       <div className="rounded-md px-12 py-10 items-end">
         <div>
-          <p className="text-lg font-medium flex">Follow Us</p>
+          <p className="text-lg font-medium flex">
+            <FormattedMessage id="contactInfo.followUs" />
+          </p>
           <div className="flex py-4 items-center gap-6">
-            <img
-              src={facebookIcon}
-              alt="Follow us on Facebook"
-              className="w-8 h-8"
-            />
-            <img
-              src={instagramIcon}
-              alt="Follow us on Instagram"
-              className="w-8 h-8"
-            />
-            <img
-              src={linkedInIcon}
-              alt="Follow us on Linkedin"
-              className="w-8 h-8"
-            />
+            <a href="https://www.facebook.com/Locaplus.net/">
+              <img
+                src={facebookIcon}
+                alt="Follow us on Facebook"
+                className="w-8 h-8"
+              />
+            </a>
+            <a href="https://www.instagram.com/chapiteaulocaplus/">
+              <img
+                src={instagramIcon}
+                alt="Follow us on Instagram"
+                className="w-8 h-8"
+              />
+            </a>
+            <a href="https://www.linkedin.com/company/chapiteau-locaplus/">
+              <img
+                src={linkedInIcon}
+                alt="Follow us on Linkedin"
+                className="w-8 h-8"
+              />
+            </a>
           </div>
         </div>
       </div>

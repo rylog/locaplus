@@ -76,5 +76,11 @@
   "products.title": "We've got you covered",
   "products.description": "Premium tents, stylish furniture, and all the essentials to make your event seamless and unforgettable.",
   "contact.title": "Have Questions? Ask Us!",
-  "contact.description": "Get in touch with Locaplus for tent and event rentals in Bromont, Granby, South Shore, Sherbrooke, and Magog. Call us, email us, orvisit our Saint-Alphonse-de-Granby office. Request your quote today to start planning your event!"
+  "contact.description": "Get in touch with Locaplus for tent and event rentals in Bromont, Granby, South Shore, Sherbrooke, and Magog. Call us, email us, orvisit our Saint-Alphonse-de-Granby office. Request your quote today to start planning your event!",
+
+  "contactInfo.address": "203 Rue des Alouettes, Saint-Alphonse-de-Granby",
+  "contactInfo.phone": "Phone",
+  "contactInfo.email": "Email",
+  "contactInfo.office": "Office",
+  "contactInfo.followUs": "Follow Us"
 }
