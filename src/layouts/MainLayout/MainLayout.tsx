@@ -1,20 +1,40 @@
-import { ReactNode } from 'react';
+import { useIntl } from 'react-intl';
 
-import { NavItem } from '../../types/NavItem';
+import { SECTIONS } from '../../constants/sections';
+import { About } from '../../sections/About/About';
+import { Contact } from '../../sections/Contact/Contact';
+import { Home } from '../../sections/Home/Home';
+import { Products } from '../../sections/Products/Products';
 import { NavBar } from '../NavBar/NavBar';
 import { SideElement } from '../SideElement/SideElement';
 
-interface MainLayoutProps {
-  navItems: NavItem[];
-  children: ReactNode;
-}
+export const MainLayout = () => {
+  const intl = useIntl();
+  const navItems = [
+    {
+      name: intl.formatMessage({ id: 'nav.aboutUs' }),
+      href: `#${SECTIONS.ABOUT}`,
+    },
+    {
+      name: intl.formatMessage({ id: 'nav.products' }),
+      href: `#${SECTIONS.PRODUCTS}`,
+    },
+    {
+      name: intl.formatMessage({ id: 'nav.contactUs' }),
+      href: `#${SECTIONS.CONTACT}`,
+    },
+  ];
 
-export const MainLayout = ({ navItems, children }: MainLayoutProps) => {
   return (
-    <div className="max-h-full h-full">
-      <NavBar navItems={navItems} />
-      {children}
+    <>
+      <div className="max-h-full h-full">
+        <Home />
+        <NavBar navItems={navItems} />
+      </div>
+      <About />
+      <Products />
+      <Contact />
       <SideElement />
-    </div>
+    </>
   );
 };

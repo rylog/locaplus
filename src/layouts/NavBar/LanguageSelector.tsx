@@ -19,7 +19,7 @@ export const LanguageSelector = () => {
 
   return (
     <Listbox value={locale} onChange={setLocale}>
-      <div className="relative">
+      <div className="relative w-fit">
         <ListboxButton
           className={clsx(
             'rounded-lg w-28 bg-white/5 py-1.5 pr-8 pl-3 text-left text-sm/6 text-white',

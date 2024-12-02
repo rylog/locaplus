@@ -2,7 +2,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import clsx from 'clsx';
 import { FormattedMessage } from 'react-intl';
 
-import { Header } from '../../components/Header/Header';
+import { SECTIONS } from '../../constants/sections';
 import { ChairsAndTables } from './categories/ChairsAndTables';
 import { Equipment } from './categories/Equipment';
 import { Tents } from './categories/Tents';
@@ -25,17 +25,22 @@ export const Products = () => {
 
   return (
     <section
-      id="products"
-      className="flex  bg-gradient-to-b from-slate-50 to-blue-50 px-6 py-8 sm:py-12 lg:px-8 min-h-full"
+      id={SECTIONS.PRODUCTS}
+      className="flex bg-slate-50 min-h-full lg:min-h-0 py-24"
     >
-      <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full">
-        <Header
-          color="text-slate-black mb-5 sm:flex text-center"
-          type="secondary"
-        >
-          <FormattedMessage id="nav.products" />
-        </Header>
-        <TabGroup className="flex flex-grow flex-col overflow-hidden min-h-full">
+      <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full gap-8">
+        <header className="text-center max-w-2xl self-center">
+          <h1 className="text-lg/7 font-semibold text-primary">
+            <FormattedMessage id="nav.products" />
+          </h1>
+          <h2 className="mt-2 text-balance text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl">
+            <FormattedMessage id="products.title" />
+          </h2>
+          <p className="mt-2 text-gray-600">
+            <FormattedMessage id="products.description" />
+          </p>
+        </header>
+        <TabGroup className="flex flex-grow flex-col overflow-hidden">
           <TabList className="flex gap-2">
             {categories.map(({ name }) => (
               <Tab

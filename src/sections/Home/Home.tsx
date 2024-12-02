@@ -4,10 +4,14 @@ import HomeBackgroundJpg from '/assets/home/MainPageTent.jpg';
 import HomeBackgroundWebp from '/assets/home/MainPageTent.webp';
 
 import { Header } from '../../components/Header/Header';
+import { SECTIONS } from '../../constants/sections';
 
 export const Home = () => {
   return (
-    <section id="home" className="flex isolate h-full px-6 pt-14 lg:px-8">
+    <section
+      id={SECTIONS.HOME}
+      className="flex isolate h-full px-6 pt-14 lg:px-8"
+    >
       <div className="flex flex-col mx-auto max-w-4xl max-h-full absolute left-0  right-0 top-[30%]">
         <div className="flex flex-col *:text-center place-content-center gap-10">
           <div className="flex flex-col gap-8">
