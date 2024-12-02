@@ -10,7 +10,10 @@ export const Home = () => {
   return (
     <section
       id={SECTIONS.HOME}
-      className="flex isolate h-full px-6 pt-14 lg:px-8"
+      className="flex isolate h-full px-6 pt-14 lg:px-8 bg-no-repeat bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${HomeBackgroundWebp}), url(${HomeBackgroundJpg})`,
+      }}
     >
       <div className="flex flex-col mx-auto max-w-4xl max-h-full absolute left-0  right-0 top-[30%]">
         <div className="flex flex-col *:text-center place-content-center gap-10">
@@ -29,16 +32,6 @@ export const Home = () => {
             <FormattedMessage id="home.requestQuote" />
           </a>
         </div>
-      </div>
-      <div className="absolute inset-0 -z-10 h-auto w-full">
-        <picture>
-          <source srcSet={HomeBackgroundWebp} type="image/webp" />
-          <img
-            src={HomeBackgroundJpg}
-            alt="Background"
-            className="h-full w-full object-cover"
-          />
-        </picture>
       </div>
     </section>
   );
