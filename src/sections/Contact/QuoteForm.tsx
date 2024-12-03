@@ -111,7 +111,7 @@ const QuoteForm = () => {
               {
                 'bg-gray-500': isSubmitting,
                 'bg-primary': !isSubmitting,
-                'disabled:bg-gray-800 text-neutral-500 disabled:cursor-not-allowed':
+                'disabled:bg-gray-800 disabled:text-neutral-500 disabled:cursor-not-allowed':
                   true,
               },
             )}
