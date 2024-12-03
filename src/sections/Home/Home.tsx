@@ -1,7 +1,7 @@
 import { FormattedMessage } from 'react-intl';
 
 import HomeBackgroundJpg from '/assets/home/MainPageTent.jpg';
-import HomeBackgroundWebp from '/assets/home/MainPageTent.webp';
+import HomeBackgroundWebP from '/assets/home/MainPageTent.webp';
 
 import { Header } from '../../components/Header/Header';
 import { SECTIONS } from '../../constants/sections';
@@ -11,9 +11,6 @@ export const Home = () => {
     <section
       id={SECTIONS.HOME}
       className="flex isolate h-full px-6 pt-14 lg:px-8 bg-no-repeat bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${HomeBackgroundWebp}), url(${HomeBackgroundJpg})`,
-      }}
     >
       <div className="flex flex-col mx-auto max-w-4xl max-h-full absolute left-0  right-0 top-[30%]">
         <div className="flex flex-col *:text-center place-content-center gap-10">
@@ -33,6 +30,14 @@ export const Home = () => {
           </a>
         </div>
       </div>
+      <picture>
+        <source srcSet={HomeBackgroundWebP} type="image/webp" />
+        <img
+          src={HomeBackgroundJpg}
+          alt="Tent image"
+          className="object-cover w-full h-full absolute top-0 left-0 z-[-1]"
+        />
+      </picture>
     </section>
   );
 };
