@@ -1,6 +1,7 @@
 export const SECTIONS = {
   HOME: 'home',
-  ABOUT: 'about-us',
+  ABOUT: 'about',
   PRODUCTS: 'products',
-  CONTACT: 'contact-us',
+  CONTACT: 'contact',
+  QUOTE: 'quote',
 };

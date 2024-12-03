@@ -28,7 +28,7 @@ export const Products = () => {
       id={SECTIONS.PRODUCTS}
       className="flex bg-slate-50 min-h-full lg:min-h-0 py-24"
     >
-      <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full gap-8">
+      <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full gap-8 p-6 lg:p-8">
         <header className="text-center max-w-2xl self-center">
           <h1 className="text-lg/7 font-semibold text-primary">
             <FormattedMessage id="nav.products" />

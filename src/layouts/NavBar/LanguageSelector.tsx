@@ -9,7 +9,11 @@ import { clsx } from 'clsx';
 
 import { useLocale } from '../../context/LocaleContext';
 
-export const LanguageSelector = () => {
+interface LanguageSelectorProps {
+  onChange?: () => void;
+}
+
+export const LanguageSelector = ({ onChange }: LanguageSelectorProps) => {
   const { locale, setLocale } = useLocale();
 
   const languages = [
@@ -17,18 +21,26 @@ export const LanguageSelector = () => {
     { name: 'Français', code: 'fr' },
   ];
 
+  const handleLanguageChange = (value: string) => {
+    setLocale(value);
+    if (onChange) onChange();
+  };
+
   return (
-    <Listbox value={locale} onChange={setLocale}>
+    <Listbox value={locale} onChange={handleLanguageChange}>
       <div className="relative w-fit">
         <ListboxButton
           className={clsx(
-            'rounded-lg w-28 bg-white/5 py-1.5 pr-8 pl-3 text-left text-sm/6 text-white',
+            'rounded-lg w-28 bg-white/5 py-1.5 pr-8 text-left font-semibold text-base text-gray-900',
+            'lg:pl-3 lg:text-sm/6  lg:font-normal lg:text-white',
             'focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25',
           )}
         >
           {languages.find((lang) => lang.code === locale)?.name}
           <ChevronDownIcon
-            className="group pointer-events-none absolute top-2.5 right-2.5 size-4 fill-white/60"
+            className={clsx(
+              'group pointer-events-none absolute top-2.5 right-2.5 size-4 lg:fill-white/60',
+            )}
             aria-hidden="true"
           />
         </ListboxButton>
@@ -48,7 +60,13 @@ export const LanguageSelector = () => {
                   value={language.code}
                   className="group flex cursor-default items-center gap-2 rounded-lg py-0.5 px-3 select-none data-[focus]:bg-white/10"
                 >
-                  <div className="text-sm/6 text-white">{language.name}</div>
+                  <div
+                    className={clsx(
+                      'lg:text-sm/6  lg:font-normal lg:text-white',
+                    )}
+                  >
+                    {language.name}
+                  </div>
                 </ListboxOption>
               ),
           )}

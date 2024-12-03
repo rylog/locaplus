@@ -1,7 +1,7 @@
-import ClipboardDocumentCheckIcon from '@heroicons/react/24/outline/ClipboardDocumentCheckIcon';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 import AboutLeftSectionPhoto from '/assets/about/leftSection.jpg';
+import AboutMiddleSectionPhoto from '/assets/about/middleSection.jpg';
 import AboutRightSectionPhoto from '/assets/about/rightSection.jpg';
 
 import { SECTIONS } from '../../constants/sections';
@@ -10,96 +10,77 @@ export const About = () => {
   const intl = useIntl();
 
   return (
-    <section id={SECTIONS.ABOUT} className="bg-gray-50 py-12 sm:py-16">
+    <section id={SECTIONS.ABOUT} className="bg-linear py-12 sm:py-16">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h1 className="text-center text-lg/7 font-semibold text-primary">
-          <FormattedMessage id="nav.aboutUs" />
-        </h1>
-        <p className="mx-auto mt-2 max-w-2xl text-balance text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl text-center">
-          <FormattedMessage id="about.title" />
-        </p>
-        <div className="h-full lg:max-h-[700px] mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+        <header>
+          <h1 className="text-center text-lg/7 font-semibold text-primary">
+            <FormattedMessage id="nav.aboutUs" />
+          </h1>
+          <h2 className="mx-auto mt-2 max-w-2xl text-balance text-3xl font-semibold text-gray-950 sm:text-4xl text-center">
+            <FormattedMessage id="about.title" />
+          </h2>
+        </header>
+        <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-1">
           {/* Left */}
-          <div className="overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] bg-white shadow-md ring-1 ring-black/5  lg:row-span-2">
-            <div className="flex h-full flex-col ">
-              <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-8 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  <FormattedMessage id="about.section1.title" />
-                </p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  <FormattedMessage id="about.section1.description" />
-                </p>
-              </div>
-              <div className="min-h-[30rem] w-full grow">
-                <img
-                  className="size-full object-cover object-top"
-                  src={AboutLeftSectionPhoto}
-                  alt={intl.formatMessage({ id: 'about.section1.title' })}
-                />
-              </div>
+          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black/5">
+            <img
+              className="h-96 w-full object-cover object-top"
+              src={AboutLeftSectionPhoto}
+              alt={intl.formatMessage({ id: 'about.section1.title' })}
+            />
+            <div className="p-8 sm:px-10">
+              <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                <FormattedMessage id="about.section1.title" />
+              </p>
+              <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                <FormattedMessage id="about.section1.description" />
+              </p>
             </div>
           </div>
-          {/* Mid Top */}
-          <div className="overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] bg-white shadow-md ring-1 ring-black/5 max-lg:row-start-1">
-            <div className="flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
-              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  <FormattedMessage id="about.section2.title" />
-                </p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  <FormattedMessage id="about.section2.description" />
-                </p>
-              </div>
-              <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
-                <div className="flex items-center justify-center w-16 h-16 bg-blue-200 rounded-full">
-                  <ClipboardDocumentCheckIcon className="text-primary size-8" />
-                </div>
-              </div>
+
+          {/* Middle */}
+          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black/5">
+            <img
+              className="h-96 w-full object-cover"
+              src={AboutMiddleSectionPhoto}
+              alt={intl.formatMessage({ id: 'about.section2.title' })}
+            />
+            <div className="p-8">
+              <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                <FormattedMessage id="about.section2.title" />
+              </p>
+              <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                <FormattedMessage id="about.section2.description" />
+              </p>
             </div>
           </div>
-          {/* Mid Bottom */}
-          <div className="overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] bg-white shadow-md ring-1 ring-black/5 max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-            <div className="flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
-              <div className="px-8 pt-8 sm:px-10 sm:pt-10 pb-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  <FormattedMessage id="about.section3.title" />
-                </p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  <FormattedMessage id="about.section3.description" />
-                </p>
-              </div>
-            </div>
-          </div>
+
           {/* Right */}
-          <div className="overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] bg-white shadow-md ring-1 ring-black/5 lg:row-span-2">
-            <div className="flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)]">
-              <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-8 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  <FormattedMessage id="about.section4.title" />
-                </p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  <FormattedMessage id="about.section4.description" />
-                </p>
-              </div>
-              <div className="min-h-[30rem] w-full grow">
-                <img
-                  className="size-full object-cover object-top"
-                  src={AboutRightSectionPhoto}
-                  alt={intl.formatMessage({ id: 'about.section4.title' })}
-                />
-              </div>
+          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black/5">
+            <img
+              className="h-96 w-full object-cover"
+              src={AboutRightSectionPhoto}
+              alt={intl.formatMessage({ id: 'about.section3.title' })}
+            />
+            <div className="p-8">
+              <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                <FormattedMessage id="about.section3.title" />
+              </p>
+              <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                <FormattedMessage id="about.section3.description" />
+              </p>
             </div>
           </div>
         </div>
-        <div className="mt-4 flex flex-col overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black/5 items-center lg:rounded-b-[calc(2rem+1px)]">
+        <div className="mt-4 flex flex-col overflow-hidden rounded-lg items-center lg:rounded-b-[calc(2rem+1px)]">
           <div className="flex flex-col px-8 pb-3 pt-8 sm:px-10 sm:pb-8 sm:pt-10 items-center">
             <h2 className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-              <FormattedMessage id="about.section5.title" />
+              <FormattedMessage id="about.section4.title" />
             </h2>
             <p className="mt-2 text-sm/6 text-gray-600 max-lg:text-center">
-              <FormattedMessage id="about.section5.description" />
+              <FormattedMessage id="about.section4.description" />
             </p>
-            <img src="/assets/about/tempo.png" className="h-12 mt-8"></img>
+            <img src="/assets/about/tempo.png" className="h-12 mt-8" />
           </div>
         </div>
       </div>

@@ -1,6 +1,10 @@
 export const SideElement = () => {
   return (
-    <div className={'w-10 fixed bottom-0 left-4 right-auto z-10 text-gray-400'}>
+    <div
+      className={
+        'w-10 fixed bottom-0 left-4 right-auto z-10 text-gray-400 hidden'
+      }
+    >
       <ul>
         <li className="flex justify-center items-center mb-6 mx-auto text-gray-400 hover:text-slate-500 mix-blend-difference relative group">
           <a href="https://www.facebook.com/Locaplus.net">
@@ -51,7 +55,7 @@ export const SideElement = () => {
             </svg>
           </a>
           <span className="text-slate-300 group-hover:inline-block hidden absolute left-10 top-1/2 transform -translate-y-1/2 bg-black px-3 py-1 rounded-md">
-            support@locaplus.net
+            contact@locaplus.net
           </span>
         </li>
       </ul>

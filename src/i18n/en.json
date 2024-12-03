@@ -6,7 +6,7 @@
   "home.title": "Trusted Tent & Event Rentals in the Eastern Townships",
   "home.subtitle": "  With 30+ years of experience Locaplus delivers reliable tent event rentals to make your event unforgettable.",
   "home.requestQuote": "Request a quote",
-  "requestQuote.title": "Request a quote",
+
   "form.firstName": "First name",
   "form.lastName": "Last name",
   "form.typeOfEvent": "Type of event",
@@ -62,25 +62,27 @@
   "equipment.propaneFurnaceAccessory": "Propane furnace accessory",
 
   "about.title": "Transforming Moments into Memories, Rain or Shine",
-  "about.section1.title": "30+ Years of Trusted Excellence",
-  "about.section1.description": "Since 1991, Locaplus has been a trusted partner in event rentals across Quebec. With decades of experience, we bring reliability and dedication to every event, from intimate gatherings to large-scale festivals.",
-  "about.section2.title": "Create the Perfect Event with Us",
-  "about.section2.description": "Every event is an opportunity to create something special. Let us help you design the perfect atmosphere with our wide range of high-quality event rentals and personalized service.",
-  "about.section3.title": "Your Vision, Our Commitment",
-  "about.section3.description": "At Locaplus, we understand that every event is unique. Our team works closely with you to ensure each detail aligns with your vision, delivering a truly personalized experience that meets your needs and expectations.",
-  "about.section4.title": "Event Equipment Tailored to Your Needs",
-  "about.section4.description": "From elegant tents and marquees to tables, chairs, flooring, and more, Locaplus offers a full range of rentals to make your event unforgettable with locations in Sherbrooke, St. Alphonse de Granby, and Cowansville.",
-  "about.section5.title": "Official distributor/installer for Tempo in the Eastern Townships",
-  "about.section5.description": "Locaplus is the official Tempo dealer in the Eastern Townships, providing sales, distribution, and expert installation.",
+  "about.section1.title": "30+ Years of Rental Experience",
+  "about.section1.description": "Locaplus brings decades of expertise to ensure your event runs smoothly, from intimate gatherings to large festivals across Quebec.",
+  "about.section2.title": "Premium Tents & Equipment",
+  "about.section2.description": "Our high-quality tents, tables, chairs, and flooring are designed to elevate any event, rain or shine.",
+  "about.section3.title": "Tailored Event Solutions",
+  "about.section3.description": "We offer customized rentals to match your event's unique needs, creating unforgettable moments every time.",
+  "about.section4.title": "Official distributor/installer for Tempo in the Eastern Townships",
+  "about.section4.description": "Locaplus is the official Tempo dealer in the Eastern Townships, providing sales, distribution, and expert installation.",
 
   "products.title": "We've got you covered",
   "products.description": "Premium tents, stylish furniture, and all the essentials to make your event seamless and unforgettable.",
+
   "contact.title": "Have Questions? Ask Us!",
-  "contact.description": "Get in touch with Locaplus for tent and event rentals in Bromont, Granby, South Shore, Sherbrooke, and Magog. Call us, email us, orvisit our Saint-Alphonse-de-Granby office. Request your quote today to start planning your event!",
+  "contact.description": "Looking for reliable event rentals? Locaplus offers premium tents and equipment across Bromont, Granby, South Shore, Sherbrooke, and Magog. Reach out or request a quote below!",
 
   "contactInfo.address": "203 Rue des Alouettes, Saint-Alphonse-de-Granby",
   "contactInfo.phone": "Phone",
   "contactInfo.email": "Email",
   "contactInfo.office": "Office",
-  "contactInfo.followUs": "Follow Us"
+  "contactInfo.followUs": "Follow Us",
+
+  "requestQuote.title": "Request a quote",
+  "requestQuote.maintenance": "The quote form will be unavailable until December 20. Please send all quote requests to contact@locaplus.net. We apologize for the inconvenience."
 }

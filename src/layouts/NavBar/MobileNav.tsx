@@ -6,6 +6,7 @@ import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 import Logo from '/Logo_locaplus.png';
 
 import { NavItem } from '../../types/NavItem';
+import { LanguageSelector } from './LanguageSelector';
 
 interface MobileNavProps {
   mobileNavOpen: boolean;
@@ -18,12 +19,17 @@ export const MobileNav = ({
   setMobileMenuOpen,
   navItems,
 }: MobileNavProps) => {
+  const openMenu = () => setMobileMenuOpen(true);
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <div className="flex lg:hidden">
       <button
         type="button"
-        onClick={() => setMobileMenuOpen(true)}
-        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+        onClick={openMenu}
+        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-primary"
       >
         <span className="sr-only">Open main menu</span>
         <Bars3Icon aria-hidden="true" className="h-6 w-6" />
@@ -41,8 +47,8 @@ export const MobileNav = ({
             </a>
             <button
               type="button"
-              onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              onClick={closeMenu}
+              className="-m-2.5 rounded-md p-2.5 text-primary"
             >
               <span className="sr-only">Close menu</span>
               <XMarkIcon aria-hidden="true" className="h-6 w-6" />
@@ -56,10 +62,12 @@ export const MobileNav = ({
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    onClick={closeMenu}
                   >
                     {item.name}
                   </a>
                 ))}
+                <LanguageSelector />
               </div>
             </div>
           </div>

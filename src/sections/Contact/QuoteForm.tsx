@@ -1,9 +1,10 @@
+import clsx from 'clsx';
 import { useState } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 
-import { Header } from '../../components/Header/Header';
 import { MessageInput } from '../../components/MessageInput/MessageInput';
 import { TextInput } from '../../components/TextInput/TextInput';
+import { SECTIONS } from '../../constants/sections';
 import { LABEL_COLORS } from '../../styles/colors';
 
 const QuoteForm = () => {
@@ -47,12 +48,12 @@ const QuoteForm = () => {
   };
 
   return (
-    <div className="p-8 lg:px-12 bg-slate-900 ">
-      <div>
-        <Header type="tertiary">
+    <section id={SECTIONS.QUOTE} className="p-8 lg:px-12 bg-slate-900">
+      <header>
+        <h1 className="text-2xl text-white font-semibold tracking-loose sm:text-2xl text-center lg:text-start">
           <FormattedMessage id="requestQuote.title" />
-        </Header>
-      </div>
+        </h1>
+      </header>
       <form onSubmit={handleSubmit} className="mx-auto mt-8 max-w-xl ">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <TextInput
@@ -95,13 +96,25 @@ const QuoteForm = () => {
           />
         </div>
 
+        <p className="text-red-500 mt-4">
+          <FormattedMessage id="requestQuote.maintenance" />
+        </p>
+
         {error && <p className="text-red-500 mt-4">{error}</p>}
 
         <div className="mt-10 w-fit justify-self-end">
           <button
             type="submit"
-            disabled={isSubmitting}
-            className={`block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm ${isSubmitting ? 'bg-gray-500' : 'bg-primary'}`}
+            disabled={true}
+            className={clsx(
+              'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm',
+              {
+                'bg-gray-500': isSubmitting,
+                'bg-primary': !isSubmitting,
+                'disabled:bg-gray-800 text-neutral-500 disabled:cursor-not-allowed':
+                  true,
+              },
+            )}
           >
             {isSubmitting ? (
               'Sending...'
@@ -111,7 +124,7 @@ const QuoteForm = () => {
           </button>
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 

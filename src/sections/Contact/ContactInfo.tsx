@@ -11,7 +11,7 @@ import linkedInIcon from '/assets/socials/linkedIn.svg';
 
 const ContactInfo = () => {
   return (
-    <div className="flex flex-col gap-4 justify-between bg-white border border-gray rounded-l-2xl">
+    <div className="flex flex-col gap-4 justify-between bg-white lg:border lg:border-gray lg:rounded-l-2xl">
       <div className="flex flex-col px-12 py-10 gap-5 border-gray border-b">
         <div>
           <p className="text-lg font-medium flex">
@@ -42,7 +42,7 @@ const ContactInfo = () => {
             <div className="flex py-4 items-center">
               <EnvelopeIcon className="h-6 w-6 mr-5" />
               <div>
-                <p className="text-gray-600">support@locaplus.com</p>
+                <p className="text-gray-600">contact@locaplus.net</p>
               </div>
             </div>
           </div>
