@@ -82,6 +82,8 @@
   "contactInfo.email": "Email",
   "contactInfo.office": "Office",
   "contactInfo.followUs": "Follow Us",
+  "contactInfo.450Locations": "Bromont, Granby, South Shore",
+  "contactInfo.819Locations": "Sherbrooke, Magog",
 
   "requestQuote.title": "Request a quote",
   "requestQuote.maintenance": "The quote form will be unavailable until December 20. Please send all quote requests to contact@locaplus.net. We apologize for the inconvenience."

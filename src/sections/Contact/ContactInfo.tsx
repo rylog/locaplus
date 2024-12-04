@@ -21,14 +21,18 @@ const ContactInfo = () => {
             <div className="flex py-4 items-center">
               <PhoneIcon className="h-6 w-6 mr-5" />
               <div>
-                <p className="font-bold">Bromont, Granby, Southshore</p>
+                <p className="font-bold">
+                  <FormattedMessage id="contactInfo.450Locations" />
+                </p>
                 <p className="flex text-gray-600">+1 (450) 654-3210</p>
               </div>
             </div>
             <div className="flex py-4 items-center">
               <PhoneIcon className="h-6 w-6 mr-5" />
               <div>
-                <p className="font-bold">Sherbrooke, Magog</p>
+                <p className="font-bold">
+                  <FormattedMessage id="contactInfo.819Locations" />
+                </p>
                 <p className="flex text-gray-600">+1 (819) 347-9544</p>
               </div>
             </div>
