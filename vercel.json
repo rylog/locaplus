@@ -1,17 +1,14 @@
 {
 
-  "rewrites":  [
-    {"source": "/(.*)", "destination": "/index.html"}
-  ],
 
-"redirects": [
+  "redirects": [
     {
-      "source": "/frdex.php/en",
+      "source": "/frdex.php/en(.*)",
       "destination": "/en",
       "permanent": true
     },
     {
-      "source": "/frdex.php/fr",
+      "source": "/frdex.php/fr(.*)",
       "destination": "/fr",
       "permanent": true
     }
@@ -22,7 +19,8 @@
       "source": "/index.html",
       "headers": [
         {
-          "key": "Cache-Control", "value": "max-age=0, must-revalidate"
+          "key": "Cache-Control",
+          "value": "max-age=0, must-revalidate"
         }
       ]
     }
