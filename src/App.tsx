@@ -8,8 +8,9 @@ export const App = () => {
     <BrowserRouter>
       <LocaleProvider>
         <Routes>
-          <Route path="/en" element={<MainLayout />} />
+          <Route path="/" element={<MainLayout />} />
           <Route path="/fr" element={<MainLayout />} />
+          <Route path="/en" element={<MainLayout />} />
         </Routes>
       </LocaleProvider>
     </BrowserRouter>
