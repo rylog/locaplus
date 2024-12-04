@@ -19,23 +19,22 @@ interface LocaleContextType {
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
 export const LocaleProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocale] = useState('fr');
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const pathLocale = location.pathname.split('/')[1]; // Assume the locale is at the start of the path
-    if (pathLocale === 'fr' || pathLocale === 'en') {
-      setLocale(pathLocale);
-    }
-  }, [location.pathname]);
+  // Initialize locale from the path directly
+  const initialLocale =
+    location.pathname.split('/')[1] === 'fr' ||
+    location.pathname.split('/')[1] === 'en'
+      ? location.pathname.split('/')[1]
+      : 'fr'; // Default to 'fr' if no valid locale is found
+  const [locale, setLocale] = useState(initialLocale);
 
   useEffect(() => {
     if (locale === 'en' || locale === 'fr') {
-      // Ensure the URL reflects the current locale
-      navigate(`/${locale}${location.pathname.slice(3)}`, { replace: true });
+      navigate(`/${locale}`, { replace: true });
     }
-  }, [locale, location.pathname, navigate]);
+  }, [locale, navigate]);
 
   const messages = locale === 'en' ? enMessages : frMessages;
 
