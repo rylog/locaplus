@@ -8,7 +8,17 @@
       "permanent": true
     },
     {
+      "source": "/index.php/en(.*)",
+      "destination": "/en",
+      "permanent": true
+    },
+    {
       "source": "/frdex.php/fr(.*)",
+      "destination": "/fr",
+      "permanent": true
+    },
+    {
+      "source": "/index.php/fr(.*)",
       "destination": "/fr",
       "permanent": true
     }

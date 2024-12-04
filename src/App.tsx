@@ -17,6 +17,14 @@ export const App = () => {
             path="/frdex.php/fr/*"
             element={<Navigate to="/fr" replace />}
           />
+          <Route
+            path="/index.php/en/*"
+            element={<Navigate to="/en" replace />}
+          />
+          <Route
+            path="/index.php/fr/*"
+            element={<Navigate to="/fr" replace />}
+          />
           <Route path="/" element={<Navigate to="/fr" replace />} />
           <Route path="/fr" element={<MainLayout />} />
           <Route path="/en" element={<MainLayout />} />
