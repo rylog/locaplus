@@ -6,7 +6,7 @@ import {
   useState,
 } from 'react';
 import { IntlProvider } from 'react-intl';
-import { useLocation, useNavigate } from 'react-router'; // Import from react-router
+import { useLocation } from 'react-router'; // Import from react-router
 
 import enMessages from '../i18n/en.json';
 import frMessages from '../i18n/fr.json';
@@ -20,9 +20,7 @@ const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
 export const LocaleProvider = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
-  const navigate = useNavigate();
 
-  // Initialize locale from the path directly
   const initialLocale =
     location.pathname.split('/')[1] === 'fr' ||
     location.pathname.split('/')[1] === 'en'
@@ -31,10 +29,11 @@ export const LocaleProvider = ({ children }: { children: ReactNode }) => {
   const [locale, setLocale] = useState(initialLocale);
 
   useEffect(() => {
-    if (locale === 'en' || locale === 'fr') {
-      navigate(`/${locale}`, { replace: true });
+    const pathLocale = location.pathname.split('/')[1]; // Assume the locale is at the start of the path
+    if (pathLocale === 'fr' || pathLocale === 'en') {
+      setLocale(pathLocale);
     }
-  }, [locale, navigate]);
+  }, [location.pathname]);
 
   const messages = locale === 'en' ? enMessages : frMessages;
 

@@ -6,6 +6,7 @@ import {
 } from '@headlessui/react';
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDoubleDownIcon';
 import { clsx } from 'clsx';
+import { useNavigate } from 'react-router';
 
 import { useLocale } from '../../context/LocaleContext';
 
@@ -14,7 +15,8 @@ interface LanguageSelectorProps {
 }
 
 export const LanguageSelector = ({ onChange }: LanguageSelectorProps) => {
-  const { locale, setLocale } = useLocale();
+  const { locale } = useLocale();
+  const navigate = useNavigate();
 
   const languages = [
     { name: 'English', code: 'en' },
@@ -22,7 +24,7 @@ export const LanguageSelector = ({ onChange }: LanguageSelectorProps) => {
   ];
 
   const handleLanguageChange = (value: string) => {
-    setLocale(value);
+    navigate(`/${value}`, { replace: true });
     if (onChange) onChange();
   };
 
