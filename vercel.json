@@ -1,29 +1,5 @@
 {
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
-
-  "redirects": [
-    {
-      "source": "/frdex.php/en(.*)",
-      "destination": "/en",
-      "permanent": true
-    },
-    {
-      "source": "/index.php/en(.*)",
-      "destination": "/en",
-      "permanent": true
-    },
-    {
-      "source": "/frdex.php/fr(.*)",
-      "destination": "/fr",
-      "permanent": true
-    },
-    {
-      "source": "/index.php/fr(.*)",
-      "destination": "/fr",
-      "permanent": true
-    }
-  ],
-
   "headers": [
     {
       "source": "/index.html",
