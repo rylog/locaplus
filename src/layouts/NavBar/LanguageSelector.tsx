@@ -9,11 +9,11 @@ import { clsx } from 'clsx';
 
 import { useLocale } from '../../context/LocaleContext';
 
-interface LanguageSelectorProps {
-  onChange?: () => void;
-}
+// interface LanguageSelectorProps {
+//   onChange?: () => void;
+// }
 
-export const LanguageSelector = ({ onChange }: LanguageSelectorProps) => {
+export const LanguageSelector = () => {
   const { locale, setLocale } = useLocale();
 
   const languages = [
