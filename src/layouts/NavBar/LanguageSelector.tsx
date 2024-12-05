@@ -6,7 +6,6 @@ import {
 } from '@headlessui/react';
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDoubleDownIcon';
 import { clsx } from 'clsx';
-import { useNavigate } from 'react-router';
 
 import { useLocale } from '../../context/LocaleContext';
 
@@ -15,21 +14,20 @@ interface LanguageSelectorProps {
 }
 
 export const LanguageSelector = ({ onChange }: LanguageSelectorProps) => {
-  const { locale } = useLocale();
-  const navigate = useNavigate();
+  const { locale, setLocale } = useLocale();
 
   const languages = [
     { name: 'English', code: 'en' },
     { name: 'Français', code: 'fr' },
   ];
 
-  const handleLanguageChange = (value: string) => {
-    navigate(`/${value}`, { replace: true });
-    if (onChange) onChange();
-  };
+  // const handleLanguageChange = (value: string) => {
+  //   navigate(`/${value}`, { replace: true });
+  //   if (onChange) onChange();
+  // };
 
   return (
-    <Listbox value={locale} onChange={handleLanguageChange}>
+    <Listbox value={locale} onChange={setLocale}>
       <div className="relative w-fit">
         <ListboxButton
           className={clsx(

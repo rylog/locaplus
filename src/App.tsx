@@ -9,25 +9,9 @@ export const App = () => {
     <BrowserRouter>
       <LocaleProvider>
         <Routes>
-          <Route
-            path="/frdex.php/en/*"
-            element={<Navigate to="/en" replace />}
-          />
-          <Route
-            path="/frdex.php/fr/*"
-            element={<Navigate to="/fr" replace />}
-          />
-          <Route
-            path="/index.php/en/*"
-            element={<Navigate to="/en" replace />}
-          />
-          <Route
-            path="/index.php/fr/*"
-            element={<Navigate to="/fr" replace />}
-          />
-          <Route path="/" element={<Navigate to="/fr" replace />} />
-          <Route path="/fr" element={<MainLayout />} />
-          <Route path="/en" element={<MainLayout />} />
+          <Route path="/index.php/en/*" element={<Navigate to="/" replace />} />
+          <Route path="/index.php/fr/*" element={<Navigate to="/" replace />} />
+          <Route path="/" element={<MainLayout />} />
         </Routes>
       </LocaleProvider>
     </BrowserRouter>

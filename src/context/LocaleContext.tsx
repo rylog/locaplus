@@ -28,13 +28,6 @@ export const LocaleProvider = ({ children }: { children: ReactNode }) => {
       : 'fr'; // Default to 'fr' if no valid locale is found
   const [locale, setLocale] = useState(initialLocale);
 
-  useEffect(() => {
-    const pathLocale = location.pathname.split('/')[1]; // Assume the locale is at the start of the path
-    if (pathLocale === 'fr' || pathLocale === 'en') {
-      setLocale(pathLocale);
-    }
-  }, [location.pathname]);
-
   const messages = locale === 'en' ? enMessages : frMessages;
 
   return (
