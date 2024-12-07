@@ -1,8 +1,7 @@
 import { FormattedMessage } from 'react-intl';
 
-import HomeBackgroundJpg from '/assets/home/MainPageTent.jpg';
+import HomeBackgroundJpg from '/assets/home/HomePage.jpg';
 
-import { Header } from '../../components/Header/Header';
 import { SECTIONS } from '../../constants/sections';
 
 export const Home = () => {
@@ -12,12 +11,12 @@ export const Home = () => {
       className="flex isolate h-full px-6 pt-14 lg:px-8 bg-no-repeat bg-cover bg-center"
     >
       <div className="flex flex-col mx-auto max-w-4xl max-h-full absolute left-0  right-0 top-[30%]">
-        <div className="flex flex-col *:text-center place-content-center gap-10">
-          <div className="flex flex-col gap-8">
-            <Header>
+        <div className="flex flex-col *:text-center gap-10">
+          <div className="flex flex-col gap-8 items-center">
+            <h1 className="text-4xl font-medium tracking-tight sm:text-6xl text-white">
               <FormattedMessage id="home.title" />
-            </Header>
-            <h2 className="text-pretty text-lg font-normal text-slate-300 sm:text-xl/8">
+            </h1>
+            <h2 className="text-lg font-normal text-slate-100 sm:text-xl/8 rounded-md">
               <FormattedMessage id="home.subtitle" />
             </h2>
           </div>
@@ -33,7 +32,7 @@ export const Home = () => {
         <img
           src={HomeBackgroundJpg}
           alt="Tent image"
-          className="object-cover w-full h-full absolute top-0 left-0 z-[-1]"
+          className="object-cover w-full h-full absolute top-0 left-0 z-[-1] brightness-75"
         />
       </picture>
     </section>
