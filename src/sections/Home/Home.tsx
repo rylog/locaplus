@@ -1,7 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 
 import HomeBackgroundJpg from '/assets/home/MainPageTent.jpg';
-import HomeBackgroundWebP from '/assets/home/MainPageTent.webp';
 
 import { Header } from '../../components/Header/Header';
 import { SECTIONS } from '../../constants/sections';
@@ -31,7 +30,6 @@ export const Home = () => {
         </div>
       </div>
       <picture>
-        <source srcSet={HomeBackgroundWebP} type="image/webp" />
         <img
           src={HomeBackgroundJpg}
           alt="Tent image"

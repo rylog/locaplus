@@ -1,38 +1,33 @@
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useState,
-} from 'react';
+import { createContext, useContext } from 'react';
 import { IntlProvider } from 'react-intl';
-import { useLocation } from 'react-router'; // Import from react-router
+import { Outlet, useParams } from 'react-router'; // Import from react-router
 
 import enMessages from '../i18n/en.json';
 import frMessages from '../i18n/fr.json';
 
 interface LocaleContextType {
   locale: string;
-  setLocale: (locale: string) => void;
 }
+
+export type Locale = 'en' | 'fr';
+
+const messages: Record<Locale, Record<string, string>> = {
+  en: enMessages,
+  fr: frMessages,
+};
 
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
-export const LocaleProvider = ({ children }: { children: ReactNode }) => {
-  const location = useLocation();
+export const LocaleProvider = () => {
+  const params = useParams<{ locale: Locale }>();
 
-  const initialLocale =
-    location.pathname.split('/')[1] === 'fr' ||
-    location.pathname.split('/')[1] === 'en'
-      ? location.pathname.split('/')[1]
-      : 'fr'; // Default to 'fr' if no valid locale is found
-  const [locale, setLocale] = useState(initialLocale);
-
-  const messages = locale === 'en' ? enMessages : frMessages;
+  // Redirect to default locale if none is provided
+  const localeValue = params.locale ?? 'fr';
 
   return (
-    <LocaleContext.Provider value={{ locale, setLocale }}>
-      <IntlProvider locale={locale} messages={messages}>
-        {children}
+    <LocaleContext.Provider value={{ locale: localeValue }}>
+      <IntlProvider locale={localeValue} messages={messages[localeValue]}>
+        <Outlet />
       </IntlProvider>
     </LocaleContext.Provider>
   );
