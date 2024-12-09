@@ -25,11 +25,11 @@ export const LocaleProvider = () => {
   const localeValue = params.locale ?? 'fr';
 
   return (
-    <LocaleContext.Provider value={{ locale: localeValue }}>
+    <LocaleContext value={{ locale: localeValue }}>
       <IntlProvider locale={localeValue} messages={messages[localeValue]}>
         <Outlet />
       </IntlProvider>
-    </LocaleContext.Provider>
+    </LocaleContext>
   );
 };
 
