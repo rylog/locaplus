@@ -44,6 +44,10 @@
   "equipment.roundTable72In": "72 in. round table",
   "equipment.rectangularTable30x96": "30x96 rectangular table",
   "equipment.rectangularTable30x72": "30x72 rectangular table",
+  "equipment.floorRegular": "Regular floor",
+  "equipment.floorLeveled": "Leveled floor",
+  "equipment.floorDance": "Dance floor",
+
   "equipment.podium": "Podium",
   "equipment.redCarpet25Ft": "Red carpet 3 x 25",
   "equipment.stanchionsAndRopes": "Stanchions and ropes",
@@ -73,6 +77,9 @@
 
   "products.title": "We've got you covered",
   "products.description": "Premium tents, stylish furniture, and all the essentials to make your event seamless and unforgettable.",
+  "products.tents": "Tents",
+  "products.equipment": "Equipment",
+  "products.flooringChairsAndTables": "Flooring, Chairs and Tables",
 
   "contact.title": "Have Questions? Ask Us!",
   "contact.description": "Looking for reliable event rentals? Locaplus offers premium tents and equipment across Bromont, Granby, South Shore, Sherbrooke, and Magog. Reach out or request a quote below!",

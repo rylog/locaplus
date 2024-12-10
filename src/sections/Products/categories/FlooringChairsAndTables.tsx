@@ -2,7 +2,7 @@ import { useIntl } from 'react-intl';
 
 import chairsAndTablesData from '../../../data/chairsAndTables.json';
 
-export const ChairsAndTables = () => {
+export const FlooringChairsAndTables = () => {
   const intl = useIntl();
   const items = [...chairsAndTablesData.chairsAndTables.list].map((e) => {
     return {

@@ -1,25 +1,26 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import clsx from 'clsx';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 import { SECTIONS } from '../../constants/sections';
-import { ChairsAndTables } from './categories/ChairsAndTables';
 import { Equipment } from './categories/Equipment';
+import { FlooringChairsAndTables } from './categories/FlooringChairsAndTables';
 import { Tents } from './categories/Tents';
 
 export const Products = () => {
+  const intl = useIntl();
   const categories = [
     {
-      name: 'Tents',
+      name: intl.formatMessage({ id: 'products.tents' }),
       component: Tents,
     },
     {
-      name: 'Equipment',
+      name: intl.formatMessage({ id: 'products.equipment' }),
       component: Equipment,
     },
     {
-      name: 'Chairs & Tables',
-      component: ChairsAndTables,
+      name: intl.formatMessage({ id: 'products.flooringChairsAndTables' }),
+      component: FlooringChairsAndTables,
     },
   ];
 

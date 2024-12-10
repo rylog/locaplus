@@ -43,6 +43,10 @@
   "equipment.roundTable72In": "Table ronde 72 pouces",
   "equipment.rectangularTable30x96": "Table rectangulaire 30x96",
   "equipment.rectangularTable30x72": "Table rectangulaire 30x72",
+  "equipment.floorRegular": "Plancher régulier",
+  "equipment.floorLeveled": "Plancher nivelé",
+  "equipment.floorDance": "Plancher de danse",
+
   "equipment.podium": "Podium",
   "equipment.redCarpet25Ft": "Tapis rouge 3 x 25 pieds",
   "equipment.stanchionsAndRopes": "Barrières et cordes",
@@ -72,6 +76,9 @@
 
   "products.title": "Nous avons tout ce qu'il vous faut",
   "products.description": "Des chapiteaux premium, du mobilier élégant et tout le nécessaire pour rendre votre événement inoubliable.",
+  "products.tents": "Chapiteaux",
+  "products.equipment": "Équipement",
+  "products.flooringChairsAndTables": "Planchers, chaise et tables",
 
   "contact.title": "Des questions ? Contactez-nous !",
 
