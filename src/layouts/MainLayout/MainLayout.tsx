@@ -27,6 +27,11 @@ export const MainLayout = () => {
 
   return (
     <>
+      <meta
+        name="description"
+        content={intl.formatMessage({ id: 'main.metadata.description' })}
+      />
+
       <div className="max-h-full h-full">
         <Home />
         <NavBar navItems={navItems} />

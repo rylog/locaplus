@@ -54,9 +54,12 @@ export const SideElement = () => {
               <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
             </svg>
           </a>
-          <span className="text-slate-300 group-hover:inline-block hidden absolute left-10 top-1/2 transform -translate-y-1/2 bg-black px-3 py-1 rounded-md">
+          <a
+            href="mailto:contact@locaplus.net"
+            className="text-slate-300 group-hover:inline-block hidden absolute left-10 top-1/2 transform -translate-y-1/2 bg-black px-3 py-1 rounded-md"
+          >
             contact@locaplus.net
-          </span>
+          </a>
         </li>
       </ul>
     </div>

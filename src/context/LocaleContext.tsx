@@ -27,6 +27,11 @@ export const LocaleProvider = () => {
   return (
     <LocaleContext value={{ locale: localeValue }}>
       <IntlProvider locale={localeValue} messages={messages[localeValue]}>
+        <meta
+          name="description"
+          content="Locaplus specializes in canopy and event tent rentals across the Eastern Townships, providing high-quality tents, chairs, tables, and equipment for festivals, weddings, and special events. Serving Bromont, Granby, South Shore, Sherbrooke, and Magog since 1991."
+        />
+
         <Outlet />
       </IntlProvider>
     </LocaleContext>
