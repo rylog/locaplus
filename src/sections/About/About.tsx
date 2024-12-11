@@ -80,7 +80,11 @@ export const About = () => {
             <p className="mt-2 text-sm/6 text-gray-600 max-lg:text-center">
               <FormattedMessage id="about.section4.description" />
             </p>
-            <img src="/assets/about/tempo.png" className="h-12 mt-8" />
+            <img
+              src="/assets/about/tempo.png"
+              alt="Tempo Logo"
+              className="h-12 mt-8"
+            />
           </div>
         </div>
       </div>
