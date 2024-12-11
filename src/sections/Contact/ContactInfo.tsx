@@ -46,7 +46,9 @@ const ContactInfo = () => {
             <div className="flex py-4 items-center">
               <EnvelopeIcon className="h-6 w-6 mr-5" />
               <div>
-                <p className="text-gray-600">contact@locaplus.net</p>
+                <a href="mailto:contact@locaplus.net" className="text-gray-600">
+                  contact@locaplus.net
+                </a>
               </div>
             </div>
           </div>

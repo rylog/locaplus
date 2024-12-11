@@ -20,8 +20,8 @@ export const NavBar = ({ navItems }: NavBarProps) => {
         className="flex items-center justify-between p-3 lg:px-8 "
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <img alt="" src={Logo} className="h-14 w-auto" />
+          <a href="#" className="-m-1.5 p-1.5" aria-label="Go to the home page">
+            <img alt="Locaplus Logo" src={Logo} className="h-14 w-auto" />
           </a>
         </div>
         <div className="flex lg:hidden"></div>

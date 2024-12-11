@@ -6,7 +6,6 @@ import { Contact } from '../../sections/Contact/Contact';
 import { Home } from '../../sections/Home/Home';
 import { Products } from '../../sections/Products/Products';
 import { NavBar } from '../NavBar/NavBar';
-import { SideElement } from '../SideElement/SideElement';
 
 export const MainLayout = () => {
   const intl = useIntl();
@@ -39,7 +38,6 @@ export const MainLayout = () => {
       <About />
       <Products />
       <Contact />
-      <SideElement />
     </>
   );
 };
