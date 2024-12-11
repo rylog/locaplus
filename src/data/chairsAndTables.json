@@ -11,7 +11,10 @@
       "equipment.roundTable60In",
       "equipment.roundTable72In",
       "equipment.rectangularTable30x96",
-      "equipment.rectangularTable30x72"
+      "equipment.rectangularTable30x72",
+      "equipment.floorRegular",
+      "equipment.floorLeveled",
+      "equipment.floorDance"
     ]
   }
 }
