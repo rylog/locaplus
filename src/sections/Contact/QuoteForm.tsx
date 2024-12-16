@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 
+import { useSendEmail } from '../../api/useSendEmail';
 import { MessageInput } from '../../components/MessageInput/MessageInput';
 import { TextInput } from '../../components/TextInput/TextInput';
 import { SECTIONS } from '../../constants/sections';
@@ -11,6 +12,7 @@ const QuoteForm = () => {
   const intl = useIntl();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const sendEmailMutation = useSendEmail();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -28,17 +30,11 @@ const QuoteForm = () => {
     };
 
     try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      sendEmailMutation.mutate({
+        recipient: 'ryanlomtl@gmail.com',
+        subject: 'test',
         body: JSON.stringify(formPayload),
       });
-
-      if (response.ok) {
-        alert('Email sent successfully!');
-      } else {
-        setError('There was an issue sending the email.');
-      }
     } catch (error) {
       console.error(error);
       setError('There was an error sending the email.');
@@ -105,7 +101,7 @@ const QuoteForm = () => {
         <div className="mt-10 w-fit justify-self-end">
           <button
             type="submit"
-            disabled={true}
+            disabled={false}
             className={clsx(
               'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm',
               {

@@ -1,40 +1,117 @@
-// api/sendEmail.ts
-import { VercelRequest, VercelResponse } from '@vercel/node';
-import nodemailer from 'nodemailer';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+import fetch from 'node-fetch';
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method === 'POST') {
-    const { to, subject, text, html } = req.body;
+const tenantId = process.env.TENANT_ID; // Azure AD Tenant ID
+const clientId = process.env.CLIENT_ID; // Azure AD App Client ID
+const clientSecret = process.env.CLIENT_SECRET; // Azure AD App Client Secret
 
-    // Set up the transporter to use Outlook's SMTP server
-    const transporter = nodemailer.createTransport({
-      service: 'hotmail',
-      auth: {
-        user: 'ryanlomtl@outlook.com',
-        pass: 'Rylo7868office!!',
+const getAccessToken = async (): Promise<string> => {
+  const tokenUrl = `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`;
+
+  if (tenantId == null || clientId == null || clientSecret == null) {
+    return '';
+  }
+  const params = new URLSearchParams({
+    grant_type: 'client_credentials',
+    client_id: clientId,
+    client_secret: clientSecret,
+    scope: 'https://graph.microsoft.com/.default',
+  });
+
+  console.log(params.toString());
+
+  const response = await fetch(tokenUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: params.toString(),
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    console.error('Failed to fetch access token:', error);
+    throw new Error(error.error_description || 'Unable to fetch access token');
+  }
+
+  const data = await response.json();
+  return data.access_token;
+};
+
+const sendEmail = async (
+  emailData: {
+    message: {
+      subject: string;
+      body: {
+        contentType: string;
+        content: string;
+      };
+      toRecipients: {
+        emailAddress: {
+          address: string;
+        };
+      }[];
+    };
+  },
+  accessToken: string,
+) => {
+  const response = await fetch(
+    'https://graph.microsoft.com/v1.0/users/Contact@Locapluscanada.onmicrosoft.com/sendMail',
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
       },
-    });
+      body: JSON.stringify(emailData),
+    },
+  );
 
-    // Define the email options
-    const mailOptions = {
-      from: 'ryanlomtl@outlook.com', // Your Outlook email address
-      to: 'recipient-email@example.com', // The recipient email address
-      subject: 'Test Email from Nodemailer',
-      text: 'This is a test email sent from Nodemailer using Outlook.',
-      html: '<p>This is a test email sent from <b>Nodemailer</b> using Outlook.</p>',
+  if (!response.ok) {
+    const error = await response.json();
+    console.error('Failed to send email:', error);
+    throw new Error(error.error.message || 'Failed to send email');
+  }
+};
+
+export default async (req: VercelRequest, res: VercelResponse) => {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
+  }
+
+  try {
+    console.log('body', req.body);
+    const emailData = req.body; // Validate and sanitize this input as needed
+
+    const message = {
+      message: {
+        subject: emailData.subject,
+        body: {
+          contentType: 'Text',
+          content: emailData.body,
+        },
+        toRecipients: [
+          {
+            emailAddress: {
+              address: emailData.recipient,
+            },
+          },
+        ],
+      },
+      from: {
+        emailAddress: {
+          address: 'no-reply@locaplus.net',
+        },
+      },
     };
 
-    try {
-      // Send the email using the defined transporter
-      await transporter.sendMail(mailOptions);
-      res.status(200).json({ message: 'Email sent successfully' });
-    } catch (error) {
-      console.log(error);
-      console.error('Error sending email:', error);
-      res.status(500).json({ error: error });
-    }
-  } else {
-    // If the HTTP method is not POST, return 405 Method Not Allowed
-    res.status(405).json({ error: 'Method Not Allowed' });
+    console.log('message', message);
+    console.log('toRecipients', emailData.recipient);
+    const accessToken = await getAccessToken();
+    await sendEmail(message, accessToken);
+    res.status(200).json({ message: 'Email sent successfully!' });
+  } catch (error) {
+    console.error('Error in API route:', error);
+    res.status(500).json({ error: error.message });
   }
-}
+};

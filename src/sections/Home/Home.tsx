@@ -31,7 +31,7 @@ export const Home = () => {
       <picture>
         <img
           src={HomeBackgroundJpg}
-          alt="Tent image"
+          alt="Locaplus home page background"
           className="object-cover w-full h-full absolute top-0 left-0 z-[-1] brightness-75"
         />
       </picture>
