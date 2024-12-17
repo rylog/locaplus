@@ -101,7 +101,7 @@ const QuoteForm = () => {
         <div className="mt-10 w-fit justify-self-end">
           <button
             type="submit"
-            disabled={false}
+            disabled={true}
             className={clsx(
               'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm',
               {
