@@ -18,8 +18,6 @@ const getAccessToken = async (): Promise<string> => {
     scope: 'https://graph.microsoft.com/.default',
   });
 
-  console.log(params.toString());
-
   const response = await fetch(tokenUrl, {
     method: 'POST',
     headers: {
@@ -56,7 +54,7 @@ const sendEmail = async (
   accessToken: string,
 ) => {
   const response = await fetch(
-    'https://graph.microsoft.com/v1.0/users/Contact@Locapluscanada.onmicrosoft.com/sendMail',
+    'https://graph.microsoft.com/v1.0/users/no-reply@locaplus.net/sendMail',
     {
       method: 'POST',
       headers: {
@@ -98,15 +96,8 @@ export default async (req: VercelRequest, res: VercelResponse) => {
           },
         ],
       },
-      from: {
-        emailAddress: {
-          address: 'no-reply@locaplus.net',
-        },
-      },
     };
 
-    console.log('message', message);
-    console.log('toRecipients', emailData.recipient);
     const accessToken = await getAccessToken();
     await sendEmail(message, accessToken);
     res.status(200).json({ message: 'Email sent successfully!' });
