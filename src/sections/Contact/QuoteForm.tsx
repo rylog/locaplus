@@ -34,9 +34,6 @@ const QuoteForm = () => {
 
   const onSubmit = (data: QuoteFormInputs): Promise<void> => {
     return new Promise(async (resolve, reject) => {
-      console.log(data);
-      console.log(isSubmitting);
-
       try {
         await sendEmailMutation.mutateAsync({
           recipient: data.email,
@@ -138,13 +135,15 @@ const QuoteForm = () => {
             errors={errors}
           />
         </div>
-
         {errors && <p className="text-red-500 mt-4">{error}</p>}
+        <p className={'text-red-500 mt-4'}>
+          <FormattedMessage id={'requestQuote.maintenance'} />
+        </p>
 
         <div className="mt-10 w-fit justify-self-end">
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={true}
             className={clsx(
               'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm',
               {
