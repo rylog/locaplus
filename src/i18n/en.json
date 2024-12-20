@@ -95,5 +95,14 @@
   "contactInfo.819Locations": "Sherbrooke, Magog",
 
   "requestQuote.title": "Request a quote",
-  "requestQuote.maintenance": "The quote form will be unavailable until December 20. Please send all quote requests to contact@locaplus.net. We apologize for the inconvenience."
+  "requestQuote.maintenance": "The quote form will be unavailable until December 20. Please send all quote requests to contact@locaplus.net. We apologize for the inconvenience.",
+
+  "error.firstName.required": "A first name is required",
+  "error.lastName.required": "A last name is required",
+  "error.eventType.required": "An event type is required",
+  "error.email.required": "An email is required",
+  "error.email.invalid": "Must be a valid email",
+  "error.phoneNumber.required": "A phone number is required",
+  "error.sendEmail.generic": "An error occured while sending email",
+  "form.sending": "Sending..."
 }

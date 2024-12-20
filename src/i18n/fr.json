@@ -95,5 +95,14 @@
   "contactInfo.819Locations": "Sherbrooke, Magog",
 
   "requestQuote.title": "Demander une soumission",
-  "requestQuote.maintenance": "Le formulaire de soumission sera indisponible jusqu'au 20 décembre. Veuillez envoyer toutes vos demandes de soumission à contact@locaplus.net. Nous nous excusons pour le désagrément."
+  "requestQuote.maintenance": "Le formulaire de soumission sera indisponible jusqu'au 20 décembre. Veuillez envoyer toutes vos demandes de soumission à contact@locaplus.net. Nous nous excusons pour le désagrément.",
+
+  "error.firstName.required": "Un prénom est requis",
+  "error.lastName.required": "Un nom de famille est requis",
+  "error.eventType.required": "Un type d'événément est requis",
+  "error.email.required": "Une adresse courriel est requise",
+  "error.email.invalid": "L'adresse courriel n'est pas valide",
+  "error.phoneNumber.required": "Un numéro de téléphone est requis",
+  "error.sendEmail.generic": "Une erreur est survenue lors de l'envoi du courriel",
+  "form.sending": "Envoi en cours..."
 }

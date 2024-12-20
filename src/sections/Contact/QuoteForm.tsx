@@ -7,40 +7,53 @@ import { MessageInput } from '../../components/MessageInput/MessageInput';
 import { TextInput } from '../../components/TextInput/TextInput';
 import { SECTIONS } from '../../constants/sections';
 import { LABEL_COLORS } from '../../styles/colors';
+import { useForm } from 'react-hook-form';
+import { useParams } from 'react-router';
+import { Locale } from '../../context/LocaleContext';
+
+export interface QuoteFormInputs {
+  firstName: string;
+  lastName: string;
+  eventType: string;
+  email: string;
+  phoneNumber: string;
+  message: string;
+}
 
 const QuoteForm = () => {
   const intl = useIntl();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const sendEmailMutation = useSendEmail();
+  const { locale } = useParams<{ locale: Locale }>();
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    setIsSubmitting(true);
-    setError('');
+  const { register, formState, handleSubmit } = useForm<QuoteFormInputs>({
+    mode: 'onSubmit',
+  });
 
-    const formData = new FormData(event.target as HTMLFormElement);
-    const formPayload = {
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
-      eventType: formData.get('eventType'),
-      email: formData.get('email'),
-      phoneNumber: formData.get('phoneNumber'),
-      message: formData.get('message'),
-    };
+  const { errors, isSubmitting } = formState;
 
-    try {
-      sendEmailMutation.mutate({
-        recipient: 'ryanlomtl@gmail.com',
-        subject: 'test',
-        body: JSON.stringify(formPayload),
-      });
-    } catch (error) {
-      console.error(error);
-      setError('There was an error sending the email.');
-    } finally {
-      setIsSubmitting(false);
-    }
+  const onSubmit = (data: QuoteFormInputs): Promise<void> => {
+    return new Promise(async (resolve, reject) => {
+      console.log(data);
+      console.log(isSubmitting);
+
+      try {
+        await sendEmailMutation.mutateAsync({
+          recipient: data.email,
+          firstName: data.firstName,
+          lastName: data.lastName,
+          eventType: data.eventType,
+          phoneNumber: data.phoneNumber,
+          message: data.message,
+          language: locale?.toString(),
+        });
+        resolve(); // Resolve the promise if the email mutation is successful
+      } catch (error) {
+        console.error(error);
+        setError(intl.formatMessage({ id: 'error.sendEmail.generic' }));
+        reject(error); // Reject the promise if an error occurs
+      }
+    });
   };
 
   return (
@@ -50,58 +63,88 @@ const QuoteForm = () => {
           <FormattedMessage id="requestQuote.title" />
         </h1>
       </header>
-      <form onSubmit={handleSubmit} className="mx-auto mt-8 max-w-xl ">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="mx-auto mt-8 max-w-xl "
+      >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <TextInput
-            name="firstName"
+            {...register('firstName', {
+              required: intl.formatMessage({
+                id: 'error.firstName.required',
+              }),
+            })}
+            required
             autoComplete="given-name"
             label={intl.formatMessage({ id: 'form.firstName' })}
             labelColor={LABEL_COLORS.CONTACT_FORM}
+            errors={errors}
           />
           <TextInput
+            {...register('lastName', {
+              required: intl.formatMessage({ id: 'error.lastName.required' }),
+            })}
+            required
             name="lastName"
             autoComplete="family-name"
             label={intl.formatMessage({ id: 'form.lastName' })}
             labelColor={LABEL_COLORS.CONTACT_FORM}
+            errors={errors}
           />
           <TextInput
+            {...register('eventType', {
+              required: intl.formatMessage({ id: 'error.eventType.required' }),
+            })}
+            required
             className={'sm:col-span-2'}
-            name="eventType"
             label={intl.formatMessage({ id: 'form.typeOfEvent' })}
             labelColor={LABEL_COLORS.CONTACT_FORM}
+            errors={errors}
           />
           <TextInput
+            {...register('email', {
+              required: intl.formatMessage({ id: 'error.email.required' }),
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: intl.formatMessage({ id: 'error.email.invalid' }),
+              },
+            })}
+            required
             className={'sm:col-span-2'}
-            name="email"
             autoComplete="email"
             label={intl.formatMessage({ id: 'form.email' })}
             labelColor={LABEL_COLORS.CONTACT_FORM}
+            errors={errors}
           />
           <TextInput
+            {...register('phoneNumber', {
+              required: intl.formatMessage({
+                id: 'error.phoneNumber.required',
+              }),
+            })}
+            required
             className={'sm:col-span-2'}
-            name="phoneNumber"
             autoComplete="tel"
             label={intl.formatMessage({ id: 'form.phoneNumber' })}
             labelColor={LABEL_COLORS.CONTACT_FORM}
+            errors={errors}
           />
           <MessageInput
+            {...register('message')}
             className={'sm:col-span-2'}
             name={'message'}
             label={intl.formatMessage({ id: 'form.message' })}
             labelColor={LABEL_COLORS.CONTACT_FORM}
+            errors={errors}
           />
         </div>
 
-        <p className="text-red-500 mt-4">
-          <FormattedMessage id="requestQuote.maintenance" />
-        </p>
-
-        {error && <p className="text-red-500 mt-4">{error}</p>}
+        {errors && <p className="text-red-500 mt-4">{error}</p>}
 
         <div className="mt-10 w-fit justify-self-end">
           <button
             type="submit"
-            disabled={true}
+            disabled={isSubmitting}
             className={clsx(
               'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm',
               {
@@ -113,7 +156,7 @@ const QuoteForm = () => {
             )}
           >
             {isSubmitting ? (
-              'Sending...'
+              intl.formatMessage({ id: 'form.sending' })
             ) : (
               <FormattedMessage id="form.submitButton" />
             )}

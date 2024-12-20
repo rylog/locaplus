@@ -1,5 +1,9 @@
 export interface Email {
   recipient: string;
-  subject: string;
-  body: string;
+  firstName: string;
+  lastName: string;
+  eventType: string;
+  phoneNumber: string;
+  message: string;
+  language?: string;
 }
