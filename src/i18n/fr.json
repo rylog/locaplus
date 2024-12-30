@@ -104,5 +104,27 @@
   "error.email.invalid": "L'adresse courriel n'est pas valide",
   "error.phoneNumber.required": "Un numéro de téléphone est requis",
   "error.sendEmail.generic": "Une erreur est survenue lors de l'envoi du courriel",
-  "form.sending": "Envoi en cours..."
+  "form.sending": "Envoi en cours...",
+
+  "privacyPolicy.checkbox.text": "J'ai lu et j'accepte la",
+  "privacyPolicy.checkbox.link": "politique de confidentialité",
+
+  "privacyPolicy.title": "Politique de confidentialité",
+  "privacyPolicy.intro": "À Locaplus, nous respectons votre vie privée et nous engageons à protéger vos informations personnelles.",
+
+  "privacyPolicy.infoCollection.title": "Informations que nous collectons",
+  "privacyPolicy.infoCollection.description": "Lorsque vous remplissez le formulaire de demande de devis sur notre site web, nous collectons les informations que vous fournissez, telles que votre nom, votre adresse e-mail, votre numéro de téléphone et les détails de votre événement.",
+
+  "privacyPolicy.howWeUse.title": "Comment nous utilisons vos informations",
+  "privacyPolicy.howWeUse.description": "Les informations que vous fournissez sont utilisées uniquement pour répondre à votre demande et fournir un devis. Nous ne stockons pas vos informations personnelles au-delà de ce qui est nécessaire pour répondre à votre demande.",
+
+  "privacyPolicy.retention.title": "Conservation des informations",
+  "privacyPolicy.retention.description": "Nous conservons vos informations personnelles uniquement pendant la durée nécessaire pour atteindre l'objectif pour lequel elles ont été collectées, ou tel qu'exigé par la loi.",
+
+  "privacyPolicy.protection.title": "Protection de vos informations",
+  "privacyPolicy.protection.description": "Nous prenons des mesures raisonnables pour garantir que les informations que vous fournissez sont transmises de manière sécurisée.",
+
+  "privacyPolicy.contact.title": "Contactez-nous",
+  "privacyPolicy.contactInfo": "Si vous avez des questions concernant cette politique de confidentialité, contactez-nous à",
+  "privacyPolicy.contactEmail": "contact@locaplus.net"
 }
