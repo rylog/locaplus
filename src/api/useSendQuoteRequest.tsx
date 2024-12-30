@@ -1,14 +1,14 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { Email } from '../types/email';
+import { QuoteRequest } from '../types/quoteRequest';
 
-const sendEmail = async (email: Email) => {
-  const response = await fetch('/api/sendEmail', {
+const sendQuoteRequest = async (quoteRequest: QuoteRequest) => {
+  const response = await fetch('/api/quotes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(email),
+    body: JSON.stringify(quoteRequest),
   });
 
   if (!response.ok) {
@@ -19,6 +19,6 @@ const sendEmail = async (email: Email) => {
   return response.json();
 };
 
-export const useSendEmail = () => {
-  return useMutation({ mutationFn: sendEmail });
+export const useSendQuoteRequest = () => {
+  return useMutation({ mutationFn: sendQuoteRequest });
 };

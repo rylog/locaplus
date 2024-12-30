@@ -11,7 +11,7 @@ import linkedInIcon from '/assets/socials/linkedIn.svg';
 
 const ContactInfo = () => {
   return (
-    <div className="flex flex-col gap-4 justify-between bg-white lg:border lg:border-gray lg:rounded-l-2xl">
+    <div className="flex flex-col gap-4 justify-evenly bg-white lg:border lg:border-gray lg:rounded-l-2xl">
       <div className="flex flex-col px-12 py-10 gap-5 border-gray border-b">
         <div>
           <p className="text-lg font-medium flex">

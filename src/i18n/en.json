@@ -104,5 +104,27 @@
   "error.email.invalid": "Must be a valid email",
   "error.phoneNumber.required": "A phone number is required",
   "error.sendEmail.generic": "An error occured while sending email",
-  "form.sending": "Sending..."
+  "form.sending": "Sending...",
+
+  "privacyPolicy.checkbox.text": "I have read and agree to the",
+  "privacyPolicy.checkbox.link": "privacy policy",
+
+  "privacyPolicy.title": "Privacy Policy",
+  "privacyPolicy.intro": "At Locaplus, we respect your privacy and are committed to protecting your personal information.",
+
+  "privacyPolicy.infoCollection.title": "Information We Collect",
+  "privacyPolicy.infoCollection.description": "When you fill out the quote request form on our website, we collect the information you provide, such as your name, email address, phone number, and event details.",
+
+  "privacyPolicy.howWeUse.title": "How We Use Your Information",
+  "privacyPolicy.howWeUse.description": "The information you provide is used solely to respond to your request and provide a quote. We do not store your personal information beyond what is necessary to reply to your inquiry.",
+
+  "privacyPolicy.retention.title": "Retention of Information",
+  "privacyPolicy.retention.description": "We retain your personal information only for as long as necessary to fulfill the purpose for which it was collected, or as required by law.",
+
+  "privacyPolicy.protection.title": "Protection of Your Information",
+  "privacyPolicy.protection.description": "We take reasonable steps to ensure the information you provide is securely transmitted.",
+
+  "privacyPolicy.contact.title": "Contact Us",
+  "privacyPolicy.contactInfo": "If you have questions about this Privacy Policy, contact us at",
+  "privacyPolicy.contactEmail": "contact@locaplus.net"
 }

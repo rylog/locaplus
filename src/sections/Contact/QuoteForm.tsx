@@ -1,15 +1,17 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { useForm } from 'react-hook-form';
 import { FormattedMessage, useIntl } from 'react-intl';
+import { useParams } from 'react-router';
 
-import { useSendEmail } from '../../api/useSendEmail';
+import { useSendQuoteRequest } from '../../api/useSendQuoteRequest';
 import { MessageInput } from '../../components/MessageInput/MessageInput';
+import PrivacyPolicyModal from '../../components/PrivacyModal/PrivacyModal';
 import { TextInput } from '../../components/TextInput/TextInput';
 import { SECTIONS } from '../../constants/sections';
-import { LABEL_COLORS } from '../../styles/colors';
-import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
 import { Locale } from '../../context/LocaleContext';
+import { LABEL_COLORS } from '../../styles/colors';
 
 export interface QuoteFormInputs {
   firstName: string;
@@ -18,24 +20,29 @@ export interface QuoteFormInputs {
   email: string;
   phoneNumber: string;
   message: string;
+  consent: boolean;
 }
 
 const QuoteForm = () => {
   const intl = useIntl();
   const [error, setError] = useState('');
-  const sendEmailMutation = useSendEmail();
+
+  const [reCaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const [showPrivacyModal, setShowPrivacyModal] = useState<boolean>(false);
+  const sendQuoteMutation = useSendQuoteRequest();
   const { locale } = useParams<{ locale: Locale }>();
 
   const { register, formState, handleSubmit } = useForm<QuoteFormInputs>({
     mode: 'onSubmit',
   });
 
-  const { errors, isSubmitting } = formState;
+  const { errors, isSubmitting, isValid } = formState;
 
   const onSubmit = (data: QuoteFormInputs): Promise<void> => {
+    // eslint-disable-next-line no-async-promise-executor
     return new Promise(async (resolve, reject) => {
       try {
-        await sendEmailMutation.mutateAsync({
+        await sendQuoteMutation.mutateAsync({
           recipient: data.email,
           firstName: data.firstName,
           lastName: data.lastName,
@@ -43,12 +50,13 @@ const QuoteForm = () => {
           phoneNumber: data.phoneNumber,
           message: data.message,
           language: locale?.toString(),
+          reCaptchaToken: reCaptchaToken!,
         });
-        resolve(); // Resolve the promise if the email mutation is successful
+        resolve();
       } catch (error) {
         console.error(error);
         setError(intl.formatMessage({ id: 'error.sendEmail.generic' }));
-        reject(error); // Reject the promise if an error occurs
+        reject(error);
       }
     });
   };
@@ -134,16 +142,48 @@ const QuoteForm = () => {
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
-        </div>
-        {errors && <p className="text-red-500 mt-4">{error}</p>}
-        <p className={'text-red-500 mt-4'}>
-          <FormattedMessage id={'requestQuote.maintenance'} />
-        </p>
 
+          <div className="mt-4 text-sm text-gray-400 sm:col-span-2">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                {...register('consent', {
+                  required: true,
+                })}
+                className="mr-2 h-4 w-4 text-primary border-gray-300 rounded"
+              />
+              <span>
+                <FormattedMessage id={'privacyPolicy.checkbox.text'} />{' '}
+                <button
+                  type="button"
+                  className="text-white underline"
+                  onClick={() => setShowPrivacyModal(true)}
+                >
+                  <FormattedMessage id={'privacyPolicy.checkbox.link'} />
+                </button>
+                <span className="text-red-500"> *</span>
+              </span>
+            </label>
+            {errors.consent && (
+              <p className="mt-2 text-sm text-red-500">
+                {errors.consent.message}
+              </p>
+            )}
+          </div>
+        </div>
+
+        {errors && <p className="text-red-500 mt-4">{error}</p>}
+
+        <div className="mt-8">
+          <ReCAPTCHA
+            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY!}
+            onChange={(val) => setRecaptchaToken(val)}
+          />
+        </div>
         <div className="mt-10 w-fit justify-self-end">
           <button
             type="submit"
-            disabled={true}
+            disabled={!reCaptchaToken || !isValid}
             className={clsx(
               'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm',
               {
@@ -162,6 +202,10 @@ const QuoteForm = () => {
           </button>
         </div>
       </form>
+      <PrivacyPolicyModal
+        open={showPrivacyModal}
+        onClose={() => setShowPrivacyModal(false)}
+      />
     </section>
   );
 };

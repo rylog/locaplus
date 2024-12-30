@@ -1,4 +1,4 @@
-export interface Email {
+export interface QuoteRequest {
   recipient: string;
   firstName: string;
   lastName: string;
@@ -6,4 +6,5 @@ export interface Email {
   phoneNumber: string;
   message: string;
   language?: string;
+  reCaptchaToken: string;
 }
