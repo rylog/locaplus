@@ -1,16 +1,16 @@
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { useParams } from 'react-router';
 
 import { useSendQuoteRequest } from '../../api/useSendQuoteRequest';
 import { MessageInput } from '../../components/MessageInput/MessageInput';
 import PrivacyPolicyModal from '../../components/PrivacyModal/PrivacyModal';
 import { TextInput } from '../../components/TextInput/TextInput';
 import { SECTIONS } from '../../constants/sections';
-import { Locale } from '../../context/LocaleContext';
+import { useLocale } from '../../context/LocaleContext';
 import { LABEL_COLORS } from '../../styles/colors';
 
 export interface QuoteFormInputs {
@@ -26,11 +26,11 @@ export interface QuoteFormInputs {
 const QuoteForm = () => {
   const intl = useIntl();
   const [error, setError] = useState('');
-
   const [reCaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [showPrivacyModal, setShowPrivacyModal] = useState<boolean>(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const sendQuoteMutation = useSendQuoteRequest();
-  const { locale } = useParams<{ locale: Locale }>();
+  const { locale } = useLocale();
 
   const { register, formState, handleSubmit } = useForm<QuoteFormInputs>({
     mode: 'onSubmit',
@@ -52,6 +52,7 @@ const QuoteForm = () => {
           language: locale?.toString(),
           reCaptchaToken: reCaptchaToken!,
         });
+        setFormSubmitted(true);
         resolve();
       } catch (error) {
         console.error(error);
@@ -61,6 +62,25 @@ const QuoteForm = () => {
     });
   };
 
+  if (formSubmitted) {
+    return (
+      <section
+        id={SECTIONS.QUOTE}
+        className="p-8 lg:px-12 bg-slate-900 flex items-center justify-center"
+      >
+        <div className="flex flex-col gap-6">
+          <h1 className="text-2xl text-white font-semibold tracking-loose sm:text-2xl text-center">
+            <FormattedMessage id="requestQuote.success.title" />
+          </h1>
+          <CheckCircleIcon className="w-24 h-24 text-white m-auto" />
+          <p className="text-white text-center">
+            <FormattedMessage id="requestQuote.success.message" />
+          </p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id={SECTIONS.QUOTE} className="p-8 lg:px-12 bg-slate-900">
       <header>
@@ -68,10 +88,7 @@ const QuoteForm = () => {
           <FormattedMessage id="requestQuote.title" />
         </h1>
       </header>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto mt-8 max-w-xl "
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className="mx-auto mt-8 max-w-xl">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <TextInput
             {...register('firstName', {
@@ -173,9 +190,10 @@ const QuoteForm = () => {
         </div>
 
         {errors && <p className="text-red-500 mt-4">{error}</p>}
-
         <div className="mt-8">
           <ReCAPTCHA
+            key={locale}
+            hl={locale}
             sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY!}
             onChange={(val) => setRecaptchaToken(val)}
           />

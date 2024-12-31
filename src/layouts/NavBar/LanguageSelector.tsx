@@ -10,10 +10,6 @@ import { useNavigate, useParams } from 'react-router';
 
 import { Locale } from '../../context/LocaleContext';
 
-// interface LanguageSelectorProps {
-//   onChange?: () => void;
-// }
-
 export const LanguageSelector = () => {
   const { locale } = useParams<{ locale: Locale }>();
   const navigate = useNavigate();

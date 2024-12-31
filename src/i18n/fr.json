@@ -95,6 +95,8 @@
   "contactInfo.819Locations": "Sherbrooke, Magog",
 
   "requestQuote.title": "Demander une soumission",
+  "requestQuote.success.title": "Demande de soumission envoyé",
+  "requestQuote.success.message": "Vous recevrez une confirmation par courriel automatisée. Un membre de notre équipe vous contactera sous peu.",
   "requestQuote.maintenance": "Le formulaire de soumission sera indisponible jusqu'au 5 janvier. Veuillez envoyer toutes vos demandes de soumission à contact@locaplus.net. Nous nous excusons pour le désagrément.",
 
   "error.firstName.required": "Un prénom est requis",
