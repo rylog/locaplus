@@ -5,18 +5,12 @@
     {
       "matchPackageNames": ["vite"],
       "allowedVersions": "5.4.11"
-    },    
+    },
     {
-      "matchPackagePatterns": [
-        "*"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
+      "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
+      "groupSlug": "all-minor-patch",
+      "matchPackageNames": ["*"]
     }
   ]
 }
-
