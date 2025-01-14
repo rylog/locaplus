@@ -1,6 +1,35 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies"],
+      "groupName": "Production dependencies"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "Development dependencies"
+    },
+    {
+      "matchPackageNames": ["react", "react-dom", "react-scripts"],
+      "groupName": "React ecosystem"
+    },
+    {
+      "matchManagers": ["npm"],
+      "groupName": "NPM dependencies"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "groupName": "Major version updates"
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Minor and patch updates"
+    }
+  ],
+  "automerge": true,
+  "automergeType": "branch",
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2
 }
+
