@@ -27,9 +27,7 @@
       "groupName": "Minor and patch updates"
     }
   ],
-  "automerge": true,
-  "automergeType": "branch",
-  "prConcurrentLimit": 5,
+  "prConcurrentLimit": 2,
   "prHourlyLimit": 5
 }
 
