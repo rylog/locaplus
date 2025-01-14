@@ -30,6 +30,6 @@
   "automerge": true,
   "automergeType": "branch",
   "prConcurrentLimit": 5,
-  "prHourlyLimit": 2
+  "prHourlyLimit": 5
 }
 
