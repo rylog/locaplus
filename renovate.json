@@ -27,7 +27,5 @@
       "groupName": "Minor and patch updates"
     }
   ],
-  "prConcurrentLimit": 2,
-  "prHourlyLimit": 5
 }
 
