@@ -26,6 +26,6 @@
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "Minor and patch updates"
     }
-  ],
+  ]
 }
 
