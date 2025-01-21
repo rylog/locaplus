@@ -105,6 +105,7 @@
   "error.lastName.required": "Un nom de famille est requis",
   "error.eventType.required": "Un type d'évènement est requis",
   "error.eventDate.required": "Une date d'évènement est requise",
+  "error.dateInput.isValid": "Veuillez saisir une date valide",
   "error.location.required": "Un emplacement est requis",
   "error.email.required": "Une adresse courriel est requise",
   "error.email.invalid": "L'adresse courriel n'est pas valide",

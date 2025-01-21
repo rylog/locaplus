@@ -105,6 +105,7 @@
   "error.lastName.required": "A last name is required",
   "error.eventType.required": "An event type is required",
   "error.eventDate.required": "An event date is required",
+  "error.dateInput.isValid": "Please enter a valid date",
   "error.location.required": "A location is required",
   "error.email.required": "An email is required",
   "error.email.invalid": "Must be a valid email",

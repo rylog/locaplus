@@ -16,6 +16,7 @@ import {
 } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import { useIntl } from 'react-intl';
+import { isValid } from 'date-fns';
 
 interface DateInputProps<T extends FieldValues> {
   control: Control<T>;
@@ -68,12 +69,21 @@ export const ControlledDateInput = <T extends FieldValues>({
               required: required
                 ? intl.formatMessage({ id: 'error.eventDate.required' })
                 : false,
+              validate: {
+                isValid: (value: string) =>
+                  isValid(value) ||
+                  intl.formatMessage({
+                    id: 'error.dateInput.isValid',
+                  }),
+              },
             }}
             render={({ field }) => (
               <DatePicker
                 {...field}
-                value={field.value || defaultValue}
-                onChange={(date) => field.onChange(date)}
+                value={field.value}
+                onChange={(date) => {
+                  field.onChange(date);
+                }}
                 disablePast
                 sx={{
                   '& .MuiInputBase-root': { height: 42 },
