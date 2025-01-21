@@ -33,7 +33,7 @@ export const ControlledDateInput = <T extends FieldValues>({
   name,
   label,
   labelColor,
-  defaultValue = new Date() as FieldValue<T>, // Ensure a default value is set, e.g., current date
+  defaultValue = new Date() as FieldValue<T>,
   errors,
   required = false,
   className,
@@ -72,8 +72,8 @@ export const ControlledDateInput = <T extends FieldValues>({
             render={({ field }) => (
               <DatePicker
                 {...field}
-                value={field.value || defaultValue} // Ensure it's controlled
-                onChange={(date) => field.onChange(date)} // Ensure onChange is handled
+                value={field.value || defaultValue}
+                onChange={(date) => field.onChange(date)}
                 disablePast
                 sx={{
                   '& .MuiInputBase-root': { height: 42 },

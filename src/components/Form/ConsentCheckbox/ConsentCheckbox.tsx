@@ -27,7 +27,6 @@ export const ConsentCheckbox = ({
 }: ConsentCheckboxProps) => {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
 
-  console.log(errors);
   return (
     <>
       <label className={className}>
