@@ -1,9 +1,10 @@
 import { ErrorMessage } from '@hookform/error-message';
 import clsx from 'clsx';
+import { Ref } from 'react';
 import { FieldErrors } from 'react-hook-form';
 
 interface MessageInputProps {
-  ref?: React.Ref<HTMLTextAreaElement>;
+  ref?: Ref<HTMLTextAreaElement>;
   className?: string;
   name: string;
   label: string;

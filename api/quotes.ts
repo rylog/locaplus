@@ -20,6 +20,8 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       firstName,
       lastName,
       eventType,
+      eventDate,
+      location,
       phoneNumber,
       message,
     } = quoteRequest;
@@ -49,6 +51,8 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       firstName,
       lastName,
       eventType,
+      eventDate,
+      location,
       phoneNumber,
       message,
     });

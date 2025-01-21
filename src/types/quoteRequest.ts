@@ -3,6 +3,8 @@ export interface QuoteRequest {
   firstName: string;
   lastName: string;
   eventType: string;
+  eventDate: string;
+  location: string;
   phoneNumber: string;
   message: string;
   language?: string;

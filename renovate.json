@@ -3,10 +3,6 @@
   "extends": ["config:recommended"],
   "packageRules": [
     {
-      "matchPackageNames": ["vite"],
-      "allowedVersions": "5.4.11"
-    },
-    {
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch",
