@@ -6,17 +6,22 @@ import { useForm } from 'react-hook-form';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 import { useSendQuoteRequest } from '../../api/useSendQuoteRequest';
-import { MessageInput } from '../../components/MessageInput/MessageInput';
+import { MessageInput } from '../../components/Form/MessageInput/MessageInput';
 import PrivacyPolicyModal from '../../components/PrivacyModal/PrivacyModal';
-import { TextInput } from '../../components/TextInput/TextInput';
+import { TextInput } from '../../components/Form/TextInput/TextInput';
 import { SECTIONS } from '../../constants/sections';
 import { useLocale } from '../../context/LocaleContext';
 import { LABEL_COLORS } from '../../styles/colors';
+import { ControlledDateInput } from '../../components/Form/ControlledDateInput/ControlledDateInput';
+import { format } from 'date-fns';
+import { ConsentCheckbox } from '../../components/Form/ConsentCheckbox/ConsentCheckbox';
 
 export interface QuoteFormInputs {
   firstName: string;
   lastName: string;
   eventType: string;
+  eventDate: string;
+  location: string;
   email: string;
   phoneNumber: string;
   message: string;
@@ -32,11 +37,12 @@ const QuoteForm = () => {
   const sendQuoteMutation = useSendQuoteRequest();
   const { locale } = useLocale();
 
-  const { register, formState, handleSubmit } = useForm<QuoteFormInputs>({
-    mode: 'onSubmit',
-  });
+  const { register, control, formState, handleSubmit } =
+    useForm<QuoteFormInputs>({
+      mode: 'onSubmit',
+    });
 
-  const { errors, isSubmitting, isValid } = formState;
+  const { errors, isSubmitting } = formState;
 
   const onSubmit = (data: QuoteFormInputs): Promise<void> => {
     // eslint-disable-next-line no-async-promise-executor
@@ -47,6 +53,11 @@ const QuoteForm = () => {
           firstName: data.firstName,
           lastName: data.lastName,
           eventType: data.eventType,
+          eventDate: format(
+            data.eventDate,
+            locale == 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy',
+          ),
+          location: data.location,
           phoneNumber: data.phoneNumber,
           message: data.message,
           language: locale?.toString(),
@@ -55,7 +66,6 @@ const QuoteForm = () => {
         setFormSubmitted(true);
         resolve();
       } catch (error) {
-        console.error(error);
         setError(intl.formatMessage({ id: 'error.sendEmail.generic' }));
         reject(error);
       }
@@ -118,8 +128,27 @@ const QuoteForm = () => {
               required: intl.formatMessage({ id: 'error.eventType.required' }),
             })}
             required
-            className={'sm:col-span-2'}
             label={intl.formatMessage({ id: 'form.typeOfEvent' })}
+            labelColor={LABEL_COLORS.CONTACT_FORM}
+            errors={errors}
+          />
+          <ControlledDateInput
+            required
+            control={control}
+            name="eventDate"
+            label={intl.formatMessage({ id: 'form.eventDate' })}
+            labelColor={LABEL_COLORS.CONTACT_FORM}
+            errors={errors}
+          />
+          <TextInput
+            {...register('location', {
+              required: intl.formatMessage({
+                id: 'error.location.required',
+              }),
+            })}
+            required
+            className={'sm:col-span-2'}
+            label={intl.formatMessage({ id: 'form.location' })}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -160,33 +189,20 @@ const QuoteForm = () => {
             errors={errors}
           />
 
-          <div className="mt-4 text-sm text-gray-400 sm:col-span-2">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                {...register('consent', {
-                  required: true,
-                })}
-                className="mr-2 h-4 w-4 text-primary border-gray-300 rounded"
-              />
-              <span>
-                <FormattedMessage id={'privacyPolicy.checkbox.text'} />{' '}
-                <button
-                  type="button"
-                  className="text-white underline"
-                  onClick={() => setShowPrivacyModal(true)}
-                >
-                  <FormattedMessage id={'privacyPolicy.checkbox.link'} />
-                </button>
-                <span className="text-red-500"> *</span>
-              </span>
-            </label>
-            {errors.consent && (
-              <p className="mt-2 text-sm text-red-500">
-                {errors.consent.message}
-              </p>
-            )}
-          </div>
+          <ConsentCheckbox
+            {...register('consent', {
+              validate: {
+                isChecked: (value: boolean) =>
+                  value ||
+                  intl.formatMessage({
+                    id: 'error.consentCheckbox.isChecked',
+                  }),
+              },
+            })}
+            name={'consent'}
+            errors={errors}
+            className="mt-4 text-sm text-gray-400 sm:col-span-2"
+          />
         </div>
 
         {errors && <p className="text-red-500 mt-4">{error}</p>}
@@ -201,7 +217,7 @@ const QuoteForm = () => {
         <div className="mt-10 w-fit justify-self-end">
           <button
             type="submit"
-            disabled={!reCaptchaToken || !isValid}
+            disabled={!reCaptchaToken}
             className={clsx(
               'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm',
               {

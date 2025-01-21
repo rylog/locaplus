@@ -1,9 +1,10 @@
 import { ErrorMessage } from '@hookform/error-message';
 import { FieldErrors } from 'react-hook-form';
 import clsx from 'clsx';
+import { Ref } from 'react';
 
 interface TextInputProps {
-  ref?: React.Ref<HTMLInputElement>;
+  ref?: Ref<HTMLInputElement>;
   className?: string;
   name: string;
   autoComplete?: string;

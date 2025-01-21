@@ -1,16 +1,19 @@
 {
-  "main.metadata.description": "Locaplus se spécialise dans la location de tentes et de chapiteaux pour événements dans les Cantons-de-l'Est, offrant des tentes de haute qualité, des chaises, des tables et de l'équipement pour des festivals, mariages et événements spéciaux. Servant Bromont, Granby, la Rive-Sud, Sherbrooke et Magog depuis 1991.",
+  "main.metadata.description": "Locaplus se spécialise dans la location de tentes et de chapiteaux pour évènements dans les Cantons-de-l'Est, offrant des tentes de haute qualité, des chaises, des tables et de l'équipement pour des festivals, mariages et évènements spéciaux. Servant Bromont, Granby, la Rive-Sud, Sherbrooke et Magog depuis 1991.",
 
   "nav.aboutUs": "À propos de nous",
   "nav.products": "Produits",
   "nav.projects": "Projets",
   "nav.contactUs": "Contactez-nous",
   "home.title": "Location de chapiteaux pour toutes occasions",
-  "home.subtitle": "Avec plus de 30 ans d'expérience, Locaplus offre des locations fiables et de qualité pour assurer le succès de votre événement.",
+  "home.subtitle": "Avec plus de 30 ans d'expérience, Locaplus offre des locations fiables et de qualité pour assurer le succès de votre évènement.",
   "home.requestQuote": "Demander une soumission",
+
   "form.firstName": "Prénom",
   "form.lastName": "Nom de famille",
-  "form.typeOfEvent": "Type d'événement",
+  "form.typeOfEvent": "Type d'évènement",
+  "form.eventDate": "Date d'évènement",
+  "form.location": "Emplacement",
   "form.email": "Courriel",
   "form.phoneNumber": "Numéro de téléphone",
   "form.message": "Message",
@@ -68,23 +71,22 @@
 
   "about.title": "Transformer les moments en souvenirs, beau temps, mauvais temps",
   "about.section1.title": "Plus de 30 ans d'expérience en location",
-  "about.section1.description": "Locaplus apporte des décennies d'expertise pour garantir la réussite de votre événement, des rassemblements intimes aux grands festivals à travers le Québec.",
+  "about.section1.description": "Locaplus apporte des décennies d'expertise pour garantir la réussite de votre évènement, des rassemblements intimes aux grands festivals à travers le Québec.",
   "about.section2.title": "Chapiteaux et équipements de qualité supérieure",
-  "about.section2.description": "Nos chapiteaux, tables, chaises et planchers de haute qualité sont conçus pour sublimer chaque événement, beau temps, mauvais temps.",
-  "about.section3.title": "Solutions personnalisées pour vos événements",
-  "about.section3.description": "Nous proposons des locations adaptées aux besoins uniques de votre événement, créant des souvenirs inoubliables à chaque occasion.",
+  "about.section2.description": "Nos chapiteaux, tables, chaises et planchers de haute qualité sont conçus pour sublimer chaque évènement, beau temps, mauvais temps.",
+  "about.section3.title": "Solutions personnalisées pour vos évènements",
+  "about.section3.description": "Nous proposons des locations adaptées aux besoins uniques de votre évènement, créant des souvenirs inoubliables à chaque occasion.",
   "about.section4.title": "Distributeur et installateur officiel d'Abris Tempo en Estrie",
   "about.section4.description": "Locaplus est le concessionnaire officiel de Tempo en Estrie, offrant la vente, la distribution et une installation experte.",
 
   "products.title": "Nous avons tout ce qu'il vous faut",
-  "products.description": "Des chapiteaux premium, du mobilier élégant et tout le nécessaire pour rendre votre événement inoubliable.",
+  "products.description": "Des chapiteaux premium, du mobilier élégant et tout le nécessaire pour rendre votre évènement inoubliable.",
   "products.tents": "Chapiteaux",
   "products.equipment": "Équipement",
   "products.flooringChairsAndTables": "Planchers, chaises et tables",
 
   "contact.title": "Des questions ? Contactez-nous !",
-
-  "contact.description": "Besoin de locations fiables pour vos événements ? Locaplus propose des chapiteaux et équipements de qualité supérieure à Bromont, Granby, Rive-Sud, Sherbrooke et Magog. Contactez-nous ou demandez un devis ci-dessous !",
+  "contact.description": "Besoin de locations fiables pour vos évènements ? Locaplus propose des chapiteaux et équipements de qualité supérieure à Bromont, Granby, Rive-Sud, Sherbrooke et Magog. Contactez-nous ou demandez un devis ci-dessous !",
 
   "contactInfo.address": "203 Rue des Alouettes, Saint-Alphonse-de-Granby",
   "contactInfo.phone": "Téléphone",
@@ -101,10 +103,13 @@
 
   "error.firstName.required": "Un prénom est requis",
   "error.lastName.required": "Un nom de famille est requis",
-  "error.eventType.required": "Un type d'événément est requis",
+  "error.eventType.required": "Un type d'évènement est requis",
+  "error.eventDate.required": "Une date d'évènement est requise",
+  "error.location.required": "Un emplacement est requis",
   "error.email.required": "Une adresse courriel est requise",
   "error.email.invalid": "L'adresse courriel n'est pas valide",
   "error.phoneNumber.required": "Un numéro de téléphone est requis",
+  "error.consentCheckbox.isChecked": "Votre consentement à la politique de confidentialité est requis",
   "error.sendEmail.generic": "Une erreur est survenue lors de l'envoi du courriel",
   "form.sending": "Envoi en cours...",
 
@@ -115,7 +120,7 @@
   "privacyPolicy.intro": "À Locaplus, nous respectons votre vie privée et nous engageons à protéger vos informations personnelles.",
 
   "privacyPolicy.infoCollection.title": "Informations que nous collectons",
-  "privacyPolicy.infoCollection.description": "Lorsque vous remplissez le formulaire de demande de devis sur notre site web, nous collectons les informations que vous fournissez, telles que votre nom, votre adresse e-mail, votre numéro de téléphone et les détails de votre événement.",
+  "privacyPolicy.infoCollection.description": "Lorsque vous remplissez le formulaire de demande de devis sur notre site web, nous collectons les informations que vous fournissez, telles que votre nom, votre adresse e-mail, votre numéro de téléphone et les détails de votre évènement.",
 
   "privacyPolicy.howWeUse.title": "Comment nous utilisons vos informations",
   "privacyPolicy.howWeUse.description": "Les informations que vous fournissez sont utilisées uniquement pour répondre à votre demande et fournir un devis. Nous ne stockons pas vos informations personnelles au-delà de ce qui est nécessaire pour répondre à votre demande.",
