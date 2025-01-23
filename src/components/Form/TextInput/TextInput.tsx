@@ -43,7 +43,7 @@ export const TextInput = ({
           ref={ref}
           id={name}
           className={clsx(
-            'block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm placeholder:text-gray-900 focus:outline-none sm:text-sm/6',
+            'block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-xs placeholder:text-gray-900 focus:outline-hidden sm:text-sm/6',
             {
               'border-2 border-b-red-500': hasError,
               'shadow-none border-gray-300': !hasError,

@@ -111,7 +111,7 @@ export const ControlledDateInput = <T extends FieldValues>({
                 slotProps={{
                   textField: {
                     className: clsx(
-                      'h-[42px] block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm placeholder:text-gray-900 focus:outline-none sm:text-sm/6 bg-white',
+                      'h-[42px] block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-xs placeholder:text-gray-900 focus:outline-hidden sm:text-sm/6 bg-white',
                       {
                         'border-2 border-red-500': hasError,
                         'border-gray-300': !hasError,

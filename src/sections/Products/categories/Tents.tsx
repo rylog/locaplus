@@ -30,7 +30,7 @@ export const Tents = () => {
             src={item.img}
           />
 
-          <div className="flex flex-col flex-grow self-center">
+          <div className="flex flex-col grow self-center">
             <p className="font-medium text-slate-900">{item.title}</p>
             <p className="text-gray-500">{item.description}</p>
           </div>
