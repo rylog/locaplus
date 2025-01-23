@@ -219,7 +219,7 @@ const QuoteForm = () => {
             type="submit"
             disabled={!reCaptchaToken}
             className={clsx(
-              'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm',
+              'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs',
               {
                 'bg-gray-500': isSubmitting,
                 'bg-primary': !isSubmitting,

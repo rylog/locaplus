@@ -41,22 +41,22 @@ export const Products = () => {
             <FormattedMessage id="products.description" />
           </p>
         </header>
-        <TabGroup className="flex flex-grow flex-col overflow-hidden">
+        <TabGroup className="flex grow flex-col overflow-hidden">
           <TabList className="flex gap-2">
             {categories.map(({ name }) => (
               <Tab
                 key={name}
                 className={clsx(
-                  'rounded-md py-1 px-3 text-sm/6  font-semibold text-slate-900 focus:outline-none',
-                  'data-[selected]:bg-primary data-[selected]:text-white',
-                  'data-[hover]:bg-slate-100 data-[selected]:data-[hover]:bg-primary',
+                  'rounded-md py-1 px-3 text-sm/6  font-semibold text-slate-900 focus:outline-hidden',
+                  'data-selected:bg-primary data-selected:text-white',
+                  'data-hover:bg-slate-100 data-selected:data-hover:bg-primary',
                 )}
               >
                 {name}
               </Tab>
             ))}
           </TabList>
-          <TabPanels className="flex-grow mt-3 overflow-auto">
+          <TabPanels className="grow mt-3 overflow-auto">
             {categories.map(({ name, component: Component }) => {
               return (
                 <TabPanel key={name} className="flex p-1">
