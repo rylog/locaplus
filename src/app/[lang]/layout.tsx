@@ -14,12 +14,11 @@ export async function generateStaticParams() {
 
 export const dynamicParams = true;
 
-type Props = {
+export async function generateMetadata({
+  params,
+}: {
   params: Promise<{ lang: Locale }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+}): Promise<Metadata> {
   const lang = (await params).lang;
   const titles = {
     en: 'Locaplus - Tent Rentals for Events',
