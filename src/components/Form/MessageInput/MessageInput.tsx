@@ -1,6 +1,6 @@
 import { ErrorMessage } from '@hookform/error-message';
 import clsx from 'clsx';
-import { Ref } from 'react';
+import { ChangeEvent, FocusEvent, Ref } from 'react';
 import { FieldErrors } from 'react-hook-form';
 
 interface MessageInputProps {
@@ -9,8 +9,8 @@ interface MessageInputProps {
   name: string;
   label: string;
   labelColor: string;
-  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void;
   errors: FieldErrors;
 }
 

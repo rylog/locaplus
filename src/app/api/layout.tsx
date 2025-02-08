@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export const metadata = {
   title: 'Locaplus - Tent Rentals for Events',
   description: 'Rent tents, and equipment for your event in Quebec.',
@@ -32,11 +34,7 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>{children}</body>

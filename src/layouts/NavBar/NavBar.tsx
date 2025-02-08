@@ -1,13 +1,12 @@
-"use client"
+'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 import Logo from '../../../public/Logo_locaplus.png';
-
 import { NavItem } from '../../types/NavItem';
 import { LanguageSelector } from './LanguageSelector';
 import { MobileNav } from './MobileNav';
-import Image from 'next/image';
 
 interface NavBarProps {
   navItems: NavItem[];
@@ -24,7 +23,13 @@ export const NavBar = ({ navItems }: NavBarProps) => {
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5" aria-label="Go to the home page">
-            <Image width={191} height={100} alt="Locaplus Logo" src={Logo.src} className="h-14 w-auto" />
+            <Image
+              width={191}
+              height={100}
+              alt="Locaplus Logo"
+              src={Logo.src}
+              className="h-14 w-auto"
+            />
           </a>
         </div>
         <div className="flex lg:hidden"></div>

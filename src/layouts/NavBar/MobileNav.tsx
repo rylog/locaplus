@@ -2,12 +2,11 @@ import { Dialog } from '@headlessui/react';
 import { DialogPanel } from '@headlessui/react';
 import Bars3Icon from '@heroicons/react/16/solid/Bars3Icon';
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
+import Image from 'next/image';
 
 import Logo from '../../../public/Logo_locaplus.png';
-
 import { NavItem } from '../../types/NavItem';
 import { LanguageSelector } from './LanguageSelector';
-import Image from 'next/image';
 
 interface MobileNavProps {
   mobileNavOpen: boolean;

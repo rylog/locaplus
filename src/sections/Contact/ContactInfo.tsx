@@ -3,7 +3,9 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 import { FormattedMessage } from 'react-intl';
+
 import facebookIcon from '../../../public/images/socials/facebook.svg';
 import instagramIcon from '../../../public/images/socials/instagram.svg';
 import linkedInIcon from '../../../public/images/socials/linkedIn.svg';
@@ -77,21 +79,27 @@ const ContactInfo = () => {
           </p>
           <div className="flex py-4 items-center gap-6">
             <a href="https://www.facebook.com/Locaplus.net/">
-              <img
+              <Image
+                width={48}
+                height={48}
                 src={facebookIcon.src}
                 alt="Follow us on Facebook"
                 className="w-8 h-8"
               />
             </a>
             <a href="https://www.instagram.com/chapiteaulocaplus/">
-              <img
+              <Image
+                width={48}
+                height={48}
                 src={instagramIcon.src}
                 alt="Follow us on Instagram"
                 className="w-8 h-8"
               />
             </a>
             <a href="https://www.linkedin.com/company/chapiteau-locaplus/">
-              <img
+              <Image
+                width={48}
+                height={48}
                 src={linkedInIcon.src}
                 alt="Follow us on Linkedin"
                 className="w-8 h-8"

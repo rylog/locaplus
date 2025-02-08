@@ -1,8 +1,9 @@
-import { sendEmail } from '../services/emailService';
+import { NextRequest, NextResponse } from 'next/server';
+
 import { getAccessToken, verifyReCaptchaToken } from '../services/authService';
+import { sendEmail } from '../services/emailService';
 import { isValidEmail } from '../utils/emailValidator';
 import { generateMessageContent } from '../utils/generateMessageContent';
-import { NextRequest, NextResponse } from 'next/server';
 
 export const POST = async (req: NextRequest) => {
   if (req.method !== 'POST') {
@@ -51,7 +52,7 @@ export const POST = async (req: NextRequest) => {
       );
     }
 
-    let messageContent = generateMessageContent({
+    const messageContent = generateMessageContent({
       language,
       firstName,
       lastName,

@@ -1,7 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 
 import HomeBackgroundJpg from '../../../public/images/home/HomePage.jpg';
-
 import { SECTIONS } from '../../constants/sections';
 
 export const Home = () => {
@@ -22,7 +21,7 @@ export const Home = () => {
           </div>
           <a
             href={`#${SECTIONS.QUOTE}`}
-            className="self-center transform transition duration-200 w-fit rounded-md bg-primary px-3.5 py-2.5 text-sm text-slate-100 shadow-xs hover:scale-105 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:shadow-inner"
+            className="self-center transform transition duration-200 w-fit rounded-md bg-primary px-3.5 py-2.5 text-sm text-slate-100 shadow-xs hover:scale-105 hover:shadow-lg active:shadow-inner"
           >
             <FormattedMessage id="home.requestQuote" />
           </a>

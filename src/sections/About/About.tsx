@@ -1,11 +1,10 @@
+import Image from 'next/image';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 import AboutLeftSectionPhoto from '../../../public/images/about/leftSection.jpg';
 import AboutMiddleSectionPhoto from '../../../public/images/about/middleSection.jpg';
 import AboutRightSectionPhoto from '../../../public/images/about/rightSection.jpg';
-
 import { SECTIONS } from '../../constants/sections';
-import Image from 'next/image';
 
 export const About = () => {
   const intl = useIntl();
@@ -87,7 +86,9 @@ export const About = () => {
             <p className="mt-2 text-sm/6 text-gray-600 max-lg:text-center">
               <FormattedMessage id="about.section4.description" />
             </p>
-            <img
+            <Image
+              width={257}
+              height={147}
               src="/images/about/tempo.png"
               alt="Tempo Logo"
               className="h-12 mt-8"

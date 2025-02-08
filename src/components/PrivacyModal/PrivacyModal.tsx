@@ -1,5 +1,6 @@
 // src/components/PrivacyPolicyModal.tsx
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
+import { FC } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 interface PrivacyPolicyModalProps {
@@ -7,7 +8,7 @@ interface PrivacyPolicyModalProps {
   onClose: () => void;
 }
 
-const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({
+const PrivacyPolicyModal: FC<PrivacyPolicyModalProps> = ({
   open,
   onClose,
 }: PrivacyPolicyModalProps) => {

@@ -1,10 +1,12 @@
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { ErrorMessage } from '@hookform/error-message';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
-import { fr } from 'date-fns/locale/fr';
-import { frFR } from '@mui/x-date-pickers/locales/frFR';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { enUS } from '@mui/x-date-pickers/locales/enUS';
+import { frFR } from '@mui/x-date-pickers/locales/frFR';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import clsx from 'clsx';
+import { isValid } from 'date-fns';
+import { fr } from 'date-fns/locale/fr';
 import {
   Control,
   Controller,
@@ -13,9 +15,8 @@ import {
   FieldValues,
   Path,
 } from 'react-hook-form';
-import { ErrorMessage } from '@hookform/error-message';
 import { useIntl } from 'react-intl';
-import { isValid } from 'date-fns';
+
 import { useLocale } from '@/context/LocaleContext';
 
 interface DateInputProps<T extends FieldValues> {

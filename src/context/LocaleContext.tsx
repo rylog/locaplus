@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { createContext, ReactNode, useContext } from 'react';
 import { IntlProvider } from 'react-intl';
@@ -13,19 +13,24 @@ interface LocaleContextType {
 }
 
 const messages: Record<string, Record<string, string>> = {
-    en: enMessages,
-    fr: frMessages,
-  };
-  
+  en: enMessages,
+  fr: frMessages,
+};
 
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
-export const LocaleContextProvider = ({locale, children }: { locale: Locale, children: ReactNode }) => {
+export const LocaleContextProvider = ({
+  locale,
+  children,
+}: {
+  locale: Locale;
+  children: ReactNode;
+}) => {
   return (
-    <LocaleContext value={{locale}}>
-        <IntlProvider locale={locale} messages={messages[locale]}>
-            {children}
-        </IntlProvider>
+    <LocaleContext value={{ locale }}>
+      <IntlProvider locale={locale} messages={messages[locale]}>
+        {children}
+      </IntlProvider>
     </LocaleContext>
   );
 };

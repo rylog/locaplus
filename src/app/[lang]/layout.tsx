@@ -1,4 +1,7 @@
 import '@/styles/globals.css';
+
+import { ReactNode } from 'react';
+
 import { LocaleContextProvider } from '../../context/LocaleContext';
 import QueryClientContextProvider from '../../context/QueryClientContext';
 
@@ -12,7 +15,7 @@ export default async function RootLayout({
   children,
   params,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
   params: Promise<{ lang: 'en' | 'fr' }>;
 }>) {
   const lang = (await params).lang;
