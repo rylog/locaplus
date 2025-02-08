@@ -1,3 +1,5 @@
+"use client"
+
 import { ErrorMessage } from '@hookform/error-message';
 import { FieldErrors } from 'react-hook-form';
 import { FormattedMessage } from 'react-intl';

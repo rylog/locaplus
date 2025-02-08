@@ -1,6 +1,6 @@
 import { useIntl } from 'react-intl';
 
-import chairsAndTablesData from '../../../data/chairsAndTables.json';
+import chairsAndTablesData from '@/data/chairsAndTables.json';
 
 export const FlooringChairsAndTables = () => {
   const intl = useIntl();

@@ -5,7 +5,6 @@ import { fr } from 'date-fns/locale/fr';
 import { frFR } from '@mui/x-date-pickers/locales/frFR';
 import { enUS } from '@mui/x-date-pickers/locales/enUS';
 import clsx from 'clsx';
-import { useLocale } from '../../../context/LocaleContext';
 import {
   Control,
   Controller,
@@ -17,6 +16,7 @@ import {
 import { ErrorMessage } from '@hookform/error-message';
 import { useIntl } from 'react-intl';
 import { isValid } from 'date-fns';
+import { useLocale } from '@/context/LocaleContext';
 
 interface DateInputProps<T extends FieldValues> {
   control: Control<T>;

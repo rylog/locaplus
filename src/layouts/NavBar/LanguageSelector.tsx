@@ -1,3 +1,4 @@
+import { useLocale } from '@/context/LocaleContext';
 import {
   Listbox,
   ListboxButton,
@@ -6,13 +7,9 @@ import {
 } from '@headlessui/react';
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDoubleDownIcon';
 import { clsx } from 'clsx';
-import { useNavigate, useParams } from 'react-router';
-
-import { Locale } from '../../context/LocaleContext';
 
 export const LanguageSelector = () => {
-  const { locale } = useParams<{ locale: Locale }>();
-  const navigate = useNavigate();
+  const { locale } = useLocale()
 
   const languages = [
     { name: 'English', code: 'en' },
@@ -20,7 +17,7 @@ export const LanguageSelector = () => {
   ];
 
   const handleLanguageChange = (value: string) => {
-    navigate(`/${value}`, { replace: true });
+    // navigate(`/${value}`, { replace: true });
   };
 
   return (

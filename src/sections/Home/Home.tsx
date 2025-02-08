@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 
-import HomeBackgroundJpg from '/assets/home/HomePage.jpg';
+import HomeBackgroundJpg from '../../../public/images/home/HomePage.jpg';
 
 import { SECTIONS } from '../../constants/sections';
 
@@ -30,7 +30,7 @@ export const Home = () => {
       </div>
       <picture>
         <img
-          src={HomeBackgroundJpg}
+          src={HomeBackgroundJpg.src}
           alt="Locaplus home page background"
           className="object-cover w-full h-full absolute top-0 left-0 z-[-1] brightness-75"
         />

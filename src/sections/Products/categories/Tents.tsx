@@ -1,6 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import tentsData from '../../../data/tents.json';
+import tentsData from '@/data/tents.json';
+import Image from 'next/image';
 
 export const Tents = () => {
   const intl = useIntl();
