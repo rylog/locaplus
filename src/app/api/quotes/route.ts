@@ -1,16 +1,17 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { sendEmail } from './services/emailService';
-import { getAccessToken, verifyReCaptchaToken } from './services/authService';
-import { isValidEmail } from './utils/emailValidator';
-import { generateMessageContent } from './utils/generateMessageContent';
+import { NextRequest, NextResponse } from 'next/server';
 
-export default async (req: VercelRequest, res: VercelResponse) => {
+import { getAccessToken, verifyReCaptchaToken } from '../services/authService';
+import { sendEmail } from '../services/emailService';
+import { isValidEmail } from '../utils/emailValidator';
+import { generateMessageContent } from '../utils/generateMessageContent';
+
+export const POST = async (req: NextRequest) => {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method Not Allowed' });
+    return NextResponse.json({ error: 'Method Not Allowed' }, { status: 405 });
   }
 
   try {
-    const quoteRequest = req.body;
+    const quoteRequest = await req.json();
     const locaplusEmail = process.env.LOCAPLUS_EMAIL;
 
     const {
@@ -29,24 +30,29 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     const isValidReCaptchaToken = await verifyReCaptchaToken(reCaptchaToken);
 
     if (!isValidReCaptchaToken) {
-      return res
-        .status(400)
-        .json({ error: 'Invalid or expired reCAPTCHA token' });
+      return NextResponse.json(
+        { error: 'Invalid or expired reCAPTCHA token' },
+        { status: 400 },
+      );
     }
 
-    // Validate the recipient email
+    // // Validate the recipient email
     if (!recipient || !isValidEmail(recipient)) {
-      return res.status(400).json({ error: 'Invalid recipient email address' });
+      return NextResponse.json(
+        { error: 'Invalid recipient email address' },
+        { status: 400 },
+      );
     }
 
     // Validate the sales rep email
     if (!locaplusEmail || !isValidEmail(locaplusEmail)) {
-      return res
-        .status(400)
-        .json({ error: 'Invalid sales representative email address' });
+      return NextResponse.json(
+        { error: 'Invalid sales representative email address' },
+        { status: 400 },
+      );
     }
 
-    let messageContent = generateMessageContent({
+    const messageContent = generateMessageContent({
       language,
       firstName,
       lastName,
@@ -85,10 +91,17 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     };
 
     const accessToken = await getAccessToken();
+
     await sendEmail(emailData, accessToken);
-    return res.status(200).json({ message: 'Email sent successfully!' });
+    return NextResponse.json(
+      { message: 'Email sent successfully!' },
+      { status: 200 },
+    );
   } catch (error) {
     console.error('Error in API route:', error);
-    return res.status(500).json({ error: error.message });
+    return NextResponse.json(
+      { message: (error as Error).message },
+      { status: 500 },
+    );
   }
 };

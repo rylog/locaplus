@@ -2,9 +2,9 @@ import { Dialog } from '@headlessui/react';
 import { DialogPanel } from '@headlessui/react';
 import Bars3Icon from '@heroicons/react/16/solid/Bars3Icon';
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
+import Image from 'next/image';
 
-import Logo from '/Logo_locaplus.png';
-
+import Logo from '../../../public/Logo_locaplus.png';
 import { NavItem } from '../../types/NavItem';
 import { LanguageSelector } from './LanguageSelector';
 
@@ -43,7 +43,13 @@ export const MobileNav = ({
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <img alt="Locaplus Logo" src={Logo} className="h-8 w-auto" />
+              <Image
+                width={191}
+                height={100}
+                alt="Locaplus Logo"
+                src={Logo.src}
+                className="h-8 w-full"
+              />
             </a>
             <button
               type="button"

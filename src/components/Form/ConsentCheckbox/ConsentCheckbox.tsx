@@ -1,16 +1,19 @@
+'use client';
+
 import { ErrorMessage } from '@hookform/error-message';
+import { ChangeEvent, FocusEvent, Ref, useState } from 'react';
 import { FieldErrors } from 'react-hook-form';
 import { FormattedMessage } from 'react-intl';
+
 import PrivacyPolicyModal from '../../PrivacyModal/PrivacyModal';
-import { Ref, useState } from 'react';
 
 interface ConsentCheckboxProps {
   ref?: Ref<HTMLInputElement>;
   className?: string;
   name: string;
   autoComplete?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
   errors?: FieldErrors;
   required?: boolean;
 }

@@ -1,7 +1,7 @@
 import { ErrorMessage } from '@hookform/error-message';
-import { FieldErrors } from 'react-hook-form';
 import clsx from 'clsx';
-import { Ref } from 'react';
+import { ChangeEvent, FocusEvent, Ref } from 'react';
+import { FieldErrors } from 'react-hook-form';
 
 interface TextInputProps {
   ref?: Ref<HTMLInputElement>;
@@ -10,8 +10,8 @@ interface TextInputProps {
   autoComplete?: string;
   label: string;
   labelColor: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
   errors?: FieldErrors;
   required?: boolean;
 }

@@ -1,20 +1,23 @@
+'use client';
+
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
+import { format } from 'date-fns';
 import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import { FormattedMessage, useIntl } from 'react-intl';
 
+import { useLocale } from '@/context/LocaleContext';
+import { LABEL_COLORS } from '@/styles/colors';
+
 import { useSendQuoteRequest } from '../../api/useSendQuoteRequest';
-import { MessageInput } from '../../components/Form/MessageInput/MessageInput';
-import PrivacyPolicyModal from '../../components/PrivacyModal/PrivacyModal';
-import { TextInput } from '../../components/Form/TextInput/TextInput';
-import { SECTIONS } from '../../constants/sections';
-import { useLocale } from '../../context/LocaleContext';
-import { LABEL_COLORS } from '../../styles/colors';
-import { ControlledDateInput } from '../../components/Form/ControlledDateInput/ControlledDateInput';
-import { format } from 'date-fns';
 import { ConsentCheckbox } from '../../components/Form/ConsentCheckbox/ConsentCheckbox';
+import { ControlledDateInput } from '../../components/Form/ControlledDateInput/ControlledDateInput';
+import { MessageInput } from '../../components/Form/MessageInput/MessageInput';
+import { TextInput } from '../../components/Form/TextInput/TextInput';
+import PrivacyPolicyModal from '../../components/PrivacyModal/PrivacyModal';
+import { SECTIONS } from '../../constants/sections';
 
 export interface QuoteFormInputs {
   firstName: string;
@@ -210,7 +213,7 @@ const QuoteForm = () => {
           <ReCAPTCHA
             key={locale}
             hl={locale}
-            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY!}
+            sitekey={'6LfHlqYqAAAAADot6hAgFU__aVE81y3ArPycGnoA'}
             onChange={(val) => setRecaptchaToken(val)}
           />
         </div>

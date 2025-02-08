@@ -1,6 +1,6 @@
 import { useIntl } from 'react-intl';
 
-import tentsData from '../../../data/tents.json';
+import tentsData from '@/data/tents.json';
 
 export const Tents = () => {
   const intl = useIntl();
@@ -24,11 +24,13 @@ export const Tents = () => {
           key={index}
           className="flex flex-row rounded-md p-4 bg-white shadow-md text-sm sm:text-base transition hover:bg-slate-100  gap-4"
         >
-          <img
-            alt={item.img}
-            className="w-20 h-20 object-cover rounded-md"
-            src={item.img}
-          />
+          <picture>
+            <img
+              alt={item.img}
+              className="w-20 h-20 object-cover rounded-md"
+              src={item.img}
+            />
+          </picture>
 
           <div className="flex flex-col grow self-center">
             <p className="font-medium text-slate-900">{item.title}</p>

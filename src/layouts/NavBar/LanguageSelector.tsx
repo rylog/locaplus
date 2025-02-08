@@ -6,21 +6,31 @@ import {
 } from '@headlessui/react';
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDoubleDownIcon';
 import { clsx } from 'clsx';
-import { useNavigate, useParams } from 'react-router';
+import { usePathname, useRouter } from 'next/navigation';
 
-import { Locale } from '../../context/LocaleContext';
+import { useLocale } from '@/context/LocaleContext';
 
 export const LanguageSelector = () => {
-  const { locale } = useParams<{ locale: Locale }>();
-  const navigate = useNavigate();
+  const { locale } = useLocale();
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   const languages = [
     { name: 'English', code: 'en' },
     { name: 'Français', code: 'fr' },
   ];
 
-  const handleLanguageChange = (value: string) => {
-    navigate(`/${value}`, { replace: true });
+  const handleLanguageChange = (locale: string) => {
+    const segments = pathname.split('/').filter(Boolean);
+
+    if (languages.some((language) => language.code === segments[0])) {
+      segments[0] = locale;
+    } else {
+      segments.unshift(locale);
+    }
+
+    router.push(`/${segments.join('/')}`);
   };
 
   return (
