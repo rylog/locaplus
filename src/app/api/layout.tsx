@@ -1,17 +1,24 @@
 import { Analytics } from '@vercel/analytics/next';
+import { Metadata } from 'next';
 import { ReactNode } from 'react';
 
-export const metadata = {
-  title: 'Locaplus - Tent Rentals for Events',
-  description: 'Rent tents, and equipment for your event in Quebec.',
+export const metadata: Metadata = {
+  title: 'Locaplus - Tent and Equipment Rentals for Events',
+  description:
+    'Premium tent and equipment rentals for festivals and events in Quebec.',
   keywords: 'tent rentals, event rentals, marquees, Quebec events',
-  robots: 'index, follow', // Allows Google to index the site
+  robots: 'index, follow',
   alternates: {
     canonical: 'https://www.locaplus.net/',
+    languages: {
+      en: 'https://www.locaplus.net/en',
+      fr: 'https://www.locaplus.net/fr',
+    },
   },
   openGraph: {
-    title: 'Locaplus - Tent Rentals for Events',
-    description: 'Premium tent rentals for festivals and events in Quebec.',
+    title: 'Locaplus - Tent and Equipment Rentals for Events',
+    description:
+      'Premium tent and equipment rentals for festivals and events in Quebec.',
     url: 'https://www.locaplus.net',
     siteName: 'Locaplus',
     images: [
@@ -26,8 +33,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Locaplus - Tent Rentals',
-    description: 'Tent and equipment rentals for events in Quebec.',
+    title: 'Locaplus - Tent and Equipment Rentals for Events',
+    description:
+      'Premium tent and equipment rentals for festivals and events in Quebec.',
     images: ['https://www.locaplus.net/event-tents-locaplus.jpg'],
   },
   icons: {
@@ -38,7 +46,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <title>Locaplus - Tent and Equipment Rentals for Events</title>
+      <body suppressHydrationWarning>
         {children}
         <Analytics />
       </body>
