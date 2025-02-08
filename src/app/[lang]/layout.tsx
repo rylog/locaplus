@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
@@ -101,6 +102,7 @@ export default async function RootLayout({
             {children}
           </LocaleContextProvider>
         </QueryClientContextProvider>
+        <Analytics />
       </body>
     </html>
   );
