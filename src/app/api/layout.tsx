@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/next';
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
 
@@ -47,10 +46,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <title>Locaplus - Tent and Equipment Rentals for Events</title>
-      <body suppressHydrationWarning>
-        {children}
-        <Analytics />
-      </body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
