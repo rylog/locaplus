@@ -7,6 +7,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import clsx from 'clsx';
 import { isValid } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
+import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import {
   Control,
   Controller,
@@ -15,9 +17,6 @@ import {
   FieldValues,
   Path,
 } from 'react-hook-form';
-import { useIntl } from 'react-intl';
-
-import { useLocale } from '@/context/LocaleContext';
 
 interface DateInputProps<T extends FieldValues> {
   control: Control<T>;
@@ -40,8 +39,8 @@ export const ControlledDateInput = <T extends FieldValues>({
   required = false,
   className,
 }: DateInputProps<T>) => {
-  const { locale } = useLocale();
-  const intl = useIntl();
+  const locale = useLocale();
+  const t = useTranslations('HomePage');
   const hasError = !!errors?.[name];
 
   return (
@@ -67,15 +66,10 @@ export const ControlledDateInput = <T extends FieldValues>({
             control={control}
             defaultValue={defaultValue}
             rules={{
-              required: required
-                ? intl.formatMessage({ id: 'error.eventDate.required' })
-                : false,
+              required: required ? t('error.eventDate.required') : false,
               validate: {
                 isValid: (value: string) =>
-                  isValid(value) ||
-                  intl.formatMessage({
-                    id: 'error.dateInput.isValid',
-                  }),
+                  isValid(value) || t('error.dateInput.isValid'),
               },
             }}
             render={({ field }) => (

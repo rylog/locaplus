@@ -1,9 +1,9 @@
 'use client';
 
 import { ErrorMessage } from '@hookform/error-message';
+import { useTranslations } from 'next-intl';
 import { ChangeEvent, FocusEvent, Ref, useState } from 'react';
 import { FieldErrors } from 'react-hook-form';
-import { FormattedMessage } from 'react-intl';
 
 import PrivacyPolicyModal from '../../PrivacyModal/PrivacyModal';
 
@@ -29,7 +29,7 @@ export const ConsentCheckbox = ({
   required = false,
 }: ConsentCheckboxProps) => {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
-
+  const t = useTranslations('HomePage');
   return (
     <>
       <label className={className}>
@@ -46,13 +46,13 @@ export const ConsentCheckbox = ({
             onBlur={onBlur}
           />
           <span>
-            <FormattedMessage id={'privacyPolicy.checkbox.text'} />{' '}
+            {t('privacyPolicy.checkbox.text')}{' '}
             <button
               type="button"
               className="text-white underline"
               onClick={() => setShowPrivacyModal(true)}
             >
-              <FormattedMessage id={'privacyPolicy.checkbox.link'} />
+              {t('privacyPolicy.checkbox.link')}
             </button>
             <span className="text-red-500"> *</span>
           </span>

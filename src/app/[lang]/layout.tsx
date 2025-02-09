@@ -2,15 +2,19 @@ import '@/styles/globals.css';
 
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { ReactNode } from 'react';
 
-import { LocaleContextProvider } from '../../context/LocaleContext';
+import { routing } from '@/i18n/routing';
+
 import QueryClientContextProvider from '../../context/QueryClientContext';
 
 export type Locale = 'en' | 'fr';
 
-export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'fr' }];
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export const dynamicParams = true;
@@ -94,13 +98,21 @@ export default async function RootLayout({
 }>) {
   const lang = (await params).lang;
 
+  if (!routing.locales.includes(lang)) {
+    redirect('/fr');
+  }
+
+  setRequestLocale(lang);
+
+  const messages = await getMessages();
+
   return (
     <html lang={lang} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <QueryClientContextProvider>
-          <LocaleContextProvider locale={lang}>
+          <NextIntlClientProvider messages={messages}>
             {children}
-          </LocaleContextProvider>
+          </NextIntlClientProvider>
         </QueryClientContextProvider>
         <Analytics />
       </body>

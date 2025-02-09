@@ -1,7 +1,7 @@
 // src/components/PrivacyPolicyModal.tsx
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
+import { useTranslations } from 'next-intl';
 import { FC } from 'react';
-import { FormattedMessage } from 'react-intl';
 
 interface PrivacyPolicyModalProps {
   open: boolean;
@@ -12,6 +12,7 @@ const PrivacyPolicyModal: FC<PrivacyPolicyModalProps> = ({
   open,
   onClose,
 }: PrivacyPolicyModalProps) => {
+  const t = useTranslations('HomePage');
   return (
     <Dialog open={open} onClose={onClose} className="relative z-50">
       <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
@@ -25,53 +26,51 @@ const PrivacyPolicyModal: FC<PrivacyPolicyModalProps> = ({
             </button>
 
             <DialogTitle className="font-bold text-lg">
-              <FormattedMessage id={'privacyPolicy.title'} />
+              {t('privacyPolicy.title')}
             </DialogTitle>
             <div className="flex flex-col gap-4">
-              <p className="text-sm mt-2">
-                <FormattedMessage id="privacyPolicy.intro" />
-              </p>
+              <p className="text-sm mt-2">{t('privacyPolicy.intro')}</p>
               <div>
                 <h2 className="font-bold">
-                  <FormattedMessage id="privacyPolicy.infoCollection.title" />
+                  {t('privacyPolicy.infoCollection.title')}
                 </h2>
                 <p className="text-sm mt-1">
-                  <FormattedMessage id="privacyPolicy.infoCollection.description" />
+                  {t('privacyPolicy.infoCollection.description')}
                 </p>
               </div>
               <div>
                 <h2 className="font-bold">
-                  <FormattedMessage id="privacyPolicy.howWeUse.title" />
+                  {t('privacyPolicy.howWeUse.title')}
                 </h2>
                 <p className="text-sm mt-1">
-                  <FormattedMessage id="privacyPolicy.howWeUse.description" />
+                  {t('privacyPolicy.howWeUse.description')}
                 </p>
               </div>
               <div>
                 <h2 className="font-bold">
-                  <FormattedMessage id="privacyPolicy.protection.title" />
+                  {t('privacyPolicy.protection.title')}
                 </h2>
                 <p className="text-sm mt-1">
-                  <FormattedMessage id="privacyPolicy.protection.description" />
-                </p>
-              </div>
-
-              <div>
-                <h2 className="font-bold">
-                  <FormattedMessage id="privacyPolicy.retention.title" />
-                </h2>
-                <p className="text-sm mt-1">
-                  <FormattedMessage id="privacyPolicy.retention.description" />
+                  {t('privacyPolicy.protection.description')}
                 </p>
               </div>
 
               <div>
                 <h2 className="font-bold">
-                  <FormattedMessage id="privacyPolicy.contact.title" />
+                  {t('privacyPolicy.retention.title')}
                 </h2>
                 <p className="text-sm mt-1">
-                  <FormattedMessage id="privacyPolicy.contactInfo" />{' '}
-                  <FormattedMessage id="privacyPolicy.contactEmail" />
+                  {t('privacyPolicy.retention.description')}
+                </p>
+              </div>
+
+              <div>
+                <h2 className="font-bold">
+                  {t('privacyPolicy.contact.title')}
+                </h2>
+                <p className="text-sm mt-1">
+                  {t('privacyPolicy.contactInfo')}{' '}
+                  {t('privacyPolicy.contactEmail')}
                 </p>
               </div>
             </div>

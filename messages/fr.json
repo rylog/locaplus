@@ -1,0 +1,198 @@
+{
+  "HomePage": {
+    "main": {
+      "metadata": {
+        "description": "Locaplus se spécialise dans la location de tentes et de chapiteaux pour évènements dans les Cantons-de-l'Est, offrant des tentes de haute qualité, des chaises, des tables et de l'équipement pour des festivals, mariages et évènements spéciaux. Servant Bromont, Granby, la Rive-Sud, Sherbrooke et Magog depuis 1991."
+      }
+    },
+    "nav": {
+      "aboutUs": "À propos de nous",
+      "products": "Produits",
+      "projects": "Projets",
+      "contactUs": "Contactez-nous"
+    },
+    "home": {
+      "title": "Location de chapiteaux pour toutes occasions",
+      "subtitle": "Avec plus de 30 ans d'expérience, Locaplus offre des locations fiables et de qualité pour assurer le succès de votre évènement.",
+      "requestQuote": "Demander une soumission"
+    },
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom de famille",
+      "typeOfEvent": "Type d'évènement",
+      "eventDate": "Date d'évènement",
+      "location": "Emplacement",
+      "email": "Courriel",
+      "phoneNumber": "Numéro de téléphone",
+      "message": "Message",
+      "submitButton": "Demander une soumission",
+      "sending": "Envoi en cours..."
+    },
+    "tent": {
+      "name": {
+        "10x10": "Chapiteau 10' x 10'",
+        "10x20": "Chapiteau 10' x 20'",
+        "20x20": "Chapiteau 20' x 20'",
+        "20x30": "Chapiteau 20' x 30'",
+        "20x40": "Chapiteau 20' x 40'",
+        "40x40": "Chapiteau 40' x 40'",
+        "hexagonal": "Chapiteau hexagonale",
+        "40x60": "Chapiteau 40' x 60'",
+        "40x80": "Chapiteau 40' x 80'",
+        "40x100": "Chapiteau 40' x 100'",
+        "40x200": "Chapiteau 40' jusqu'à 200'",
+        "60x80": "Chapiteau 60' x 80'",
+        "60x100": "Chapiteau 60' x 100'",
+        "60x200": "Chapiteau 60' jusqu'à 200'"
+      }
+    },
+    "tents": {
+      "capacity": {
+        "range": "Capacité : {min} - {max} personnes",
+        "maxOnly": "Capacité jusqu'à {max} personnes"
+      }
+    },
+    "equipment": {
+      "chairsAndTables": "Chaises et tables",
+      "burgundyFoldingChair": "Chaise pliante bourgogne",
+      "crystalChiavariChair": "Chaise Chiavari cristal",
+      "mahoganyChiavariChair": "Chaise Chiavari acajou",
+      "whiteBistroChair": "Chaise bistro blanche",
+      "barStool": "Tabouret de bar",
+      "cocktailTable30In": "Table de cocktail 30 pouces",
+      "roundTable48In": "Table ronde 48 pouces",
+      "roundTable60In": "Table ronde 60 pouces",
+      "roundTable72In": "Table ronde 72 pouces",
+      "rectangularTable30x96": "Table rectangulaire 30x96",
+      "rectangularTable30x72": "Table rectangulaire 30x72",
+      "floorRegular": "Plancher régulier",
+      "floorLeveled": "Plancher nivelé",
+      "floorDance": "Plancher de danse",
+      "podium": "Podium",
+      "redCarpet25Ft": "Tapis rouge 3 x 25 pieds",
+      "stanchionsAndRopes": "Barrières et cordes",
+      "coatRack": "Porte-manteaux",
+      "equipment": "Équipement",
+      "cornRoasts": "Rôtis de maïs",
+      "roastOven": "Four à rôtir (méchoui)",
+      "propaneBBQ24x48": "BBQ propane 24 x 48",
+      "coffeeMaker": "Cafetière",
+      "propanePatioHeater": "Chauffage de patio au propane",
+      "portableBar": "Bar portable",
+      "portableIlluminatedBar": "Bar portable éclairé",
+      "dishesCutleryAndGlasses": "Vaisselle, couverts et verres",
+      "iceBasket": "Panier à glace",
+      "propaneFurnace": "Fourneau à propane",
+      "propaneFurnaceAccessory": "Accessoire pour fourneau à propane"
+    },
+    "about": {
+      "title": "Transformer les moments en souvenirs, beau temps, mauvais temps",
+      "section1": {
+        "title": "Plus de 30 ans d'expérience en location",
+        "description": "Locaplus apporte des décennies d'expertise pour garantir la réussite de votre évènement, des rassemblements intimes aux grands festivals à travers le Québec."
+      },
+      "section2": {
+        "title": "Chapiteaux et équipements de qualité supérieure",
+        "description": "Nos chapiteaux, tables, chaises et planchers de haute qualité sont conçus pour sublimer chaque évènement, beau temps, mauvais temps."
+      },
+      "section3": {
+        "title": "Solutions personnalisées pour vos évènements",
+        "description": "Nous proposons des locations adaptées aux besoins uniques de votre évènement, créant des souvenirs inoubliables à chaque occasion."
+      },
+      "section4": {
+        "title": "Distributeur et installateur officiel d'Abris Tempo en Estrie",
+        "description": "Locaplus est le concessionnaire officiel de Tempo en Estrie, offrant la vente, la distribution et une installation experte."
+      }
+    },
+    "products": {
+      "title": "Nous avons tout ce qu'il vous faut",
+      "description": "Des chapiteaux premium, du mobilier élégant et tout le nécessaire pour rendre votre évènement inoubliable.",
+      "tents": "Chapiteaux",
+      "equipment": "Équipement",
+      "flooringChairsAndTables": "Planchers, chaises et tables"
+    },
+    "contact": {
+      "title": "Des questions ? Contactez-nous !",
+      "description": "Besoin de locations fiables pour vos évènements ? Locaplus propose des chapiteaux et équipements de qualité supérieure à Bromont, Granby, Rive-Sud, Sherbrooke et Magog. Contactez-nous ou demandez un devis ci-dessous !"
+    },
+    "contactInfo": {
+      "address": "203 Rue des Alouettes, Saint-Alphonse-de-Granby",
+      "phone": "Téléphone",
+      "email": "Courriel",
+      "office": "Bureau",
+      "followUs": "Suivez-nous",
+      "450Locations": "Bromont, Granby, Rive-Sud",
+      "819Locations": "Sherbrooke, Magog"
+    },
+    "requestQuote": {
+      "title": "Demander une soumission",
+      "success": {
+        "title": "Demande de soumission envoyé",
+        "message": "Vous recevrez une confirmation par courriel automatisée. Un membre de notre équipe vous contactera sous peu."
+      },
+      "maintenance": "Le formulaire de soumission sera indisponible jusqu'au 5 janvier. Veuillez envoyer toutes vos demandes de soumission à contact@locaplus.net. Nous nous excusons pour le désagrément."
+    },
+    "error": {
+      "firstName": {
+        "required": "Un prénom est requis"
+      },
+      "lastName": {
+        "required": "Un nom de famille est requis"
+      },
+      "eventType": {
+        "required": "Un type d'évènement est requis"
+      },
+      "eventDate": {
+        "required": "Une date d'évènement est requise"
+      },
+      "dateInput": {
+        "isValid": "Veuillez saisir une date valide"
+      },
+      "location": {
+        "required": "Un emplacement est requis"
+      },
+      "email": {
+        "required": "Une adresse courriel est requise",
+        "invalid": "L'adresse courriel n'est pas valide"
+      },
+      "phoneNumber": {
+        "required": "Un numéro de téléphone est requis"
+      },
+      "consentCheckbox": {
+        "isChecked": "Votre consentement à la politique de confidentialité est requis"
+      },
+      "sendEmail": {
+        "generic": "Une erreur est survenue lors de l'envoi du courriel"
+      }
+    },
+    "privacyPolicy": {
+      "checkbox": {
+        "text": "J'ai lu et j'accepte la",
+        "link": "politique de confidentialité"
+      },
+      "title": "Politique de confidentialité",
+      "intro": "À Locaplus, nous respectons votre vie privée et nous engageons à protéger vos informations personnelles.",
+      "infoCollection": {
+        "title": "Informations que nous collectons",
+        "description": "Lorsque vous remplissez le formulaire de demande de devis sur notre site web, nous collectons les informations que vous fournissez, telles que votre nom, votre adresse e-mail, votre numéro de téléphone et les détails de votre évènement."
+      },
+      "howWeUse": {
+        "title": "Comment nous utilisons vos informations",
+        "description": "Les informations que vous fournissez sont utilisées uniquement pour répondre à votre demande et fournir un devis. Nous ne stockons pas vos informations personnelles au-delà de ce qui est nécessaire pour répondre à votre demande."
+      },
+      "retention": {
+        "title": "Conservation des informations",
+        "description": "Nous conservons vos informations personnelles uniquement pendant la durée nécessaire pour atteindre l'objectif pour lequel elles ont été collectées, ou tel qu'exigé par la loi."
+      },
+      "protection": {
+        "title": "Protection de vos informations",
+        "description": "Nous prenons des mesures raisonnables pour garantir que les informations que vous fournissez sont transmises de manière sécurisée."
+      },
+      "contact": {
+        "title": "Contactez-nous"
+      },
+      "contactInfo": "Si vous avez des questions concernant cette politique de confidentialité, contactez-nous à",
+      "contactEmail": "contact@locaplus.net"
+    }
+  }
+}
