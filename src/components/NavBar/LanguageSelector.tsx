@@ -15,6 +15,10 @@ export const LanguageSelector = () => {
   const router = useRouter();
   const pathname = usePathname();
 
+  if (pathname == null) {
+    return <></>;
+  }
+
   const languages = [
     { name: 'English', code: 'en' },
     { name: 'Français', code: 'fr' },
