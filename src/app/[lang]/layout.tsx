@@ -99,7 +99,7 @@ export default async function RootLayout({
   const lang = (await params).lang;
 
   if (!routing.locales.includes(lang)) {
-    redirect('/');
+    redirect('/fr');
   }
 
   setRequestLocale(lang);
