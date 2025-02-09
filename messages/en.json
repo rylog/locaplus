@@ -1,0 +1,198 @@
+{
+  "HomePage": {
+    "main": {
+      "metadata": {
+        "description": "Locaplus specializes in canopy and event tent rentals across the Eastern Townships, providing high-quality tents, chairs, tables, and equipment for festivals, weddings, and special events. Serving Bromont, Granby, South Shore, Sherbrooke, and Magog since 1991."
+      }
+    },
+    "nav": {
+      "aboutUs": "About Us",
+      "products": "Products",
+      "projects": "Projects",
+      "contactUs": "Contact us"
+    },
+    "home": {
+      "title": "Trusted Tent & Event Rentals in the Eastern Townships",
+      "subtitle": "  With 30+ years of experience Locaplus delivers reliable tent event rentals to make your event unforgettable.",
+      "requestQuote": "Request a quote"
+    },
+    "form": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "typeOfEvent": "Type of event",
+      "eventDate": "Event date",
+      "location": "Location",
+      "email": "Email",
+      "phoneNumber": "Phone number",
+      "message": "Message",
+      "submitButton": "Request quote",
+      "sending": "Sending..."
+    },
+    "tent": {
+      "name": {
+        "10x10": "10' x 10' Tent",
+        "10x20": "10' x 20' Tent",
+        "20x20": "20' x 20' Tent",
+        "20x30": "20' x 30' Tent",
+        "20x40": "20' x 40' Tent",
+        "40x40": "40' x 40' Tent",
+        "hexagonal": "Hexagonal Tent",
+        "40x60": "40' x 60' Tent",
+        "40x80": "40' x 80' Tent",
+        "40x100": "40' x 100' Tent",
+        "40x200": "40' x up to 200' Tent",
+        "60x80": "60' x 80' Tent",
+        "60x100": "60' x 100' Tent",
+        "60x200": "60' x up to 200' Tent"
+      }
+    },
+    "tents": {
+      "capacity": {
+        "range": "Capacity: {min} - {max} people",
+        "maxOnly": "Capacity up to {max} people"
+      }
+    },
+    "equipment": {
+      "chairsAndTables": "Chairs and Tables",
+      "burgundyFoldingChair": "Burgundy folding chair",
+      "crystalChiavariChair": "Crystal chiavari chair",
+      "mahoganyChiavariChair": "Mahogany chiavari chair",
+      "whiteBistroChair": "White bistro chair",
+      "barStool": "Bar stool",
+      "cocktailTable30In": "30 in. cocktail table",
+      "roundTable48In": "48 in. round table",
+      "roundTable60In": "60 in. round table",
+      "roundTable72In": "72 in. round table",
+      "rectangularTable30x96": "30x96 rectangular table",
+      "rectangularTable30x72": "30x72 rectangular table",
+      "floorRegular": "Regular floor",
+      "floorLeveled": "Leveled floor",
+      "floorDance": "Dance floor",
+      "podium": "Podium",
+      "redCarpet25Ft": "Red carpet 3 x 25",
+      "stanchionsAndRopes": "Stanchions and ropes",
+      "coatRack": "Coat rack",
+      "equipment": "Equipment",
+      "cornRoasts": "Corn roasts",
+      "roastOven": "Roast oven (mechoui)",
+      "propaneBBQ24x48": "24 x 48 propane BBQ",
+      "coffeeMaker": "Coffee maker",
+      "propanePatioHeater": "Propane patio heater",
+      "portableBar": "Portable bar",
+      "portableIlluminatedBar": "Portable illuminated bar",
+      "dishesCutleryAndGlasses": "Dishes, cutlery and glasses",
+      "iceBasket": "Ice basket",
+      "propaneFurnace": "Propane furnace",
+      "propaneFurnaceAccessory": "Propane furnace accessory"
+    },
+    "about": {
+      "title": "Transforming Moments into Memories, Rain or Shine",
+      "section1": {
+        "title": "30+ Years of Rental Experience",
+        "description": "Locaplus brings decades of expertise to ensure your event runs smoothly, from intimate gatherings to large festivals across Quebec."
+      },
+      "section2": {
+        "title": "Premium Tents & Equipment",
+        "description": "Our high-quality tents, tables, chairs, and flooring are designed to elevate any event, rain or shine."
+      },
+      "section3": {
+        "title": "Tailored Event Solutions",
+        "description": "We offer customized rentals to match your event's unique needs, creating unforgettable moments every time."
+      },
+      "section4": {
+        "title": "Official distributor and installer for Tempo shelters in the Eastern Townships",
+        "description": "Locaplus is the official Tempo dealer in the Eastern Townships, providing sales, distribution, and expert installation."
+      }
+    },
+    "products": {
+      "title": "We've got you covered",
+      "description": "Premium tents, stylish furniture, and all the essentials to make your event seamless and unforgettable.",
+      "tents": "Tents",
+      "equipment": "Equipment",
+      "flooringChairsAndTables": "Flooring, Chairs and Tables"
+    },
+    "contact": {
+      "title": "Have Questions? Ask Us!",
+      "description": "Looking for reliable event rentals? Locaplus offers premium tents and equipment across Bromont, Granby, South Shore, Sherbrooke, and Magog. Reach out or request a quote below!"
+    },
+    "contactInfo": {
+      "address": "203 Rue des Alouettes, Saint-Alphonse-de-Granby",
+      "phone": "Phone",
+      "email": "Email",
+      "office": "Office",
+      "followUs": "Follow Us",
+      "450Locations": "Bromont, Granby, South Shore",
+      "819Locations": "Sherbrooke, Magog"
+    },
+    "requestQuote": {
+      "title": "Request a quote",
+      "success": {
+        "title": "Quote Request Submitted",
+        "message": "You will receive an automated email confirmation. A team member will follow up with you shortly."
+      },
+      "maintenance": "The quote form will be unavailable until January 5th. Please send all quote requests to contact@locaplus.net. We apologize for the inconvenience."
+    },
+    "error": {
+      "firstName": {
+        "required": "A first name is required"
+      },
+      "lastName": {
+        "required": "A last name is required"
+      },
+      "eventType": {
+        "required": "An event type is required"
+      },
+      "eventDate": {
+        "required": "An event date is required"
+      },
+      "dateInput": {
+        "isValid": "Please enter a valid date"
+      },
+      "location": {
+        "required": "A location is required"
+      },
+      "email": {
+        "required": "An email is required",
+        "invalid": "Must be a valid email"
+      },
+      "phoneNumber": {
+        "required": "A phone number is required"
+      },
+      "consentCheckbox": {
+        "isChecked": "Your consent to the privacy policy is required"
+      },
+      "sendEmail": {
+        "generic": "An error occured while sending email"
+      }
+    },
+    "privacyPolicy": {
+      "checkbox": {
+        "text": "I have read and agree to the",
+        "link": "privacy policy"
+      },
+      "title": "Privacy Policy",
+      "intro": "At Locaplus, we respect your privacy and are committed to protecting your personal information.",
+      "infoCollection": {
+        "title": "Information We Collect",
+        "description": "When you fill out the quote request form on our website, we collect the information you provide, such as your name, email address, phone number, and event details."
+      },
+      "howWeUse": {
+        "title": "How We Use Your Information",
+        "description": "The information you provide is used solely to respond to your request and provide a quote. We do not store your personal information beyond what is necessary to reply to your inquiry."
+      },
+      "retention": {
+        "title": "Retention of Information",
+        "description": "We retain your personal information only for as long as necessary to fulfill the purpose for which it was collected, or as required by law."
+      },
+      "protection": {
+        "title": "Protection of Your Information",
+        "description": "We take reasonable steps to ensure the information you provide is securely transmitted."
+      },
+      "contact": {
+        "title": "Contact Us"
+      },
+      "contactInfo": "If you have questions about this Privacy Policy, contact us at",
+      "contactEmail": "contact@locaplus.net"
+    }
+  }
+}

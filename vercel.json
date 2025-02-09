@@ -1,11 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/",
-      "destination": "/fr",
-      "permanent": true
-    },
-    {
       "source": "/index.php/fr/:path*",
       "destination": "/fr",
       "permanent": true

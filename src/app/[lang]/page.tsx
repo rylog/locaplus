@@ -1,5 +1,13 @@
-import { MainLayout } from '../../layouts/MainLayout/MainLayout';
+import { setRequestLocale } from 'next-intl/server';
 
-export default async function Home() {
-  return <MainLayout />;
+import { Main } from '../../pages/Main/Main';
+
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: 'en' | 'fr' }>;
+}) {
+  const lang = (await params).lang;
+  setRequestLocale(lang);
+  return <Main />;
 }
