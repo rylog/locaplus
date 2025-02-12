@@ -39,7 +39,7 @@ const QuoteForm = () => {
   const sendQuoteMutation = useSendQuoteRequest();
   const locale = useLocale();
 
-  const t = useTranslations('HomePage');
+  const t = useTranslations('Form');
 
   const { register, control, formState, handleSubmit } =
     useForm<QuoteFormInputs>({
@@ -110,7 +110,7 @@ const QuoteForm = () => {
             })}
             required
             autoComplete="given-name"
-            label={t('form.firstName')}
+            label={t('firstName')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -121,7 +121,7 @@ const QuoteForm = () => {
             required
             name="lastName"
             autoComplete="family-name"
-            label={t('form.lastName')}
+            label={t('lastName')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -130,7 +130,7 @@ const QuoteForm = () => {
               required: t('error.eventType.required'),
             })}
             required
-            label={t('form.typeOfEvent')}
+            label={t('typeOfEvent')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -138,7 +138,7 @@ const QuoteForm = () => {
             required
             control={control}
             name="eventDate"
-            label={t('form.eventDate')}
+            label={t('eventDate')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -148,7 +148,7 @@ const QuoteForm = () => {
             })}
             required
             className={'sm:col-span-2'}
-            label={t('form.location')}
+            label={t('location')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -163,7 +163,7 @@ const QuoteForm = () => {
             required
             className={'sm:col-span-2'}
             autoComplete="email"
-            label={t('form.email')}
+            label={t('email')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -174,7 +174,7 @@ const QuoteForm = () => {
             required
             className={'sm:col-span-2'}
             autoComplete="tel"
-            label={t('form.phoneNumber')}
+            label={t('phoneNumber')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -182,7 +182,7 @@ const QuoteForm = () => {
             {...register('message')}
             className={'sm:col-span-2'}
             name={'message'}
-            label={t('form.message')}
+            label={t('message')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -223,7 +223,7 @@ const QuoteForm = () => {
               },
             )}
           >
-            {isSubmitting ? t('form.sending') : t('form.submitButton')}
+            {isSubmitting ? t('sending') : t('submitButton')}
           </button>
         </div>
       </form>

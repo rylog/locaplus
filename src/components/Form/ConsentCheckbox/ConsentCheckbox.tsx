@@ -29,7 +29,7 @@ export const ConsentCheckbox = ({
   required = false,
 }: ConsentCheckboxProps) => {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
-  const t = useTranslations('HomePage');
+  const t = useTranslations('Form');
   return (
     <>
       <label className={className}>

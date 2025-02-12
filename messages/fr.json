@@ -9,24 +9,13 @@
       "aboutUs": "À propos de nous",
       "products": "Produits",
       "projects": "Projets",
-      "contactUs": "Contactez-nous"
+      "contactUs": "Contactez-nous",
+      "careers": "Carrières"
     },
     "home": {
       "title": "Location de chapiteaux pour toutes occasions",
       "subtitle": "Avec plus de 30 ans d'expérience, Locaplus offre des locations fiables et de qualité pour assurer le succès de votre évènement.",
       "requestQuote": "Demander une soumission"
-    },
-    "form": {
-      "firstName": "Prénom",
-      "lastName": "Nom de famille",
-      "typeOfEvent": "Type d'évènement",
-      "eventDate": "Date d'évènement",
-      "location": "Emplacement",
-      "email": "Courriel",
-      "phoneNumber": "Numéro de téléphone",
-      "message": "Message",
-      "submitButton": "Demander une soumission",
-      "sending": "Envoi en cours..."
     },
     "tent": {
       "name": {
@@ -123,7 +112,9 @@
       "followUs": "Suivez-nous",
       "450Locations": "Bromont, Granby, Rive-Sud",
       "819Locations": "Sherbrooke, Magog"
-    },
+    }
+  },
+  "Form": {
     "requestQuote": {
       "title": "Demander une soumission",
       "success": {
@@ -132,6 +123,26 @@
       },
       "maintenance": "Le formulaire de soumission sera indisponible jusqu'au 5 janvier. Veuillez envoyer toutes vos demandes de soumission à contact@locaplus.net. Nous nous excusons pour le désagrément."
     },
+    "applyNow": "Postulez maintenant",
+    "firstName": "Prénom",
+    "lastName": "Nom de famille",
+    "typeOfEvent": "Type d'évènement",
+    "eventDate": "Date d'évènement",
+    "location": "Emplacement",
+    "email": "Courriel",
+    "phoneNumber": "Numéro de téléphone",
+    "message": "Message",
+    "dragAndDropOr": "Déposez vos fichiers ici ou",
+    "browse": "cliquez pour choisir",
+    "privacyPolicy": {
+      "checkbox": {
+        "text": "J'ai lu et j'accepte la",
+        "link": "politique de confidentialité"
+      }
+    },
+    "documents": "Documents",
+    "submitButton": "Demander une soumission",
+    "sending": "Envoi en cours...",
     "error": {
       "firstName": {
         "required": "Un prénom est requis"
@@ -163,36 +174,47 @@
       },
       "sendEmail": {
         "generic": "Une erreur est survenue lors de l'envoi du courriel"
-      }
+      },
+      "invalidFileType": "Le fichier est invalide",
+      "fileTooLarge": "Le fichier dépasse la taille maximum (5MB)"
+    }
+  },
+  "PrivacyPolicy": {
+    "title": "Politique de confidentialité",
+    "intro": "À Locaplus, nous respectons votre vie privée et nous engageons à protéger vos informations personnelles.",
+    "infoCollection": {
+      "title": "Informations que nous collectons",
+      "description": "Lorsque vous remplissez le formulaire de demande de devis sur notre site web, nous collectons les informations que vous fournissez, telles que votre nom, votre adresse e-mail, votre numéro de téléphone et les détails de votre évènement."
     },
-    "privacyPolicy": {
-      "checkbox": {
-        "text": "J'ai lu et j'accepte la",
-        "link": "politique de confidentialité"
-      },
-      "title": "Politique de confidentialité",
-      "intro": "À Locaplus, nous respectons votre vie privée et nous engageons à protéger vos informations personnelles.",
-      "infoCollection": {
-        "title": "Informations que nous collectons",
-        "description": "Lorsque vous remplissez le formulaire de demande de devis sur notre site web, nous collectons les informations que vous fournissez, telles que votre nom, votre adresse e-mail, votre numéro de téléphone et les détails de votre évènement."
-      },
-      "howWeUse": {
-        "title": "Comment nous utilisons vos informations",
-        "description": "Les informations que vous fournissez sont utilisées uniquement pour répondre à votre demande et fournir un devis. Nous ne stockons pas vos informations personnelles au-delà de ce qui est nécessaire pour répondre à votre demande."
-      },
-      "retention": {
-        "title": "Conservation des informations",
-        "description": "Nous conservons vos informations personnelles uniquement pendant la durée nécessaire pour atteindre l'objectif pour lequel elles ont été collectées, ou tel qu'exigé par la loi."
-      },
-      "protection": {
-        "title": "Protection de vos informations",
-        "description": "Nous prenons des mesures raisonnables pour garantir que les informations que vous fournissez sont transmises de manière sécurisée."
-      },
-      "contact": {
-        "title": "Contactez-nous"
-      },
-      "contactInfo": "Si vous avez des questions concernant cette politique de confidentialité, contactez-nous à",
-      "contactEmail": "contact@locaplus.net"
+    "howWeUse": {
+      "title": "Comment nous utilisons vos informations",
+      "description": "Les informations que vous fournissez sont utilisées uniquement pour répondre à votre demande et fournir un devis. Nous ne stockons pas vos informations personnelles au-delà de ce qui est nécessaire pour répondre à votre demande."
+    },
+    "retention": {
+      "title": "Conservation des informations",
+      "description": "Nous conservons vos informations personnelles uniquement pendant la durée nécessaire pour atteindre l'objectif pour lequel elles ont été collectées, ou tel qu'exigé par la loi."
+    },
+    "protection": {
+      "title": "Protection de vos informations",
+      "description": "Nous prenons des mesures raisonnables pour garantir que les informations que vous fournissez sont transmises de manière sécurisée."
+    },
+    "contact": {
+      "title": "Contactez-nous"
+    },
+    "contactInfo": "Si vous avez des questions concernant cette politique de confidentialité, contactez-nous à",
+    "contactEmail": "contact@locaplus.net"
+  },
+  "Careers": {
+    "title": "Carrières",
+    "joinOurTeam": {
+      "title": "Rejoignez notre équipe",
+      "description": "Faites partie d'une équipe dédiée et passionnée qui installe des tentes pour des événements inoubliables dans de magnifiques sites en plein air. Si vous aimez travailler à l'extérieur et souhaitez intégrer une entreprise qui valorise l'esprit d'équipe, cette opportunité est faite pour vous.",
+      "whatWeOffer": {
+        "title": "Ce que nous offrons :",
+        "competitiveSalary": "Salaire compétitif",
+        "teamAtmosphere": "Esprit d'équipe",
+        "physicalOutdoorWork": "Travail physique en plein air"
+      }
     }
   }
 }

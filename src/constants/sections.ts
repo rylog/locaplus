@@ -4,4 +4,5 @@ export const SECTIONS = {
   PRODUCTS: 'products',
   CONTACT: 'contact',
   QUOTE: 'quote',
+  CAREERS: 'careers',
 };

@@ -9,24 +9,13 @@
       "aboutUs": "About Us",
       "products": "Products",
       "projects": "Projects",
-      "contactUs": "Contact us"
+      "contactUs": "Contact us",
+      "careers": "Careers"
     },
     "home": {
       "title": "Trusted Tent & Event Rentals in the Eastern Townships",
       "subtitle": "  With 30+ years of experience Locaplus delivers reliable tent event rentals to make your event unforgettable.",
       "requestQuote": "Request a quote"
-    },
-    "form": {
-      "firstName": "First name",
-      "lastName": "Last name",
-      "typeOfEvent": "Type of event",
-      "eventDate": "Event date",
-      "location": "Location",
-      "email": "Email",
-      "phoneNumber": "Phone number",
-      "message": "Message",
-      "submitButton": "Request quote",
-      "sending": "Sending..."
     },
     "tent": {
       "name": {
@@ -123,7 +112,9 @@
       "followUs": "Follow Us",
       "450Locations": "Bromont, Granby, South Shore",
       "819Locations": "Sherbrooke, Magog"
-    },
+    }
+  },
+  "Form": {
     "requestQuote": {
       "title": "Request a quote",
       "success": {
@@ -132,6 +123,26 @@
       },
       "maintenance": "The quote form will be unavailable until January 5th. Please send all quote requests to contact@locaplus.net. We apologize for the inconvenience."
     },
+    "applyNow": "Apply Now",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "typeOfEvent": "Type of event",
+    "eventDate": "Event date",
+    "location": "Location",
+    "email": "Email",
+    "phoneNumber": "Phone number",
+    "message": "Message",
+    "dragAndDropOr": "Drag & drop files here or",
+    "browse": "browse",
+    "privacyPolicy": {
+      "checkbox": {
+        "text": "I have read and agree to the",
+        "link": "privacy policy"
+      }
+    },
+    "documents": "Documents",
+    "submitButton": "Request quote",
+    "sending": "Sending...",
     "error": {
       "firstName": {
         "required": "A first name is required"
@@ -163,36 +174,47 @@
       },
       "sendEmail": {
         "generic": "An error occured while sending email"
-      }
+      },
+      "invalidFileType": "Invalid file type",
+      "fileTooLarge": "File exceeds maximum size (5MB)"
+    }
+  },
+  "PrivacyPolicy": {
+    "title": "Privacy Policy",
+    "intro": "At Locaplus, we respect your privacy and are committed to protecting your personal information.",
+    "infoCollection": {
+      "title": "Information We Collect",
+      "description": "When you fill out the quote request form on our website, we collect the information you provide, such as your name, email address, phone number, and event details."
     },
-    "privacyPolicy": {
-      "checkbox": {
-        "text": "I have read and agree to the",
-        "link": "privacy policy"
-      },
-      "title": "Privacy Policy",
-      "intro": "At Locaplus, we respect your privacy and are committed to protecting your personal information.",
-      "infoCollection": {
-        "title": "Information We Collect",
-        "description": "When you fill out the quote request form on our website, we collect the information you provide, such as your name, email address, phone number, and event details."
-      },
-      "howWeUse": {
-        "title": "How We Use Your Information",
-        "description": "The information you provide is used solely to respond to your request and provide a quote. We do not store your personal information beyond what is necessary to reply to your inquiry."
-      },
-      "retention": {
-        "title": "Retention of Information",
-        "description": "We retain your personal information only for as long as necessary to fulfill the purpose for which it was collected, or as required by law."
-      },
-      "protection": {
-        "title": "Protection of Your Information",
-        "description": "We take reasonable steps to ensure the information you provide is securely transmitted."
-      },
-      "contact": {
-        "title": "Contact Us"
-      },
-      "contactInfo": "If you have questions about this Privacy Policy, contact us at",
-      "contactEmail": "contact@locaplus.net"
+    "howWeUse": {
+      "title": "How We Use Your Information",
+      "description": "The information you provide is used solely to respond to your request and provide a quote. We do not store your personal information beyond what is necessary to reply to your inquiry."
+    },
+    "retention": {
+      "title": "Retention of Information",
+      "description": "We retain your personal information only for as long as necessary to fulfill the purpose for which it was collected, or as required by law."
+    },
+    "protection": {
+      "title": "Protection of Your Information",
+      "description": "We take reasonable steps to ensure the information you provide is securely transmitted."
+    },
+    "contact": {
+      "title": "Contact Us"
+    },
+    "contactInfo": "If you have questions about this Privacy Policy, contact us at",
+    "contactEmail": "contact@locaplus.net"
+  },
+  "Careers": {
+    "title": "Careers",
+    "joinOurTeam": {
+      "title": "Join Our Team",
+      "description": "Be a part of a dedicated and passionate team setting up tents for unforgettable events across beautiful outdoor locations. If you love working outdoors and want to be part of a company that values teamwork, this is the perfect opportunity for you.",
+      "whatWeOffer": {
+        "title": "What we offer:",
+        "competitiveSalary": "Competitive Salary",
+        "teamAtmosphere": "Team Atmosphere",
+        "physicalOutdoorWork": "Physical Outdoor Work"
+      }
     }
   }
 }
