@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { QuoteRequest } from '@/api/useSendQuoteRequest';
-
 import { getAccessToken, verifyReCaptchaToken } from '../services/authService';
 import { sendEmail } from '../services/emailService';
 import { isValidEmail } from '../utils/emailValidator';
@@ -13,7 +11,7 @@ export const POST = async (req: NextRequest) => {
   }
 
   try {
-    const quoteRequest = (await req.json()) as QuoteRequest;
+    const quoteRequest = await req.json();
     const locaplusEmail = process.env.LOCAPLUS_EMAIL;
 
     const {

@@ -1,8 +1,15 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { QuoteRequest } from '../types/quoteRequest';
+export interface ApplicationRequest {
+  recipient: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  language: string;
+  reCaptchaToken: string;
+}
 
-const sendQuoteRequest = async (quoteRequest: QuoteRequest) => {
+const sendApplicationRequest = async (quoteRequest: ApplicationRequest) => {
   const response = await fetch('/api/quotes', {
     method: 'POST',
     headers: {
@@ -19,6 +26,6 @@ const sendQuoteRequest = async (quoteRequest: QuoteRequest) => {
   return response.json();
 };
 
-export const useSendQuoteRequest = () => {
-  return useMutation({ mutationFn: sendQuoteRequest });
+export const useSendApplicationRequest = () => {
+  return useMutation({ mutationFn: sendApplicationRequest });
 };

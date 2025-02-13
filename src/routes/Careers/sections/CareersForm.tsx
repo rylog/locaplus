@@ -7,7 +7,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { Controller, useForm } from 'react-hook-form';
 import { Toaster } from 'react-hot-toast';
 
-import { useSendQuoteRequest } from '@/api/useSendCVRequest';
+import { useSendApplicationRequest } from '@/api/useSendApplicationRequest';
 import FileUploader from '@/components/FileUploader/FileUploader';
 import { TextInput } from '@/components/Form/TextInput/TextInput';
 import PrivacyPolicyModal from '@/components/PrivacyModal/PrivacyModal';
@@ -26,7 +26,7 @@ export const CareersForm = () => {
   const [reCaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [showPrivacyModal, setShowPrivacyModal] = useState<boolean>(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const sendQuoteMutation = useSendQuoteRequest();
+  const sendQuoteMutation = useSendApplicationRequest();
   const locale = useLocale();
 
   const t = useTranslations('Form');
@@ -37,7 +37,24 @@ export const CareersForm = () => {
     });
 
   const onSubmit = (data: CareersFormInputs): Promise<void> => {
-    return new Promise(async (resolve, reject) => {});
+    // eslint-disable-next-line no-async-promise-executor
+    return new Promise(async (resolve, reject) => {
+      try {
+        await sendQuoteMutation.mutate({
+          recipient: data.email,
+          firstName: data.firstName,
+          lastName: data.lastName,
+          phoneNumber: data.phoneNumber,
+          language: locale,
+          reCaptchaToken: reCaptchaToken!,
+        });
+        setFormSubmitted(true);
+        resolve();
+      } catch (error) {
+        setError(t('error.sendEmail.generic'));
+        reject(error);
+      }
+    });
   };
 
   const { errors, isSubmitting } = formState;

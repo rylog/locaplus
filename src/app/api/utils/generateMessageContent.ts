@@ -1,5 +1,5 @@
 interface MessageDetails {
-  language: string;
+  language?: string;
   firstName: string;
   lastName: string;
   eventType: string;
