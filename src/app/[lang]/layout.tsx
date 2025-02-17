@@ -108,7 +108,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
-      <body suppressHydrationWarning>
+      <body className="bg-gray-100" suppressHydrationWarning>
         <QueryClientContextProvider>
           <NextIntlClientProvider messages={messages}>
             {children}

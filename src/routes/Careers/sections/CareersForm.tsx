@@ -1,5 +1,7 @@
 'use client';
 
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
+import { ErrorMessage } from '@hookform/error-message';
 import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
@@ -12,13 +14,14 @@ import FileUploader from '@/components/FileUploader/FileUploader';
 import { TextInput } from '@/components/Form/TextInput/TextInput';
 import PrivacyPolicyModal from '@/components/PrivacyModal/PrivacyModal';
 import { LABEL_COLORS } from '@/styles/colors';
+import { UploadedFile } from '@/types/UploadedFile';
 
 interface CareersFormInputs {
   firstName: '';
   lastName: '';
   email: string;
   phoneNumber: string;
-  documents: File[];
+  documents: UploadedFile[];
 }
 
 export const CareersForm = () => {
@@ -26,7 +29,7 @@ export const CareersForm = () => {
   const [reCaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [showPrivacyModal, setShowPrivacyModal] = useState<boolean>(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const sendQuoteMutation = useSendApplicationRequest();
+  const sendApplicationMutation = useSendApplicationRequest();
   const locale = useLocale();
 
   const t = useTranslations('Form');
@@ -36,28 +39,39 @@ export const CareersForm = () => {
       mode: 'onSubmit',
     });
 
-  const onSubmit = (data: CareersFormInputs): Promise<void> => {
-    // eslint-disable-next-line no-async-promise-executor
-    return new Promise(async (resolve, reject) => {
-      try {
-        await sendQuoteMutation.mutate({
-          recipient: data.email,
-          firstName: data.firstName,
-          lastName: data.lastName,
-          phoneNumber: data.phoneNumber,
-          language: locale,
-          reCaptchaToken: reCaptchaToken!,
-        });
-        setFormSubmitted(true);
-        resolve();
-      } catch (error) {
-        setError(t('error.sendEmail.generic'));
-        reject(error);
-      }
-    });
+  const onSubmit = async (data: CareersFormInputs) => {
+    try {
+      await sendApplicationMutation.mutateAsync({
+        recipient: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        phoneNumber: data.phoneNumber,
+        language: locale,
+        reCaptchaToken: reCaptchaToken!,
+        documents: data.documents, // Sending documents as part of the request
+      });
+      setFormSubmitted(true);
+    } catch (error) {
+      setError(t('error.sendEmail.generic'));
+      throw error;
+    }
   };
 
   const { errors, isSubmitting } = formState;
+
+  if (formSubmitted) {
+    return (
+      <div className="flex flex-1 mt-4 rounded-md shadow-md ring-1 ring-black/5 p-10 bg-white">
+        <div className="flex flex-col gap-6 m-auto">
+          <h1 className="text-2xl font-semibold tracking-loose sm:text-2xl text-center">
+            {t('careers.success.title')}
+          </h1>
+          <CheckCircleIcon className="w-24 h-24 mx-auto" />
+          <p className="text-center">{t('careers.success.message')}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -121,6 +135,7 @@ export const CareersForm = () => {
 
             <div className={'sm:col-span-2'}>
               <Controller
+                rules={{ required: t('error.documents.required') }}
                 control={control}
                 name="documents"
                 render={({ field: { onChange } }) => (
@@ -131,10 +146,19 @@ export const CareersForm = () => {
                     >
                       {t('documents')} <span className="text-red-500">*</span>
                     </label>
-                    <FileUploader onFilesChange={(e) => onChange(e)} />
+                    <FileUploader onFilesChange={onChange} />
                   </>
                 )}
-              ></Controller>
+              />
+              {errors && (
+                <ErrorMessage
+                  errors={errors}
+                  name={'documents'}
+                  render={({ message }) => (
+                    <p className="text-red-500 mt-1">{message}</p>
+                  )}
+                />
+              )}
             </div>
           </div>
 

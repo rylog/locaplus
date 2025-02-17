@@ -1,16 +1,19 @@
 import { useMutation } from '@tanstack/react-query';
 
+import { UploadedFile } from '@/types/UploadedFile';
+
 export interface ApplicationRequest {
   recipient: string;
   firstName: string;
   lastName: string;
   phoneNumber: string;
+  documents: UploadedFile[];
   language: string;
   reCaptchaToken: string;
 }
 
 const sendApplicationRequest = async (quoteRequest: ApplicationRequest) => {
-  const response = await fetch('/api/quotes', {
+  const response = await fetch('/api/applications', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

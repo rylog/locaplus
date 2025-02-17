@@ -13,7 +13,7 @@ import { CareersForm } from './sections/CareersForm';
 export const Careers = () => {
   const t = useTranslations('Careers');
   return (
-    <div className="bg-gray-100">
+    <div className="flex flex-col bg-gray-100 h-full">
       <header>
         <nav
           aria-label="Global"
@@ -50,7 +50,7 @@ export const Careers = () => {
           </div>
         </nav>
       </header>
-      <div className="max-w-6xl m-auto p-8">
+      <div className="max-w-6xl mx-auto p-8 flex flex-col flex-1">
         <div className="max-w-6xl mt-8">
           <div className="flex rounded-lg flex-col md:flex-row text-center md:text-left gap-4">
             <div className="md:w-1/2 rounded-md ring-1 ring-black/5 p-10 flex flex-col justify-between bg-white">

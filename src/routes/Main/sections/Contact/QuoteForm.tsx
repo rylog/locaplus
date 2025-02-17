@@ -48,32 +48,28 @@ const QuoteForm = () => {
 
   const { errors, isSubmitting } = formState;
 
-  const onSubmit = (data: QuoteFormInputs): Promise<void> => {
-    // eslint-disable-next-line no-async-promise-executor
-    return new Promise(async (resolve, reject) => {
-      try {
-        await sendQuoteMutation.mutateAsync({
-          recipient: data.email,
-          firstName: data.firstName,
-          lastName: data.lastName,
-          eventType: data.eventType,
-          eventDate: format(
-            data.eventDate,
-            locale == 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy',
-          ),
-          location: data.location,
-          phoneNumber: data.phoneNumber,
-          message: data.message,
-          language: locale?.toString(),
-          reCaptchaToken: reCaptchaToken!,
-        });
-        setFormSubmitted(true);
-        resolve();
-      } catch (error) {
-        setError(t('error.sendEmail.generic'));
-        reject(error);
-      }
-    });
+  const onSubmit = async (data: QuoteFormInputs) => {
+    try {
+      await sendQuoteMutation.mutateAsync({
+        recipient: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        eventType: data.eventType,
+        eventDate: format(
+          data.eventDate,
+          locale == 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy',
+        ),
+        location: data.location,
+        phoneNumber: data.phoneNumber,
+        message: data.message,
+        language: locale?.toString(),
+        reCaptchaToken: reCaptchaToken!,
+      });
+      setFormSubmitted(true);
+    } catch (error) {
+      setError(t('error.sendEmail.generic'));
+      throw error;
+    }
   };
 
   if (formSubmitted) {

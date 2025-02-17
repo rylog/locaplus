@@ -1,15 +1,6 @@
-interface MessageDetails {
-  language?: string;
-  firstName: string;
-  lastName: string;
-  eventType: string;
-  eventDate: string;
-  location: string;
-  phoneNumber: string;
-  message: string;
-}
+import { QuoteRequest } from '@/api/useSendQuoteRequest';
 
-export const generateMessageContent = ({
+export const generateQuotesMessage = ({
   language,
   firstName,
   lastName,
@@ -18,7 +9,7 @@ export const generateMessageContent = ({
   location,
   phoneNumber,
   message,
-}: MessageDetails): string => {
+}: QuoteRequest): string => {
   if (language === 'fr') {
     return `
       <h2>Bonjour ${firstName} ${lastName},</h2>

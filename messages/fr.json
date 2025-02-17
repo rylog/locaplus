@@ -123,6 +123,12 @@
       },
       "maintenance": "Le formulaire de soumission sera indisponible jusqu'au 5 janvier. Veuillez envoyer toutes vos demandes de soumission à contact@locaplus.net. Nous nous excusons pour le désagrément."
     },
+    "careers": {
+      "success": {
+        "title": "Candidature reçue",
+        "message": "Vous recevrez une confirmation par courriel automatisée."
+      }
+    },
     "applyNow": "Postulez maintenant",
     "firstName": "Prénom",
     "lastName": "Nom de famille",
@@ -141,7 +147,11 @@
       }
     },
     "documents": "Documents",
+    "supportedFileTypes": "Types de fichiers autorisés : ",
+    "maxFileSize": "Taille maximale des fichiers : ",
+    "maxFileCount": "Nombre maximum de fichiers : ",
     "submitButton": "Demander une soumission",
+    "uploadingFiles": "Uploading files",
     "sending": "Envoi en cours...",
     "error": {
       "firstName": {
@@ -175,8 +185,13 @@
       "sendEmail": {
         "generic": "Une erreur est survenue lors de l'envoi du courriel"
       },
-      "invalidFileType": "Le fichier est invalide",
-      "fileTooLarge": "Le fichier dépasse la taille maximum (5MB)"
+      "documents": {
+        "required": "Veuillez télécharger les documents requis (CV).",
+        "tooManyFiles": "Vous pouvez télécharger jusqu'à 3 fichiers.",
+        "invalidFileType": "Type de fichier invalide. Veuillez télécharger un PDF, DOC ou DOCX.",
+        "fileTooLarge": "Le fichier est trop volumineux. La taille maximale est de 3 Mo.",
+        "tooLargeTotalSize": "La taille totale des fichiers dépasse la limite de 10 Mo."
+      }
     }
   },
   "PrivacyPolicy": {

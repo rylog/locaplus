@@ -5,7 +5,7 @@ import { QuoteRequest } from '@/api/useSendQuoteRequest';
 import { getAccessToken, verifyReCaptchaToken } from '../services/authService';
 import { sendEmail } from '../services/emailService';
 import { isValidEmail } from '../utils/emailValidator';
-import { generateMessageContent } from '../utils/generateMessageContent';
+import { generateQuotesMessage } from '../utils/quotes';
 
 export const POST = async (req: NextRequest) => {
   if (req.method !== 'POST') {
@@ -16,18 +16,7 @@ export const POST = async (req: NextRequest) => {
     const quoteRequest = (await req.json()) as QuoteRequest;
     const locaplusEmail = process.env.LOCAPLUS_EMAIL;
 
-    const {
-      reCaptchaToken,
-      recipient,
-      language,
-      firstName,
-      lastName,
-      eventType,
-      eventDate,
-      location,
-      phoneNumber,
-      message,
-    } = quoteRequest;
+    const { reCaptchaToken, recipient, language } = quoteRequest;
 
     const isValidReCaptchaToken = await verifyReCaptchaToken(reCaptchaToken);
 
@@ -54,16 +43,7 @@ export const POST = async (req: NextRequest) => {
       );
     }
 
-    const messageContent = generateMessageContent({
-      language,
-      firstName,
-      lastName,
-      eventType,
-      eventDate,
-      location,
-      phoneNumber,
-      message,
-    });
+    const messageContent = generateQuotesMessage(quoteRequest);
 
     const emailData = {
       message: {

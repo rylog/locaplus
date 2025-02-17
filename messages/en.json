@@ -123,6 +123,12 @@
       },
       "maintenance": "The quote form will be unavailable until January 5th. Please send all quote requests to contact@locaplus.net. We apologize for the inconvenience."
     },
+    "careers": {
+      "success": {
+        "title": "Application Received",
+        "message": "You will receive an automated email confirmation"
+      }
+    },
     "applyNow": "Apply Now",
     "firstName": "First name",
     "lastName": "Last name",
@@ -141,7 +147,11 @@
       }
     },
     "documents": "Documents",
+    "supportedFileTypes": "Supported file types: ",
+    "maxFileSize": "Max file size: ",
+    "maxFileCount": "Max file count: ",
     "submitButton": "Request quote",
+    "uploadingFiles": "Uploading files",
     "sending": "Sending...",
     "error": {
       "firstName": {
@@ -175,8 +185,13 @@
       "sendEmail": {
         "generic": "An error occured while sending email"
       },
-      "invalidFileType": "Invalid file type",
-      "fileTooLarge": "File exceeds maximum size (5MB)"
+      "documents": {
+        "required": "Please upload the required documents (resume).",
+        "tooManyFiles": "You can only upload up to 3 files.",
+        "invalidFileType": "Invalid file type. Please upload a PDF, DOC, or DOCX.",
+        "fileTooLarge": "File is too large. Maximum size is 3MB.",
+        "tooLargeTotalSize": "The total file size exceeds the 10MB limit."
+      }
     }
   },
   "PrivacyPolicy": {

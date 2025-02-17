@@ -1,15 +1,14 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { ChangeEvent, DragEvent, useState } from 'react';
 import { toast } from 'react-hot-toast';
 
-interface UploadedFile {
-  id: string;
-  name: string;
-  type: string;
-  base64: string; // Converted file content
-}
+import { UploadedFile } from '@/types/UploadedFile';
 
-const MAX_FILE_SIZE_MB = 5; // Limit file size to 5MB
+const MAX_FILE_SIZE_MB = 3; // Limit file size to 3MB per file
+const MAX_TOTAL_SIZE_MB = 10; // Limit total file size to 10MB
+const MAX_FILE_COUNT = 3; // Limit to 3 files
 
 const FileUploader = ({
   onFilesChange,
@@ -34,6 +33,7 @@ const FileUploader = ({
   const processFiles = (fileList: FileList) => {
     const validFiles: UploadedFile[] = [];
     const errors: string[] = [];
+    let totalSize = 0;
 
     const allowedTypes = [
       'application/pdf', // PDF
@@ -43,16 +43,40 @@ const FileUploader = ({
 
     setLoading(true); // Start loading when file processing begins
 
+    // Check if the number of files exceeds the maximum limit
+    if (uploadedFiles.length + fileList.length > MAX_FILE_COUNT) {
+      errors.push(t('error.documents.tooManyFiles'));
+    }
+
+    // Validate file types and size, and accumulate valid files
     Array.from(fileList).forEach((file) => {
+      totalSize += file.size / 1024 / 1024; // Size in MB
+
       if (!allowedTypes.includes(file.type)) {
-        errors.push(`${file.name}: ${t('error.invalidFileType')}`);
+        errors.push(`${file.name}: ${t('error.documents.invalidFileType')}`);
       } else if (file.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
-        errors.push(`${file.name}: ${t('error.fileTooLarge')}`);
-      } else {
+        errors.push(`${file.name}: ${t('error.documents.fileTooLarge')}`);
+      }
+    });
+
+    // Check if total file size exceeds the limit
+    if (totalSize > MAX_TOTAL_SIZE_MB) {
+      errors.push(t('error.documents.tooLargeTotalSize'));
+    }
+
+    if (errors.length > 0) {
+      errors.forEach((error) => toast.error(error));
+      setLoading(false);
+      return;
+    }
+
+    // Process files once validation is complete
+    const filePromises = Array.from(fileList).map((file) => {
+      return new Promise<void>((resolve) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = () => {
-          const base64String = reader.result?.toString().split(',')[1]; // Remove data URL prefix
+          const base64String = reader.result?.toString().split(',')[1];
           if (base64String) {
             validFiles.push({
               id: crypto.randomUUID(),
@@ -60,22 +84,18 @@ const FileUploader = ({
               type: file.type,
               base64: base64String,
             });
-
-            // Update state and notify parent when all files are processed
-            if (validFiles.length > 0) {
-              setUploadedFiles((prev) => [...prev, ...validFiles]);
-              onFilesChange([...uploadedFiles, ...validFiles]);
-            }
           }
+          resolve();
         };
-      }
+      });
     });
 
-    if (errors.length > 0) {
-      errors.forEach((error) => toast.error(error));
-    }
-
-    setLoading(false); // Stop loading after processing
+    // Once all files have been processed, update the state
+    Promise.all(filePromises).then(() => {
+      setUploadedFiles((prev) => [...prev, ...validFiles]);
+      onFilesChange([...uploadedFiles, ...validFiles]);
+      setLoading(false);
+    });
   };
 
   const removeFile = (id: string) => {
@@ -92,7 +112,6 @@ const FileUploader = ({
         onDragOver={(e) => e.preventDefault()}
         onDrop={handleDrop}
       >
-        {/* The label triggers the input */}
         <input
           type="file"
           accept=".pdf,.doc,.docx"
@@ -112,14 +131,21 @@ const FileUploader = ({
         </label>
       </div>
 
-      {/* Loading Indicator */}
+      <div className="text-sm text-gray-600 mt-4">
+        <p>
+          {t('supportedFileTypes')} <strong>PDF, DOC, DOCX</strong>
+        </p>
+        <p>
+          {t('maxFileSize')} <strong>{MAX_FILE_SIZE_MB}MB</strong>
+        </p>
+      </div>
+
       {loading && (
         <div className="mt-4 text-center text-blue-500">
-          <span>{t('uploadingFiles')}</span> {/* You can customize this text */}
+          <span>{t('uploadingFiles')}</span>
         </div>
       )}
 
-      {/* File List */}
       {uploadedFiles.length > 0 && !loading && (
         <ul className="mt-4 space-y-3">
           {uploadedFiles.map(({ id, name }) => (
