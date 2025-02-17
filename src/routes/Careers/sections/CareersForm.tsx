@@ -61,7 +61,7 @@ export const CareersForm = () => {
 
   if (formSubmitted) {
     return (
-      <div className="flex flex-1 mt-4 rounded-md shadow-md ring-1 ring-black/5 p-10 bg-white">
+      <div className="flex flex-1 mt-4 rounded-md shadow-md ring-1 ring-black/5 p-4 bg-white">
         <div className="flex flex-col gap-6 m-auto">
           <h1 className="text-2xl font-semibold tracking-loose sm:text-2xl text-center">
             {t('careers.success.title')}
