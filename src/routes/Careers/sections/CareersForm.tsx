@@ -4,7 +4,7 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { ErrorMessage } from '@hookform/error-message';
 import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Controller, useForm } from 'react-hook-form';
 import { Toaster } from 'react-hot-toast';
@@ -31,7 +31,6 @@ export const CareersForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const sendApplicationMutation = useSendApplicationRequest();
   const locale = useLocale();
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const t = useTranslations('Form');
 
