@@ -4,7 +4,7 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { ErrorMessage } from '@hookform/error-message';
 import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Controller, useForm } from 'react-hook-form';
 import { Toaster } from 'react-hot-toast';
@@ -31,6 +31,7 @@ export const CareersForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const sendApplicationMutation = useSendApplicationRequest();
   const locale = useLocale();
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const t = useTranslations('Form');
 
@@ -61,7 +62,7 @@ export const CareersForm = () => {
 
   if (formSubmitted) {
     return (
-      <div className="flex flex-1 mt-4 rounded-md shadow-md ring-1 ring-black/5 p-10 bg-white">
+      <div className="flex flex-1 mt-4 rounded-md shadow-md ring-1 ring-black/5 p-4 bg-white">
         <div className="flex flex-col gap-6 m-auto">
           <h1 className="text-2xl font-semibold tracking-loose sm:text-2xl text-center">
             {t('careers.success.title')}
