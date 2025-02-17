@@ -1,15 +1,6 @@
 import sanitizeHtml from 'sanitize-html';
 
-interface MessageDetails {
-  language: string;
-  firstName: string;
-  lastName: string;
-  eventType: string;
-  eventDate: string;
-  location: string;
-  phoneNumber: string;
-  message: string;
-}
+import { QuoteRequest } from '@/api/useSendQuoteRequest';
 
 const cleanInput = (input: string) =>
   sanitizeHtml(input, {
@@ -17,7 +8,7 @@ const cleanInput = (input: string) =>
     allowedAttributes: {},
   });
 
-export const generateMessageContent = ({
+export const generateQuotesMessage = ({
   language,
   firstName,
   lastName,
@@ -26,7 +17,7 @@ export const generateMessageContent = ({
   location,
   phoneNumber,
   message,
-}: MessageDetails): string => {
+}: QuoteRequest): string => {
   const safeFirstName = cleanInput(firstName);
   const safeLastName = cleanInput(lastName);
   const safeEventType = cleanInput(eventType);

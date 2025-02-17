@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import Logo from '@/../public/Logo_locaplus.png';
+import { Link } from '@/i18n/routing';
 
 import { NavItem } from '../../types/NavItem';
 import { LanguageSelector } from './LanguageSelector';
@@ -23,7 +24,11 @@ export const NavBar = ({ navItems }: NavBarProps) => {
         className="flex items-center justify-between p-3 lg:px-8 "
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5" aria-label="Go to the home page">
+          <Link
+            href="/"
+            className="-m-1.5 p-1.5"
+            aria-label="Go to the home page"
+          >
             <Image
               width={191}
               height={100}
@@ -31,7 +36,7 @@ export const NavBar = ({ navItems }: NavBarProps) => {
               src={Logo.src}
               className="h-14 w-auto"
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden"></div>
         <div className="hidden lg:flex lg:gap-x-12">

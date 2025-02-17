@@ -39,7 +39,7 @@ const QuoteForm = () => {
   const sendQuoteMutation = useSendQuoteRequest();
   const locale = useLocale();
 
-  const t = useTranslations('HomePage');
+  const t = useTranslations('Form');
 
   const { register, control, formState, handleSubmit } =
     useForm<QuoteFormInputs>({
@@ -48,32 +48,28 @@ const QuoteForm = () => {
 
   const { errors, isSubmitting } = formState;
 
-  const onSubmit = (data: QuoteFormInputs): Promise<void> => {
-    // eslint-disable-next-line no-async-promise-executor
-    return new Promise(async (resolve, reject) => {
-      try {
-        await sendQuoteMutation.mutateAsync({
-          recipient: data.email,
-          firstName: data.firstName,
-          lastName: data.lastName,
-          eventType: data.eventType,
-          eventDate: format(
-            data.eventDate,
-            locale == 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy',
-          ),
-          location: data.location,
-          phoneNumber: data.phoneNumber,
-          message: data.message,
-          language: locale?.toString(),
-          reCaptchaToken: reCaptchaToken!,
-        });
-        setFormSubmitted(true);
-        resolve();
-      } catch (error) {
-        setError(t('error.sendEmail.generic'));
-        reject(error);
-      }
-    });
+  const onSubmit = async (data: QuoteFormInputs) => {
+    try {
+      await sendQuoteMutation.mutateAsync({
+        recipient: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        eventType: data.eventType,
+        eventDate: format(
+          data.eventDate,
+          locale == 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy',
+        ),
+        location: data.location,
+        phoneNumber: data.phoneNumber,
+        message: data.message,
+        language: locale?.toString(),
+        reCaptchaToken: reCaptchaToken!,
+      });
+      setFormSubmitted(true);
+    } catch (error) {
+      setError(t('error.sendEmail.generic'));
+      throw error;
+    }
   };
 
   if (formSubmitted) {
@@ -110,7 +106,7 @@ const QuoteForm = () => {
             })}
             required
             autoComplete="given-name"
-            label={t('form.firstName')}
+            label={t('firstName')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -121,7 +117,7 @@ const QuoteForm = () => {
             required
             name="lastName"
             autoComplete="family-name"
-            label={t('form.lastName')}
+            label={t('lastName')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -130,7 +126,7 @@ const QuoteForm = () => {
               required: t('error.eventType.required'),
             })}
             required
-            label={t('form.typeOfEvent')}
+            label={t('typeOfEvent')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -138,7 +134,7 @@ const QuoteForm = () => {
             required
             control={control}
             name="eventDate"
-            label={t('form.eventDate')}
+            label={t('eventDate')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -148,7 +144,7 @@ const QuoteForm = () => {
             })}
             required
             className={'sm:col-span-2'}
-            label={t('form.location')}
+            label={t('location')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -163,7 +159,7 @@ const QuoteForm = () => {
             required
             className={'sm:col-span-2'}
             autoComplete="email"
-            label={t('form.email')}
+            label={t('email')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -174,7 +170,7 @@ const QuoteForm = () => {
             required
             className={'sm:col-span-2'}
             autoComplete="tel"
-            label={t('form.phoneNumber')}
+            label={t('phoneNumber')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -182,7 +178,7 @@ const QuoteForm = () => {
             {...register('message')}
             className={'sm:col-span-2'}
             name={'message'}
-            label={t('form.message')}
+            label={t('message')}
             labelColor={LABEL_COLORS.CONTACT_FORM}
             errors={errors}
           />
@@ -223,7 +219,7 @@ const QuoteForm = () => {
               },
             )}
           >
-            {isSubmitting ? t('form.sending') : t('form.submitButton')}
+            {isSubmitting ? t('sending') : t('submitButton')}
           </button>
         </div>
       </form>

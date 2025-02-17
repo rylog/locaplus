@@ -1,20 +1,19 @@
 import { useMutation } from '@tanstack/react-query';
 
-export interface QuoteRequest {
+import { UploadedFile } from '@/types/UploadedFile';
+
+export interface ApplicationRequest {
   recipient: string;
   firstName: string;
   lastName: string;
-  eventType: string;
-  eventDate: string;
-  location: string;
   phoneNumber: string;
-  message: string;
-  language?: string;
+  documents: UploadedFile[];
+  language: string;
   reCaptchaToken: string;
 }
 
-const sendQuoteRequest = async (quoteRequest: QuoteRequest) => {
-  const response = await fetch('/api/quotes', {
+const sendApplicationRequest = async (quoteRequest: ApplicationRequest) => {
+  const response = await fetch('/api/applications', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -30,6 +29,6 @@ const sendQuoteRequest = async (quoteRequest: QuoteRequest) => {
   return response.json();
 };
 
-export const useSendQuoteRequest = () => {
-  return useMutation({ mutationFn: sendQuoteRequest });
+export const useSendApplicationRequest = () => {
+  return useMutation({ mutationFn: sendApplicationRequest });
 };

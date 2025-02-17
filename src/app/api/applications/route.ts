@@ -1,18 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import sanitizeHtml from 'sanitize-html';
 
-import { QuoteRequest } from '@/api/useSendQuoteRequest';
+import { ApplicationRequest } from '@/api/useSendApplicationRequest';
+import { UploadedFile } from '@/types/UploadedFile';
 
 import { getAccessToken, verifyReCaptchaToken } from '../services/authService';
 import { sendEmail } from '../services/emailService';
+import {
+  generateApplicantMessage,
+  generateEmployerMessage,
+} from '../utils/applications';
 import { isValidEmail } from '../utils/emailValidator';
-import { generateQuotesMessage } from '../utils/quotes';
-
-const cleanInput = (input: string) =>
-  sanitizeHtml(input, {
-    allowedTags: [], // No HTML allowed
-    allowedAttributes: {},
-  });
 
 export const POST = async (req: NextRequest) => {
   if (req.method !== 'POST') {
@@ -20,12 +17,11 @@ export const POST = async (req: NextRequest) => {
   }
 
   try {
-    const rawBody = await req.text(); // Get raw JSON as a string
-    const sanitizedBody = cleanInput(rawBody); // Sanitize entire JSON string
-    const quoteRequest = JSON.parse(sanitizedBody) as QuoteRequest; // Parse into an object
+    const applicationRequest = await req.json();
     const locaplusEmail = process.env.LOCAPLUS_EMAIL;
 
-    const { reCaptchaToken, recipient, language } = quoteRequest;
+    const { reCaptchaToken, recipient, documents, language } =
+      applicationRequest as ApplicationRequest;
 
     const isValidReCaptchaToken = await verifyReCaptchaToken(reCaptchaToken);
 
@@ -36,7 +32,7 @@ export const POST = async (req: NextRequest) => {
       );
     }
 
-    // // Validate the recipient email
+    // // Validate the applicant email
     if (!recipient || !isValidEmail(recipient)) {
       return NextResponse.json(
         { error: 'Invalid recipient email address' },
@@ -44,7 +40,7 @@ export const POST = async (req: NextRequest) => {
       );
     }
 
-    // Validate the sales rep email
+    // Validate employer
     if (!locaplusEmail || !isValidEmail(locaplusEmail)) {
       return NextResponse.json(
         { error: 'Invalid sales representative email address' },
@@ -52,17 +48,26 @@ export const POST = async (req: NextRequest) => {
       );
     }
 
-    const messageContent = generateQuotesMessage(quoteRequest);
+    const attachments =
+      documents?.map((file: UploadedFile) => ({
+        '@odata.type': '#microsoft.graph.fileAttachment',
+        name: file.name, // Assuming documents have fileName property
+        contentBytes: file.base64, // Assuming documents have base64Content property
+      })) || [];
 
-    const emailData = {
+    const applicantMessageContent =
+      generateApplicantMessage(applicationRequest);
+    const employerMessageContent = generateEmployerMessage(applicationRequest);
+
+    const applicantEmailData = {
       message: {
         subject:
           language === 'fr'
-            ? `Demande de soumission reçue`
-            : `Quote request received`,
+            ? `Merci pour votre candidature – Locaplus`
+            : `Votre candidature a été reçue – Locaplus`,
         body: {
           contentType: 'HTML',
-          content: messageContent,
+          content: applicantMessageContent,
         },
         toRecipients: [
           {
@@ -71,19 +76,35 @@ export const POST = async (req: NextRequest) => {
             },
           },
         ],
-        ccRecipients: [
+      },
+    };
+
+    const employerEmailData = {
+      message: {
+        subject:
+          language === 'fr'
+            ? `Nouvelle candidature reçue`
+            : `New Application Received`,
+        body: {
+          contentType: 'HTML',
+          content: employerMessageContent,
+        },
+        toRecipients: [
           {
             emailAddress: {
               address: locaplusEmail,
             },
           },
         ],
+        attachments: attachments,
       },
     };
 
     const accessToken = await getAccessToken();
 
-    await sendEmail(emailData, accessToken);
+    await sendEmail(applicantEmailData, accessToken);
+    await sendEmail(employerEmailData, accessToken);
+
     return NextResponse.json(
       { message: 'Email sent successfully!' },
       { status: 200 },

@@ -12,7 +12,7 @@ const PrivacyPolicyModal: FC<PrivacyPolicyModalProps> = ({
   open,
   onClose,
 }: PrivacyPolicyModalProps) => {
-  const t = useTranslations('HomePage');
+  const t = useTranslations('PrivacyPolicy');
   return (
     <Dialog open={open} onClose={onClose} className="relative z-50">
       <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
@@ -26,51 +26,34 @@ const PrivacyPolicyModal: FC<PrivacyPolicyModalProps> = ({
             </button>
 
             <DialogTitle className="font-bold text-lg">
-              {t('privacyPolicy.title')}
+              {t('title')}
             </DialogTitle>
             <div className="flex flex-col gap-4">
-              <p className="text-sm mt-2">{t('privacyPolicy.intro')}</p>
+              <p className="text-sm mt-2">{t('intro')}</p>
               <div>
-                <h2 className="font-bold">
-                  {t('privacyPolicy.infoCollection.title')}
-                </h2>
+                <h2 className="font-bold">{t('infoCollection.title')}</h2>
                 <p className="text-sm mt-1">
-                  {t('privacyPolicy.infoCollection.description')}
+                  {t('infoCollection.description')}
                 </p>
               </div>
               <div>
-                <h2 className="font-bold">
-                  {t('privacyPolicy.howWeUse.title')}
-                </h2>
-                <p className="text-sm mt-1">
-                  {t('privacyPolicy.howWeUse.description')}
-                </p>
+                <h2 className="font-bold">{t('howWeUse.title')}</h2>
+                <p className="text-sm mt-1">{t('howWeUse.description')}</p>
               </div>
               <div>
-                <h2 className="font-bold">
-                  {t('privacyPolicy.protection.title')}
-                </h2>
-                <p className="text-sm mt-1">
-                  {t('privacyPolicy.protection.description')}
-                </p>
+                <h2 className="font-bold">{t('protection.title')}</h2>
+                <p className="text-sm mt-1">{t('protection.description')}</p>
               </div>
 
               <div>
-                <h2 className="font-bold">
-                  {t('privacyPolicy.retention.title')}
-                </h2>
-                <p className="text-sm mt-1">
-                  {t('privacyPolicy.retention.description')}
-                </p>
+                <h2 className="font-bold">{t('retention.title')}</h2>
+                <p className="text-sm mt-1">{t('retention.description')}</p>
               </div>
 
               <div>
-                <h2 className="font-bold">
-                  {t('privacyPolicy.contact.title')}
-                </h2>
+                <h2 className="font-bold">{t('contact.title')}</h2>
                 <p className="text-sm mt-1">
-                  {t('privacyPolicy.contactInfo')}{' '}
-                  {t('privacyPolicy.contactEmail')}
+                  {t('contactInfo')} {t('contactEmail')}
                 </p>
               </div>
             </div>

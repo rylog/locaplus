@@ -1,6 +1,6 @@
 {
   "name": "locaplus-website",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -28,6 +28,7 @@
     "react-dom": "^19.0.0",
     "react-google-recaptcha": "^3.1.0",
     "react-hook-form": "^7.54.2",
+    "react-hot-toast": "^2.5.1",
     "sanitize-html": "^2.14.0"
   },
   "devDependencies": {

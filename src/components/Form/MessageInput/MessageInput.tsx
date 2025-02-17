@@ -11,7 +11,7 @@ interface MessageInputProps {
   labelColor: string;
   onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void;
-  errors: FieldErrors;
+  errors?: FieldErrors;
 }
 
 export const MessageInput = ({

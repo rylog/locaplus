@@ -11,6 +11,7 @@ export const routing = defineRouting({
     mode: 'always',
   },
   pathnames: {
+    '/': '/',
     '/careers': {
       en: '/careers',
       fr: '/carrieres',

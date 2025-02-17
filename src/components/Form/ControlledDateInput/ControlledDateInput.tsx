@@ -40,7 +40,7 @@ export const ControlledDateInput = <T extends FieldValues>({
   className,
 }: DateInputProps<T>) => {
   const locale = useLocale();
-  const t = useTranslations('HomePage');
+  const t = useTranslations('Form');
   const hasError = !!errors?.[name];
 
   return (

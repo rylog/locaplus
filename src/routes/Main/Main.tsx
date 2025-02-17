@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { NavBar } from '../../components/NavBar/NavBar';
 import { SECTIONS } from '../../constants/sections';
@@ -11,7 +11,13 @@ import { Products } from './sections/Products/Products';
 
 export const Main = () => {
   const t = useTranslations('HomePage');
+  const locale = useLocale();
+
   const navItems = [
+    {
+      name: t('nav.careers'),
+      href: `${locale}/${SECTIONS.CAREERS}`,
+    },
     {
       name: t('nav.aboutUs'),
       href: `#${SECTIONS.ABOUT}`,
