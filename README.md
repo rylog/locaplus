@@ -26,7 +26,7 @@ Locaplus provides exceptional service in the tent and equipment rental industry.
 - **React**: Frontend framework for building the user interface.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
 - **TypeScript**: Static type checking for JavaScript.
-- **React Router**: For routing and navigation.
+- **Next.js**: Routing, SSR, SSG, and SEO optimization
 - **ESLint/Prettier**: For code linting and formatting.
 - **Node.js**: Backend server for serving the website.
 
