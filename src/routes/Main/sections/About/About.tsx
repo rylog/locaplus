@@ -11,8 +11,8 @@ export const About = () => {
   const t = useTranslations('HomePage');
 
   return (
-    <section id={SECTIONS.ABOUT} className="bg-linear py-12 sm:py-16">
-      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <section id={SECTIONS.ABOUT}>
+      <div className="mx-auto max-w-2xl lg:max-w-7xl pt-20 lg:px-8">
         <header>
           <h1 className="text-center text-lg/7 font-semibold text-primary">
             {t('nav.aboutUs')}
@@ -23,7 +23,7 @@ export const About = () => {
         </header>
         <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-1">
           {/* Left */}
-          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black/5">
+          <div className="grid grid-rows-[auto_1fr] overflow-hidden lg:rounded-lg bg-white lg:shadow-md ring-1 ring-black/5">
             <Image
               width={1536}
               height={2048}
@@ -32,7 +32,7 @@ export const About = () => {
               alt={t('about.section1.title')}
             />
             <div className="p-8 sm:px-10">
-              <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+              <p className="lg:mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
                 {t('about.section1.title')}
               </p>
               <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
@@ -42,7 +42,7 @@ export const About = () => {
           </div>
 
           {/* Middle */}
-          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black/5">
+          <div className="grid grid-rows-[auto_1fr] overflow-hidden lg:rounded-lg bg-white lg:shadow-md ring-1 ring-black/5">
             <Image
               width={2048}
               height={1536}
@@ -51,7 +51,7 @@ export const About = () => {
               alt={t('about.section2.title')}
             />
             <div className="p-8">
-              <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+              <p className="lg:mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
                 {t('about.section2.title')}
               </p>
               <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
@@ -61,7 +61,7 @@ export const About = () => {
           </div>
 
           {/* Right */}
-          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black/5">
+          <div className="grid grid-rows-[auto_1fr] overflow-hidden lg:rounded-lg bg-white lg:shadow-md ring-1 ring-black/5">
             <Image
               width={1024}
               height={768}
@@ -70,7 +70,7 @@ export const About = () => {
               alt={t('about.section3.title')}
             />
             <div className="p-8">
-              <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+              <p className="lg:mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
                 {t('about.section3.title')}
               </p>
               <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">

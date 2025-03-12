@@ -40,9 +40,11 @@ export const Main = () => {
         <Home />
         <NavBar navItems={navItems} />
       </div>
-      <About />
-      <Products />
-      <Contact />
+      <div className="flex flex-col gap-8">
+        <About />
+        <Products />
+        <Contact />
+      </div>
     </>
   );
 };
