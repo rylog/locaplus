@@ -25,11 +25,8 @@ export const Products = () => {
   ];
 
   return (
-    <section
-      id={SECTIONS.PRODUCTS}
-      className="flex bg-slate-50 min-h-full lg:min-h-0 py-24"
-    >
-      <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full gap-8 p-6 lg:p-8">
+    <section id={SECTIONS.PRODUCTS}>
+      <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full gap-8 px-0 pt-12 lg:px-8">
         <header className="text-center max-w-2xl self-center">
           <h1 className="text-lg/7 font-semibold text-primary">
             {t('nav.products')}
@@ -40,7 +37,7 @@ export const Products = () => {
           <p className="mt-2 text-gray-600">{t('products.description')}</p>
         </header>
         <TabGroup className="flex grow flex-col overflow-hidden">
-          <TabList className="flex gap-2">
+          <TabList className="flex gap-2 px-2">
             {categories.map(({ name }) => (
               <Tab
                 key={name}
