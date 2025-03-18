@@ -10,7 +10,7 @@ export const Tents = () => {
       title: t(tent.key),
       description: t(
         tent.min ? 'tents.capacity.range' : 'tents.capacity.maxOnly',
-        { min: tent.min, max: tent.max },
+        tent.min ? { min: tent.min, max: tent.max } : { max: tent.max },
       ),
     };
   });
