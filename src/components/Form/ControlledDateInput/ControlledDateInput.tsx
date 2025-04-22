@@ -8,7 +8,6 @@ import { isValid } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
-import { ComponentProps } from 'react';
 import {
   Control,
   Controller,
