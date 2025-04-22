@@ -1,14 +1,14 @@
 import { ErrorMessage } from '@hookform/error-message';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { enUS } from '@mui/x-date-pickers/locales/enUS';
-import { frFR } from '@mui/x-date-pickers/locales/frFR';
+import { enUS, frFR } from '@mui/x-date-pickers/locales';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import clsx from 'clsx';
 import { isValid } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
+import { ComponentProps } from 'react';
 import {
   Control,
   Controller,
@@ -80,21 +80,6 @@ export const ControlledDateInput = <T extends FieldValues>({
                   field.onChange(date);
                 }}
                 disablePast
-                sx={{
-                  '& .MuiInputBase-root': { height: 42 },
-                  '& .MuiOutlinedInput-notchedOutline': {
-                    border: '1px solid transparent', // Remove the default border
-                    transition: 'none', // Remove transition effects
-                  },
-                  '& .MuiOutlinedInput-root': {
-                    '&:hover .MuiOutlinedInput-notchedOutline': {
-                      border: '1px solid transparent', // Remove hover border effect
-                    },
-                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                      border: '1px solid transparent', // Remove focus border effect
-                    },
-                  },
-                }}
                 localeText={
                   {
                     en: enUS.components.MuiLocalizationProvider.defaultProps
@@ -105,6 +90,7 @@ export const ControlledDateInput = <T extends FieldValues>({
                 }
                 slotProps={{
                   textField: {
+                    size: 'small',
                     className: clsx(
                       'h-[42px] block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-xs placeholder:text-gray-900 focus:outline-hidden sm:text-sm/6 bg-white',
                       {
@@ -112,6 +98,11 @@ export const ControlledDateInput = <T extends FieldValues>({
                         'border-gray-300': !hasError,
                       },
                     ),
+                    sx: {
+                      '> .MuiPickersOutlinedInput-root': {
+                        height: 42, // whatever height you want here
+                      },
+                    },
                   },
                 }}
               />
