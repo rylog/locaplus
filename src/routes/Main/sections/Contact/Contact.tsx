@@ -21,7 +21,7 @@ export const Contact = () => {
           </p>
         </header>
       </div>
-      <div className="flex lg:py-6 justify-center">
+      <div className="flex lg:py-10 justify-center">
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 mx-0 lg:max-w-7xl lg:mx-8 lg:rounded-2xl bg-white overflow-hidden">
           <ContactInfo />
           <QuoteForm />

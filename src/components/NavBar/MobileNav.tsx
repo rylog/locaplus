@@ -5,6 +5,7 @@ import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 import Image from 'next/image';
 
 import Logo from '@/../public/Logo_locaplus.png';
+import { Link } from '@/i18n/routing';
 
 import { NavItem } from '../../types/NavItem';
 import { LanguageSelector } from './LanguageSelector';
@@ -41,17 +42,17 @@ export const MobileNav = ({
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-3 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <Image
                 width={191}
                 height={100}
                 alt="Locaplus Logo"
                 src={Logo.src}
-                className="h-8 w-full"
+                className="h-14 w-auto"
               />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={closeMenu}

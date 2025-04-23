@@ -201,7 +201,7 @@ const QuoteForm = () => {
           <ReCAPTCHA
             key={locale}
             hl={locale}
-            sitekey={'6LfHlqYqAAAAADot6hAgFU__aVE81y3ArPycGnoA'}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
             onChange={(val) => setRecaptchaToken(val)}
           />
         </div>
