@@ -13,7 +13,7 @@ import linkedInIcon from '@/../public/images/socials/linkedIn.svg';
 const ContactInfo = () => {
   const t = useTranslations('HomePage');
   return (
-    <div className="flex flex-col gap-4 justify-evenly bg-white lg:border lg:border-gray lg:rounded-l-2xl">
+    <div className="flex flex-col gap-4 bg-white lg:border lg:border-gray lg:rounded-l-2xl">
       <div className="flex flex-col px-12 py-10 gap-5 border-gray border-b">
         <div>
           <p className="text-lg font-medium flex">{t('contactInfo.phone')}</p>
@@ -21,15 +21,7 @@ const ContactInfo = () => {
             <div className="flex py-4 items-center">
               <PhoneIcon className="h-6 w-6 mr-5" />
               <div>
-                <p className="font-bold">{t('contactInfo.450Locations')}</p>
-                <p className="flex text-gray-600">+1 (450) 654-3210</p>
-              </div>
-            </div>
-            <div className="flex py-4 items-center">
-              <PhoneIcon className="h-6 w-6 mr-5" />
-              <div>
-                <p className="font-bold">{t('contactInfo.819Locations')}</p>
-                <p className="flex text-gray-600">+1 (819) 347-9544</p>
+                <p className="flex text-gray-600">+1 (450) 777-0233</p>
               </div>
             </div>
           </div>
