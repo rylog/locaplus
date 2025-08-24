@@ -22,9 +22,9 @@ export const dynamicParams = true;
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
-  const lang = (await params).lang;
+  const lang = (await params).lang as Locale;
   const titles = {
     en: 'Locaplus - Tent Rentals for Events',
     fr: 'Locaplus - Location de tentes pour événements',
@@ -94,9 +94,9 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: ReactNode;
-  params: Promise<{ lang: 'en' | 'fr' }>;
+  params: Promise<{ lang: string }>;
 }>) {
-  const lang = (await params).lang;
+  const lang = (await params).lang as Locale;
 
   if (!routing.locales.includes(lang)) {
     redirect('/fr');
