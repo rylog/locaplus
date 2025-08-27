@@ -26,7 +26,7 @@ const sendQuoteRequest = async (quoteRequest: QuoteRequest) => {
 
   if (!response.ok) {
     trackEvent({
-      action: 'submit_form_error',
+      action: 'form_submit_error',
       category: 'Quote',
       label: 'Quote Form',
     });
@@ -36,7 +36,7 @@ const sendQuoteRequest = async (quoteRequest: QuoteRequest) => {
   }
 
   trackEvent({
-    action: 'submit_form_success',
+    action: 'form_submit_success',
     category: 'Quote',
     label: 'Quote Form',
   });

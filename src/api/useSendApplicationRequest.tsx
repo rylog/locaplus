@@ -24,7 +24,7 @@ const sendApplicationRequest = async (quoteRequest: ApplicationRequest) => {
 
   if (!response.ok) {
     trackEvent({
-      action: 'submit_form_error',
+      action: 'form_submit_error',
       category: 'Careers',
       label: 'Careers Form',
     });
@@ -34,7 +34,7 @@ const sendApplicationRequest = async (quoteRequest: ApplicationRequest) => {
   }
 
   trackEvent({
-    action: 'submit_form_success',
+    action: 'form_submit_success',
     category: 'Careers',
     label: 'Careers Form',
   });
