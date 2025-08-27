@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
+import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { ReactNode } from 'react';
@@ -108,6 +109,22 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
+      <head>
+        {/* GA4 snippet */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-GHZM8KBSMM`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-GHZM8KBSMM');
+          `}
+        </Script>
+      </head>
       <body className="bg-gray-100" suppressHydrationWarning>
         <QueryClientContextProvider>
           <NextIntlClientProvider messages={messages}>
