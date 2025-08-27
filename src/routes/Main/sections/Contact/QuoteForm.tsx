@@ -10,6 +10,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 
 import { LABEL_COLORS } from '@/styles/colors';
+import { trackEvent } from '@/utils/ga';
 
 import { useSendQuoteRequest } from '../../../../api/useSendQuoteRequest';
 import { ConsentCheckbox } from '../../../../components/Form/ConsentCheckbox/ConsentCheckbox';
@@ -66,7 +67,17 @@ const QuoteForm = () => {
         reCaptchaToken: reCaptchaToken!,
       });
       setFormSubmitted(true);
+      trackEvent({
+        action: 'submit_form_successful',
+        category: 'Quote',
+        label: 'Quote Form',
+      });
     } catch (error) {
+      trackEvent({
+        action: 'submit_form_error',
+        category: 'Quote',
+        label: 'Quote Form',
+      });
       setError(t('error.sendEmail.generic'));
       throw error;
     }
@@ -214,8 +225,7 @@ const QuoteForm = () => {
               {
                 'bg-gray-500': isSubmitting,
                 'bg-primary': !isSubmitting,
-                'disabled:bg-gray-800 disabled:text-neutral-500 disabled:cursor-not-allowed':
-                  true,
+                'disabled:bg-gray-800 disabled:text-neutral-500 disabled:cursor-not-allowed': true,
               },
             )}
           >

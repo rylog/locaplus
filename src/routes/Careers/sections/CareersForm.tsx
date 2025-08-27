@@ -15,6 +15,7 @@ import { TextInput } from '@/components/Form/TextInput/TextInput';
 import PrivacyPolicyModal from '@/components/PrivacyModal/PrivacyModal';
 import { LABEL_COLORS } from '@/styles/colors';
 import { UploadedFile } from '@/types/UploadedFile';
+import { trackEvent } from '@/utils/ga';
 
 interface CareersFormInputs {
   firstName: '';
@@ -50,8 +51,18 @@ export const CareersForm = () => {
         reCaptchaToken: reCaptchaToken!,
         documents: data.documents, // Sending documents as part of the request
       });
+      trackEvent({
+        action: 'submit_form_successful',
+        category: 'Careers',
+        label: 'Careers Form',
+      });
       setFormSubmitted(true);
     } catch (error) {
+      trackEvent({
+        action: 'submit_form_error',
+        category: 'Careers',
+        label: 'Careers Form',
+      });
       setError(t('error.sendEmail.generic'));
       throw error;
     }
@@ -180,8 +191,7 @@ export const CareersForm = () => {
                 {
                   'bg-gray-500': isSubmitting,
                   'bg-primary': !isSubmitting,
-                  'disabled:bg-gray-800 disabled:text-neutral-500 disabled:cursor-not-allowed':
-                    true,
+                  'disabled:bg-gray-800 disabled:text-neutral-500 disabled:cursor-not-allowed': true,
                 },
               )}
             >
