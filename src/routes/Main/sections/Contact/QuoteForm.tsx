@@ -10,7 +10,6 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 
 import { LABEL_COLORS } from '@/styles/colors';
-import { trackEvent } from '@/utils/ga';
 
 import { useSendQuoteRequest } from '../../../../api/useSendQuoteRequest';
 import { ConsentCheckbox } from '../../../../components/Form/ConsentCheckbox/ConsentCheckbox';
