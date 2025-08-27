@@ -1,5 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 
+import { trackEvent } from '@/utils/ga';
+
 export interface QuoteRequest {
   recipient: string;
   firstName: string;
@@ -23,9 +25,21 @@ const sendQuoteRequest = async (quoteRequest: QuoteRequest) => {
   });
 
   if (!response.ok) {
+    trackEvent({
+      action: 'submit_form_error',
+      category: 'Quote',
+      label: 'Quote Form',
+    });
+
     const error = await response.json();
     throw new Error(error.error || 'Failed to send email');
   }
+
+  trackEvent({
+    action: 'submit_form_success',
+    category: 'Quote',
+    label: 'Quote Form',
+  });
 
   return response.json();
 };

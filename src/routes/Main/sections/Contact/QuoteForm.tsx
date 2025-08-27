@@ -67,17 +67,7 @@ const QuoteForm = () => {
         reCaptchaToken: reCaptchaToken!,
       });
       setFormSubmitted(true);
-      trackEvent({
-        action: 'submit_form_successful',
-        category: 'Quote',
-        label: 'Quote Form',
-      });
     } catch (error) {
-      trackEvent({
-        action: 'submit_form_error',
-        category: 'Quote',
-        label: 'Quote Form',
-      });
       setError(t('error.sendEmail.generic'));
       throw error;
     }
