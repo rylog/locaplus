@@ -17,13 +17,13 @@ export const Home = () => {
             <h1 className="text-4xl font-medium tracking-tight sm:text-6xl text-white px-5">
               {t('home.title')}
             </h1>
-            <h2 className="text-lg font-normal text-slate-100 sm:text-xl/8 rounded-md px-5">
+            <h2 className="text-lg font-normal text-slate-100 sm:text-2xl/8 rounded-md px-5">
               {t('home.subtitle')}
             </h2>
           </div>
           <a
             href={`#${SECTIONS.QUOTE}`}
-            className="self-center transform transition duration-200 w-fit rounded-md bg-primary px-3.5 py-2.5 text-sm text-slate-100 shadow-xs hover:scale-105 hover:shadow-lg active:shadow-inner"
+            className="self-center transform transition duration-200 w-fit rounded-md bg-primary px-3.5 py-2.5 text-m text-slate-100 shadow-xs hover:scale-105 hover:shadow-lg active:shadow-inner"
           >
             {t('home.requestQuote')}
           </a>

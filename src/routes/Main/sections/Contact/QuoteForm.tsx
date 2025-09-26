@@ -16,7 +16,6 @@ import { ConsentCheckbox } from '../../../../components/Form/ConsentCheckbox/Con
 import { ControlledDateInput } from '../../../../components/Form/ControlledDateInput/ControlledDateInput';
 import { MessageInput } from '../../../../components/Form/MessageInput/MessageInput';
 import { TextInput } from '../../../../components/Form/TextInput/TextInput';
-import PrivacyPolicyModal from '../../../../components/PrivacyModal/PrivacyModal';
 import { SECTIONS } from '../../../../constants/sections';
 
 export interface QuoteFormInputs {
@@ -34,7 +33,6 @@ export interface QuoteFormInputs {
 const QuoteForm = () => {
   const [error, setError] = useState('');
   const [reCaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-  const [showPrivacyModal, setShowPrivacyModal] = useState<boolean>(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const sendQuoteMutation = useSendQuoteRequest();
   const locale = useLocale();
@@ -218,14 +216,10 @@ const QuoteForm = () => {
               },
             )}
           >
-            {isSubmitting ? t('sending') : t('submitButton')}
+            {isSubmitting ? t('sending') : t('submitQuote')}
           </button>
         </div>
       </form>
-      <PrivacyPolicyModal
-        open={showPrivacyModal}
-        onClose={() => setShowPrivacyModal(false)}
-      />
     </section>
   );
 };

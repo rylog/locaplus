@@ -184,7 +184,7 @@ export const CareersForm = () => {
                 },
               )}
             >
-              {isSubmitting ? t('sending') : t('submitButton')}
+              {isSubmitting ? t('sending') : t('submitApplication')}
             </button>
           </div>
         </form>
