@@ -1,0 +1,17 @@
+export const equipmentData = [
+  'equipment.podium',
+  'equipment.redCarpet25Ft',
+  'equipment.stanchionsAndRopes',
+  'equipment.coatRack',
+  'equipment.cornRoasts',
+  'equipment.roastOven',
+  'equipment.propaneBBQ24x48',
+  'equipment.coffeeMaker',
+  'equipment.propanePatioHeater',
+  'equipment.portableBar',
+  'equipment.portableIlluminatedBar',
+  'equipment.dishesCutleryAndGlasses',
+  'equipment.iceBasket',
+  'equipment.propaneFurnace',
+  'equipment.propaneFurnaceAccessory',
+] as const;

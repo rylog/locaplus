@@ -20,7 +20,7 @@ interface SelectInputProps {
   label: string;
   labelColor: string;
   options: Option[];
-  value: string | null;
+  value?: string;
   onChange: (value: string) => void;
   errors?: FieldErrors;
   placeholder?: string;
