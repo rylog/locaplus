@@ -22,7 +22,13 @@ export const POST = async (req: NextRequest) => {
   try {
     const rawBody = await req.text(); // Get raw JSON as a string
     const sanitizedBody = cleanInput(rawBody); // Sanitize entire JSON string
+<<<<<<< Updated upstream
     const quoteRequest = JSON.parse(sanitizedBody) as QuoteRequest; // Parse into an object
+=======
+    const quoteRequest = JSON.parse(sanitizedBody) as
+      | QuoteRequest
+      | TempoQuoteRequest; // Parse into an object
+>>>>>>> Stashed changes
     const locaplusEmail = process.env.LOCAPLUS_EMAIL;
 
     const { reCaptchaToken, recipient, language } = quoteRequest;
