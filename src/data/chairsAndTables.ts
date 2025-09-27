@@ -1,0 +1,16 @@
+export const chairsAndTablesData = [
+  'equipment.burgundyFoldingChair',
+  'equipment.crystalChiavariChair',
+  'equipment.mahoganyChiavariChair',
+  'equipment.whiteBistroChair',
+  'equipment.barStool',
+  'equipment.cocktailTable30In',
+  'equipment.roundTable48In',
+  'equipment.roundTable60In',
+  'equipment.roundTable72In',
+  'equipment.rectangularTable30x96',
+  'equipment.rectangularTable30x72',
+  'equipment.floorRegular',
+  'equipment.floorLeveled',
+  'equipment.floorDance',
+] as const;

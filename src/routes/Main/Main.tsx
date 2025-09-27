@@ -16,19 +16,19 @@ export const Main = () => {
   const navItems = [
     {
       name: t('nav.careers'),
-      href: `${locale}/${SECTIONS.CAREERS}`,
+      href: `${locale}/${SECTIONS[locale].CAREERS}`,
     },
     {
       name: t('nav.aboutUs'),
-      href: `#${SECTIONS.ABOUT}`,
+      href: `#${SECTIONS[locale].ABOUT}`,
     },
     {
       name: t('nav.products'),
-      href: `#${SECTIONS.PRODUCTS}`,
+      href: `#${SECTIONS[locale].PRODUCTS}`,
     },
     {
       name: t('nav.contactUs'),
-      href: `#${SECTIONS.CONTACT}`,
+      href: `#${SECTIONS[locale].CONTACT}`,
     },
   ];
 

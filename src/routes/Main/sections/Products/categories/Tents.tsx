@@ -1,17 +1,19 @@
 import { useTranslations } from 'next-intl';
 
-import tentsData from '@/data/tents.json';
+import { tentsData } from '@/data/tents';
 
 export const Tents = () => {
   const t = useTranslations('HomePage');
-  const items = [...tentsData.tents.list].map((tent) => {
+  const items = tentsData.map((tent) => {
+    const { img, key, max } = tent;
+    const min = 'min' in tent ? tent.min : undefined;
     return {
-      img: tent.img,
-      title: t(tent.key),
-      description: t(
-        tent.min ? 'tents.capacity.range' : 'tents.capacity.maxOnly',
-        tent.min ? { min: tent.min, max: tent.max } : { max: tent.max },
-      ),
+      img,
+      title: t(key),
+      description:
+        min !== undefined
+          ? t('tents.capacity.range', { min, max })
+          : t('tents.capacity.maxOnly', { max }),
     };
   });
 

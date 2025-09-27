@@ -150,8 +150,9 @@
     "supportedFileTypes": "Types de fichiers autorisés : ",
     "maxFileSize": "Taille maximale des fichiers : ",
     "maxFileCount": "Nombre maximum de fichiers : ",
-    "submitButton": "Demander une soumission",
-    "uploadingFiles": "Uploading files",
+    "submitQuote": "Demander une soumission",
+    "submitApplication": "Postuler maintenant",
+    "uploadingFiles": "Téléchargement des fichiers",
     "sending": "Envoi en cours...",
     "error": {
       "firstName": {

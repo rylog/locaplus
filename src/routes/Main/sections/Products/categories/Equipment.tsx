@@ -1,10 +1,10 @@
 import { useTranslations } from 'next-intl';
 
-import equipmentData from '@/data/equipment.json';
+import { equipmentData } from '@/data/equipment';
 
 export const Equipment = () => {
   const t = useTranslations('HomePage');
-  const items = [...equipmentData.equipment.list].map((e) => {
+  const items = equipmentData.map((e) => {
     return {
       title: t(e),
     };

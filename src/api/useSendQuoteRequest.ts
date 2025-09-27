@@ -1,8 +1,10 @@
 import { useMutation } from '@tanstack/react-query';
 
+import { Locale } from '@/app/[lang]/layout';
 import { trackEvent } from '@/utils/ga';
 
 export interface QuoteRequest {
+  type: 'standard';
   recipient: string;
   firstName: string;
   lastName: string;
@@ -11,11 +13,27 @@ export interface QuoteRequest {
   location: string;
   phoneNumber: string;
   message: string;
-  language?: string;
+  language?: Locale;
   reCaptchaToken: string;
 }
 
-const sendQuoteRequest = async (quoteRequest: QuoteRequest) => {
+export interface TempoQuoteRequest {
+  type: 'tempo';
+  firstName: string;
+  lastName: string;
+  serviceType: string;
+  location: string;
+  recipient: string;
+  dimensions: string;
+  phoneNumber: string;
+  message: string;
+  language?: Locale;
+  reCaptchaToken: string;
+}
+
+const sendQuoteRequest = async (
+  quoteRequest: QuoteRequest | TempoQuoteRequest,
+) => {
   const response = await fetch('/api/quotes', {
     method: 'POST',
     headers: {
