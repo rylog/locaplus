@@ -28,7 +28,7 @@ export const POST = async (req: NextRequest) => {
     const quoteRequest = JSON.parse(sanitizedBody) as
       | QuoteRequest
       | TempoQuoteRequest; // Parse into an object
-    const locaplusEmail = 'ryanlomtl@gmail.com';
+    const locaplusEmail = process.env.LOCAPLUS_EMAIL;
 
     const { reCaptchaToken, recipient, language } = quoteRequest;
 
