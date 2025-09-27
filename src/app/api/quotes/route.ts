@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import sanitizeHtml from 'sanitize-html';
 
-import { QuoteRequest } from '@/api/useSendQuoteRequest';
+import { QuoteRequest, TempoQuoteRequest } from '@/api/useSendQuoteRequest';
 
 import { getAccessToken, verifyReCaptchaToken } from '../services/authService';
 import { sendEmail } from '../services/emailService';
 import { isValidEmail } from '../utils/emailValidator';
-import { generateQuotesMessage } from '../utils/quotes';
+import {
+  generateQuotesMessage,
+  generateTempoQuotesMessage,
+} from '../utils/quotes';
 
 const cleanInput = (input: string) =>
   sanitizeHtml(input, {
@@ -22,8 +25,10 @@ export const POST = async (req: NextRequest) => {
   try {
     const rawBody = await req.text(); // Get raw JSON as a string
     const sanitizedBody = cleanInput(rawBody); // Sanitize entire JSON string
-    const quoteRequest = JSON.parse(sanitizedBody) as QuoteRequest; // Parse into an object
-    const locaplusEmail = process.env.LOCAPLUS_EMAIL;
+    const quoteRequest = JSON.parse(sanitizedBody) as
+      | QuoteRequest
+      | TempoQuoteRequest; // Parse into an object
+    const locaplusEmail = 'ryanlomtl@gmail.com';
 
     const { reCaptchaToken, recipient, language } = quoteRequest;
 
@@ -52,14 +57,26 @@ export const POST = async (req: NextRequest) => {
       );
     }
 
-    const messageContent = generateQuotesMessage(quoteRequest);
+    let messageContent: string = '';
+    switch (quoteRequest.type) {
+      case 'standard':
+        messageContent = generateQuotesMessage(quoteRequest);
+        break;
+      case 'tempo':
+        messageContent = generateTempoQuotesMessage(quoteRequest);
+        break;
+    }
 
     const emailData = {
       message: {
         subject:
-          language === 'fr'
-            ? `Demande de soumission reçue`
-            : `Quote request received`,
+          quoteRequest.type === 'tempo'
+            ? language === 'fr'
+              ? 'Demande de soumission Tempo reçue'
+              : 'Tempo quote request received'
+            : language === 'fr'
+              ? 'Demande de soumission reçue'
+              : 'Quote request received',
         body: {
           contentType: 'HTML',
           content: messageContent,

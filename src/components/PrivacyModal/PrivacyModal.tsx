@@ -15,7 +15,7 @@ const PrivacyPolicyModal: FC<PrivacyPolicyModalProps> = ({
   const t = useTranslations('PrivacyPolicy');
   return (
     <Dialog open={open} onClose={onClose} className="relative z-50">
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center">
         <div className="flex min-h-full items-center justify-center p-4">
           <DialogPanel className="w-full max-w-xl rounded-x bg-white p-8 rounded-md max-h-[90vh] overflow-y-auto relative">
             <button

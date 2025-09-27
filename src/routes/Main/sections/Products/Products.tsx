@@ -1,6 +1,6 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import clsx from 'clsx';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { SECTIONS } from '../../../../constants/sections';
 import { Equipment } from './categories/Equipment';
@@ -8,6 +8,7 @@ import { FlooringChairsAndTables } from './categories/FlooringChairsAndTables';
 import { Tents } from './categories/Tents';
 
 export const Products = () => {
+  const locale = useLocale();
   const t = useTranslations('HomePage');
   const categories = [
     {
@@ -25,7 +26,7 @@ export const Products = () => {
   ];
 
   return (
-    <section id={SECTIONS.PRODUCTS}>
+    <section id={SECTIONS[locale].PRODUCTS}>
       <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full gap-8 px-0 pt-12 lg:px-8">
         <header className="text-center max-w-2xl self-center">
           <h1 className="text-lg/7 font-semibold text-primary">

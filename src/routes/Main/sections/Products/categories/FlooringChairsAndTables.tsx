@@ -1,10 +1,10 @@
 import { useTranslations } from 'next-intl';
 
-import chairsAndTablesData from '@/data/chairsAndTables.json';
+import { chairsAndTablesData } from '@/data/chairsAndTables';
 
 export const FlooringChairsAndTables = () => {
   const t = useTranslations('HomePage');
-  const items = [...chairsAndTablesData.chairsAndTables.list].map((e) => {
+  const items = chairsAndTablesData.map((e) => {
     return {
       title: t(e),
     };

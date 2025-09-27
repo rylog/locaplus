@@ -1,13 +1,14 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { SECTIONS } from '../../../../constants/sections';
 import ContactInfo from './ContactInfo';
 import QuoteForm from './QuoteForm';
 
 export const Contact = () => {
+  const locale = useLocale();
   const t = useTranslations('HomePage');
   return (
-    <section id={SECTIONS.CONTACT}>
+    <section id={SECTIONS[locale].CONTACT}>
       <div className="flex flex-col max-w-2xl pt-12 lg:max-w-6xl justify-self-center gap-4">
         <header>
           <h1 className="text-lg/7 font-semibold text-primary text-center">

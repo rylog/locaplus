@@ -1,0 +1,84 @@
+export const tentsData = [
+  {
+    img: '/images/tents/10x10.png',
+    key: 'tent.name.10x10',
+    min: 8,
+    max: 10,
+  },
+  {
+    img: '/images/tents/10x20.png',
+    key: 'tent.name.10x20',
+    min: 16,
+    max: 20,
+  },
+  {
+    img: '/images/tents/20x20.png',
+    key: 'tent.name.20x20',
+    min: 32,
+    max: 40,
+  },
+  {
+    img: '/images/tents/20x30.png',
+    key: 'tent.name.20x30',
+    min: 48,
+    max: 60,
+  },
+  {
+    img: '/images/tents/20x40.png',
+    key: 'tent.name.20x40',
+    min: 64,
+    max: 80,
+  },
+  {
+    img: '/images/tents/hex.png',
+    key: 'tent.name.hexagonal',
+    min: 84,
+    max: 104,
+  },
+  {
+    img: '/images/tents/40w.png',
+    key: 'tent.name.40x40',
+    min: 128,
+    max: 160,
+  },
+  {
+    img: '/images/tents/40w.png',
+    key: 'tent.name.40x60',
+    min: 192,
+    max: 240,
+  },
+  {
+    img: '/images/tents/40w.png',
+    key: 'tent.name.40x80',
+    min: 256,
+    max: 320,
+  },
+  {
+    img: '/images/tents/40w.png',
+    key: 'tent.name.40x100',
+    min: 320,
+    max: 400,
+  },
+  {
+    img: '/images/tents/40w.png',
+    key: 'tent.name.40x200',
+    max: 800,
+  },
+  {
+    img: '/images/tents/60w.png',
+    key: 'tent.name.60x80',
+    min: 384,
+    max: 480,
+  },
+  {
+    img: '/images/tents/60w.png',
+    key: 'tent.name.60x100',
+    min: 480,
+    max: 600,
+  },
+  {
+    img: '/images/tents/60w.png',
+    key: 'tent.name.60x200',
+    max: 1200,
+  },
+] as const;
