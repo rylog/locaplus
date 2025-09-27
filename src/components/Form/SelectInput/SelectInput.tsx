@@ -69,7 +69,10 @@ export const SelectInput = ({
               </span>
             </ListboxButton>
 
-            <ListboxOptions className="absolute mt-1 max-h-60 w-full overflow-auto rounded-lg bg-white py-1 shadow-lg ring-1 ring-black/10 focus:outline-none sm:text-sm">
+            <ListboxOptions
+              className="absolute mt-1 max-h-60 w-full overflow-auto rounded-lg bg-white py-1 shadow-lg ring-1 ring-black/10 focus:outline-none sm:text-sm"
+              modal={false}
+            >
               {options.map((option) => (
                 <ListboxOption
                   key={option.value}

@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import HomeBackgroundJpg from '@/../public/images/home/HomePage.jpg';
 
@@ -6,9 +6,10 @@ import { SECTIONS } from '../../../../constants/sections';
 
 export const Home = () => {
   const t = useTranslations('HomePage');
+  const locale = useLocale();
   return (
     <section
-      id={SECTIONS.HOME}
+      id={SECTIONS[locale].HOME}
       className="flex isolate h-full lg:px-8 bg-no-repeat bg-cover bg-center"
     >
       <div className="flex flex-col mx-auto max-w-4xl max-h-full absolute left-0 right-0 top-[30%]">
@@ -22,7 +23,7 @@ export const Home = () => {
             </h2>
           </div>
           <a
-            href={`#${SECTIONS.QUOTE}`}
+            href={`#${SECTIONS[locale].QUOTE}`}
             className="self-center transform transition duration-200 w-fit rounded-md bg-primary px-3.5 py-2.5 text-m text-slate-100 shadow-xs hover:scale-105 hover:shadow-lg active:shadow-inner"
           >
             {t('home.requestQuote')}

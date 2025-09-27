@@ -49,6 +49,7 @@ const QuoteForm = () => {
   const onSubmit = async (data: QuoteFormInputs) => {
     try {
       await sendQuoteMutation.mutateAsync({
+        type: 'standard',
         recipient: data.email,
         firstName: data.firstName,
         lastName: data.lastName,
@@ -60,7 +61,7 @@ const QuoteForm = () => {
         location: data.location,
         phoneNumber: data.phoneNumber,
         message: data.message,
-        language: locale?.toString(),
+        language: locale,
         reCaptchaToken: reCaptchaToken!,
       });
       setFormSubmitted(true);
@@ -73,7 +74,7 @@ const QuoteForm = () => {
   if (formSubmitted) {
     return (
       <section
-        id={SECTIONS.QUOTE}
+        id={SECTIONS[locale].QUOTE}
         className="p-8 lg:px-12 bg-slate-900 flex items-center justify-center"
       >
         <div className="flex flex-col gap-6">
@@ -82,7 +83,9 @@ const QuoteForm = () => {
           </h1>
           <CheckCircleIcon className="w-24 h-24 text-white m-auto" />
           <p className="text-white text-center">
-            {t('requestQuote.success.message')}
+            {t.rich('requestQuote.success.message', {
+              br: () => '\n',
+            })}
           </p>
         </div>
       </section>
@@ -90,7 +93,7 @@ const QuoteForm = () => {
   }
 
   return (
-    <section id={SECTIONS.QUOTE} className="p-8 lg:px-12 bg-slate-900">
+    <section id={SECTIONS[locale].QUOTE} className="p-8 lg:px-12 bg-slate-900">
       <header>
         <h1 className="text-2xl text-white font-semibold tracking-loose sm:text-2xl text-center lg:text-start">
           {t('requestQuote.title')}
@@ -194,7 +197,7 @@ const QuoteForm = () => {
           />
         </div>
 
-        {errors && <p className="text-red-500 mt-4">{error}</p>}
+        {error && <p className="text-red-500 mt-4">{error}</p>}
         <div className="mt-8">
           <ReCAPTCHA
             key={locale}
@@ -206,7 +209,7 @@ const QuoteForm = () => {
         <div className="mt-10 w-fit justify-self-end">
           <button
             type="submit"
-            disabled={!reCaptchaToken}
+            disabled={!reCaptchaToken || isSubmitting}
             className={clsx(
               'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs',
               {

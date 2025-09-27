@@ -196,7 +196,7 @@
       "title": "Request a quote",
       "success": {
         "title": "Quote Request Submitted",
-        "message": "You will receive an automated email confirmation. A team member will follow up with you shortly."
+        "message": "You will receive an automated email confirmation. <br></br> A team member will follow up with you shortly."
       },
       "maintenance": "The quote form will be unavailable until January 5th. Please send all quote requests to contact@locaplus.net. We apologize for the inconvenience."
     },
@@ -269,6 +269,12 @@
         "invalidFileType": "Invalid file type. Please upload a PDF, DOC, or DOCX.",
         "fileTooLarge": "File is too large. Maximum size is 3MB.",
         "tooLargeTotalSize": "The total file size exceeds the 10MB limit."
+      },
+      "serviceType": {
+        "required": "A service type is required"
+      },
+      "carportDimensions": {
+        "required": "A carport dimension is required"
       }
     }
   },

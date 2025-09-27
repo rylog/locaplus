@@ -174,7 +174,7 @@ export const CareersForm = () => {
           <div className="mt-10 w-fit justify-self-end">
             <button
               type="submit"
-              disabled={!reCaptchaToken}
+              disabled={!reCaptchaToken || isSubmitting}
               className={clsx(
                 'block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs',
                 {

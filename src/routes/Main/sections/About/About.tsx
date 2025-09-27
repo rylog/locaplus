@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import AboutLeftSectionPhoto from '@/../public/images/about/leftSection.jpg';
 import AboutMiddleSectionPhoto from '@/../public/images/about/middleSection.jpg';
@@ -8,10 +8,11 @@ import AboutRightSectionPhoto from '@/../public/images/about/rightSection.jpg';
 import { SECTIONS } from '../../../../constants/sections';
 
 export const About = () => {
+  const locale = useLocale();
   const t = useTranslations('HomePage');
 
   return (
-    <section id={SECTIONS.ABOUT}>
+    <section id={SECTIONS[locale].ABOUT}>
       <div className="mx-auto max-w-2xl lg:max-w-7xl pt-20 lg:px-8">
         <header>
           <h1 className="text-center text-lg/7 font-semibold text-primary">
