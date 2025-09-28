@@ -25,7 +25,13 @@ export async function generateMetadata({
 }: {
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
-  const lang = (await params).lang as Locale;
+  // Use params.slug for route detection
+  const { lang, slug } = (await params) as {
+    lang: Locale;
+    slug?: string | string[];
+  };
+  const slugArr = Array.isArray(slug) ? slug : [slug];
+
   const titles = {
     en: 'Locaplus - Tent Rentals for Events',
     fr: 'Locaplus - Location de tentes pour événements',
@@ -34,6 +40,11 @@ export async function generateMetadata({
   const descriptions = {
     en: 'Premium tent and equipment rentals for festivals and events in Quebec.',
     fr: "Location de tentes et d'équipement pour festivals et événements au Québec.",
+  };
+
+  const temposDescriptions = {
+    en: 'Discover our full range of Tempo shelters for every event and season.',
+    fr: 'Découvrez notre gamme complète d’abris Tempo pour chaque événement et saison.',
   };
 
   const keywords = {
@@ -51,19 +62,29 @@ export async function generateMetadata({
     fr: 'Location de tentes pour événements',
   };
 
+  // Default OG image and description
+  let ogImage = 'https://www.locaplus.net/event-tents-locaplus.jpg';
+  let description = descriptions[lang] || descriptions['en'];
+
+  // If on /tempos, use different OG image and description
+  if (slugArr.includes('tempos') || slugArr.includes('abris-tempo')) {
+    ogImage = 'https://www.locaplus.net/tempo-display.jpg'; // Your new Tempos image URL
+    description = temposDescriptions[lang] || temposDescriptions['en'];
+  }
+
   return {
     title: titles[lang] || titles['en'],
-    description: descriptions[lang] || descriptions['en'],
+    description,
     keywords: keywords[lang] || keywords['en'],
     robots: 'index, follow',
     openGraph: {
       title: titles[lang] || titles['en'],
-      description: descriptions[lang] || descriptions['en'],
+      description,
       url: canonicalUrls[lang] || canonicalUrls['en'],
       siteName: 'Locaplus',
       images: [
         {
-          url: 'https://www.locaplus.net/event-tents-locaplus.jpg',
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: imageAlts[lang],
@@ -74,8 +95,8 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: titles[lang] || titles['en'],
-      description: descriptions[lang] || descriptions['en'],
-      images: ['https://www.locaplus.net/event-tents-locaplus.jpg'],
+      description,
+      images: [ogImage],
     },
     icons: {
       icon: '/favicon.ico',
