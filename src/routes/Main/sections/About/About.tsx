@@ -14,7 +14,7 @@ export const About = () => {
   return (
     <section
       id={SECTIONS[locale].ABOUT}
-      className="bg-white rounded-4xl translate-y-[-32px] z-10"
+      className="bg-gray-50 rounded-4xl translate-y-[-32px] z-10"
     >
       <div className="mx-auto max-w-2xl lg:max-w-7xl pt-20 lg:px-8">
         <header>

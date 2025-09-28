@@ -20,7 +20,7 @@ export const Main = () => {
         <Home />
         <NavBar />
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col bg-gray-50">
         <About />
         <Products />
         <Contact />
