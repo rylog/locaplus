@@ -255,13 +255,13 @@
   "TemposPage": {
     "hero": {
       "title": "Abris Tempo officiels Locaplus",
-      "subtitle": "Abris Tempo durables et faciles à installer pour toutes les saisons dans les cantons orientaux.",
+      "subtitle": "Abris Tempo durables et faciles à installer pour toutes les saisons.",
       "cta": "Demander une soumission"
     },
-    "installation": "Installation",
     "serviceOptions": {
-      "rent": "Louer",
-      "purchase": "Achat"
+      "rent": "Location",
+      "purchase": "Achat",
+      "installation": "Installation"
     },
     "whyChoose": {
       "subtitle": "Pourquoi choisir nos abris Tempo",

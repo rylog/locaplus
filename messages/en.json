@@ -255,13 +255,13 @@
   "TemposPage": {
     "hero": {
       "title": "Locaplus Tempos",
-      "subtitle": "Durable, easy-to-install Tempo shelters for all seasons in the Eastern Townships.",
+      "subtitle": "Durable, easy-to-install Tempo shelters for all seasons.",
       "cta": "Request a quote"
     },
-    "installation": "Installation",
     "serviceOptions": {
-      "rent": "Rent",
-      "purchase": "Purchase"
+      "rent": "Rental",
+      "purchase": "Purchase",
+      "installation": "Installation"
     },
     "whyChoose": {
       "subtitle": "Why Choose Our Tempos",

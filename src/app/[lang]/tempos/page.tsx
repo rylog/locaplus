@@ -95,17 +95,17 @@ export default function TemposPage() {
       label: t('TemposPage.serviceOptions.purchase'),
     },
     {
-      value: t('TemposPage.installation'),
-      label: t('TemposPage.installation'),
+      value: t('TemposPage.serviceOptions.installation'),
+      label: t('TemposPage.serviceOptions.installation'),
     },
   ];
 
   return (
     <div>
       <NavBar />
-      <main className="flex flex-col">
+      <main className="flex flex-col bg-gray-50">
         {/* Hero content */}
-        <div className="relative px-6 py-36 lg:px-8 bg-slate-900 text-white text-center">
+        <div className="relative px-6 pt-36 pb-44 lg:px-8 bg-slate-900 text-white text-center">
           <div className="mx-auto max-w-2xl">
             <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl">
               {t('TemposPage.hero.title')}
@@ -125,7 +125,7 @@ export default function TemposPage() {
         </div>
 
         {/* Why Choose Section */}
-        <section className="overflow-hidden bg-white py-24 sm:py-32">
+        <section className="relative overflow-hidden bg-white pt-24 py-8 rounded-4xl translate-y-[-32px] z-10">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
               {/* Left side: Text + features */}
@@ -211,7 +211,7 @@ export default function TemposPage() {
         {formSubmitted ? (
           <section
             id={SECTIONS[locale].QUOTE}
-            className="min-h-[1000px] px-6 py-24 sm:py-32 lg:px-8 bg-slate-900 flex items-center justify-center"
+            className="relative min-h-[1000px] px-6 py-24 sm:py-32 lg:px-8 bg-slate-900 flex items-center justify-center rounded-4xl top-[-32px] z-10"
           >
             <div className="flex flex-col gap-6">
               <h1 className="text-2xl text-white font-semibold tracking-loose sm:text-2xl text-center">
@@ -227,7 +227,7 @@ export default function TemposPage() {
           </section>
         ) : (
           <section
-            className="isolate bg-slate-900 px-6 py-24 sm:py-32 lg:px-8"
+            className="relative isolate bg-slate-900 px-6 py-24 sm:py-32 lg:px-8 rounded-t-2xl z-10"
             id={SECTIONS[locale].QUOTE}
           >
             <div className="mx-auto max-w-2xl text-center">
