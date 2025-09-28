@@ -16,6 +16,10 @@ export const routing = defineRouting({
       en: '/careers',
       fr: '/carrieres',
     },
+    '/tempos': {
+      en: '/tempos',
+      fr: '/abris-tempo',
+    },
   },
 });
 
