@@ -89,8 +89,8 @@
         "description": "Nous proposons des locations adaptées aux besoins uniques de votre évènement, créant des souvenirs inoubliables à chaque occasion."
       },
       "section4": {
-        "title": "Distributeur et installateur officiel d'Abris Tempo en Estrie",
-        "description": "Locaplus est le concessionnaire officiel de Tempo en Estrie, offrant la vente, la distribution et une installation experte."
+        "title": "Distributeur et installateur officiel d'abris Tempo en Estrie",
+        "description": "Locaplus est le concessionnaire officiel d'abris Tempo en Estrie, offrant la vente, la distribution et une installation experte."
       }
     },
     "products": {
@@ -102,7 +102,7 @@
     },
     "contact": {
       "title": "Des questions ? Contactez-nous !",
-      "description": "Besoin de locations fiables pour vos évènements ? Locaplus propose des chapiteaux et équipements de qualité supérieure à Bromont, Granby, Rive-Sud, Sherbrooke et Magog. Contactez-nous ou demandez un devis ci-dessous !"
+      "description": "Besoin de locations fiables pour vos évènements ? Locaplus propose des chapiteaux et équipements de qualité supérieure à Bromont, Granby, Rive-Sud, Sherbrooke et Magog. Contactez-nous ou demandez une soumission ci-dessous !"
     },
     "contactInfo": {
       "address": "203 Rue des Alouettes, Saint-Alphonse-de-Granby",
@@ -119,7 +119,7 @@
       "title": "Demander une soumission",
       "success": {
         "title": "Demande de soumission envoyé",
-        "message": "Vous recevrez une confirmation par courriel automatisée. Un membre de notre équipe vous contactera sous peu."
+        "message": "Vous recevrez une confirmation par courriel automatisée.\n Un membre de notre équipe vous contactera sous peu."
       },
       "maintenance": "Le formulaire de soumission sera indisponible jusqu'au 5 janvier. Veuillez envoyer toutes vos demandes de soumission à contact@locaplus.net. Nous nous excusons pour le désagrément."
     },
@@ -192,7 +192,24 @@
         "invalidFileType": "Type de fichier invalide. Veuillez télécharger un PDF, DOC ou DOCX.",
         "fileTooLarge": "Le fichier est trop volumineux. La taille maximale est de 3 Mo.",
         "tooLargeTotalSize": "La taille totale des fichiers dépasse la limite de 10 Mo."
+      },
+      "serviceType": {
+        "required": "Un type de service est requis"
+      },
+      "carportDimensions": {
+        "required": "Des dimensions d'abri sont requises"
       }
+    },
+    "carportOptions": {
+      "other": "Autre"
+    },
+    "serviceType": {
+      "label": "Type de service",
+      "placeholder": "- sélectionnez une option -"
+    },
+    "carportDimensions": {
+      "label": "Dimensions de l'abri",
+      "placeholder": "- sélectionnez une option -"
     }
   },
   "PrivacyPolicy": {
@@ -204,7 +221,7 @@
     },
     "howWeUse": {
       "title": "Comment nous utilisons vos informations",
-      "description": "Les informations que vous fournissez sont utilisées uniquement pour répondre à votre demande et fournir un devis. Nous ne stockons pas vos informations personnelles au-delà de ce qui est nécessaire pour répondre à votre demande."
+      "description": "Les informations que vous fournissez sont utilisées uniquement pour répondre à votre demande et fournir une soumission. Nous ne gardons pas vos informations personnelles au-delà de ce qui est nécessaire pour répondre à votre demande."
     },
     "retention": {
       "title": "Conservation des informations",
@@ -231,6 +248,72 @@
         "teamAtmosphere": "Esprit d'équipe",
         "physicalOutdoorWork": "Travail physique en plein air"
       }
+    }
+  },
+  "TemposPage": {
+    "hero": {
+      "title": "Locaplus Tempo",
+      "subtitle": "Abris Tempo durables et faciles à installer pour toutes les saisons dans les cantons orientaux.",
+      "cta": "Demander une soumission"
+    },
+    "installation": "Installation",
+    "serviceOptions": {
+      "rent": "Louer",
+      "purchase": "Achat"
+    },
+    "whyChoose": {
+      "subtitle": "Pourquoi choisir nos abris Tempo",
+      "title": "Protéger ce qui compte le plus",
+      "description": "En tant que fournisseur officiel d'abris Tempo dans les cantons de l'Est, nous proposons des abris durables et faciles à installer qui protègent vos véhicules et équipements toute l'année.",
+      "features": {
+        "durable": {
+          "title": "Durable & fort",
+          "desc": "Conçu pour résister aux hivers rigoureux du Québec."
+        },
+        "fastSetup": {
+          "title": "Installation & retrait rapides",
+          "desc": "Installation et démontage sans tracas."
+        },
+        "flexible": {
+          "title": "Options flexibles",
+          "desc": "Louez ou achetez selon vos besoins."
+        },
+        "customSizes": {
+          "title": "Tailles personnalisées",
+          "desc": "Dimensions standard et personnalisées disponibles."
+        }
+      }
+    },
+    "popularShelters": {
+      "title": "Abris les plus populaires",
+      "description": "Explorez nos abris Tempo les plus demandés - de confiance pour la durabilité, la facilité de configuration et la protection toute l'année pour les véhicules et l'équipement.",
+      "shelters": {
+        "elevenSixteen": {
+          "name": "Abri simple",
+          "size": "11’ x 16’ x 6’6”",
+          "desc": "Compact et facile à installer – parfait pour les petites voitures et les espaces restreints."
+        },
+        "elevenTwenty": {
+          "name": "Abri simple",
+          "size": "11’ x 20’ x 6’6”",
+          "desc": "Choix populaire pour les voitures standards et les VUS."
+        },
+        "eighteenTwenty": {
+          "name": "Abri double",
+          "size": "18’ x 20’ x 6’6”",
+          "desc": "Idéal pour deux véhicules ou des équipements plus grands."
+        },
+        "twentyTwenty": {
+          "name": "Abri double",
+          "size": "20’ x 20’ x 6’6”",
+          "desc": "Option spacieuse pour camions, équipements ou plusieurs véhicules."
+        }
+      },
+      "cta": "Vous ne trouvez pas la taille dont vous avez besoin? \nD'autres dimensions sont disponibles - contactez-nous pour plus de détails."
+    },
+    "quoteForm": {
+      "title": "Demander une soumission",
+      "subtitle": "Vous cherchez le bon abri Tempo? \nRemplissez le formulaire ci-dessous et nous fournirons une soumission détaillée adaptée à vos besoins."
     }
   }
 }

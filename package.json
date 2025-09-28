@@ -7,7 +7,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "validate-messages": "npx @lingual/i18n-check@latest --source fr --locales messages -u src/"
   },
   "dependencies": {
     "@azure/msal-node": "^3.2.3",
@@ -22,8 +23,8 @@
     "@vercel/node": "^5.1.10",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
-    "next": "15.5.4",
     "lucide-react": "^0.544.0",
+    "next": "15.5.4",
     "next-intl": "^4.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.21.0",
+    "@inlang/plugin-next-intl": "^2.0.1",
     "@tailwindcss/postcss": "^4.0.9",
     "@types/node": "^22.13.9",
     "@types/react": "^19.0.10",

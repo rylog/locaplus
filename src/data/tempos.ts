@@ -1,51 +1,26 @@
-import { Package, Ruler, Shield, Zap } from 'lucide-react';
-
 export const temposData = [
   {
-    name: 'TemposPage.popularShelters.items.0.name',
-    size: 'TemposPage.popularShelters.items.0.size',
-    desc: 'TemposPage.popularShelters.items.0.desc',
+    name: 'TemposPage.popularShelters.shelters.elevenSixteen.name',
+    size: 'TemposPage.popularShelters.shelters.elevenSixteen.size',
+    desc: 'TemposPage.popularShelters.shelters.elevenSixteen.desc',
     img: '/images/tempos/tempo-11x16.webp',
   },
   {
-    name: 'TemposPage.popularShelters.items.1.name',
-    size: 'TemposPage.popularShelters.items.1.size',
-    desc: 'TemposPage.popularShelters.items.1.desc',
+    name: 'TemposPage.popularShelters.shelters.elevenTwenty.name',
+    size: 'TemposPage.popularShelters.shelters.elevenTwenty.size',
+    desc: 'TemposPage.popularShelters.shelters.elevenTwenty.desc',
     img: '/images/tempos/tempo-11x20.webp',
   },
   {
-    name: 'TemposPage.popularShelters.items.2.name',
-    size: 'TemposPage.popularShelters.items.2.size',
-    desc: 'TemposPage.popularShelters.items.2.desc',
+    name: 'TemposPage.popularShelters.shelters.eighteenTwenty.name',
+    size: 'TemposPage.popularShelters.shelters.eighteenTwenty.size',
+    desc: 'TemposPage.popularShelters.shelters.eighteenTwenty.desc',
     img: '/images/tempos/tempo-18x20.webp',
   },
   {
-    name: 'TemposPage.popularShelters.items.3.name',
-    size: 'TemposPage.popularShelters.items.3.size',
-    desc: 'TemposPage.popularShelters.items.3.desc',
+    name: 'TemposPage.popularShelters.shelters.twentyTwenty.name',
+    size: 'TemposPage.popularShelters.shelters.twentyTwenty.size',
+    desc: 'TemposPage.popularShelters.shelters.twentyTwenty.desc',
     img: '/images/tempos/tempo-20x20.webp',
-  },
-] as const;
-
-export const tempoFeaturesData = [
-  {
-    title: 'TemposPage.whyChoose.features.durable.title',
-    desc: 'TemposPage.whyChoose.features.durable.desc',
-    icon: Shield,
-  },
-  {
-    title: 'TemposPage.whyChoose.features.fastSetup.title',
-    desc: 'TemposPage.whyChoose.features.fastSetup.desc',
-    icon: Zap,
-  },
-  {
-    title: 'TemposPage.whyChoose.features.flexible.title',
-    desc: 'TemposPage.whyChoose.features.flexible.desc',
-    icon: Package,
-  },
-  {
-    title: 'TemposPage.whyChoose.features.customSizes.title',
-    desc: 'TemposPage.whyChoose.features.customSizes.desc',
-    icon: Ruler,
   },
 ] as const;

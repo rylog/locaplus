@@ -19,7 +19,8 @@ import { SelectInput } from '@/components/Form/SelectInput/SelectInput';
 import { TextInput } from '@/components/Form/TextInput/TextInput';
 import { LanguageSelector } from '@/components/NavBar/LanguageSelector';
 import { SECTIONS } from '@/constants/sections';
-import { tempoFeaturesData, temposData } from '@/data/tempos';
+import { temposData } from '@/data/tempos';
+import { tempoFeaturesData } from '@/data/temposFeatures';
 import { Link } from '@/i18n/routing';
 import { LABEL_COLORS } from '@/styles/colors';
 
@@ -81,8 +82,8 @@ export default function TemposPage() {
     { value: '18 x 20 x 6\'6"', label: '18 x 20 x 6\'6"' },
     { value: '20 x 20 x 6\'6"', label: '20 x 20 x 6\'6"' },
     {
-      value: t('TemposPage.carportOptions.other'),
-      label: t('TemposPage.carportOptions.other'),
+      value: t('Form.carportOptions.other'),
+      label: t('Form.carportOptions.other'),
     },
   ];
 
@@ -298,11 +299,11 @@ export default function TemposPage() {
                   render={({ field }) => (
                     <SelectInput
                       {...field} // gives value and onChange
-                      label={t('TemposPage.serviceType.label')}
+                      label={t('Form.serviceType.label')}
                       labelColor="text-gray-300"
                       options={serviceOptions}
                       errors={errors}
-                      placeholder={t('TemposPage.serviceType.placeholder')}
+                      placeholder={t('Form.serviceType.placeholder')}
                       required
                     />
                   )}
@@ -317,13 +318,11 @@ export default function TemposPage() {
                   render={({ field }) => (
                     <SelectInput
                       {...field} // gives value and onChange
-                      label={t('TemposPage.carportDimensions.label')}
+                      label={t('Form.carportDimensions.label')}
                       labelColor="text-gray-300"
                       options={carportOptions}
                       errors={errors}
-                      placeholder={t(
-                        'TemposPage.carportDimensions.placeholder',
-                      )}
+                      placeholder={t('Form.carportDimensions.placeholder')}
                       required
                     />
                   )}

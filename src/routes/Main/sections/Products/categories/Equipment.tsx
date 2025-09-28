@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { equipmentData } from '@/data/equipment';
 
 export const Equipment = () => {
-  const t = useTranslations('HomePage');
+  const t = useTranslations();
   const items = equipmentData.map((e) => {
     return {
       title: t(e),
