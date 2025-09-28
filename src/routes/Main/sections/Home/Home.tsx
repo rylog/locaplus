@@ -12,7 +12,7 @@ export const Home = () => {
       id={SECTIONS[locale].HOME}
       className="flex isolate h-full lg:px-8 bg-no-repeat bg-cover bg-center"
     >
-      <div className="flex flex-col mx-auto max-w-4xl max-h-full absolute left-0 right-0 top-[30%]">
+      <div className="flex flex-col mx-auto max-w-4xl max-h-full absolute left-0 right-0 lg:top-[30%] top-[25%]">
         <div className="flex flex-col *:text-center gap-10">
           <div className="flex flex-col gap-6 items-center">
             <h1 className="text-4xl font-medium tracking-tight sm:text-6xl text-white px-5">

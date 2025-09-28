@@ -12,13 +12,16 @@ export const About = () => {
   const t = useTranslations('HomePage');
 
   return (
-    <section id={SECTIONS[locale].ABOUT} className="bg-gray-50 pb-8">
+    <section
+      id={SECTIONS[locale].ABOUT}
+      className="bg-white rounded-4xl translate-y-[-32px] z-10"
+    >
       <div className="mx-auto max-w-2xl lg:max-w-7xl pt-20 lg:px-8">
         <header>
-          <h1 className="text-center text-lg/7 font-semibold text-primary">
+          <h1 className="lg:text-center text-lg/7 font-semibold text-primary mx-4">
             {t('nav.aboutUs')}
           </h1>
-          <h2 className="mx-auto mt-2 max-w-2xl text-balance text-3xl font-semibold text-gray-950 sm:text-4xl text-center">
+          <h2 className="lg:mx-auto mt-2 max-w-2xl text-balance text-3xl font-semibold text-gray-950 sm:text-4xl lg:text-center mx-4">
             {t('about.title')}
           </h2>
         </header>
@@ -33,10 +36,10 @@ export const About = () => {
               alt={t('about.section1.title')}
             />
             <div className="p-8 sm:px-10">
-              <p className="lg:mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+              <p className="lg:mt-2 text-lg font-medium tracking-tight text-gray-950 text-left">
                 {t('about.section1.title')}
               </p>
-              <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+              <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
                 {t('about.section1.description')}
               </p>
             </div>
@@ -52,10 +55,10 @@ export const About = () => {
               alt={t('about.section2.title')}
             />
             <div className="p-8">
-              <p className="lg:mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+              <p className="lg:mt-2 text-lg font-medium tracking-tight text-gray-950">
                 {t('about.section2.title')}
               </p>
-              <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+              <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
                 {t('about.section2.description')}
               </p>
             </div>
@@ -71,10 +74,10 @@ export const About = () => {
               alt={t('about.section3.title')}
             />
             <div className="p-8">
-              <p className="lg:mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+              <p className="lg:mt-2 text-lg font-medium tracking-tight text-gray-950">
                 {t('about.section3.title')}
               </p>
-              <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+              <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
                 {t('about.section3.description')}
               </p>
             </div>
@@ -82,10 +85,10 @@ export const About = () => {
         </div>
         <div className="mt-3 flex flex-col overflow-hidden rounded-lg items-center lg:rounded-b-[calc(2rem+1px)] bg-white lg:shadow-md ring-1 ring-black/5 lg:m-0 m-2">
           <div className="flex flex-col px-8 pb-3 pt-8 sm:px-10 sm:pb-8 sm:pt-10 items-center w-full">
-            <h2 className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+            <h2 className="mt-2 text-lg font-medium tracking-tight text-gray-950">
               {t('about.section4.title')}
             </h2>
-            <p className="mt-2 text-sm/6 text-gray-600 max-lg:text-center ">
+            <p className="mt-2 text-sm/6 text-gray-600">
               {t('about.section4.description')}
             </p>
             <Image
@@ -97,7 +100,7 @@ export const About = () => {
             />
             <div className="flex w-full justify-end lg:mt-4 mt-12 ">
               <a
-                className="text-sm/6 font-semibold text-gray-900 lg:pb-0 lg:pr-1 lg:pt-5 pb-4"
+                className="text-sm/6 font-semibold text-primary lg:pb-0 lg:pr-1 lg:pt-5 pb-4"
                 href={`/${locale}/tempos`}
               >
                 {t('about.tempoLink')} <span aria-hidden="true">→</span>
