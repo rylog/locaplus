@@ -83,9 +83,7 @@ const QuoteForm = () => {
           </h1>
           <CheckCircleIcon className="w-24 h-24 text-white m-auto" />
           <p className="text-white text-center">
-            {t.rich('requestQuote.success.message', {
-              br: () => '\n',
-            })}
+            {t('requestQuote.success.message')}
           </p>
         </div>
       </section>

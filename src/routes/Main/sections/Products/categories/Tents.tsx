@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { tentsData } from '@/data/tents';
 
 export const Tents = () => {
-  const t = useTranslations('HomePage');
+  const t = useTranslations();
   const items = tentsData.map((tent) => {
     const { img, key, max } = tent;
     const min = 'min' in tent ? tent.min : undefined;
@@ -12,8 +12,8 @@ export const Tents = () => {
       title: t(key),
       description:
         min !== undefined
-          ? t('tents.capacity.range', { min, max })
-          : t('tents.capacity.maxOnly', { max }),
+          ? t('HomePage.tents.capacity.range', { min, max })
+          : t('HomePage.tents.capacity.maxOnly', { max }),
     };
   });
 

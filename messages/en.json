@@ -1,81 +1,4 @@
 {
-  "TemposPage": {
-    "hero": {
-      "title": "Locaplus Tempos",
-      "subtitle": "Durable, easy-to-install Tempo shelters for all seasons in the Eastern Townships.",
-      "cta": "Request a quote"
-    },
-    "whyChoose": {
-      "subtitle": "Why Choose Our Tempos",
-      "title": "Protect What Matters Most",
-      "description": "As the official Tempo provider in the Eastern Townships, we offer durable, easy-to-install shelters that protect your vehicles and equipment year-round.",
-      "features": {
-        "durable": {
-          "title": "Durable & Strong",
-          "desc": "Built to withstand harsh Quebec winters."
-        },
-        "fastSetup": {
-          "title": "Fast Setup & Removal",
-          "desc": "Hassle-free installation and takedown."
-        },
-        "flexible": {
-          "title": "Flexible Options",
-          "desc": "Rent or purchase according to your needs."
-        },
-        "customSizes": {
-          "title": "Custom Sizes",
-          "desc": "Standard and custom dimensions available."
-        }
-      }
-    },
-    "popularShelters": {
-      "title": "Most Popular Shelters",
-      "description": "Explore our most requested Tempo shelters — trusted for durability, ease of setup, and year-round protection for vehicles and equipment.",
-      "cta": "Can't find the size you need? Other dimensions are available — contact us for details.",
-      "items": [
-        {
-          "name": "Single Shelter",
-          "size": "11’ x 16’ x 6’6”",
-          "desc": "Compact and easy to install – perfect for small cars and tight spaces."
-        },
-        {
-          "name": "Single Shelter",
-          "size": "11’ x 20’ x 6’6”",
-          "desc": "Popular choice for standard cars and SUVs."
-        },
-        {
-          "name": "Double Shelter",
-          "size": "18’ x 20’ x 6’6”",
-          "desc": "Great for two vehicles or larger equipment."
-        },
-        {
-          "name": "Double Shelter",
-          "size": "20’ x 20’ x 6’6”",
-          "desc": "Spacious option for trucks, equipment, or multiple vehicles."
-        }
-      ]
-    },
-    "quoteForm": {
-      "title": "Request a Quote",
-      "subtitle": "Looking for the right tempo? Fill out the form below and we’ll provide a detailed quote tailored to your requirements."
-    },
-    "installation": "Installation",
-    "serviceOptions": {
-      "rent": "Rent",
-      "purchase": "Purchase"
-    },
-    "carportOptions": {
-      "other": "Other"
-    },
-    "carportDimensions": {
-      "label": "Carport dimensions",
-      "placeholder": "-- Select an option --"
-    },
-    "serviceType": {
-      "label": "Service type",
-      "placeholder": "-- Select an option --"
-    }
-  },
   "HomePage": {
     "main": {
       "metadata": {
@@ -196,7 +119,7 @@
       "title": "Request a quote",
       "success": {
         "title": "Quote Request Submitted",
-        "message": "You will receive an automated email confirmation. <br></br> A team member will follow up with you shortly."
+        "message": "You will receive an automated email confirmation.\n A team member will follow up with you shortly."
       },
       "maintenance": "The quote form will be unavailable until January 5th. Please send all quote requests to contact@locaplus.net. We apologize for the inconvenience."
     },
@@ -274,8 +197,19 @@
         "required": "A service type is required"
       },
       "carportDimensions": {
-        "required": "A carport dimension is required"
+        "required": "Carport dimensions are required"
       }
+    },
+    "carportOptions": {
+      "other": "Other"
+    },
+    "serviceType": {
+      "label": "Service type",
+      "placeholder": "-- Select an option --"
+    },
+    "carportDimensions": {
+      "label": "Carport dimensions",
+      "placeholder": "-- Select an option --"
     }
   },
   "PrivacyPolicy": {
@@ -314,6 +248,72 @@
         "teamAtmosphere": "Team Atmosphere",
         "physicalOutdoorWork": "Physical Outdoor Work"
       }
+    }
+  },
+  "TemposPage": {
+    "hero": {
+      "title": "Locaplus Tempos",
+      "subtitle": "Durable, easy-to-install Tempo shelters for all seasons in the Eastern Townships.",
+      "cta": "Request a quote"
+    },
+    "installation": "Installation",
+    "serviceOptions": {
+      "rent": "Rent",
+      "purchase": "Purchase"
+    },
+    "whyChoose": {
+      "subtitle": "Why Choose Our Tempos",
+      "title": "Protect What Matters Most",
+      "description": "As the official Tempo provider in the Eastern Townships, we offer durable, easy-to-install shelters that protect your vehicles and equipment year-round.",
+      "features": {
+        "durable": {
+          "title": "Durable & Strong",
+          "desc": "Built to withstand harsh Quebec winters."
+        },
+        "fastSetup": {
+          "title": "Fast Setup & Removal",
+          "desc": "Hassle-free installation and takedown."
+        },
+        "flexible": {
+          "title": "Flexible Options",
+          "desc": "Rent or purchase according to your needs."
+        },
+        "customSizes": {
+          "title": "Custom Sizes",
+          "desc": "Standard and custom dimensions available."
+        }
+      }
+    },
+    "popularShelters": {
+      "title": "Most Popular Shelters",
+      "description": "Explore our most requested Tempo shelters — trusted for durability, ease of setup, and year-round protection for vehicles and equipment.",
+      "shelters": {
+        "elevenSixteen": {
+          "name": "Single Shelter",
+          "size": "11’ x 16’ x 6’6”",
+          "desc": "Compact and easy to install – perfect for small cars and tight spaces."
+        },
+        "elevenTwenty": {
+          "name": "Single Shelter",
+          "size": "11’ x 20’ x 6’6”",
+          "desc": "Popular choice for standard cars and SUVs."
+        },
+        "eighteenTwenty": {
+          "name": "Double Shelter",
+          "size": "18’ x 20’ x 6’6”",
+          "desc": "Great for two vehicles or larger equipment."
+        },
+        "twentyTwenty": {
+          "name": "Double Shelter",
+          "size": "20’ x 20’ x 6’6”",
+          "desc": "Spacious option for trucks, equipment, or multiple vehicles."
+        }
+      },
+      "cta": "Can't find the size you need? Other dimensions are available — contact us for details."
+    },
+    "quoteForm": {
+      "title": "Request a Quote",
+      "subtitle": "Looking for the right tempo? Fill out the form below and we’ll provide a detailed quote tailored to your requirements."
     }
   }
 }
