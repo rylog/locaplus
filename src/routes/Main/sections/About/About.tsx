@@ -18,10 +18,10 @@ export const About = () => {
     >
       <div className="mx-auto max-w-2xl lg:max-w-7xl pt-20 lg:px-8">
         <header>
-          <h1 className="lg:text-center text-lg/7 font-semibold text-primary mx-4">
+          <h1 className="lg:text-center text-lg/7 font-semibold text-primary mx-4 text-center">
             {t('nav.aboutUs')}
           </h1>
-          <h2 className="lg:mx-auto mt-2 max-w-2xl text-balance text-3xl font-semibold text-gray-950 sm:text-4xl lg:text-center mx-4">
+          <h2 className="lg:mx-auto mt-2 max-w-2xl text-balance text-3xl font-semibold text-gray-950 sm:text-4xl lg:text-center mx-4 text-center">
             {t('about.title')}
           </h2>
         </header>

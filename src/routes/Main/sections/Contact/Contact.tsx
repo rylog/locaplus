@@ -9,7 +9,7 @@ export const Contact = () => {
   const t = useTranslations('HomePage');
   return (
     <section id={SECTIONS[locale].CONTACT} className="lg:bg-gray-100 bg-white">
-      <div className="flex flex-col max-w-2xl pt-12 lg:max-w-6xl justify-self-center gap-4 mx-4">
+      <div className="flex flex-col max-w-2xl pt-8 lg:pt-12 lg:max-w-6xl justify-self-center gap-4 mx-4">
         <header>
           <h1 className="text-lg/7 font-semibold text-primary text-center">
             {t('nav.contactUs')}
@@ -17,7 +17,7 @@ export const Contact = () => {
           <h2 className="mx-auto mt-2 max-w-2xl text-balance text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl text-center">
             {t('contact.title')}
           </h2>
-          <p className="text-center mt-2 mb-6 lg:mb-0 text-gray-600 px-4">
+          <p className="text-center mt-2 mb-6 lg:mb-0 text-gray-600 px-0 lg:px-4">
             {t('contact.description')}
           </p>
         </header>
