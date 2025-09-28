@@ -28,17 +28,19 @@ export const Products = () => {
   return (
     <section
       id={SECTIONS[locale].PRODUCTS}
-      className="bg-gray-50 pt-8 lg:pb-28"
+      className="bg-gray-50 lg:pt-8 pt-0 lg:pb-28"
     >
       <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full gap-8 px-0 pt-12 lg:px-8">
-        <header className="text-center max-w-2xl self-center">
-          <h1 className="text-lg/7 font-semibold text-primary">
+        <header className="max-w-2xl lg:px-0 px-4 lg:self-center">
+          <h1 className="text-lg/7 font-semibold text-primary text-center">
             {t('nav.products')}
           </h1>
-          <h2 className="mt-2 text-balance text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl">
+          <h2 className="mt-2 text-balance text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl text-center">
             {t('products.title')}
           </h2>
-          <p className="mt-2 text-gray-600">{t('products.description')}</p>
+          <p className="mt-2 text-gray-600 text-center">
+            {t('products.description')}
+          </p>
         </header>
         <TabGroup className="flex grow flex-col overflow-hidden">
           <TabList className="flex gap-2 px-2">
