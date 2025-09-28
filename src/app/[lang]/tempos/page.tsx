@@ -8,7 +8,6 @@ import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Controller, useForm } from 'react-hook-form';
 
-import Logo from '@/../public/Logo_locaplus.png';
 import {
   TempoQuoteRequest,
   useSendQuoteRequest,
@@ -17,11 +16,10 @@ import { ConsentCheckbox } from '@/components/Form/ConsentCheckbox/ConsentCheckb
 import { MessageInput } from '@/components/Form/MessageInput/MessageInput';
 import { SelectInput } from '@/components/Form/SelectInput/SelectInput';
 import { TextInput } from '@/components/Form/TextInput/TextInput';
-import { LanguageSelector } from '@/components/NavBar/LanguageSelector';
+import { NavBar } from '@/components/NavBar/NavBar';
 import { SECTIONS } from '@/constants/sections';
 import { temposData } from '@/data/tempos';
 import { tempoFeaturesData } from '@/data/temposFeatures';
-import { Link } from '@/i18n/routing';
 import { LABEL_COLORS } from '@/styles/colors';
 
 interface QuoteFormInputs {
@@ -104,32 +102,7 @@ export default function TemposPage() {
 
   return (
     <div>
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav
-          aria-label="Global"
-          className="flex items-center justify-between p-3 lg:px-8"
-        >
-          <div className="flex lg:flex-1">
-            <Link
-              href="/"
-              className="-m-1.5 p-1.5"
-              aria-label={'Go to the home page'}
-            >
-              <Image
-                width={191}
-                height={100}
-                alt="Locaplus Logo"
-                src={Logo.src}
-                className="h-14 w-auto"
-              />
-            </Link>
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <LanguageSelector />
-          </div>
-        </nav>
-      </header>
-
+      <NavBar />
       <main className="flex flex-col">
         {/* Hero content */}
         <div className="relative px-6 py-36 lg:px-8 bg-slate-900 text-white text-center">
@@ -213,7 +186,7 @@ export default function TemposPage() {
                 key={tempo.size}
                 className="bg-white shadow-md rounded-2xl p-10 text-center flex flex-col"
               >
-                <div className="w-full h-56 relative mb-6">
+                <div className="w-full aspect-[16/9] relative mb-6">
                   <Image
                     src={tempo.img}
                     alt={tempo.name}

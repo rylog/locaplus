@@ -10,7 +10,8 @@
       "products": "Produits",
       "projects": "Projets",
       "contactUs": "Contactez-nous",
-      "careers": "Carrières"
+      "careers": "Carrières",
+      "tempos": "Abris Tempo"
     },
     "home": {
       "title": "Location de chapiteaux pour toutes occasions",
@@ -91,7 +92,8 @@
       "section4": {
         "title": "Distributeur et installateur officiel d'abris Tempo en Estrie",
         "description": "Locaplus est le concessionnaire officiel d'abris Tempo en Estrie, offrant la vente, la distribution et une installation experte."
-      }
+      },
+      "tempoLink": "En savoir plus"
     },
     "products": {
       "title": "Nous avons tout ce qu'il vous faut",
