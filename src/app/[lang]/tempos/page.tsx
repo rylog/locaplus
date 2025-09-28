@@ -190,6 +190,7 @@ export default function TemposPage() {
                   <Image
                     src={tempo.img}
                     alt={tempo.name}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     fill
                     className="object-cover rounded-xl"
                   />

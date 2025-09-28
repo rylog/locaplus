@@ -1,24 +1,13 @@
-import '@/styles/globals.css';
-
 import { Analytics } from '@vercel/analytics/next';
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import Script from 'next/script';
-import { NextIntlClientProvider } from 'next-intl';
+import { Locale, NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { ReactNode } from 'react';
 
+import QueryClientContextProvider from '@/context/QueryClientContext';
 import { routing } from '@/i18n/routing';
-
-import QueryClientContextProvider from '../../context/QueryClientContext';
-
-export type Locale = 'en' | 'fr';
-
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
-
-export const dynamicParams = true;
 
 export async function generateMetadata({
   params,
@@ -31,23 +20,23 @@ export async function generateMetadata({
   };
 
   const titles = {
-    en: 'Locaplus - Tent Rentals for Events',
-    fr: 'Locaplus - Location de tentes pour événements',
+    en: 'Tempo Purchase, Installation and Rentals - Locaplus',
+    fr: 'Achat, installation et location d’abris Tempo - Locaplus',
   };
 
   const descriptions = {
-    en: 'Premium tent and equipment rentals for festivals and events in Quebec.',
-    fr: "Location de tentes et d'équipement pour festivals et événements au Québec.",
+    en: 'Tempo shelters for purchase, rental, and installation services in Quebec.',
+    fr: "Abris Tempo à vendre, à louer et services d'installation au Québec.",
   };
 
   const keywords = {
-    en: 'tent rentals, event rentals, marquees, Quebec events, event planning',
-    fr: "location de tentes, location d'équipement, tentes pour événements, événements au Québec, planification d'événements",
+    en: 'tempo rentals, tempo purchase, tempo installation',
+    fr: "location d'abris Tempo, achat d'abris Tempo, installation d'abris Tempo",
   };
 
   const canonicalUrls = {
-    en: 'https://www.locaplus.net/en',
-    fr: 'https://www.locaplus.net/fr',
+    en: 'https://www.locaplus.net/en/tempos',
+    fr: 'https://www.locaplus.net/fr/abris-tempo',
   };
 
   const imageAlts = {
@@ -56,7 +45,7 @@ export async function generateMetadata({
   };
 
   // Default OG image and description
-  const ogImage = 'https://www.locaplus.net/event-tents-locaplus.jpg';
+  const ogImage = 'https://www.locaplus.net/tempo-display.jpg';
   const description = descriptions[lang] || descriptions['en'];
 
   return {
@@ -89,7 +78,7 @@ export async function generateMetadata({
       icon: '/favicon.ico',
     },
     alternates: {
-      canonical: 'https://www.locaplus.net/',
+      canonical: 'https://www.locaplus.net/tempos',
       languages: {
         en: 'https://www.locaplus.net/en',
         fr: 'https://www.locaplus.net/fr',
