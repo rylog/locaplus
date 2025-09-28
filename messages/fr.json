@@ -89,8 +89,8 @@
         "description": "Nous proposons des locations adaptées aux besoins uniques de votre évènement, créant des souvenirs inoubliables à chaque occasion."
       },
       "section4": {
-        "title": "Distributeur et installateur officiel d'Abris Tempo en Estrie",
-        "description": "Locaplus est le concessionnaire officiel de Tempo en Estrie, offrant la vente, la distribution et une installation experte."
+        "title": "Distributeur et installateur officiel d'abris Tempo en Estrie",
+        "description": "Locaplus est le concessionnaire officiel d'abris Tempo en Estrie, offrant la vente, la distribution et une installation experte."
       }
     },
     "products": {
@@ -197,7 +197,7 @@
         "required": "Un type de service est requis"
       },
       "carportDimensions": {
-        "required": "Une dimension d'auto est requise"
+        "required": "Des dimensions d'abri sont requises"
       }
     },
     "carportOptions": {
@@ -208,7 +208,7 @@
       "placeholder": "- sélectionnez une option -"
     },
     "carportDimensions": {
-      "label": "Dimensions de l'auto",
+      "label": "Dimensions de l'abri",
       "placeholder": "- sélectionnez une option -"
     }
   },
@@ -252,8 +252,8 @@
   },
   "TemposPage": {
     "hero": {
-      "title": "Locaplus tempos",
-      "subtitle": "Abris de tempo durables et faciles à installer pour toutes les saisons dans les cantons orientaux.",
+      "title": "Locaplus Tempo",
+      "subtitle": "Abris Tempo durables et faciles à installer pour toutes les saisons dans les cantons orientaux.",
       "cta": "Demander une soumission"
     },
     "installation": "Installation",
@@ -262,9 +262,9 @@
       "purchase": "Achat"
     },
     "whyChoose": {
-      "subtitle": "Pourquoi choisir nos tempos",
+      "subtitle": "Pourquoi choisir nos abris Tempo",
       "title": "Protéger ce qui compte le plus",
-      "description": "En tant que fournisseur officiel de tempo dans les cantons de l'Est, nous proposons des abris durables et faciles à installer qui protègent vos véhicules et équipements toute l'année.",
+      "description": "En tant que fournisseur officiel d'abris Tempo dans les cantons de l'Est, nous proposons des abris durables et faciles à installer qui protègent vos véhicules et équipements toute l'année.",
       "features": {
         "durable": {
           "title": "Durable & fort",
@@ -286,7 +286,7 @@
     },
     "popularShelters": {
       "title": "Abris les plus populaires",
-      "description": "Explorez nos abris de tempo les plus demandés - de confiance pour la durabilité, la facilité de configuration et la protection toute l'année pour les véhicules et l'équipement.",
+      "description": "Explorez nos abris Tempo les plus demandés - de confiance pour la durabilité, la facilité de configuration et la protection toute l'année pour les véhicules et l'équipement.",
       "shelters": {
         "elevenSixteen": {
           "name": "Abri simple",
@@ -313,7 +313,7 @@
     },
     "quoteForm": {
       "title": "Demander une soumission",
-      "subtitle": "Vous cherchez le bon tempo? \nRemplissez le formulaire ci-dessous et nous fournirons une soumission détaillée adaptée à vos besoins."
+      "subtitle": "Vous cherchez le bon abri Tempo? \nRemplissez le formulaire ci-dessous et nous fournirons une soumission détaillée adaptée à vos besoins."
     }
   }
 }
