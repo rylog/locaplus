@@ -26,11 +26,9 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   // Use params.slug for route detection
-  const { lang, slug } = (await params) as {
+  const { lang } = (await params) as {
     lang: Locale;
-    slug?: string | string[];
   };
-  const slugArr = Array.isArray(slug) ? slug : [slug];
 
   const titles = {
     en: 'Locaplus - Tent Rentals for Events',
@@ -40,11 +38,6 @@ export async function generateMetadata({
   const descriptions = {
     en: 'Premium tent and equipment rentals for festivals and events in Quebec.',
     fr: "Location de tentes et d'équipement pour festivals et événements au Québec.",
-  };
-
-  const temposDescriptions = {
-    en: 'Discover our full range of Tempo shelters for every event and season.',
-    fr: 'Découvrez notre gamme complète d’abris Tempo pour chaque événement et saison.',
   };
 
   const keywords = {
@@ -63,14 +56,8 @@ export async function generateMetadata({
   };
 
   // Default OG image and description
-  let ogImage = 'https://www.locaplus.net/event-tents-locaplus.jpg';
-  let description = descriptions[lang] || descriptions['en'];
-
-  // If on /tempos, use different OG image and description
-  if (slugArr.includes('tempos') || slugArr.includes('abris-tempo')) {
-    ogImage = 'https://www.locaplus.net/tempo-display.jpg'; // Your new Tempos image URL
-    description = temposDescriptions[lang] || temposDescriptions['en'];
-  }
+  const ogImage = 'https://www.locaplus.net/event-tents-locaplus.jpg';
+  const description = descriptions[lang] || descriptions['en'];
 
   return {
     title: titles[lang] || titles['en'],
