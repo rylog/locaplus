@@ -6,6 +6,7 @@ export const SECTIONS = {
     CONTACT: 'contact',
     QUOTE: 'quote',
     CAREERS: 'careers',
+    TEMPOS: 'tempos',
   },
   fr: {
     HOME: 'accueil',
@@ -14,5 +15,6 @@ export const SECTIONS = {
     CONTACT: 'contact',
     QUOTE: 'soumission',
     CAREERS: 'carrieres',
+    TEMPOS: 'abris-tempo',
   },
 } as const;

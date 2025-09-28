@@ -8,7 +8,7 @@ import Logo from '@/../public/Logo_locaplus.png';
 import { Link } from '@/i18n/routing';
 
 import { NavItem } from '../../types/NavItem';
-import { LanguageSelector } from './LanguageSelector';
+import { LanguageSelector } from '../NavBar/LanguageSelector';
 
 interface MobileNavProps {
   mobileNavOpen: boolean;

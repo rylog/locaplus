@@ -125,7 +125,7 @@ export default async function RootLayout({
           `}
         </Script>
       </head>
-      <body className="bg-gray-100" suppressHydrationWarning>
+      <body className="bg-white" suppressHydrationWarning>
         <QueryClientContextProvider>
           <NextIntlClientProvider messages={messages}>
             {children}

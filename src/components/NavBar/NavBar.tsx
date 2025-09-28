@@ -1,21 +1,44 @@
 'use client';
 
 import Image from 'next/image';
+import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import Logo from '@/../public/Logo_locaplus.png';
+import { SECTIONS } from '@/constants/sections';
 import { Link } from '@/i18n/routing';
 
-import { NavItem } from '../../types/NavItem';
 import { LanguageSelector } from './LanguageSelector';
 import { MobileNav } from './MobileNav';
 
-interface NavBarProps {
-  navItems: NavItem[];
-}
-
-export const NavBar = ({ navItems }: NavBarProps) => {
+export const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const t = useTranslations('HomePage');
+  const locale = useLocale();
+
+  const navItems = [
+    {
+      name: t('nav.tempos'),
+      href: `/${locale}/${SECTIONS[locale].TEMPOS}`,
+    },
+    {
+      name: t('nav.products'),
+      href: `/${locale}#${SECTIONS[locale].PRODUCTS}`,
+    },
+    {
+      name: t('nav.aboutUs'),
+      href: `/${locale}#${SECTIONS[locale].ABOUT}`,
+    },
+    {
+      name: t('nav.careers'),
+      href: `/${locale}/${SECTIONS[locale].CAREERS}`,
+    },
+    {
+      name: t('nav.contactUs'),
+      href: `/${locale}#${SECTIONS[locale].CONTACT}`,
+    },
+  ];
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
@@ -44,7 +67,7 @@ export const NavBar = ({ navItems }: NavBarProps) => {
             <a
               key={item.name}
               href={item.href}
-              className="text-base leading-6 text-slate-300 hover:text-slate-200"
+              className="text-base leading-6 text-slate-300 hover:text-slate-200 cursor-pointer"
             >
               {item.name}
             </a>

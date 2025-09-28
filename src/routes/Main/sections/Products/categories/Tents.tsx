@@ -22,7 +22,7 @@ export const Tents = () => {
       {items.map((item, index) => (
         <li
           key={index}
-          className="flex flex-row rounded-md p-4 bg-white shadow-md text-sm sm:text-base transition hover:bg-slate-100  gap-4"
+          className="flex flex-row rounded-md p-4 bg-white shadow-md text-sm sm:text-base transition  gap-4"
         >
           <picture>
             <img

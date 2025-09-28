@@ -10,7 +10,8 @@
       "products": "Products",
       "projects": "Projects",
       "contactUs": "Contact us",
-      "careers": "Careers"
+      "careers": "Careers",
+      "tempos": "Tempos"
     },
     "home": {
       "title": "Trusted Tent & Event Rentals in the Eastern Townships",
@@ -91,7 +92,8 @@
       "section4": {
         "title": "Official distributor and installer for Tempo shelters in the Eastern Townships",
         "description": "Locaplus is the official Tempo dealer in the Eastern Townships, providing sales, distribution, and expert installation."
-      }
+      },
+      "tempoLink": "Learn more"
     },
     "products": {
       "title": "We've Got You Covered",
