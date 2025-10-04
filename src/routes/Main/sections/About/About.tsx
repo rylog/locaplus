@@ -27,7 +27,7 @@ export const About = () => {
         </header>
         <div className="mt-10 grid gap-2 m-1 sm:mt-16 lg:grid-cols-3 lg:grid-rows-1">
           {/* Left */}
-          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white lg:shadow-md ring-1 ring-black/5 lg:m-0 m-1">
+          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white lg:shadow-sm ring-1 ring-black/5 lg:m-0 m-1">
             <Image
               width={1536}
               height={2048}
@@ -46,7 +46,7 @@ export const About = () => {
           </div>
 
           {/* Middle */}
-          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white lg:shadow-md ring-1 ring-black/5 lg:m-0 m-1">
+          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white lg:shadow-sm ring-1 ring-black/5 lg:m-0 m-1">
             <Image
               width={2048}
               height={1536}
@@ -65,7 +65,7 @@ export const About = () => {
           </div>
 
           {/* Right */}
-          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white lg:shadow-md ring-1 ring-black/5 lg:m-0 m-1">
+          <div className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg bg-white lg:shadow-sm ring-1 ring-black/5 lg:m-0 m-1">
             <Image
               width={1024}
               height={768}
@@ -83,7 +83,7 @@ export const About = () => {
             </div>
           </div>
         </div>
-        <div className="mt-3 flex flex-col overflow-hidden rounded-lg items-center lg:rounded-b-[calc(2rem+1px)] bg-white lg:shadow-md ring-1 ring-black/5 lg:m-0 m-2">
+        <div className="flex flex-col overflow-hidden rounded-lg items-center lg:rounded-b-[calc(2rem+1px)] bg-white lg:shadow-sm ring-1 ring-black/5 lg:m-1 lg:mt-3 m-2">
           <div className="flex flex-col px-8 pb-3 pt-8 sm:px-10 sm:pb-8 sm:pt-10 items-center w-full">
             <h2 className="mt-2 text-lg font-medium tracking-tight text-gray-950">
               {t('about.section4.title')}

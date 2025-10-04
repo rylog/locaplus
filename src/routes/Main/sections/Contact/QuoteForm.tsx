@@ -75,7 +75,7 @@ const QuoteForm = () => {
     return (
       <section
         id={SECTIONS[locale].QUOTE}
-        className="p-8 lg:px-12 bg-slate-900 flex items-center justify-center"
+        className="p-8 lg:px-12 bg-slate-900 flex items-center justify-center rounded-t-4xl lg:rounded-none"
       >
         <div className="flex flex-col gap-6">
           <h1 className="text-2xl text-white font-semibold tracking-loose sm:text-2xl text-center">
@@ -91,7 +91,10 @@ const QuoteForm = () => {
   }
 
   return (
-    <section id={SECTIONS[locale].QUOTE} className="p-8 lg:px-12 bg-slate-900">
+    <section
+      id={SECTIONS[locale].QUOTE}
+      className="p-8 lg:px-12 bg-slate-900 rounded-t-4xl lg:rounded-none"
+    >
       <header>
         <h1 className="text-2xl text-white font-semibold tracking-loose sm:text-2xl text-center lg:text-start">
           {t('requestQuote.title')}
