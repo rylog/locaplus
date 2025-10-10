@@ -2,12 +2,11 @@
 
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon';
 import { useTranslations } from 'next-intl';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 export default function FAQSection() {
   const t = useTranslations('TemposPage.FAQ');
   const [openIndices, setOpenIndices] = useState<number[]>([]);
-  const contentRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const renderRichText = (key: Parameters<typeof t.rich>[0]) =>
     t.rich(key, {
@@ -67,9 +66,7 @@ export default function FAQSection() {
 
               <div
                 style={{
-                  maxHeight: isOpen
-                    ? contentRefs.current[index]?.scrollHeight
-                    : 0,
+                  maxHeight: isOpen ? 'min-content' : 0,
                   transition: 'max-height 0.3s ease',
                   overflow: 'hidden',
                 }}
