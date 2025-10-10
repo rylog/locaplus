@@ -40,6 +40,7 @@ export const LanguageSelector = () => {
     <Listbox value={locale} onChange={handleLanguageChange}>
       <div className="relative w-fit">
         <ListboxButton
+          id="language-selector"
           className={clsx(
             'rounded-lg w-28 bg-white/5 py-1.5 pr-8 text-left font-semibold text-base text-gray-900',
             'lg:pl-3 lg:text-sm/6  lg:font-normal lg:text-white',

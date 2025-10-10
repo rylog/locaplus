@@ -1,13 +1,6 @@
-import { Analytics } from '@vercel/analytics/next';
 import { Metadata } from 'next';
-import { redirect } from 'next/navigation';
-import Script from 'next/script';
-import { Locale, NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { Locale } from 'next-intl';
 import { ReactNode } from 'react';
-
-import QueryClientContextProvider from '@/context/QueryClientContext';
-import { routing } from '@/i18n/routing';
 
 export async function generateMetadata({
   params,
@@ -87,64 +80,6 @@ export async function generateMetadata({
   };
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: ReactNode;
-  params: Promise<{ lang: string }>;
-}>) {
-  const lang = (await params).lang as Locale;
-
-  if (!routing.locales.includes(lang)) {
-    redirect('/fr');
-  }
-
-  setRequestLocale(lang);
-
-  const messages = await getMessages();
-
-  return (
-    <html lang={lang} suppressHydrationWarning>
-      <head>
-        {/* GA4 snippet */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-GHZM8KBSMM`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-GHZM8KBSMM');
-          `}
-        </Script>
-
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=AW-16978918656`}
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-GHZM8KBSMM');
-          `}
-        </Script>
-      </head>
-      <body className="bg-white" suppressHydrationWarning>
-        <QueryClientContextProvider>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </QueryClientContextProvider>
-        <Analytics />
-      </body>
-    </html>
-  );
+export default function TemposLayout({ children }: { children: ReactNode }) {
+  return <>{children}</>;
 }
