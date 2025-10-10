@@ -78,7 +78,6 @@ export default function TemposPage() {
   const carportOptions = [
     { value: '11 x 16 x 6\'6"', label: '11 x 16 x 6\'6"' },
     { value: '11 x 20 x 6\'6"', label: '11 x 20 x 6\'6"' },
-    { value: '18 x 20 x 6\'6"', label: '18 x 20 x 6\'6"' },
     { value: '20 x 20 x 6\'6"', label: '20 x 20 x 6\'6"' },
     {
       value: t('Form.carportOptions.other'),
@@ -181,13 +180,13 @@ export default function TemposPage() {
             </p>
           </div>
 
-          <div className="grid gap-12 md:grid-cols-2 max-w-5xl mx-auto">
+          <div className="grid gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
             {temposData.map((tempo) => (
               <div
                 key={tempo.size}
-                className="bg-white shadow-md rounded-2xl p-10 text-center flex flex-col"
+                className="bg-white shadow-lg rounded-xl p-12 text-center flex flex-col"
               >
-                <div className="w-full aspect-[16/9] relative mb-6">
+                <div className="w-full aspect-[16/9] relative mb-8">
                   <Image
                     src={tempo.img}
                     alt={tempo.name}
@@ -196,9 +195,11 @@ export default function TemposPage() {
                     className="object-cover rounded-xl"
                   />
                 </div>
-                <h3 className="font-semibold text-2xl">{t(tempo.name)}</h3>
-                <p className="text-gray-500 text-lg mb-4">{t(tempo.size)}</p>
-                <p className="text-gray-600 flex-grow">{t(tempo.desc)}</p>
+                <h3 className="font-semibold text-3xl mb-2">{t(tempo.name)}</h3>
+                <p className="text-gray-500 text-lg mb-6">{t(tempo.size)}</p>
+                <p className="text-gray-700 text-base flex-grow">
+                  {t(tempo.desc)}
+                </p>
               </div>
             ))}
           </div>

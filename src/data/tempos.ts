@@ -12,12 +12,6 @@ export const temposData = [
     img: '/images/tempos/tempo-11x20.webp',
   },
   {
-    name: 'TemposPage.popularShelters.shelters.eighteenTwenty.name',
-    size: 'TemposPage.popularShelters.shelters.eighteenTwenty.size',
-    desc: 'TemposPage.popularShelters.shelters.eighteenTwenty.desc',
-    img: '/images/tempos/tempo-18x20.webp',
-  },
-  {
     name: 'TemposPage.popularShelters.shelters.twentyTwenty.name',
     size: 'TemposPage.popularShelters.shelters.twentyTwenty.size',
     desc: 'TemposPage.popularShelters.shelters.twentyTwenty.desc',
