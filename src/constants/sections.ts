@@ -7,6 +7,9 @@ export const SECTIONS = {
     QUOTE: 'quote',
     CAREERS: 'careers',
     TEMPOS: 'tempos',
+    POPULAR_SHELTERS: 'popular-shelters',
+    WHY_CHOOSE_US: 'why-choose-us',
+    FAQ: 'FAQ',
   },
   fr: {
     HOME: 'accueil',
@@ -16,5 +19,8 @@ export const SECTIONS = {
     QUOTE: 'soumission',
     CAREERS: 'carrieres',
     TEMPOS: 'abris-tempo',
+    POPULAR_SHELTERS: 'abris-populaires',
+    WHY_CHOOSE_US: 'pourquoi-nous-choisir',
+    FAQ: 'FAQ',
   },
 } as const;

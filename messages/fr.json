@@ -11,7 +11,12 @@
       "projects": "Projets",
       "contactUs": "Contactez-nous",
       "careers": "Carrières",
-      "tempos": "Abris Tempo"
+      "tempos": "Abris Tempo",
+      "whyChooseUs": "Pourquoi nous choisir",
+      "popularShelters": "Abris populaires",
+      "home": "Accueil",
+      "requestAQuote": "Demander une soumission",
+      "FAQ": "FAQ"
     },
     "home": {
       "title": "Location de chapiteaux pour toutes occasions",
@@ -319,34 +324,24 @@
     },
     "FAQ": {
       "title": "Foire aux questions",
-
       "q1": "Quelles sont les grandeurs d’abris disponibles en location?",
       "a1": "<p>Locaplus offre trois modèles standards d’abris tempo à toit pointu: </p><ul><li>11' x 16': idéal pour voiture compacte ou entrée étroite</li><li>11' x 20': parfait pour la majorité des voitures, VUS et petits camions</li><li>20' x 20': abri double pouvant accueillir deux véhicules côte à côte</li></ul><p>Nous pouvons vous aider à choisir la grandeur idéale selon votre entrée et vos besoins.</p>",
-
       "q2": "Comment fonctionne le service de location?",
       "a2": "<p>Notre service est clé en main:</p><ul><li>Livraison à domicile</li><li>Installation professionnelle avec ancrages adaptés à votre surface</li><li>Démontage et ramassage à la fin de l’hiver</li></ul><p>Aucun effort de votre part — on s’occupe de tout!</p>",
-
       "q3": "Quand installez-vous les abris?",
       "a3": "<ul><li>Début des installations: en octobre jusqu’à la fin novembre</li><li>Nous planifions les visites selon les conditions météo et l’emplacement</li><li>Vous recevrez un appel 1–2 jours avant notre passage</li></ul>",
-
       "q4": "Quand faites-vous le démontage?",
       "a4": "<ul><li>Démontage à partir de la début-mars, selon la météo</li><li>Nous démontons l’abri et ramassons les composantes</li></ul>",
-
       "q5": "Est-ce que j’ai de l’entretien à faire durant l’hiver?",
       "a5": "<p>Oui — pour assurer la sécurité et la durabilité de l’abri:</p><ul><li>Retirez la neige régulièrement et de façon symétrique</li><li>Évitez de stationner dans l’abri pendant une tempête</li><li>Fermez ou ouvrez vos deux portes en tout temps pour éviter que le vent prenne l’abri si une seule porte est ouverte</li><li>Communiquez avec nous si vous remarquez un affaissement ou un mouvement anormal</li></ul>",
-
       "q6": "Quels types d’ancrages utilisez-vous?",
       "a6": "<p>Nous utilisons des ancrages sécuritaires, selon la surface:</p><ul><li>Asphalte: clous et pins en métal au besoin</li><li>Gravier, pavé ou terre: clous, pins ou ancrages permanents</li><li>Aucun bloc de béton n’est utilisé (non conforme et dangereux)</li></ul>",
-
       "q7": "Que faire en cas de bris?",
       "a7": "<p>Si un bris est causé par un mauvais entretien, un ancrage déplacé ou un usage non conforme, des frais de réparation peuvent s’appliquer.</p><p>En cas de bris lié à des conditions météo extrêmes (vents violents, verglas, etc.), nous évaluerons la situation avec vous.</p>",
-
       "q8": "Combien coûte la location?",
       "a8": "<p>Nos prix varient selon:</p><ul><li>La grandeur de l’abri Tempo</li><li>La distance de votre adresse par rapport à notre entrepôt (Saint-Alphonse-de-Granby)</li></ul><p>Contactez-nous pour obtenir une soumission rapide. Rabais disponibles pour plusieurs saisons ou plusieurs abris.</p>",
-
       "q9": "Est-ce que vous desservez ma région?",
       "a9": "<p>Nous installons des abris dans plusieurs municipalités des Cantons-de-l’Est et de la Montérégie, incluant:</p><ul><li>Granby</li><li>Bromont</li><li>Cowansville</li><li>Waterloo</li><li>Shefford</li><li>Farnham</li><li>Lac-Brome</li><li>Knowlton</li><li>Bedford</li><li>St-Césaire</li><li>Brigham</li><li>Roxton Pond</li><li>Frelighsburg</li><li>Dunham</li><li>Magog</li><li>Saint-Alphonse-de-Granby</li><li>Et les environs!</li></ul>",
-
       "q10": "Puis-je acheter l’abri Tempo et le faire installer ?",
       "a10": "<p>Oui! Plusieurs clients aiment avoir leur propre abri Tempo neuf.</p><p>Nous offrons aussi l’installation professionnelle à l’achat.</p>"
     }

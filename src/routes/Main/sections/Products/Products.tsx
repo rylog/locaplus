@@ -46,6 +46,7 @@ export const Products = () => {
           <TabList className="flex gap-2 px-2">
             {categories.map(({ name }) => (
               <Tab
+                id={name}
                 key={name}
                 className={clsx(
                   'rounded-md py-1 px-3 text-sm/6  font-semibold text-slate-900 focus:outline-hidden cursor-pointer',
@@ -60,7 +61,7 @@ export const Products = () => {
           <TabPanels className="grow mt-3 overflow-auto lg:mx-0 mx-1">
             {categories.map(({ name, component: Component }) => {
               return (
-                <TabPanel key={name} className="flex p-1">
+                <TabPanel id={name} key={name} className="flex p-1">
                   <Component />
                 </TabPanel>
               );

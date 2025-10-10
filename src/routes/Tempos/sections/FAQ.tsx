@@ -1,11 +1,14 @@
 'use client';
 
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
-export default function FAQSection() {
+import { SECTIONS } from '@/constants/sections';
+
+export const FAQ = () => {
   const t = useTranslations('TemposPage.FAQ');
+  const locale = useLocale();
   const [openIndices, setOpenIndices] = useState<number[]>([]);
 
   const renderRichText = (key: Parameters<typeof t.rich>[0]) =>
@@ -39,7 +42,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="bg-white py-24 sm:py-32 px-6">
+    <section id={SECTIONS[locale].FAQ} className="bg-white py-24 sm:py-32 px-6">
       <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
         <h2 className="mt-2 text-3xl md:text-4xl font-bold mb-4">
           {t('title')}
@@ -79,4 +82,4 @@ export default function FAQSection() {
       </div>
     </section>
   );
-}
+};

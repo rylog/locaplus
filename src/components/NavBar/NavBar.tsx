@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import Logo from '@/../public/Logo_locaplus.png';
 import { SECTIONS } from '@/constants/sections';
-import { Link } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 
 import { LanguageSelector } from './LanguageSelector';
 import { MobileNav } from './MobileNav';
@@ -17,10 +17,39 @@ export const NavBar = () => {
   const t = useTranslations('HomePage');
   const locale = useLocale();
 
-  const navItems = [
+  const pathname = usePathname();
+
+  const temposNavItems = [
+    {
+      name: t('nav.home'),
+      href: `/${locale}/`,
+    },
+    {
+      name: t('nav.whyChooseUs'),
+      href: `/${locale}/${SECTIONS[locale].TEMPOS}#${SECTIONS[locale].WHY_CHOOSE_US}`,
+    },
+    {
+      name: t('nav.popularShelters'),
+      href: `/${locale}/${SECTIONS[locale].TEMPOS}#${SECTIONS[locale].POPULAR_SHELTERS}`,
+    },
+    {
+      name: t('nav.FAQ'),
+      href: `/${locale}/${SECTIONS[locale].TEMPOS}#${SECTIONS[locale].FAQ}`,
+    },
+    {
+      name: t('nav.requestAQuote'),
+      href: `/${locale}/${SECTIONS[locale].TEMPOS}#${SECTIONS[locale].QUOTE}`,
+    },
+  ];
+
+  const rootNavItems = [
     {
       name: t('nav.tempos'),
       href: `/${locale}/${SECTIONS[locale].TEMPOS}`,
+    },
+    {
+      name: t('nav.careers'),
+      href: `/${locale}/${SECTIONS[locale].CAREERS}`,
     },
     {
       name: t('nav.products'),
@@ -31,14 +60,12 @@ export const NavBar = () => {
       href: `/${locale}#${SECTIONS[locale].ABOUT}`,
     },
     {
-      name: t('nav.careers'),
-      href: `/${locale}/${SECTIONS[locale].CAREERS}`,
-    },
-    {
       name: t('nav.contactUs'),
       href: `/${locale}#${SECTIONS[locale].CONTACT}`,
     },
   ];
+
+  const navItems = pathname.includes('/tempo') ? temposNavItems : rootNavItems;
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
