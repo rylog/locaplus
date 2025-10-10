@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useForm, useWatch } from 'react-hook-form';
 
 import {
   TempoQuoteRequest,
@@ -42,7 +42,7 @@ export default function TemposPage() {
   const { mutateAsync: sendQuoteAsync } = useSendQuoteRequest();
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const { register, control, formState, handleSubmit, watch } =
+  const { register, control, formState, handleSubmit } =
     useForm<QuoteFormInputs>({
       mode: 'onSubmit',
     });
@@ -73,7 +73,7 @@ export default function TemposPage() {
     }
   };
 
-  const reCaptchaToken = watch('reCaptchaToken');
+  const reCaptchaToken = useWatch({ control, name: 'reCaptchaToken' });
 
   const carportOptions = [
     { value: '11 x 16 x 6\'6"', label: '11 x 16 x 6\'6"' },
@@ -180,7 +180,7 @@ export default function TemposPage() {
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          <div className="grid gap-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 max-w-6xl mx-auto">
             {temposData.map((tempo) => (
               <div
                 key={tempo.size}
