@@ -316,6 +316,39 @@
     "quoteForm": {
       "title": "Request a Quote",
       "subtitle": "Looking for the right tempo? Fill out the form below and we’ll provide a detailed quote tailored to your requirements."
+    },
+    "FAQ": {
+      "title": "Frequently Asked Questions",
+
+      "q1": "What sizes of shelters are available for rent?",
+      "a1": "<p>Locaplus offers three standard pointed-roof tempo shelters:</p><ul><li>11' x 16': ideal for a compact car or narrow driveway</li><li>11' x 20': suitable for most cars, SUVs, and small trucks</li><li>20' x 20': double shelter for two vehicles side by side</li></ul><p>We can help you choose the best size for your driveway and needs.</p>",
+
+      "q2": "How does the rental service work?",
+      "a2": "<p>Our service is completely hands-off:</p><ul><li>Home delivery</li><li>Professional installation with anchors suitable for your surface</li><li>Dismantling and pickup at the end of the winter season</li></ul><p>You don’t have to lift a finger — we handle everything!</p>",
+
+      "q3": "When are shelters installed?",
+      "a3": "<ul><li>Installations begin in October and continue through late November</li><li>We schedule visits based on weather conditions and location</li><li>You will receive a call 1–2 days before installation</li></ul>",
+
+      "q4": "When are shelters dismantled?",
+      "a4": "<ul><li>Dismantling starts in early March, depending on weather</li><li>We remove the shelter and collect all components</li></ul>",
+
+      "q5": "Do I need to maintain the shelter during winter?",
+      "a5": "<p>Yes — to keep your shelter safe and durable:</p><ul><li>Clear snow regularly and evenly</li><li>Do not park under the shelter during storms</li><li>Always open or close both doors to prevent wind from catching the shelter if only one door is open</li><li>Contact us if you notice sagging or unusual movement</li></ul>",
+
+      "q6": "What types of anchors do you use?",
+      "a6": "<p>We use safe anchors based on the surface:</p><ul><li>Asphalt: nails and metal pins as needed</li><li>Gravel, pavers, or soil: nails, pins, or permanent anchors</li><li>No concrete blocks are used (unsafe and non-compliant)</li></ul>",
+
+      "q7": "What should I do if there’s damage?",
+      "a7": "<p>If damage is caused by poor maintenance, a displaced anchor, or improper use, repair fees may apply.</p><p>For damage caused by extreme weather (strong winds, ice storms, etc.), we will evaluate the situation with you.</p>",
+
+      "q8": "How much does renting a shelter cost?",
+      "a8": "<p>Prices depend on:</p><ul><li>The size of the Tempo shelter</li><li>The distance from your address to our warehouse in Saint-Alphonse-de-Granby</li></ul><p>Contact us for a quick quote. Discounts are available for multiple seasons or multiple shelters.</p>",
+
+      "q9": "Do you deliver to my area?",
+      "a9": "<p>We install shelters in many towns in the Eastern Townships and Montérégie regions, including:</p><ul><li>Granby</li><li>Bromont</li><li>Cowansville</li><li>Waterloo</li><li>Shefford</li><li>Farnham</li><li>Lac-Brome</li><li>Knowlton</li><li>Bedford</li><li>St-Césaire</li><li>Brigham</li><li>Roxton Pond</li><li>Frelighsburg</li><li>Dunham</li><li>Magog</li><li>Saint-Alphonse-de-Granby</li><li>And surrounding areas!</li></ul>",
+
+      "q10": "Can I buy a Tempo shelter and have it installed?",
+      "a10": "<p>Yes! Many clients prefer to own their own new Tempo shelter.</p><p>We also provide professional installation if you purchase a shelter.</p>"
     }
   }
 }

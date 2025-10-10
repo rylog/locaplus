@@ -12,6 +12,7 @@ import {
   TempoQuoteRequest,
   useSendQuoteRequest,
 } from '@/api/useSendQuoteRequest';
+import FAQSection from '@/components/FAQ/FAQSection';
 import { ConsentCheckbox } from '@/components/Form/ConsentCheckbox/ConsentCheckbox';
 import { MessageInput } from '@/components/Form/MessageInput/MessageInput';
 import { SelectInput } from '@/components/Form/SelectInput/SelectInput';
@@ -77,7 +78,6 @@ export default function TemposPage() {
   const carportOptions = [
     { value: '11 x 16 x 6\'6"', label: '11 x 16 x 6\'6"' },
     { value: '11 x 20 x 6\'6"', label: '11 x 20 x 6\'6"' },
-    { value: '18 x 20 x 6\'6"', label: '18 x 20 x 6\'6"' },
     { value: '20 x 20 x 6\'6"', label: '20 x 20 x 6\'6"' },
     {
       value: t('Form.carportOptions.other'),
@@ -180,13 +180,13 @@ export default function TemposPage() {
             </p>
           </div>
 
-          <div className="grid gap-12 md:grid-cols-2 max-w-5xl mx-auto">
+          <div className="grid gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
             {temposData.map((tempo) => (
               <div
                 key={tempo.size}
-                className="bg-white shadow-md rounded-2xl p-10 text-center flex flex-col"
+                className="bg-white shadow-lg rounded-xl p-12 text-center flex flex-col"
               >
-                <div className="w-full aspect-[16/9] relative mb-6">
+                <div className="w-full aspect-[16/9] relative mb-8">
                   <Image
                     src={tempo.img}
                     alt={tempo.name}
@@ -195,9 +195,11 @@ export default function TemposPage() {
                     className="object-cover rounded-xl"
                   />
                 </div>
-                <h3 className="font-semibold text-2xl">{t(tempo.name)}</h3>
-                <p className="text-gray-500 text-lg mb-4">{t(tempo.size)}</p>
-                <p className="text-gray-600 flex-grow">{t(tempo.desc)}</p>
+                <h3 className="font-semibold text-3xl mb-2">{t(tempo.name)}</h3>
+                <p className="text-gray-500 text-lg mb-6">{t(tempo.size)}</p>
+                <p className="text-gray-700 text-base flex-grow">
+                  {t(tempo.desc)}
+                </p>
               </div>
             ))}
           </div>
@@ -206,14 +208,14 @@ export default function TemposPage() {
             {t('TemposPage.popularShelters.cta')}
           </p>
         </section>
-
+        <FAQSection />
         {/* Quote Form Section */}
         {formSubmitted ? (
           <section
             id={SECTIONS[locale].QUOTE}
-            className="relative min-h-[1000px] px-6 py-24 sm:py-32 lg:px-8 bg-slate-900 flex items-center justify-center rounded-4xl top-[-32px] z-10"
+            className="relative isolate bg-slate-900 px-6 py-24 sm:py-32 lg:px-8 rounded-t-2xl z-10 min-h-[1000px] flex items-center justify-center"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 max-w-96">
               <h1 className="text-2xl text-white font-semibold tracking-loose sm:text-2xl text-center">
                 {t('Form.requestQuote.success.title')}
               </h1>
