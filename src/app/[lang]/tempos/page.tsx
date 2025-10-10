@@ -12,6 +12,7 @@ import {
   TempoQuoteRequest,
   useSendQuoteRequest,
 } from '@/api/useSendQuoteRequest';
+import FAQSection from '@/components/FAQ/FAQSection';
 import { ConsentCheckbox } from '@/components/Form/ConsentCheckbox/ConsentCheckbox';
 import { MessageInput } from '@/components/Form/MessageInput/MessageInput';
 import { SelectInput } from '@/components/Form/SelectInput/SelectInput';
@@ -206,14 +207,14 @@ export default function TemposPage() {
             {t('TemposPage.popularShelters.cta')}
           </p>
         </section>
-
+        <FAQSection />
         {/* Quote Form Section */}
         {formSubmitted ? (
           <section
             id={SECTIONS[locale].QUOTE}
-            className="relative min-h-[1000px] px-6 py-24 sm:py-32 lg:px-8 bg-slate-900 flex items-center justify-center rounded-4xl top-[-32px] z-10"
+            className="relative isolate bg-slate-900 px-6 py-24 sm:py-32 lg:px-8 rounded-t-2xl z-10 min-h-[1000px] flex items-center justify-center"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 max-w-96">
               <h1 className="text-2xl text-white font-semibold tracking-loose sm:text-2xl text-center">
                 {t('Form.requestQuote.success.title')}
               </h1>
