@@ -98,7 +98,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function RootLayout({
+export default async function TemposLayout({
   children,
   params,
 }: Readonly<{
