@@ -131,7 +131,7 @@ export const Tempos = () => {
           id={SECTIONS[locale].WHY_CHOOSE_US}
           className="relative overflow-hidden bg-white pt-24 py-8 rounded-4xl translate-y-[-32px] z-10"
         >
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 md:pb-0 lg:pb-16">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
               {/* Left side: Text + features */}
               <div className="lg:pt-4 lg:pr-8">
@@ -161,13 +161,13 @@ export const Tempos = () => {
               </div>
 
               {/* Right side: Image */}
-              <div className="relative lg:pt-4">
+              <div className="relative lg:pt-4 flex">
                 <Image
                   src="/images/tempos/tempo-display.jpg"
                   alt="Tempo shelter"
                   width={1440}
                   height={1440}
-                  className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[36rem] lg:-ml-0 sm:mx-auto"
+                  className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[36rem] lg:-ml-0 sm:mx-auto justify-self-center m-auto"
                 />
               </div>
             </div>

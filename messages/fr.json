@@ -259,8 +259,8 @@
   },
   "TemposPage": {
     "hero": {
-      "title": "Abris Tempo officiels Locaplus",
-      "subtitle": "Abris Tempo durables et faciles à installer pour toutes les saisons.",
+      "title": "Abris Tempo",
+      "subtitle": "Le Locaplus offre le service de location et l'achat d'abris de la marque Tempo",
       "cta": "Demander une soumission"
     },
     "serviceOptions": {
@@ -275,19 +275,19 @@
       "features": {
         "durable": {
           "title": "Durable & fort",
-          "desc": "Conçu pour résister aux hivers rigoureux du Québec."
+          "desc": "Conçu pour résister aux hivers rigoureux du Québec, nos abris Tempo assurent une protection fiable année après année."
         },
         "fastSetup": {
           "title": "Installation & retrait rapides",
-          "desc": "Installation et démontage sans tracas."
+          "desc": "Nos équipes s'occupent de tout. Installation à l'automne et démontage au printemps - pour un service clé en main sans tracas."
         },
         "flexible": {
           "title": "Options flexibles",
-          "desc": "Louez ou achetez selon vos besoins."
+          "desc": "Louez votre abris pour la saison ou achetez-le avec installation professionnelle selon vos besoins."
         },
         "customSizes": {
           "title": "Tailles personnalisées",
-          "desc": "Dimensions standard et personnalisées disponibles."
+          "desc": "Choisissez parmi nos formats standards (11x16, 11x20, 20x20) ou demandez un abri sur mesure adapté à votre espace."
         }
       }
     },
