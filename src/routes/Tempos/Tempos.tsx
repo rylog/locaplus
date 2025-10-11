@@ -143,7 +143,11 @@ export const Tempos = () => {
                     {t('TemposPage.whyChoose.title')}
                   </p>
                   <p className="mt-6 text-lg text-gray-700">
-                    {t('TemposPage.whyChoose.description')}
+                    {t.rich('TemposPage.whyChoose.description', {
+                      b: (chunks) => (
+                        <span className="font-semibold">{chunks}</span>
+                      ),
+                    })}
                   </p>
 
                   <dl className="mt-10 max-w-xl space-y-8 text-base text-gray-600 lg:max-w-none">
@@ -153,7 +157,13 @@ export const Tempos = () => {
                           <feature.icon className="absolute top-1 left-1 w-5 h-5 text-[#0d2d51]" />
                           {t(feature.title)}.
                         </dt>
-                        <dd className="inline ml-1">{t(feature.desc)}</dd>
+                        <dd className="inline ml-1">
+                          {t.rich(feature.desc, {
+                            b: (chunks) => (
+                              <span className="font-semibold">{chunks}</span>
+                            ),
+                          })}
+                        </dd>
                       </div>
                     ))}
                   </dl>
