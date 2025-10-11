@@ -93,7 +93,7 @@ export const RecentInstallations = () => {
                   prev! > 0 ? prev! - 1 : photos.length - 1,
                 )
               }
-              className="absolute left-2 top-1/2 -translate-y-1/2 p-2 sm:p-4 bg-black/70 rounded-full text-white shadow-lg hover:bg-black/90 hover:scale-105 transition-transform cursor-pointer"
+              className="absolute left-2 top-1/2 -translate-y-1/2 p-2 sm:p-4 bg-black/70 rounded-full text-white shadow-lg hover:bg-black/90 hover:scale-105 cursor-pointer"
             >
               <ChevronLeftIcon className="h-8 w-8 sm:h-10 sm:w-10" />
             </button>
@@ -103,13 +103,13 @@ export const RecentInstallations = () => {
                   prev! < photos.length - 1 ? prev! + 1 : 0,
                 )
               }
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 sm:p-4 bg-black/70 rounded-full text-white shadow-lg hover:bg-black/90 hover:scale-105 transition-transform cursor-pointer"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 sm:p-4 bg-black/70 rounded-full text-white shadow-lg hover:bg-black/90 hover:scale-105  cursor-pointer"
             >
               <ChevronRightIcon className="h-8 w-8 sm:h-10 sm:w-10" />
             </button>
             <button
               onClick={() => setSelectedIndex(null)}
-              className="absolute top-2 right-2 p-2 sm:p-3 bg-black/70 rounded-full text-white shadow-lg hover:bg-black/90 hover:scale-105 transition-transform cursor-pointer"
+              className="absolute top-2 right-2 p-2 sm:p-3 bg-black/70 rounded-full text-white shadow-lg hover:bg-black/90 hover:scale-105 cursor-pointer"
             >
               <XMarkIcon className="h-6 w-6 sm:h-8 sm:w-8" />
             </button>
