@@ -271,7 +271,7 @@
     "whyChoose": {
       "subtitle": "Pourquoi choisir nos abris Tempo",
       "title": "Protéger ce qui compte le plus",
-      "description": "En tant que fournisseur officiel d'abris Tempo dans les cantons de l'Est, nous proposons des abris durables et faciles à installer qui protègent vos véhicules et équipements toute l'année.",
+      "description": "En tant que <b>fournisseur officiel d’abris Tempo</b> dans les <b>Cantons-de-l’Est</b> et la <b>Montérégie</b>, Locaplus offre à la fois la <b>location</b> et la <b>vente</b> d’abris durables et faciles à installer qui protègent vos véhicules et équipements tout au long de l’année. Avec plus de <b>150 clients satisfaits</b> chaque année pour nos services de location, nous sommes la référence régionale pour un hiver sans souci.",
       "features": {
         "durable": {
           "title": "Durable & fort",
@@ -283,11 +283,11 @@
         },
         "flexible": {
           "title": "Options flexibles",
-          "desc": "Louez votre abris pour la saison ou achetez-le avec installation professionnelle selon vos besoins."
+          "desc": "<b>Louez</b> votre abris pour la saison ou <b>achetez-le</b> avec installation professionnelle selon vos besoins."
         },
         "customSizes": {
           "title": "Tailles personnalisées",
-          "desc": "Choisissez parmi nos formats standards (11x16, 11x20, 20x20) ou demandez un abri sur mesure adapté à votre espace."
+          "desc": "Choisissez parmi nos <b>formats standards</b> (11x16, 11x20, 20x20) ou demandez un <b>abri sur mesure</b> adapté à votre espace."
         }
       }
     },

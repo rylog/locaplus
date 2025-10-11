@@ -271,23 +271,23 @@
     "whyChoose": {
       "subtitle": "Why Choose Our Tempo Shelters",
       "title": "Protect What Matters Most",
-      "description": "As the official Tempo shelter provider in the Eastern Townships, we offer durable and easy-to-install shelters that protect your vehicles and equipment year-round.",
+      "description": "As the <b>official Tempo shelter provider</b> in the <b>Eastern Townships</b> and <b>Montérégie</b>, Locaplus offers both <b>rental</b> and <b>sales</b> of durable, easy-to-install shelters that protect your vehicles and equipment year-round. With over <b>150 satisfied clients</b> each year using our rental services, we are the regional reference for a worry-free winter.",
       "features": {
         "durable": {
           "title": "Durable & Strong",
           "desc": "Built to withstand Quebec's harsh winters, our Tempo shelters provide reliable protection year after year."
         },
         "fastSetup": {
-          "title": "Quick Setup & Removal",
+          "title": "Fast Setup & Removal",
           "desc": "Our teams take care of everything. Set up in the fall and taken down in the spring — a hassle-free service."
         },
         "flexible": {
           "title": "Flexible Options",
-          "desc": "Rent your shelter for the season or purchase it with professional installation according to your needs."
+          "desc": "<b>Rent</b> your shelter for the season or <b>purchase</b> it with professional installation according to your needs."
         },
         "customSizes": {
           "title": "Custom Sizes",
-          "desc": "Choose from our standard sizes (11x16, 11x20, 20x20) or request a custom shelter tailored to your space."
+          "desc": "Choose from our <b>standard sizes</b> (11x16, 11x20, 20x20) or request a <b>custom size</b> tailored to your space."
         }
       }
     },
