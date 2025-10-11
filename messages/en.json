@@ -260,7 +260,7 @@
   "TemposPage": {
     "hero": {
       "title": "Locaplus Tempos",
-      "subtitle": "Durable, easy-to-install Tempo shelters for all seasons.",
+      "subtitle": "Locaplus offers rental and sales of Tempo brand shelters",
       "cta": "Request a quote"
     },
     "serviceOptions": {
@@ -269,25 +269,25 @@
       "installation": "Installation"
     },
     "whyChoose": {
-      "subtitle": "Why Choose Our Tempos",
+      "subtitle": "Why Choose Our Tempo Shelters",
       "title": "Protect What Matters Most",
-      "description": "As the official Tempo provider in the Eastern Townships, we offer durable, easy-to-install shelters that protect your vehicles and equipment year-round.",
+      "description": "As the official Tempo shelter provider in the Eastern Townships, we offer durable and easy-to-install shelters that protect your vehicles and equipment year-round.",
       "features": {
         "durable": {
           "title": "Durable & Strong",
-          "desc": "Built to withstand harsh Quebec winters."
+          "desc": "Built to withstand Quebec's harsh winters, our Tempo shelters provide reliable protection year after year."
         },
         "fastSetup": {
-          "title": "Fast Setup & Removal",
-          "desc": "Hassle-free installation and takedown."
+          "title": "Quick Setup & Removal",
+          "desc": "Our teams take care of everything. Set up in the fall and taken down in the spring — a hassle-free service."
         },
         "flexible": {
           "title": "Flexible Options",
-          "desc": "Rent or purchase according to your needs."
+          "desc": "Rent your shelter for the season or purchase it with professional installation according to your needs."
         },
         "customSizes": {
           "title": "Custom Sizes",
-          "desc": "Standard and custom dimensions available."
+          "desc": "Choose from our standard sizes (11x16, 11x20, 20x20) or request a custom shelter tailored to your space."
         }
       }
     },
