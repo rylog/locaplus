@@ -23,6 +23,7 @@ import { tempoFeaturesData } from '@/data/temposFeatures';
 import { LABEL_COLORS } from '@/styles/colors';
 
 import { FAQ } from './sections/FAQ';
+import { RecentInstallations } from './sections/RecentInstallations';
 
 interface QuoteFormInputs {
   firstName: string;
@@ -166,7 +167,7 @@ export const Tempos = () => {
                   alt="Tempo shelter"
                   width={1440}
                   height={1440}
-                  className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[36rem] md:-ml-4 lg:-ml-0"
+                  className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[36rem] lg:-ml-0 sm:mx-auto"
                 />
               </div>
             </div>
@@ -187,7 +188,7 @@ export const Tempos = () => {
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 max-w-6xl mx-auto">
+          <div className="grid gap-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 lg:max-w-6xl max-w-lg mx-auto">
             {temposData.map((tempo) => (
               <div
                 key={tempo.size}
@@ -212,9 +213,10 @@ export const Tempos = () => {
             ))}
           </div>
 
-          <p className="mt-24 text-center text-gray-500">
+          <p className="mt-12 text-center text-gray-500">
             {t('TemposPage.popularShelters.cta')}
           </p>
+          <RecentInstallations />
         </section>
         <FAQ />
         {/* Quote Form Section */}
