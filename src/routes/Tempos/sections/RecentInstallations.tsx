@@ -83,7 +83,7 @@ export const RecentInstallations = () => {
               alt={photos[selectedIndex].alt}
               width={2800}
               height={2800}
-              className="object-contain w-full h-full sm:h-auto rounded-lg select-none"
+              className="object-contain w-full h-full sm:h-auto rounded-lg select-none max-w-full max-h-screen"
             />
 
             {/* Navigation buttons */}
