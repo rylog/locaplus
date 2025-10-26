@@ -30,7 +30,7 @@ export const Products = () => {
       id={SECTIONS[locale].PRODUCTS}
       className="bg-gray-50 lg:pt-8 pt-0 lg:pb-28"
     >
-      <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full gap-8 px-0 pt-12 lg:px-8">
+      <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full gap-8 px-0 pt-12 lg:px-0">
         <header className="max-w-2xl lg:px-0 px-4 lg:self-center">
           <h1 className="text-lg/7 font-semibold text-primary text-center">
             {t('nav.products')}
