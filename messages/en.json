@@ -24,21 +24,61 @@
       "requestQuote": "Request a quote"
     },
     "tent": {
-      "name": {
-        "10x10": "10' x 10' Tent",
-        "10x20": "10' x 20' Tent",
-        "20x20": "20' x 20' Tent",
-        "20x30": "20' x 30' Tent",
-        "20x40": "20' x 40' Tent",
-        "40x40": "40' x 40' Tent",
-        "hexagonal": "Hexagonal Tent",
-        "40x60": "40' x 60' Tent",
-        "40x80": "40' x 80' Tent",
-        "40x100": "40' x 100' Tent",
-        "40x200": "40' x up to 200' Tent",
-        "60x80": "60' x 80' Tent",
-        "60x100": "60' x 100' Tent",
-        "60x200": "60' x up to 200' Tent"
+      "10x10": {
+        "name": "10' x 10' Tent",
+        "spaceRequired": "Area: 22' x 22'"
+      },
+      "10x20": {
+        "name": "10' x 20' Tent",
+        "spaceRequired": "Area: 22' x 32'"
+      },
+      "20x20": {
+        "name": "20' x 20' Tent",
+        "spaceRequired": "Area: 32' x 32'"
+      },
+      "20x30": {
+        "name": "20' x 30' Tent",
+        "spaceRequired": "Area: 32' x 42'"
+      },
+      "20x40": {
+        "name": "20' x 40' Tent",
+        "spaceRequired": "Area: 32' x 52'"
+      },
+      "40x40": {
+        "name": "40' x 40' Tent",
+        "spaceRequired": "Area: 52' x 52'"
+      },
+      "hexagonal": {
+        "name": "Hexagonal Tent",
+        "spaceRequired": "Area: 35' x 40'"
+      },
+      "40x60": {
+        "name": "40' x 60' Tent",
+        "spaceRequired": "Area: 52' x 72'"
+      },
+      "40x80": {
+        "name": "40' x 80' Tent",
+        "spaceRequired": "Area: 52' x 92'"
+      },
+      "40x100": {
+        "name": "40' x 100' Tent",
+        "spaceRequired": "Area: 52' x 112'"
+      },
+      "40x200": {
+        "name": "40' x up to 200' Tent",
+        "spaceRequired": "Area: 52' x up to 212'"
+      },
+      "60x80": {
+        "name": "60' x 80' Tent",
+        "spaceRequired": "Area: 72' x 92'"
+      },
+      "60x100": {
+        "name": "60' x 100' Tent",
+        "spaceRequired": "Area: 72' x 112'"
+      },
+      "60x200": {
+        "name": "60' x up to 200' Tent",
+        "spaceRequired": "Area: 72' x 212'"
       }
     },
     "tents": {

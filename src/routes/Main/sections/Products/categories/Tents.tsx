@@ -5,7 +5,7 @@ import { tentsData } from '@/data/tents';
 export const Tents = () => {
   const t = useTranslations();
   const items = tentsData.map((tent) => {
-    const { img, key, max } = tent;
+    const { img, key, max, spaceRequired } = tent;
     const min = 'min' in tent ? tent.min : undefined;
     return {
       img,
@@ -14,6 +14,7 @@ export const Tents = () => {
         min !== undefined
           ? t('HomePage.tents.capacity.range', { min, max })
           : t('HomePage.tents.capacity.maxOnly', { max }),
+      spaceRequired: t(spaceRequired),
     };
   });
 
@@ -27,7 +28,7 @@ export const Tents = () => {
           <picture>
             <img
               alt={item.img}
-              className="w-20 h-20 object-cover rounded-md"
+              className="w-20 h-20 object-contain rounded-md"
               src={item.img}
             />
           </picture>
@@ -35,6 +36,7 @@ export const Tents = () => {
           <div className="flex flex-col grow self-center">
             <p className="font-medium text-slate-900">{item.title}</p>
             <p className="text-gray-500">{item.description}</p>
+            <p className="text-gray-500">{item.spaceRequired}</p>
           </div>
         </li>
       ))}
