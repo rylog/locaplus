@@ -63,7 +63,7 @@ export const tentsData = [
     max: 320,
   },
   {
-    img: '/images/tents/40x100.jpeg',
+    img: '/images/tents/40x100.png',
     key: 'HomePage.tent.40x100.name',
     spaceRequired: 'HomePage.tent.40x100.spaceRequired',
     min: 320,
