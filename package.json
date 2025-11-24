@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "validate-messages": "npx @lingual/i18n-check@latest --source fr --locales messages -u src/",
-    "payload:dev": "payload dev"
+    "validate-messages": "npx @lingual/i18n-check@latest --source fr --locales messages -u src/"
   },
   "dependencies": {
     "@azure/msal-node": "^3.2.3",

@@ -10,7 +10,7 @@ import { ReactNode } from 'react';
 
 import { routing } from '@/i18n/routing';
 
-import QueryClientContextProvider from '../../context/QueryClientContext';
+import QueryClientContextProvider from '../../../context/QueryClientContext';
 
 export type Locale = 'en' | 'fr';
 
