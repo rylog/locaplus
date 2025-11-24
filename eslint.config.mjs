@@ -57,7 +57,7 @@ const eslintConfig = [
       'simple-import-sort/exports': 'error',
 
       // Next.js
-      '@next/next/no-async-client-component': 'warn', // Warn if missing "use client"
+      '@next/next/no-async-client-component': 'error', // Warn if missing "use client"
       // React Hooks
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
