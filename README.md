@@ -35,5 +35,5 @@ Locaplus provides exceptional service in the tent and equipment rental industry.
 For any inquiries or support, you can reach us at:
 
 - Email: support@locaplus.net
-- Website: [www.locaplus.net](http://www.locaplus.net)
+- Website: [www.chapiteaulocaplus.com](http://www.chapiteaulocaplus.com/en)
 - For website-specific inquiries, contact: ryanlomtl@gmail.com
