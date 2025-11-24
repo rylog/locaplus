@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { Locale } from '@/app/[lang]/layout';
+import { Locale } from '@/app/(frontend)/[lang]/layout';
 import { trackEvent } from '@/utils/ga';
 
 export interface QuoteRequest {

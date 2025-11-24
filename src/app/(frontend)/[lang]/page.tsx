@@ -1,6 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 
-import { Main } from '../../routes/Main/Main';
+import { Main } from '../../../routes/Main/Main';
 
 export default async function Home({
   params,
