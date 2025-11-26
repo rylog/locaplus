@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix .",
     "validate-messages": "npx @lingual/i18n-check@latest --source fr --locales messages -u src/"
   },
   "dependencies": {
