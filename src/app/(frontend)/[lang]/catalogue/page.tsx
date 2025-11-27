@@ -2,6 +2,7 @@ import configPromise from '@payload-config';
 import Image from 'next/image';
 import { setRequestLocale } from 'next-intl/server';
 import { getPayload } from 'payload';
+
 import { Catalogue, Media } from '@/payload-types';
 
 type CatalogueWithMedia = Omit<Catalogue, 'photos'> & {
