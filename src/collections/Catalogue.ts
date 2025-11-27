@@ -67,5 +67,14 @@ export const Catalogue: CollectionConfig = {
         { name: 'capacity', type: 'number' },
       ],
     },
+
+    {
+      name: 'price',
+      type: 'text',
+      required: false,
+      admin: {
+        description: 'Price in CAD',
+      },
+    },
   ],
 };

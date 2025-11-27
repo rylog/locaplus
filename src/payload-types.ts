@@ -195,6 +195,10 @@ export interface Catalogue {
     length?: number | null;
     capacity?: number | null;
   };
+  /**
+   * Price in CAD
+   */
+  price?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -338,6 +342,7 @@ export interface CatalogueSelect<T extends boolean = true> {
         length?: T;
         capacity?: T;
       };
+  price?: T;
   updatedAt?: T;
   createdAt?: T;
 }
