@@ -69,7 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    catalogue: Catalogue;
+    catalogue_item: CatalogueItem;
+    categories: Category;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -79,7 +80,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    catalogue: CatalogueSelect<false> | CatalogueSelect<true>;
+    catalogue_item: CatalogueItemSelect<false> | CatalogueItemSelect<true>;
+    categories: CategoriesSelect<false> | CategoriesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -162,43 +164,45 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "catalogue".
+ * via the `definition` "catalogue_item".
  */
-export interface Catalogue {
+export interface CatalogueItem {
   id: string;
-  title: string;
-  description?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  photos?: (string | Media)[] | null;
-  category: 'tents' | 'chairs' | 'tables' | 'flooring' | 'equipment';
-  features?:
-    | {
-        text: string;
-        id?: string | null;
-      }[]
-    | null;
-  specs?: {
-    width?: number | null;
-    length?: number | null;
-    capacity?: number | null;
-  };
+  _order?: string | null;
   /**
-   * Price in CAD
+   * Set the order for manual sorting
    */
-  price?: string | null;
+  order?: number | null;
+  general: {
+    title: string;
+    slug?: string | null;
+    description?: string | null;
+  };
+  category: string | Category;
+  media?: {
+    thumbnail?: (string | null) | Media;
+    gallery?: (string | Media)[] | null;
+  };
+  pricing?: {
+    price?: number | null;
+    unit?: ('day' | 'week' | 'event') | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface Category {
+  id: string;
+  _order?: string | null;
+  /**
+   * Set the order for manual sorting
+   */
+  order?: number | null;
+  name: string;
+  slug: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -235,8 +239,12 @@ export interface PayloadLockedDocument {
         value: string | Media;
       } | null)
     | ({
-        relationTo: 'catalogue';
-        value: string | Catalogue;
+        relationTo: 'catalogue_item';
+        value: string | CatalogueItem;
+      } | null)
+    | ({
+        relationTo: 'categories';
+        value: string | Category;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -322,27 +330,43 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "catalogue_select".
+ * via the `definition` "catalogue_item_select".
  */
-export interface CatalogueSelect<T extends boolean = true> {
-  title?: T;
-  description?: T;
-  photos?: T;
+export interface CatalogueItemSelect<T extends boolean = true> {
+  _order?: T;
+  order?: T;
+  general?:
+    | T
+    | {
+        title?: T;
+        slug?: T;
+        description?: T;
+      };
   category?: T;
-  features?:
+  media?:
     | T
     | {
-        text?: T;
-        id?: T;
+        thumbnail?: T;
+        gallery?: T;
       };
-  specs?:
+  pricing?:
     | T
     | {
-        width?: T;
-        length?: T;
-        capacity?: T;
+        price?: T;
+        unit?: T;
       };
-  price?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories_select".
+ */
+export interface CategoriesSelect<T extends boolean = true> {
+  _order?: T;
+  order?: T;
+  name?: T;
+  slug?: T;
   updatedAt?: T;
   createdAt?: T;
 }

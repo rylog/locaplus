@@ -10,7 +10,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix .",
     "validate-messages": "npx @lingual/i18n-check@latest --source fr --locales messages -u src/",
-    "generate-types": "payload generate:types"
+    "generate-types": "payload generate:types",
+    "generate-types:watch": "payload generate:types --watch"
   },
   "dependencies": {
     "@azure/msal-node": "^3.2.3",

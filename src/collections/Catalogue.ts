@@ -1,80 +1,114 @@
-// src/payload/collections/catalogue.ts
-
+// payload/collections/Products.ts
 import { CollectionConfig } from 'payload';
 
 export const Catalogue: CollectionConfig = {
-  slug: 'catalogue',
+  slug: 'catalogue_item',
+  orderable: true,
   labels: {
     singular: 'Catalogue Item',
     plural: 'Catalogue Items',
   },
   admin: {
-    useAsTitle: 'title',
+    defaultColumns: [
+      'media.thumbnail',
+      'general.title',
+      'category',
+      'pricing.price',
+    ],
   },
-
   fields: [
+    // ---------- ORDER FIELD ----------
     {
-      name: 'title',
-      type: 'text',
-      required: true,
-    },
-
-    {
-      name: 'description',
-      type: 'richText', // Uses Lexical editor
+      name: 'order',
+      type: 'number',
       required: false,
-    },
-
-    {
-      name: 'photos',
-      type: 'relationship',
-      relationTo: 'media',
-      hasMany: true,
       admin: {
         position: 'sidebar',
+        description: 'Set the order for manual sorting',
       },
     },
+    // ---------- BASIC INFO ----------
+    {
+      type: 'group',
+      name: 'general',
+      label: 'General Information',
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'slug',
+          type: 'text',
+          unique: true,
+          hooks: {
+            beforeValidate: [
+              ({ value, siblingData }) => {
+                if (value) return value.toLowerCase().replace(/\s+/g, '-');
+                if (siblingData.title)
+                  return siblingData.title.toLowerCase().replace(/\s+/g, '-');
+              },
+            ],
+          },
+        },
+        {
+          name: 'description',
+          type: 'textarea',
+        },
+      ],
+    },
 
+    // ---------- CATEGORY ----------
     {
       name: 'category',
-      type: 'select',
-      options: [
-        { label: 'Tents', value: 'tents' },
-        { label: 'Chairs', value: 'chairs' },
-        { label: 'Tables', value: 'tables' },
-        { label: 'Flooring', value: 'flooring' },
-        { label: 'Equipment', value: 'equipment' },
-      ],
+      type: 'relationship',
+      relationTo: 'categories',
       required: true,
     },
 
+    // ---------- IMAGES ----------
     {
-      name: 'features',
-      type: 'array',
-      labels: {
-        singular: 'Feature',
-        plural: 'Features',
-      },
-      fields: [{ name: 'text', type: 'text', required: true }],
-    },
-
-    {
-      name: 'specs',
       type: 'group',
+      name: 'media',
+      label: 'Images',
       fields: [
-        { name: 'width', type: 'number' },
-        { name: 'length', type: 'number' },
-        { name: 'capacity', type: 'number' },
+        {
+          name: 'thumbnail',
+          type: 'upload',
+          relationTo: 'media',
+        },
+        {
+          name: 'gallery',
+          type: 'upload',
+          relationTo: 'media',
+          hasMany: true,
+        },
       ],
     },
 
+    // ---------- PRICING ----------
     {
-      name: 'price',
-      type: 'text',
-      required: false,
-      admin: {
-        description: 'Price in CAD',
-      },
+      type: 'group',
+      name: 'pricing',
+      label: 'Pricing',
+      fields: [
+        {
+          name: 'price',
+          type: 'number',
+          min: 0,
+        },
+        {
+          name: 'unit',
+          type: 'select',
+          options: [
+            { label: '/day', value: 'day' },
+            { label: '/week', value: 'week' },
+            { label: '/event', value: 'event' },
+          ],
+          defaultValue: 'day',
+        },
+      ],
     },
   ],
 };

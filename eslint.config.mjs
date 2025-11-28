@@ -21,6 +21,9 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
+    ignores: ['src/app/(payload)/admin/**'],
+  },
+  {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     languageOptions: {
       globals: globals.browser,
