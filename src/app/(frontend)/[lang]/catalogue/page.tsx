@@ -1,4 +1,6 @@
 'use server';
+export const dynamic = 'force-dynamic';
+
 import configPromise from '@payload-config';
 import { setRequestLocale } from 'next-intl/server';
 import { getPayload } from 'payload';
