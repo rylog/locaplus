@@ -21,7 +21,9 @@ const ContactInfo = () => {
             <div className="flex py-4 items-center">
               <PhoneIcon className="h-6 w-6 mr-5" />
               <div>
-                <p className="flex text-gray-600">+1 (450) 777-0233</p>
+                <a href="tel:+1-450-777-0233" className="flex text-gray-600">
+                  +1 (450) 777-0233
+                </a>
               </div>
             </div>
           </div>

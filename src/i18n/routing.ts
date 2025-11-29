@@ -20,6 +20,10 @@ export const routing = defineRouting({
       en: '/tempos',
       fr: '/abris-tempo',
     },
+    '/catalogue': {
+      en: '/catalogue',
+      fr: '/catalogue',
+    },
   },
 });
 

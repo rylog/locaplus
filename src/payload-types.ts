@@ -69,6 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    catalogue_item: CatalogueItem;
+    categories: Category;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -78,6 +80,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    catalogue_item: CatalogueItemSelect<false> | CatalogueItemSelect<true>;
+    categories: CategoriesSelect<false> | CategoriesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -88,7 +92,7 @@ export interface Config {
   };
   globals: {};
   globalsSelect: {};
-  locale: null;
+  locale: 'en' | 'fr';
   user: User & {
     collection: 'users';
   };
@@ -160,6 +164,68 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "catalogue_item".
+ */
+export interface CatalogueItem {
+  id: string;
+  _order?: string | null;
+  /**
+   * Set the order for manual sorting
+   */
+  order?: number | null;
+  general: {
+    title: string;
+    slug?: string | null;
+    description?: string | null;
+  };
+  category: string | Category;
+  media?: {
+    thumbnail?: (string | null) | Media;
+    gallery?: (string | Media)[] | null;
+  };
+  measurements?: {
+    /**
+     * Diameter (for round items)
+     */
+    diameter?: number | null;
+    /**
+     * Width (for rectangular items)
+     */
+    width?: number | null;
+    /**
+     * Length (for rectangular items)
+     */
+    length?: number | null;
+    /**
+     * Height
+     */
+    height?: number | null;
+  };
+  pricing?: {
+    price?: number | null;
+    unit?: ('day' | 'week' | 'event') | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface Category {
+  id: string;
+  _order?: string | null;
+  /**
+   * Set the order for manual sorting
+   */
+  order?: number | null;
+  name: string;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -189,6 +255,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: string | Media;
+      } | null)
+    | ({
+        relationTo: 'catalogue_item';
+        value: string | CatalogueItem;
+      } | null)
+    | ({
+        relationTo: 'categories';
+        value: string | Category;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -271,6 +345,56 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "catalogue_item_select".
+ */
+export interface CatalogueItemSelect<T extends boolean = true> {
+  _order?: T;
+  order?: T;
+  general?:
+    | T
+    | {
+        title?: T;
+        slug?: T;
+        description?: T;
+      };
+  category?: T;
+  media?:
+    | T
+    | {
+        thumbnail?: T;
+        gallery?: T;
+      };
+  measurements?:
+    | T
+    | {
+        diameter?: T;
+        width?: T;
+        length?: T;
+        height?: T;
+      };
+  pricing?:
+    | T
+    | {
+        price?: T;
+        unit?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories_select".
+ */
+export interface CategoriesSelect<T extends boolean = true> {
+  _order?: T;
+  order?: T;
+  name?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
