@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import Logo from '@/../public/Logo_locaplus.png';
+import CareersBanner from '@/assets/images/careers/careers-banner.jpg';
 import { LanguageSelector } from '@/components/NavBar/LanguageSelector';
 import { Link } from '@/i18n/routing';
 
@@ -13,7 +14,7 @@ import { CareersForm } from './sections/CareersForm';
 export const Careers = () => {
   const t = useTranslations('Careers');
   return (
-    <div className="flex flex-col bg-gray-100 h-full">
+    <div className="flex flex-col bg-gray-100">
       <header>
         <nav
           aria-label="Global"
@@ -77,8 +78,8 @@ export const Careers = () => {
             </div>
             <div className="md:w-1/2 rounded-md ring-1 ring-black/5 flex items-stretch">
               <picture className="w-full h-full">
-                <img
-                  src="/images/careers/careers-banner.jpg"
+                <Image
+                  src={CareersBanner}
                   alt="Tent setup"
                   className="w-full h-full object-cover object-top rounded-md"
                 />

@@ -12,6 +12,7 @@ import {
   TempoQuoteRequest,
   useSendQuoteRequest,
 } from '@/api/useSendQuoteRequest';
+import TempoDisplayImg from '@/assets/images/tempos/tempo-display.jpg';
 import { ConsentCheckbox } from '@/components/Form/ConsentCheckbox/ConsentCheckbox';
 import { MessageInput } from '@/components/Form/MessageInput/MessageInput';
 import { SelectInput } from '@/components/Form/SelectInput/SelectInput';
@@ -173,11 +174,13 @@ export const Tempos = () => {
               {/* Right side: Image */}
               <div className="relative lg:pt-4 flex">
                 <Image
-                  src="/images/tempos/tempo-display.jpg"
+                  src={TempoDisplayImg}
                   alt="Tempo shelter"
                   width={1440}
                   height={1440}
                   className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[36rem] lg:-ml-0 sm:mx-auto justify-self-center m-auto"
+                  placeholder="blur"
+                  priority
                 />
               </div>
             </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { tentsData } from '@/data/tents';
@@ -15,6 +16,7 @@ export const Tents = () => {
           ? t('HomePage.tents.capacity.range', { min, max })
           : t('HomePage.tents.capacity.maxOnly', { max }),
       spaceRequired: t(spaceRequired),
+      alt: tent.alt,
     };
   });
 
@@ -26,10 +28,10 @@ export const Tents = () => {
           className="flex flex-row rounded-md p-4 bg-white shadow-md text-sm sm:text-base transition  gap-4"
         >
           <picture>
-            <img
-              alt={item.img}
+            <Image
               className="w-20 h-20 object-contain rounded-md"
               src={item.img}
+              alt={item.alt}
             />
           </picture>
 

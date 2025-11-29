@@ -6,9 +6,9 @@ import {
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import facebookIcon from '@/../public/images/socials/facebook.svg';
-import instagramIcon from '@/../public/images/socials/instagram.svg';
-import linkedInIcon from '@/../public/images/socials/linkedIn.svg';
+import facebookIcon from '@/assets/images/socials/facebook.svg';
+import instagramIcon from '@/assets/images/socials/instagram.svg';
+import linkedInIcon from '@/assets/images/socials/linkedIn.svg';
 
 const ContactInfo = () => {
   const t = useTranslations('HomePage');
@@ -65,7 +65,7 @@ const ContactInfo = () => {
               <Image
                 width={48}
                 height={48}
-                src={facebookIcon.src}
+                src={facebookIcon}
                 alt="Follow us on Facebook"
                 className="w-8 h-8"
               />
@@ -74,7 +74,7 @@ const ContactInfo = () => {
               <Image
                 width={48}
                 height={48}
-                src={instagramIcon.src}
+                src={instagramIcon}
                 alt="Follow us on Instagram"
                 className="w-8 h-8"
               />
@@ -83,7 +83,7 @@ const ContactInfo = () => {
               <Image
                 width={48}
                 height={48}
-                src={linkedInIcon.src}
+                src={linkedInIcon}
                 alt="Follow us on Linkedin"
                 className="w-8 h-8"
               />

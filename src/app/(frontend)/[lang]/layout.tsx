@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import { redirect } from 'next/navigation';
 import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
@@ -98,7 +99,34 @@ export async function generateMetadata({
   };
 }
 
-export default async function TemposLayout({
+const poppins = localFont({
+  src: [
+    {
+      path: '../../../assets/fonts/Poppins-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../../assets/fonts/Poppins-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../../assets/fonts/Poppins-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../../assets/fonts/Poppins-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
@@ -116,7 +144,7 @@ export default async function TemposLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={lang} className={poppins.variable} suppressHydrationWarning>
       <head>
         {/* GA4 snippet */}
         <Script
@@ -149,7 +177,10 @@ export default async function TemposLayout({
           `}
         </Script>
       </head>
-      <body className="bg-white" suppressHydrationWarning>
+      <body
+        className="bg-white font-[var(--font-sans)]"
+        suppressHydrationWarning
+      >
         <QueryClientContextProvider>
           <NextIntlClientProvider messages={messages}>
             {children}
