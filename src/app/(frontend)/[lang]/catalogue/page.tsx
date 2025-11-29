@@ -18,11 +18,13 @@ const CataloguePage = async ({
     collection: 'catalogue_item',
     depth: 2, // include media URLs
     limit: 100, // or any number you need
+    locale: lang,
   });
 
   const { docs: categories } = await payload.find({
     collection: 'categories',
     limit: 100,
+    locale: lang,
   });
 
   return <Catalogue items={catalogueItems} categories={categories} />;

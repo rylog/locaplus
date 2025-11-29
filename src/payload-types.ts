@@ -92,7 +92,7 @@ export interface Config {
   };
   globals: {};
   globalsSelect: {};
-  locale: null;
+  locale: 'en' | 'fr';
   user: User & {
     collection: 'users';
   };
@@ -182,6 +182,24 @@ export interface CatalogueItem {
   media?: {
     thumbnail?: (string | null) | Media;
     gallery?: (string | Media)[] | null;
+  };
+  measurements?: {
+    /**
+     * Diameter (for round items)
+     */
+    diameter?: number | null;
+    /**
+     * Width (for rectangular items)
+     */
+    width?: number | null;
+    /**
+     * Length (for rectangular items)
+     */
+    length?: number | null;
+    /**
+     * Height
+     */
+    height?: number | null;
   };
   pricing?: {
     price?: number | null;
@@ -348,6 +366,14 @@ export interface CatalogueItemSelect<T extends boolean = true> {
     | {
         thumbnail?: T;
         gallery?: T;
+      };
+  measurements?:
+    | T
+    | {
+        diameter?: T;
+        width?: T;
+        length?: T;
+        height?: T;
       };
   pricing?:
     | T

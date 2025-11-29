@@ -94,6 +94,22 @@ export const Catalogue: React.FC<CatalogueProps> = ({ items, categories }) => {
                     <h3 className="mt-4 text-base font-sans font-medium text-gray-700">
                       {item.general.title}
                     </h3>
+                    {/* Dimensions */}
+                    {item.measurements && (
+                      <div className="text-sm text-gray-500 font-light mt-1">
+                        {item.measurements.diameter && (
+                          <span>{item.measurements.diameter}&#34;</span>
+                        )}
+                        {!item.measurements.diameter &&
+                          item.measurements.width &&
+                          item.measurements.length && (
+                            <span>
+                              {item.measurements.width}&#34;x
+                              {item.measurements.length}&#34;
+                            </span>
+                          )}
+                      </div>
+                    )}
                     {item.pricing?.price && (
                       <p className="mt-1 text-lg font-medium text-gray-900">
                         {item.pricing.price} {item.pricing.unit}

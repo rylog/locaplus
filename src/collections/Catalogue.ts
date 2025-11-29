@@ -37,11 +37,13 @@ export const Catalogue: CollectionConfig = {
           name: 'title',
           type: 'text',
           required: true,
+          localized: true,
         },
         {
           name: 'slug',
           type: 'text',
           unique: true,
+          localized: true,
           hooks: {
             beforeValidate: [
               ({ value, siblingData }) => {
@@ -83,6 +85,47 @@ export const Catalogue: CollectionConfig = {
           type: 'upload',
           relationTo: 'media',
           hasMany: true,
+        },
+      ],
+    },
+
+    // ---------- MEASUREMENTS ----------
+    {
+      type: 'group',
+      name: 'measurements',
+      label: 'Measurements',
+      fields: [
+        {
+          name: 'diameter',
+          type: 'number',
+          min: 0,
+          admin: {
+            description: 'Diameter (for round items)',
+          },
+        },
+        {
+          name: 'width',
+          type: 'number',
+          min: 0,
+          admin: {
+            description: 'Width (for rectangular items)',
+          },
+        },
+        {
+          name: 'length',
+          type: 'number',
+          min: 0,
+          admin: {
+            description: 'Length (for rectangular items)',
+          },
+        },
+        {
+          name: 'height',
+          type: 'number',
+          min: 0,
+          admin: {
+            description: 'Height',
+          },
         },
       ],
     },
