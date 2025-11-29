@@ -40,7 +40,15 @@ export default buildConfig({
   sharp,
   plugins: [
     s3Storage({
-      collections: { media: true },
+      collections: {
+        media: {
+          generateFileURL: ({ filename }) => {
+            // Construct the URL using your custom domain and the file path
+            return `${process.env.R2_CUSTOM_URL}/${filename}`;
+          },
+          disablePayloadAccessControl: true,
+        },
+      },
       bucket: process.env.R2_BUCKET || '',
       config: {
         credentials: {
