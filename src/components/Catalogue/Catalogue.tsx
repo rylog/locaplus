@@ -11,10 +11,7 @@ interface CatalogueProps {
 }
 
 export const Catalogue: React.FC<CatalogueProps> = ({ items, categories }) => {
-  console.log(categories);
-  // Use categories prop for sidebar and ordering
   const categoryNames = categories.map((cat) => cat.name);
-  // Example useState for filtering/searching
   const [search, setSearch] = useState('');
 
   const filteredItems = items.filter((item) =>
