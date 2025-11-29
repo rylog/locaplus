@@ -13,7 +13,7 @@ import { CareersForm } from './sections/CareersForm';
 export const Careers = () => {
   const t = useTranslations('Careers');
   return (
-    <div className="flex flex-col bg-gray-100 h-full">
+    <div className="flex flex-col bg-gray-100">
       <header>
         <nav
           aria-label="Global"
