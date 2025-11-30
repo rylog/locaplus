@@ -1,4 +1,5 @@
 import { randomUUID } from 'crypto';
+import { revalidatePath } from 'next/cache';
 import type { CollectionConfig } from 'payload';
 
 export const Media: CollectionConfig = {
@@ -34,6 +35,19 @@ export const Media: CollectionConfig = {
         }
 
         return data;
+      },
+    ],
+    afterChange: [
+      async () => {
+        // Automatically set the order field to match the _order value
+        revalidatePath('/en/catalogue');
+        revalidatePath('/fr/catalogue');
+      },
+    ],
+    afterDelete: [
+      async () => {
+        revalidatePath('/en/catalogue');
+        revalidatePath('/fr/catalogue');
       },
     ],
   },
