@@ -142,10 +142,13 @@
     },
     "products": {
       "title": "Nous avons tout ce qu'il vous faut",
-      "description": "Des chapiteaux premium, du mobilier élégant et tout le nécessaire pour rendre votre évènement inoubliable.",
+      "description": "Des chapiteaux premium et des installations élégantes pour rendre votre évènement inoubliable.",
       "tents": "Chapiteaux",
       "equipment": "Équipement",
-      "flooringChairsAndTables": "Planchers, chaises et tables"
+      "flooringChairsAndTables": "Planchers, chaises et tables",
+      "moreProductsDescription": "Vous cherchez d'autres équipements, planchers ou tables? Consultez notre catalogue complet pour découvrir tous nos produits disponibles.",
+      "moreProductsTitle": "Plus de produits disponibles",
+      "viewFullCatalogue": "Voir le catalogue complet"
     },
     "contact": {
       "title": "Des questions ? Contactez-nous !",
@@ -388,5 +391,8 @@
     "gallery": {
       "title": "Installations récentes"
     }
+  },
+  "catalogue": {
+    "title": "Catalogue"
   }
 }

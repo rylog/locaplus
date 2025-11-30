@@ -142,10 +142,13 @@
     },
     "products": {
       "title": "We've Got You Covered",
-      "description": "Premium tents, stylish furniture, and all the essentials to make your event seamless and unforgettable.",
+      "description": "Premium tents and elegant installations to make your event unforgettable.",
       "tents": "Tents",
       "equipment": "Equipment",
-      "flooringChairsAndTables": "Flooring, Chairs and Tables"
+      "flooringChairsAndTables": "Flooring, Chairs and Tables",
+      "moreProductsDescription": "Looking for additional equipment, flooring, and tables? Check out our full catalogue for all available products.",
+      "moreProductsTitle": "More products available",
+      "viewFullCatalogue": "View Full Catalogue"
     },
     "contact": {
       "title": "Have Questions? Ask Us!",
@@ -388,5 +391,8 @@
     "gallery": {
       "title": "Recent Installations"
     }
+  },
+  "catalogue": {
+    "title": "Catalogue"
   }
 }
