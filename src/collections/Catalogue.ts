@@ -1,4 +1,5 @@
 // payload/collections/Products.ts
+import { revalidatePath } from 'next/cache';
 import { CollectionConfig } from 'payload';
 
 export const Catalogue: CollectionConfig = {
@@ -14,6 +15,21 @@ export const Catalogue: CollectionConfig = {
       'general.title',
       'category',
       'pricing.price',
+    ],
+  },
+  hooks: {
+    afterChange: [
+      async () => {
+        // Automatically set the order field to match the _order value
+        revalidatePath('/en/catalogue');
+        revalidatePath('/fr/catalogue');
+      },
+    ],
+    afterDelete: [
+      async () => {
+        revalidatePath('/en/catalogue');
+        revalidatePath('/fr/catalogue');
+      },
     ],
   },
   fields: [
