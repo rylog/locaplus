@@ -129,7 +129,7 @@ export const Tempos = () => {
         {/* Why Choose Section */}
         <section
           id={SECTIONS[locale].WHY_CHOOSE_US}
-          className="relative overflow-hidden bg-white pt-24 py-8 rounded-4xl translate-y-[-32px] z-10"
+          className="relative overflow-hidden bg-white pt-24 py-8 rounded-4xl translate-y-8 z-10"
         >
           <div className="mx-auto max-w-7xl px-6 lg:px-8 md:pb-0 lg:pb-16">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
@@ -154,7 +154,7 @@ export const Tempos = () => {
                     {tempoFeaturesData.map((feature) => (
                       <div key={t(feature.title)} className="relative pl-9">
                         <dt className="inline font-semibold text-gray-900">
-                          <feature.icon className="absolute top-1 left-1 w-5 h-5 text-[#0d2d51]" />
+                          <feature.icon className="absolute top-1 left-1 w-5 h-5 text-primary" />
                           {t(feature.title)}.
                         </dt>
                         <dd className="inline ml-1">
@@ -177,7 +177,7 @@ export const Tempos = () => {
                   alt="Tempo shelter"
                   width={1440}
                   height={1440}
-                  className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[36rem] lg:-ml-0 sm:mx-auto justify-self-center m-auto"
+                  className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-xl lg:ml-0 sm:mx-auto justify-self-center m-auto"
                 />
               </div>
             </div>
@@ -205,7 +205,7 @@ export const Tempos = () => {
                 className="bg-white shadow-xs
                 rounded-xl p-12 text-center flex flex-col"
               >
-                <div className="w-full aspect-[16/9] relative mb-8">
+                <div className="w-full aspect-video relative mb-8">
                   <Image
                     src={tempo.img}
                     alt={tempo.name}
@@ -216,9 +216,7 @@ export const Tempos = () => {
                 </div>
                 <h3 className="font-semibold text-3xl mb-2">{t(tempo.name)}</h3>
                 <p className="text-gray-500 text-lg mb-6">{t(tempo.size)}</p>
-                <p className="text-gray-700 text-base flex-grow">
-                  {t(tempo.desc)}
-                </p>
+                <p className="text-gray-700 text-base grow">{t(tempo.desc)}</p>
               </div>
             ))}
           </div>

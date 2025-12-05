@@ -72,7 +72,7 @@ export const Catalogue: React.FC<CatalogueProps> = ({ items, categories }) => {
                 className="h-14 w-auto"
               />
             </Link>
-            <h1 className="font-sans font-extralight text-xl content-end ml-4 mb-[-4px]">
+            <h1 className="font-sans font-extralight text-xl content-end ml-4 -mb-1">
               {t('catalogue.title')}
             </h1>
           </div>
@@ -97,7 +97,7 @@ export const Catalogue: React.FC<CatalogueProps> = ({ items, categories }) => {
                     : 'bg-gray-100 text-gray-500 border-gray-300 hover:bg-slate-100'
                 }`}
               >
-                All
+                {t('catalogue.allCategories')}
               </button>
 
               {categories.map((category) => (
