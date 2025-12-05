@@ -1,4 +1,3 @@
-'use server';
 import configPromise from '@payload-config';
 import { setRequestLocale } from 'next-intl/server';
 import { getPayload } from 'payload';
@@ -27,7 +26,11 @@ const CataloguePage = async ({
     locale: lang,
   });
 
-  return <Catalogue items={catalogueItems} categories={categories} />;
+  return (
+    <>
+      <Catalogue items={catalogueItems} categories={categories} />
+    </>
+  );
 };
 
 export default CataloguePage;
