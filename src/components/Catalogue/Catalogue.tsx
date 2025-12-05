@@ -136,7 +136,7 @@ export const Catalogue: React.FC<CatalogueProps> = ({ items, categories }) => {
                 </h3>
                 <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                   {itemsForCategory.map((item) => (
-                    <a key={item.id} href="#" className="group">
+                    <a key={item.id} className="group">
                       <div className="relative w-full h-72 p-2 overflow-hidden rounded-md bg-gray-100 xl:aspect-square">
                         {typeof item.media?.thumbnail === 'object' &&
                           item.media.thumbnail?.url && (
@@ -145,7 +145,7 @@ export const Catalogue: React.FC<CatalogueProps> = ({ items, categories }) => {
                               alt={item.media.thumbnail.alt || ''}
                               width={256}
                               height={256}
-                              className="relative object-contain w-full h-full group-hover:opacity-75 transition-opacity duration-200"
+                              className="relative object-contain w-full h-full"
                             />
                           )}
                       </div>
