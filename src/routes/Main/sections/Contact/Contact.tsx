@@ -8,8 +8,11 @@ export const Contact = () => {
   const locale = useLocale();
   const t = useTranslations('HomePage');
   return (
-    <section id={SECTIONS[locale].CONTACT} className="lg:bg-gray-100 bg-white">
-      <div className="flex flex-col max-w-2xl pt-8 lg:pt-12 lg:max-w-6xl justify-self-center gap-4 mx-4">
+    <section
+      id={SECTIONS[locale].CONTACT}
+      className="lg:bg-gray-100 bg-white rounded-t-4xl "
+    >
+      <div className="flex flex-col max-w-2xl pt-12 lg:pt-12 lg:max-w-6xl justify-self-center gap-4 mx-4">
         <header>
           <h1 className="text-lg/7 font-semibold text-primary text-center">
             {t('nav.contactUs')}

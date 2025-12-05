@@ -17,7 +17,7 @@ export const Products = () => {
       className="bg-gray-50 lg:pt-8 pt-0 lg:pb-28"
     >
       <div className="flex flex-col overflow-hidden mx-auto max-w-6xl w-full lg:gap-8 px-0 pt-12 lg:px-0">
-        <header className="max-w-2xl lg:px-0 px-4 lg:self-center text-center">
+        <header className="max-w-2xl lg:px-0 px-4 md:self-center text-center">
           <h1 className="text-lg/7 font-semibold text-primary">
             {t('nav.products')}
           </h1>
@@ -27,12 +27,12 @@ export const Products = () => {
           <p className="mt-2 text-gray-600">{t('products.description')}</p>
         </header>
         <Tents />
-        <div className="lg:mt-12 bg-gray-100 rounded-lg p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="lg:mt-12 bg-gray-50 lg:bg-gray-100 rounded-lg p-10 py-12 lg:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex-1">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center lg:text-left">
               {t('products.moreProductsTitle')}
             </h3>
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-center lg:text-left">
               {t('products.moreProductsDescription')}
             </p>
           </div>

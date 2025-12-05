@@ -19,11 +19,11 @@ export const Tents = () => {
   });
 
   return (
-    <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 bg-white rounded-md sm:bg-transparent w-full">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 bg-gray-50 rounded-md sm:bg-transparent w-full p-4">
       {items.map((item, index) => (
         <li
           key={index}
-          className="flex flex-row rounded-md p-4 bg-white shadow-md text-sm sm:text-base transition  gap-4"
+          className="flex flex-row rounded-md p-4 bg-white shadow-md text-sm sm:text-base transition"
         >
           <picture>
             <img
