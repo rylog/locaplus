@@ -393,6 +393,7 @@
     }
   },
   "catalogue": {
-    "title": "Catalogue"
+    "title": "Catalogue",
+    "allCategories": "Tout"
   }
 }
