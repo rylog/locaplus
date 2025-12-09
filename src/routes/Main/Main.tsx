@@ -26,7 +26,7 @@ export const Main = ({ tents }: MainProps) => {
       </div>
       <div className="flex flex-col bg-gray-50">
         <About />
-        <Products tents={tents ?? []} />
+        <Products tents={tents} />
         <Contact />
       </div>
     </>

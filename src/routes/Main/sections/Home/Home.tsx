@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 
-import HomeBackgroundJpg from '@/assets/images/home/HomePage.webp';
-
 import { SECTIONS } from '../../../../constants/sections';
 
 export const Home = () => {
@@ -32,11 +30,10 @@ export const Home = () => {
         </div>
       </div>
       <Image
-        src={HomeBackgroundJpg}
+        src="https://cdn.chapiteaulocaplus.com/HomePage.jpg"
         fill
         alt="Locaplus home page background"
         className="object-cover w-full h-full absolute top-0 left-0 z-[-1] brightness-75"
-        placeholder="blur"
         sizes="100vw"
       />
     </section>
