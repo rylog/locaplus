@@ -129,7 +129,7 @@ export const Tempos = () => {
         {/* Why Choose Section */}
         <section
           id={SECTIONS[locale].WHY_CHOOSE_US}
-          className="relative overflow-hidden bg-white pt-24 py-8 rounded-4xl translate-y-8 z-10"
+          className="relative overflow-hidden bg-white pt-24 py-8 rounded-4xl -translate-y-8 z-10"
         >
           <div className="mx-auto max-w-7xl px-6 lg:px-8 md:pb-0 lg:pb-16">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">

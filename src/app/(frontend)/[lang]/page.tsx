@@ -1,4 +1,6 @@
+import configPromise from '@payload-config';
 import { setRequestLocale } from 'next-intl/server';
+import { getPayload } from 'payload';
 
 import { Main } from '../../../routes/Main/Main';
 
@@ -9,5 +11,13 @@ export default async function Home({
 }) {
   const lang = (await params).lang;
   setRequestLocale(lang);
-  return <Main />;
+  const payload = await getPayload({ config: configPromise });
+  const { docs: tents } = await payload.find({
+    collection: 'tents',
+    limit: 100,
+    depth: 2,
+    locale: lang, // or dynamic
+  });
+
+  return <Main tents={tents ?? []} />;
 }

@@ -71,6 +71,7 @@ export interface Config {
     media: Media;
     catalogue_item: CatalogueItem;
     categories: Category;
+    tents: Tent;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -82,6 +83,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     catalogue_item: CatalogueItemSelect<false> | CatalogueItemSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    tents: TentsSelect<false> | TentsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -227,6 +229,20 @@ export interface Category {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tents".
+ */
+export interface Tent {
+  id: string;
+  title: string;
+  image: string | Media;
+  spaceRequired?: string | null;
+  minCapacity?: number | null;
+  maxCapacity?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -264,6 +280,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'categories';
         value: string | Category;
+      } | null)
+    | ({
+        relationTo: 'tents';
+        value: string | Tent;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -394,6 +414,19 @@ export interface CategoriesSelect<T extends boolean = true> {
   order?: T;
   name?: T;
   slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tents_select".
+ */
+export interface TentsSelect<T extends boolean = true> {
+  title?: T;
+  image?: T;
+  spaceRequired?: T;
+  minCapacity?: T;
+  maxCapacity?: T;
   updatedAt?: T;
   createdAt?: T;
 }

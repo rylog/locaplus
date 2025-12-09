@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 
-import AboutLeftSectionPhoto from '@/../public/images/about/leftSection.jpg';
-import AboutMiddleSectionPhoto from '@/../public/images/about/middleSection.jpg';
-import AboutRightSectionPhoto from '@/../public/images/about/rightSection.jpg';
+import AboutLeftSectionPhoto from '@/assets/images/about/leftSection.webp';
+import AboutMiddleSectionPhoto from '@/assets/images/about/middleSection.webp';
+import AboutRightSectionPhoto from '@/assets/images/about/rightSection.webp';
+import TempoPhoto from '@/assets/images/about/tempo.webp';
 
 import { SECTIONS } from '../../../../constants/sections';
 
@@ -14,7 +15,7 @@ export const About = () => {
   return (
     <section
       id={SECTIONS[locale].ABOUT}
-      className="bg-gray-50 rounded-4xl translate-y-[-32px] z-10"
+      className="bg-gray-50 rounded-4xl -translate-y-8 z-10"
     >
       <div className="mx-auto max-w-2xl lg:max-w-7xl pt-20 lg:px-8">
         <header>
@@ -51,7 +52,7 @@ export const About = () => {
               width={2048}
               height={1536}
               className="h-96 w-full object-cover"
-              src={AboutMiddleSectionPhoto.src}
+              src={AboutMiddleSectionPhoto}
               alt={t('about.section2.title')}
             />
             <div className="p-8">
@@ -70,7 +71,7 @@ export const About = () => {
               width={1024}
               height={768}
               className="h-96 w-full object-cover"
-              src={AboutRightSectionPhoto.src}
+              src={AboutRightSectionPhoto}
               alt={t('about.section3.title')}
             />
             <div className="p-8">
@@ -95,7 +96,7 @@ export const About = () => {
               className="h-20 w-auto mt-8"
               width={257}
               height={147}
-              src="/images/about/tempo.png"
+              src={TempoPhoto}
               alt="Tempo Logo"
             />
             <div className="flex w-full justify-end lg:mt-4 mt-12 ">

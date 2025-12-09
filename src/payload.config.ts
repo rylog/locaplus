@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 import { Catalogue } from './collections/Catalogue';
 import { Categories } from './collections/Categories';
 import { Media } from './collections/Media';
+import { Tents } from './collections/Tents';
 import { Users } from './collections/Users';
 
 const filename = fileURLToPath(import.meta.url);
@@ -28,7 +29,7 @@ export default buildConfig({
       { code: 'fr', label: 'Français' },
     ],
   },
-  collections: [Users, Media, Catalogue, Categories],
+  collections: [Users, Media, Catalogue, Categories, Tents],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

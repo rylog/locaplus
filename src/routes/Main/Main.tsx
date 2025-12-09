@@ -3,15 +3,19 @@
 import { useTranslations } from 'next-intl';
 
 import { NavBar } from '@/components/NavBar/NavBar';
+import { Tent } from '@/payload-types';
 
 import { About } from './sections/About/About';
 import { Contact } from './sections/Contact/Contact';
 import { Home } from './sections/Home/Home';
 import { Products } from './sections/Products/Products';
 
-export const Main = () => {
-  const t = useTranslations('HomePage');
+interface MainProps {
+  tents: Tent[];
+}
 
+export const Main = ({ tents }: MainProps) => {
+  const t = useTranslations('HomePage');
   return (
     <>
       <meta name="description" content={t('main.metadata.description')} />
@@ -22,7 +26,7 @@ export const Main = () => {
       </div>
       <div className="flex flex-col bg-gray-50">
         <About />
-        <Products />
+        <Products tents={tents ?? []} />
         <Contact />
       </div>
     </>

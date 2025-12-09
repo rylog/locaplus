@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 
-import HomeBackgroundJpg from '@/assets/images/home/HomePage.jpg';
+import HomeBackgroundJpg from '@/assets/images/home/HomePage.webp';
 
 import { SECTIONS } from '../../../../constants/sections';
 
@@ -31,15 +31,14 @@ export const Home = () => {
           </a>
         </div>
       </div>
-      <picture>
-        <Image
-          src={HomeBackgroundJpg}
-          fill
-          alt="Locaplus home page background"
-          className="object-cover w-full h-full absolute top-0 left-0 z-[-1] brightness-75"
-          placeholder="blur"
-        />
-      </picture>
+      <Image
+        src={HomeBackgroundJpg}
+        fill
+        alt="Locaplus home page background"
+        className="object-cover w-full h-full absolute top-0 left-0 z-[-1] brightness-75"
+        placeholder="blur"
+        sizes="100vw"
+      />
     </section>
   );
 };
