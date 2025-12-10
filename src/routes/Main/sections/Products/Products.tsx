@@ -78,6 +78,7 @@ export const Products = ({ tents }: ProductsProps) => {
                         ? tent.image.url
                         : '/placeholder.png'
                   }
+                  sizes="80px"
                 />
               </div>
 
