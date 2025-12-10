@@ -1,11 +1,6 @@
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 
-import AboutLeftSectionPhoto from '@/assets/images/about/leftSection.webp';
-import AboutMiddleSectionPhoto from '@/assets/images/about/middleSection.webp';
-import AboutRightSectionPhoto from '@/assets/images/about/rightSection.webp';
-import TempoPhoto from '@/assets/images/about/tempo.webp';
-
 import { SECTIONS } from '../../../../constants/sections';
 
 export const About = () => {
@@ -33,7 +28,7 @@ export const About = () => {
               width={1536}
               height={2048}
               className="h-96 w-full object-cover object-top"
-              src={AboutLeftSectionPhoto.src}
+              src="https://cdn.chapiteaulocaplus.com/leftSection.webp"
               alt={t('about.section1.title')}
             />
             <div className="p-8 sm:px-10">
@@ -52,7 +47,7 @@ export const About = () => {
               width={2048}
               height={1536}
               className="h-96 w-full object-cover"
-              src={AboutMiddleSectionPhoto}
+              src="https://cdn.chapiteaulocaplus.com/middleSection.webp"
               alt={t('about.section2.title')}
             />
             <div className="p-8">
@@ -71,7 +66,7 @@ export const About = () => {
               width={1024}
               height={768}
               className="h-96 w-full object-cover"
-              src={AboutRightSectionPhoto}
+              src="https://cdn.chapiteaulocaplus.com/rightSection.webp"
               alt={t('about.section3.title')}
             />
             <div className="p-8">
@@ -96,7 +91,7 @@ export const About = () => {
               className="h-20 w-auto mt-8"
               width={257}
               height={147}
-              src={TempoPhoto}
+              src="https://cdn.chapiteaulocaplus.com/tempo.webp"
               alt="Tempo Logo"
             />
             <div className="flex w-full justify-end lg:mt-4 mt-12 ">
