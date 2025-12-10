@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 
-import TempoPhoto from '@/assets/images/about/tempo.webp';
-
 import { SECTIONS } from '../../../../constants/sections';
 
 export const About = () => {
