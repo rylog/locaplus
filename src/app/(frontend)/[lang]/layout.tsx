@@ -177,10 +177,7 @@ export default async function RootLayout({
           `}
         </Script>
       </head>
-      <body
-        className="bg-white font-[var(--font-sans)]"
-        suppressHydrationWarning
-      >
+      <body className="bg-white font-(--font-sans)" suppressHydrationWarning>
         <QueryClientContextProvider>
           <NextIntlClientProvider messages={messages}>
             {children}
