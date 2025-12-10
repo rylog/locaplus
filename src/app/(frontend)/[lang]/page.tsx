@@ -19,5 +19,6 @@ export default async function Home({
     locale: lang, // or dynamic
   });
 
-  return <Main tents={tents ?? []} />;
+  // Reversed until I fix the sorting in Payload CMS
+  return <Main tents={tents.reverse() ?? []} />;
 }
