@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://locaplus.net/sitemap.xml
+Sitemap: https://chapiteaulocaplus.com/sitemap.xml

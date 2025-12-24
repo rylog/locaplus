@@ -47,8 +47,8 @@ export async function generateMetadata({
   };
 
   const canonicalUrls = {
-    en: 'https://www.locaplus.net/en',
-    fr: 'https://www.locaplus.net/fr',
+    en: 'https://www.chapiteaulocaplus.com/en',
+    fr: 'https://www.chapiteaulocaplus.com/fr',
   };
 
   const imageAlts = {
@@ -57,7 +57,7 @@ export async function generateMetadata({
   };
 
   // Default OG image and description
-  const ogImage = 'https://www.locaplus.net/event-tents-locaplus.jpg';
+  const ogImage = 'https://www.chapiteaulocaplus.com/event-tents-locaplus.jpg';
   const description = descriptions[lang] || descriptions['en'];
 
   return {
@@ -90,10 +90,10 @@ export async function generateMetadata({
       icon: '/favicon.ico',
     },
     alternates: {
-      canonical: 'https://www.locaplus.net/',
+      canonical: 'https://www.chapiteaulocaplus.com/',
       languages: {
-        en: 'https://www.locaplus.net/en',
-        fr: 'https://www.locaplus.net/fr',
+        en: 'https://www.chapiteaulocaplus.com/en',
+        fr: 'https://www.chapiteaulocaplus.com/fr',
       },
     },
   };

@@ -170,8 +170,7 @@
       "success": {
         "title": "Demande de soumission envoyé",
         "message": "Vous recevrez une confirmation par courriel automatisée.\n Un membre de notre équipe vous contactera sous peu."
-      },
-      "maintenance": "Le formulaire de soumission sera indisponible jusqu'au 5 janvier. Veuillez envoyer toutes vos demandes de soumission à contact@locaplus.net. Nous nous excusons pour le désagrément."
+      }
     },
     "careers": {
       "success": {

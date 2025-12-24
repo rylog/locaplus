@@ -2,15 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://locaplus.net/en</loc>
-    <lastmod>2024-12-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://locaplus.net/en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://locaplus.net/fr" />
+    <loc>https://chapiteaulocaplus.com/en</loc>
+    <lastmod>2025-12-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chapiteaulocaplus.com/en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chapiteaulocaplus.com/fr" />
   </url>
   <url>
-    <loc>https://locaplus.net/fr</loc>
-    <lastmod>2024-12-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://locaplus.net/en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://locaplus.net/fr" />
+    <loc>https://chapiteaulocaplus.com/fr</loc>
+    <lastmod>2025-12-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chapiteaulocaplus.com/en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chapiteaulocaplus.com/fr" />
+  </url>
+
+    <!-- CAREERS -->
+  <url>
+    <loc>https://chapiteaulocaplus.com/en/careers</loc>
+    <lastmod>2025-12-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chapiteaulocaplus.com/en/careers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chapiteaulocaplus.com/fr/carrieres"/>
+  </url>
+
+  <url>
+    <loc>https://chapiteaulocaplus.com/fr/carrieres</loc>
+    <lastmod>2025-12-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chapiteaulocaplus.com/en/careers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chapiteaulocaplus.com/fr/carrieres"/>
+  </url>
+
+      <!-- TEMPOS -->
+  <url>
+    <loc>https://chapiteaulocaplus.com/en/tempos</loc>
+    <lastmod>2025-12-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chapiteaulocaplus.com/en/tempos"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chapiteaulocaplus.com/fr/tempos"/>
+  </url>
+
+  <url>
+    <loc>https://chapiteaulocaplus.com/fr/tempos</loc>
+    <lastmod>2025-12-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chapiteaulocaplus.com/en/tempos"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chapiteaulocaplus.com/fr/tempos"/>
   </url>
 </urlset>

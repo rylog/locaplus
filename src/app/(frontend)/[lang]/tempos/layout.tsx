@@ -28,8 +28,8 @@ export async function generateMetadata({
   };
 
   const canonicalUrls = {
-    en: 'https://www.locaplus.net/en/tempos',
-    fr: 'https://www.locaplus.net/fr/abris-tempo',
+    en: 'https://www.chapiteaulocaplus.com/en/tempos',
+    fr: 'https://www.chapiteaulocaplus.com/fr/abris-tempo',
   };
 
   const imageAlts = {
@@ -38,7 +38,7 @@ export async function generateMetadata({
   };
 
   // Default OG image and description
-  const ogImage = 'https://www.locaplus.net/tempo-display.jpg';
+  const ogImage = 'https://www.chapiteaulocaplus.com/tempo-display.jpg';
   const description = descriptions[lang] || descriptions['en'];
 
   return {
@@ -71,10 +71,10 @@ export async function generateMetadata({
       icon: '/favicon.ico',
     },
     alternates: {
-      canonical: 'https://www.locaplus.net/tempos',
+      canonical: 'https://www.chapiteaulocaplus.com/tempos',
       languages: {
-        en: 'https://www.locaplus.net/en',
-        fr: 'https://www.locaplus.net/fr',
+        en: 'https://www.chapiteaulocaplus.com/en',
+        fr: 'https://www.chapiteaulocaplus.com/fr',
       },
     },
   };

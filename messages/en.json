@@ -170,8 +170,7 @@
       "success": {
         "title": "Quote Request Submitted",
         "message": "You will receive an automated email confirmation.\n A team member will follow up with you shortly."
-      },
-      "maintenance": "The quote form will be unavailable until January 5th. Please send all quote requests to contact@locaplus.net. We apologize for the inconvenience."
+      }
     },
     "careers": {
       "success": {
