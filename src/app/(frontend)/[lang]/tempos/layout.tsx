@@ -71,10 +71,10 @@ export async function generateMetadata({
       icon: 'https://www.chapiteaulocaplus.com/favicon.ico',
     },
     alternates: {
-      canonical: `https://www.chapiteaulocaplus.com/${lang}/tempos`,
+      canonical: `https://www.chapiteaulocaplus.com/${lang == 'en' ? 'en/tempos' : 'fr/abris-tempo'}`,
       languages: {
-        en: 'https://www.chapiteaulocaplus.com/en',
-        fr: 'https://www.chapiteaulocaplus.com/fr',
+        en: 'https://www.chapiteaulocaplus.com/en/tempos',
+        fr: 'https://www.chapiteaulocaplus.com/fr/abris-tempo',
       },
     },
   };
