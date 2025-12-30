@@ -71,7 +71,7 @@ export async function generateMetadata({
       icon: 'https://www.chapiteaulocaplus.com/favicon.ico',
     },
     alternates: {
-      canonical: 'https://www.chapiteaulocaplus.com/tempos',
+      canonical: `https://www.chapiteaulocaplus.com/${lang}/tempos`,
       languages: {
         en: 'https://www.chapiteaulocaplus.com/en',
         fr: 'https://www.chapiteaulocaplus.com/fr',
