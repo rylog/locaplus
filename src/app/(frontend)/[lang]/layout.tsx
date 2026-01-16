@@ -46,15 +46,12 @@ export async function generateMetadata({
     fr: "location de tentes, location d'équipement, tentes pour événements, événements au Québec, planification d'événements",
   };
 
-  const canonicalUrls = {
-    en: 'https://www.chapiteaulocaplus.com/en',
-    fr: 'https://www.chapiteaulocaplus.com/fr',
-  };
-
   const imageAlts = {
     en: 'Tent Rentals for Events',
     fr: 'Location de tentes pour événements',
   };
+
+  const baseUrl = 'https://chapiteaulocaplus.com';
 
   // Default OG image and description
   const ogImage = 'https://www.chapiteaulocaplus.com/event-tents-locaplus.jpg';
@@ -68,7 +65,7 @@ export async function generateMetadata({
     openGraph: {
       title: titles[lang] || titles['en'],
       description,
-      url: canonicalUrls[lang] || canonicalUrls['en'],
+      url: `${baseUrl}/${lang}`,
       siteName: 'Locaplus',
       images: [
         {
@@ -96,10 +93,11 @@ export async function generateMetadata({
     },
     manifest: '/site.webmanifest',
     alternates: {
-      canonical: `https://www.chapiteaulocaplus.com/${lang}`,
+      canonical: `${baseUrl}/${lang}`,
       languages: {
-        en: 'https://www.chapiteaulocaplus.com/en',
-        fr: 'https://www.chapiteaulocaplus.com/fr',
+        en: `${baseUrl}/en`,
+        fr: `${baseUrl}/fr`,
+        'x-default': `${baseUrl}/en`,
       },
     },
   };

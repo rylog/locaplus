@@ -27,18 +27,15 @@ export async function generateMetadata({
     fr: "location d'abris Tempo, achat d'abris Tempo, installation d'abris Tempo",
   };
 
-  const canonicalUrls = {
-    en: 'https://www.chapiteaulocaplus.com/en/tempos',
-    fr: 'https://www.chapiteaulocaplus.com/fr/abris-tempo',
-  };
-
   const imageAlts = {
     en: 'Tent Rentals for Events',
     fr: 'Location de tentes pour événements',
   };
 
+  const baseUrl = 'https://chapiteaulocaplus.com';
+
   // Default OG image and description
-  const ogImage = 'https://www.chapiteaulocaplus.com/tempo-display.jpg';
+  const ogImage = 'https://chapiteaulocaplus.com/tempo-display.jpg';
   const description = descriptions[lang] || descriptions['en'];
 
   return {
@@ -49,7 +46,7 @@ export async function generateMetadata({
     openGraph: {
       title: titles[lang] || titles['en'],
       description,
-      url: canonicalUrls[lang] || canonicalUrls['en'],
+      url: `${baseUrl}/${lang == 'en' ? 'en/tempos' : 'fr/abris-tempo'}`,
       siteName: 'Locaplus',
       images: [
         {
@@ -68,13 +65,14 @@ export async function generateMetadata({
       images: [ogImage],
     },
     icons: {
-      icon: 'https://www.chapiteaulocaplus.com/favicon.ico',
+      icon: 'https://chapiteaulocaplus.com/favicon.ico',
     },
     alternates: {
-      canonical: `https://www.chapiteaulocaplus.com/${lang == 'en' ? 'en/tempos' : 'fr/abris-tempo'}`,
+      canonical: `${baseUrl}/${lang == 'en' ? 'en/tempos' : 'fr/abris-tempo'}`,
       languages: {
-        en: 'https://www.chapiteaulocaplus.com/en/tempos',
-        fr: 'https://www.chapiteaulocaplus.com/fr/abris-tempo',
+        en: `${baseUrl}/en/tempos`,
+        fr: `${baseUrl}/fr/abris-tempo`,
+        'x-default': `${baseUrl}/en/tempos`,
       },
     },
   };
