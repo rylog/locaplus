@@ -231,7 +231,7 @@ export const Tempos = () => {
         {formSubmitted ? (
           <section
             id={SECTIONS[locale].QUOTE}
-            className="relative isolate bg-slate-900 px-6 py-24 sm:py-32 lg:px-8 rounded-t-2xl z-10 min-h-[1000px] flex items-center justify-center"
+            className="relative isolate bg-slate-900 px-6 py-24 sm:py-32 lg:px-8 rounded-t-2xl z-10 min-h-250 flex items-center justify-center"
           >
             <div className="flex flex-col gap-6 max-w-96">
               <h1 className="text-2xl text-white font-semibold tracking-loose sm:text-2xl text-center">
