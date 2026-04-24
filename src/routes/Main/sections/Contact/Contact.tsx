@@ -10,9 +10,9 @@ export const Contact = () => {
   return (
     <section
       id={SECTIONS[locale].CONTACT}
-      className="lg:bg-gray-100 bg-white rounded-t-4xl "
+      className="lg:bg-gray-100 bg-white rounded-t-4xl"
     >
-      <div className="flex flex-col max-w-2xl pt-12 lg:pt-12 lg:max-w-6xl justify-self-center gap-4 mx-4">
+      <div className="flex flex-col max-w-2xl pt-12 lg:pt-12 lg:max-w-6xl justify-self-center gap-4 mx-auto">
         <header>
           <h1 className="text-lg/7 font-semibold text-primary text-center">
             {t('nav.contactUs')}

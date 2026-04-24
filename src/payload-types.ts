@@ -96,9 +96,7 @@ export interface Config {
   globals: {};
   globalsSelect: {};
   locale: 'en' | 'fr';
-  user: User & {
-    collection: 'users';
-  };
+  user: User;
   jobs: {
     tasks: unknown;
     workflows: unknown;
@@ -145,6 +143,7 @@ export interface User {
       }[]
     | null;
   password?: string | null;
+  collection: 'users';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -233,6 +232,11 @@ export interface Category {
  */
 export interface Tent {
   id: string;
+  _order?: string | null;
+  /**
+   * Set the order for manual sorting
+   */
+  order?: number | null;
   title: string;
   image: string | Media;
   spaceRequired?: string | null;
@@ -422,6 +426,8 @@ export interface CategoriesSelect<T extends boolean = true> {
  * via the `definition` "tents_select".
  */
 export interface TentsSelect<T extends boolean = true> {
+  _order?: T;
+  order?: T;
   title?: T;
   image?: T;
   spaceRequired?: T;
