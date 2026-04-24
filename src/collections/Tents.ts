@@ -2,11 +2,22 @@ import type { CollectionConfig } from 'payload';
 
 export const Tents: CollectionConfig = {
   slug: 'tents',
+  orderable: true,
   labels: {
     singular: 'Tent',
     plural: 'Tents',
   },
+  defaultSort: 'order',
   fields: [
+        {
+      name: 'order',
+      type: 'number',
+      required: false,
+      admin: {
+        position: 'sidebar',
+        description: 'Set the order for manual sorting',
+      },
+    },
     {
       name: 'title',
       type: 'text',
