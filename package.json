@@ -20,7 +20,7 @@
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@hookform/error-message": "^2.0.1",
-    "@mui/x-date-pickers": "^8.0.0",
+    "@mui/x-date-pickers": "^9.0.0",
     "@payloadcms/db-mongodb": "^3.64.0",
     "@payloadcms/next": "^3.64.0",
     "@payloadcms/richtext-lexical": "^3.64.0",
